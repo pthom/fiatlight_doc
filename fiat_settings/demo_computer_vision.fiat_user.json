@@ -21,7 +21,7 @@
                     "name": "t_lower",
                     "data": {
                         "type": "Primitive",
-                        "value": 15950.0
+                        "value": 11530.0
                     }
                 },
                 "t_upper": {
@@ -72,7 +72,7 @@
                     "name": "iterations",
                     "data": {
                         "type": "Primitive",
-                        "value": 2
+                        "value": 4
                     }
                 }
             }
@@ -89,11 +89,11 @@
                     "inputs": {
                         "path": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "convert_bgr_to_rgb": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -109,11 +109,11 @@
                 "inputs": {
                     "path": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "convert_bgr_to_rgb": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -191,23 +191,23 @@
                         },
                         "t_lower": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "t_upper": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "aperture_size": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "l2_gradient": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "blur_sigma": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -224,8 +224,8 @@
                                             "UseStatsMax": false,
                                             "UseStatsMin": false
                                         },
-                                        "ColormapScaleMax": 68.43335573180757,
-                                        "ColormapScaleMin": -54.82972272121011,
+                                        "ColormapScaleMax": 71.34904655815326,
+                                        "ColormapScaleMin": -56.647951594618526,
                                         "internal_ColormapHovered": ""
                                     },
                                     "DrawValuesOnZoomedPixels": true,
@@ -250,12 +250,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.6547807574090723,
+                                        "00": 0.6547807574090724,
                                         "01": 0.0,
-                                        "02": -874.4879656627802,
+                                        "02": -874.4879656627804,
                                         "10": 0.0,
-                                        "11": 0.6547807574090723,
-                                        "12": -558.8652582917811,
+                                        "11": 0.6547807574090724,
+                                        "12": -558.8652582917812,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -331,23 +331,23 @@
                     },
                     "t_lower": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "t_upper": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "aperture_size": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "l2_gradient": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "blur_sigma": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -364,8 +364,8 @@
                                         "UseStatsMax": false,
                                         "UseStatsMin": false
                                     },
-                                    "ColormapScaleMax": 68.43335573180757,
-                                    "ColormapScaleMin": -54.82972272121011,
+                                    "ColormapScaleMax": 71.34904655815326,
+                                    "ColormapScaleMin": -56.647951594618526,
                                     "internal_ColormapHovered": ""
                                 },
                                 "DrawValuesOnZoomedPixels": true,
@@ -390,12 +390,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.6547807574090723,
+                                    "00": 0.6547807574090724,
                                     "01": 0.0,
-                                    "02": -874.4879656627802,
+                                    "02": -874.4879656627804,
                                     "10": 0.0,
-                                    "11": 0.6547807574090723,
-                                    "12": -558.8652582917811,
+                                    "11": 0.6547807574090724,
+                                    "12": -558.8652582917812,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -477,15 +477,15 @@
                         },
                         "kernel_size": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "morph_shape": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "iterations": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -502,8 +502,8 @@
                                             "UseStatsMax": false,
                                             "UseStatsMin": false
                                         },
-                                        "ColormapScaleMax": 122.0506193083253,
-                                        "ColormapScaleMin": -82.51727301238907,
+                                        "ColormapScaleMax": 156.6418453740996,
+                                        "ColormapScaleMin": -94.16906066470128,
                                         "internal_ColormapHovered": ""
                                     },
                                     "DrawValuesOnZoomedPixels": true,
@@ -609,15 +609,15 @@
                     },
                     "kernel_size": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "morph_shape": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "iterations": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -634,8 +634,8 @@
                                         "UseStatsMax": false,
                                         "UseStatsMin": false
                                     },
-                                    "ColormapScaleMax": 122.0506193083253,
-                                    "ColormapScaleMin": -82.51727301238907,
+                                    "ColormapScaleMax": 156.6418453740996,
+                                    "ColormapScaleMin": -94.16906066470128,
                                     "internal_ColormapHovered": ""
                                 },
                                 "DrawValuesOnZoomedPixels": true,

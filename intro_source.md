@@ -55,17 +55,23 @@ fl.run(lissajous_curve, app_name="Interactive Lissajou Curve")
 Create a full application in just 4 lines of Python by chaining pure Python functions into an interactive graph. This graph visually displays each function’s inputs and outputs, allowing for manual input adjustments.
 
 
-*Example: The application below displays a live image from the camera, then adds a text on it. All user preferences are saved (text, image size, camera source, etc.)!.*
+*Example: The application below is a meme generator. It is a simple composition of an AI image generator, and a function that adds text onto an image*
 ```python
 import fiatlight as fl
-from fiatlight.fiat_kits.fiat_image import CameraImageProviderGui
+from fiatlight.fiat_kits.fiat_ai import invoke_sdxl_turbo
 from fiatlight.demos.images.old_school_meme import add_meme_text
 
 # Run the composition to create a simple app
-fl.run([CameraImageProviderGui(), add_meme_text], app_name="Rapid App Creation")
+fl.run([invoke_sdxl_turbo, add_meme_text], app_name="Old school meme generator")
 ```
-> *For technical readers: [`CameraImageProviderGui`](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_image/camera_image_provider.py) provides a GUI interface to a camera. [`add_meme_text`](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/old_school_meme.py) is a pure Python function that adds colored text onto an image.*
 
+This can be used as a full application:
+  * All inputs are saved: prompt, and meme text, font, color, position of the text
+  * All preferences are saved: window size, position, and layout of the nodes
+  * The user can save and load different state of the application (i.e. different memes)
+
+
+> *For technical readers: [`invoke_sdxl_turbo`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py) provides a simple wrapper to SDXL, and [`add_meme_text`](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/old_school_meme.py) is a Python function that adds colored text onto an image.*
 
 
 ## Domain-specific Kits:
@@ -94,29 +100,20 @@ fl.run([image_from_file, canny, dilate], app_name="demo_computer_vision")
 ```
 >*For technical readers: [`image_from_file`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_image/image_to_from_file_gui.py) is a function that reads an image from a file, [`canny`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py) applies the Canny edge detection algorithm, and [`dilate`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py) dilates the edges.*
 
-### Data visualization
+### Data visualization with Matplotlib and ImPlot
 
-#### With Matplotlib
-*In the example below, we display matplotlib figures, where each functions' parameters has a pre-defined range, and a specific widget (knobs, sliders). The sine wave function is updated in real time.*
-
-```python
-from fiatlight.fiat_kits.fiat_matplotlib import figure_with_gui_demo
-figure_with_gui_demo.main()
-```
-> *For technical readers: as soon as a function returns a `matplotlib.figure.Figure`, its output will be displayed as a plot. See figure_with_gui_demo.py [source code](../fiat_kits/fiat_matplotlib/figure_with_gui_demo.py).*
-
-#### With ImPlot
-[ImPlot](https://github.com/epezent/implot) is an Immediate Mode Plotting library for Dear ImGui. It is a fast and easy-to-use plotting library that can be used in real-time applications.
-
-*In the example below, we display several ImPlot figures, where each functions' parameters has a pre-defined range, and a specific widget (knobs, sliders). The sine wave function is updated in real time.*
+*In the example below, we display figures using [ImPlot](https://github.com/epezent/implot) (left) and [Matplotlib](https://matplotlib.org/) (right). Each figure provides user-settable parameters (in a given range, with customizable widgets). The sine wave function is updated in real time.*
 
 ```python
-from fiatlight.fiat_kits.fiat_implot import simple_plot_gui_demo
+from fiatlight.demos.plots import demo_mix_implot_matplotib
 
-simple_plot_gui_demo.main()
+demo_mix_implot_matplotib.main()
 ```
 
-> *For technical readers: as soon as a function returns a `fiat_implot.FloatMatrix_Dim1` or `fiat_implot.FloatMatrix_Dim2` (which are aliases for np.ndarray), its output will be displayed as a plot, using [ImPlot](https://github.com/epezent/implot). See simple_plot_gui_demo [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_implot/simple_plot_gui_demo.py). For a complete demo of ImPlot, click here: [ImPlot complete demo](https://traineq.org/implot_demo/src/implot_demo.html)*
+> *For technical readers:* 
+> * when a function returns a `matplotlib.figure.Figure`, its output will be displayed as a plot. See demo_matplotlib.py [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_matplotlib/demo_matplotlib.py).*
+> * when a function returns a `fiat_implot.FloatMatrix_Dim1` or `fiat_implot.FloatMatrix_Dim2` (which are aliases for np.ndarray), its output will be displayed as a plot, using [ImPlot](https://github.com/epezent/implot). See demo_implot [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_implot/demo_implot.py). 
+> * [ImPlot](https://github.com/epezent/implot) is a plotting library for Dear ImGui. It is often faster than Matplotlib, and can be used in real-time applications. For a complete demo of ImPlot, click here: [ImPlot complete demo](https://traineq.org/implot_demo/src/implot_demo.html)*
 
 ### Data Exploration
 *In the example below, we display a data frame from the famous titanic example with filtering.**
@@ -128,15 +125,15 @@ dataframe_with_gui_demo_titanic.main()
 
 ### AI - Image generation
 
-*Example: the application below generates images using a stable diffusion model, and enables to add effects to it.*
+*Example: the application below generates images using a stable diffusion model, and enables to add effects to it (color transformation, add thick edges).*
 
 ```python
-import fiatlight
+import fiatlight as fl
 from fiatlight.fiat_kits.fiat_ai import invoke_sdxl_turbo
 from fiatlight.fiat_kits.fiat_image import lut_channels_in_colorspace
-from fiatlight.demos.images.old_school_meme import add_meme_text
+from fiatlight.demos.images.toon_edges import add_toon_edges
 
-fiatlight.run([invoke_sdxl_turbo, lut_channels_in_colorspace, add_meme_text], app_name="demo_sdxl_meme")
+fl.run([invoke_sdxl_turbo, lut_channels_in_colorspace, add_toon_edges], app_name="SDXL Edges")
 ```
 
 >*For technical readers: `invoke_sdxl_turbo` uses HuggingFace's diffuser library to invoke stable diffusion. See its [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py)*

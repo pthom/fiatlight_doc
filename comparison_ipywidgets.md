@@ -40,11 +40,13 @@ This comparison is based on the following example, which includes several Matplo
 
 #### Using Fiatlight
 
-See the code of [figure_with_gui_demo.py](../fiat_kits/fiat_matplotlib/figure_with_gui_demo.py).
+See the code of [figure_with_gui_demo.py](../fiat_kits/fiat_matplotlib/demo_matplotlib.py).
 
 Here it is in action with Fiatlight. The sine wave is animated at 35 FPS (it could be 120 FPS if using ImPlot instead of MatPlotlib).
+
 ```python
-from fiatlight.fiat_kits.fiat_matplotlib import figure_with_gui_demo
+from fiatlight.fiat_kits.fiat_matplotlib import demo_matplotlib
+
 figure_with_gui_demo.main()
 ```
 

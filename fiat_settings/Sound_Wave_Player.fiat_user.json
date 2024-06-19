@@ -1,55 +1,79 @@
 {
-    "functions_graph": {
+    "user_inputs": {
         "functions_nodes": {
             "sound_wave_from_file": {
-                "inputs": {
-                    "file_path": {
-                        "name": "file_path",
-                        "data": {
-                            "type": "Primitive",
-                            "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/audio/6 - Libera me.mp3"
-                        }
+                "file_path": {
+                    "name": "file_path",
+                    "data": {
+                        "type": "Primitive",
+                        "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight.old/priv_assets/audio/6 - Libera me.mp3"
                     }
-                },
-                "gui_options": {
-                    "inputs": {},
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "sound_wave_from_file": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "file_path": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
                     "outputs": {
                         "0": {
+                            "cb_options": {
+                                "show_time_as_seconds": false,
+                                "can_select": false,
+                                "volume": 1.0,
+                                "plot_size_em": [
+                                    33.57181930541992,
+                                    22.241243362426758
+                                ],
+                                "selection": {
+                                    "start": 81.70448979591836,
+                                    "end": 245.1134693877551
+                                }
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "file_path": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
                             "show_time_as_seconds": false,
                             "can_select": false,
                             "volume": 1.0,
                             "plot_size_em": [
-                                34.2601203918457,
-                                19.677637100219727
+                                33.57181930541992,
+                                22.241243362426758
                             ],
                             "selection": {
                                 "start": 81.70448979591836,
                                 "end": 245.1134693877551
                             }
-                        }
-                    },
-                    "internal_gui_options": {}
-                }
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
             }
-        }
-    },
-    "functions_gui_settings": {
-        "sound_wave_from_file": {
-            "_show_input_details": {
-                "file_path": true
-            },
-            "_inputs_expanded": true,
-            "_show_output_details": {
-                "0": true
-            },
-            "_outputs_expanded": true,
-            "_show_internals_details": {
-                "edges": true,
-                "dilated_edges": true,
-                "image_with_edges": false
-            },
-            "_internals_expanded": true,
-            "_internal_state_gui_expanded": true
         }
     }
 }

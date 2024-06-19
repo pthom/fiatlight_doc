@@ -44,19 +44,19 @@
                     "inputs": {
                         "freq1": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "freq2": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "delta": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "nb_periods": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -77,19 +77,19 @@
                 "inputs": {
                     "freq1": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "freq2": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "delta": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "nb_periods": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {

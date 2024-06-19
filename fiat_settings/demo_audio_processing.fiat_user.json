@@ -26,7 +26,7 @@
                     "inputs": {
                         "factor": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {},
@@ -37,7 +37,7 @@
                 "inputs": {
                     "factor": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {},
@@ -100,7 +100,13 @@
                     "outputs": {
                         "0": {
                             "cb_options": {
-                                "width_em": 15.0
+                                "width_em": 15.0,
+                                "size_multiline_em": [
+                                    60.0,
+                                    15.0
+                                ],
+                                "wrap_multiline": false,
+                                "wrap_multiline_width": 80
                             },
                             "expanded": true
                         }
@@ -130,7 +136,13 @@
                 "outputs": {
                     "0": {
                         "cb_options": {
-                            "width_em": 15.0
+                            "width_em": 15.0,
+                            "size_multiline_em": [
+                                60.0,
+                                15.0
+                            ],
+                            "wrap_multiline": false,
+                            "wrap_multiline_width": 80
                         },
                         "expanded": true
                     }

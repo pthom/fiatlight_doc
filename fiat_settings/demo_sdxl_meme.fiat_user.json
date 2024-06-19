@@ -132,13 +132,14 @@
                                     ],
                                     "wrap_multiline": false,
                                     "wrap_multiline_width": 80
-                                }
+                                },
+                                "submit_continuously": false
                             },
                             "expanded": true
                         },
                         "seed": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -214,13 +215,14 @@
                                 ],
                                 "wrap_multiline": false,
                                 "wrap_multiline_width": 80
-                            }
+                            },
+                            "submit_continuously": false
                         },
                         "expanded": true
                     },
                     "seed": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -654,23 +656,23 @@
                                         "wrap_multiline": false,
                                         "wrap_multiline_width": 80
                                     },
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "font_size": {
                                     "cb_options": {},
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "font_type": {
                                     "cb_options": {},
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "x": {
                                     "cb_options": {},
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "y": {
                                     "cb_options": {},
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "text_color": {
                                     "cb_options": {},
@@ -682,7 +684,7 @@
                                 },
                                 "is_image_bgr": {
                                     "cb_options": {},
-                                    "expanded": true
+                                    "expanded": false
                                 }
                             },
                             "expanded": true
@@ -819,23 +821,23 @@
                                     "wrap_multiline": false,
                                     "wrap_multiline_width": 80
                                 },
-                                "expanded": true
+                                "expanded": false
                             },
                             "font_size": {
                                 "cb_options": {},
-                                "expanded": true
+                                "expanded": false
                             },
                             "font_type": {
                                 "cb_options": {},
-                                "expanded": true
+                                "expanded": false
                             },
                             "x": {
                                 "cb_options": {},
-                                "expanded": true
+                                "expanded": false
                             },
                             "y": {
                                 "cb_options": {},
-                                "expanded": true
+                                "expanded": false
                             },
                             "text_color": {
                                 "cb_options": {},
@@ -847,7 +849,7 @@
                             },
                             "is_image_bgr": {
                                 "cb_options": {},
-                                "expanded": true
+                                "expanded": false
                             }
                         },
                         "expanded": true

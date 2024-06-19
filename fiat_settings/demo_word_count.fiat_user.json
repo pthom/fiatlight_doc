@@ -6,7 +6,7 @@
                     "name": "text_file",
                     "data": {
                         "type": "Primitive",
-                        "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/text/hamlet_Shakespeare.txt"
+                        "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight.old/priv_assets/text/hamlet_Shakespeare.txt"
                     }
                 }
             },
@@ -46,7 +46,7 @@
                     "inputs": {
                         "text_file": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -60,7 +60,7 @@
                                 "wrap_multiline": false,
                                 "wrap_multiline_width": 80
                             },
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -70,7 +70,7 @@
                 "inputs": {
                     "text_file": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -84,7 +84,7 @@
                             "wrap_multiline": false,
                             "wrap_multiline_width": 80
                         },
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}
@@ -122,7 +122,7 @@
                                 "wrap_multiline": false,
                                 "wrap_multiline_width": 80
                             },
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -154,7 +154,7 @@
                             "wrap_multiline": false,
                             "wrap_multiline_width": 80
                         },
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}
@@ -192,7 +192,7 @@
                                 "wrap_multiline": false,
                                 "wrap_multiline_width": 80
                             },
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -224,7 +224,7 @@
                             "wrap_multiline": false,
                             "wrap_multiline_width": 80
                         },
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}
@@ -298,7 +298,7 @@
                         },
                         "min_length": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -318,7 +318,7 @@
                     },
                     "min_length": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -382,7 +382,7 @@
                         },
                         "reverse": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -402,7 +402,7 @@
                     },
                     "reverse": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
