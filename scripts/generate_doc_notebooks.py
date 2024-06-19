@@ -181,6 +181,9 @@ def generate_book() -> None:
     output_dir = f"{DOC_DIR}/docs/flgt"
     shutil.rmtree(output_dir, ignore_errors=True)
     shutil.copytree(f"{DOC_DIR}/_build/html", output_dir)
+    # Add nojekyll file
+    with open(f"{output_dir}/.nojekyll", "w") as f:
+        f.write("")
 
 
 
