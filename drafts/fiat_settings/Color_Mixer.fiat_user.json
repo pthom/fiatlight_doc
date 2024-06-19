@@ -1,0 +1,65 @@
+{
+    "functions_graph": {
+        "functions_nodes": {
+            "color_chooser": {
+                "inputs": {
+                    "color1": {
+                        "name": "color1",
+                        "data": {
+                            "type": "Tuple",
+                            "value": [
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    },
+                    "color2": {
+                        "name": "color2",
+                        "data": {
+                            "type": "Tuple",
+                            "value": [
+                                160,
+                                151,
+                                104,
+                                121
+                            ]
+                        }
+                    }
+                },
+                "gui_options": {
+                    "inputs": {},
+                    "outputs": {
+                        "0": {
+                            "_input_text_in_node_size": {
+                                "x": 15.0,
+                                "y": 0.0
+                            },
+                            "_input_text_in_popup_size": {
+                                "x": 60.0,
+                                "y": 15.0
+                            }
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            }
+        }
+    },
+    "functions_gui_settings": {
+        "color_chooser": {
+            "_show_input_details": {
+                "color1": true,
+                "color2": true
+            },
+            "_inputs_expanded": true,
+            "_show_output_details": {
+                "0": true
+            },
+            "_outputs_expanded": true,
+            "_show_internals_details": {},
+            "_internals_expanded": true,
+            "_internal_state_gui_expanded": true
+        }
+    }
+}

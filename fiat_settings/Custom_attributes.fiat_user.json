@@ -1,0 +1,125 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "interactive_histogram": {
+                "n_bars": {
+                    "name": "n_bars",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 69
+                    }
+                },
+                "mu": {
+                    "name": "mu",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 0.4000000059604645
+                    }
+                },
+                "sigma": {
+                    "name": "sigma",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 4.0
+                    }
+                },
+                "average": {
+                    "name": "average",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 549.7999877929688
+                    }
+                },
+                "nb_data": {
+                    "name": "nb_data",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 8562
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "interactive_histogram": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "n_bars": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "mu": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "sigma": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "average": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "nb_data": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "figure_size": {
+                                    "x": 640.0,
+                                    "y": 480.0
+                                }
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "n_bars": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "mu": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "sigma": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "average": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "nb_data": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "figure_size": {
+                                "x": 640.0,
+                                "y": 480.0
+                            }
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

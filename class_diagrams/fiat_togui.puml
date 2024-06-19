@@ -1,0 +1,54 @@
+@startuml
+
+
+package fiat_togui {
+    class free_functions {
+    ---
+     + register_type(type_, gui_type)
+       (Stores a GUI for a type: gui_type
+       can be any descendant of AnyDataWithGui)
+     ----
+     Dataclasses
+     + register_dataclass(dataclass_type)
+     + @dataclass_with_gui_registration (decorator)
+     + register_base_model(base_model_type) (Pydantic)
+     + @base_model_with_gui_registration (decorator)
+    ---
+    Notes:
+     * factories are stored in a singleton of the class GuiFactories
+     * FunctionWithGui's constructor will call
+        add_input_outputs_to_function_with_gui()
+    }
+
+    class PrimitiveWithGui{
+        ---
+        see primitive_gui.py
+        ---
+        aka
+        + IntWithGui, FloatWithGui, StrWithGui
+        ---
+    }
+
+    class CompositeWithGui{
+        ---
+        see composite_gui.py
+        ---
+        aka
+        OptionalWithGui, ListWithGui, EnumWithGui, etc.
+    }
+
+    free_functions ...> CompositeWithGui: uses
+}
+note top of fiat_togui
+    This package contains a registry of GUI factories,
+    able to emit GUI widgets for many data type.
+
+    Consequently, it can also add
+    input/output widgets to a function.
+end note
+
+fiat_togui.CompositeWithGui --|> fiat_core.AnyDataWithGui
+fiat_togui.PrimitiveWithGui --|> fiat_core.AnyDataWithGui
+fiat_core.FunctionWithGui ...> fiat_togui.free_functions : uses add_input_outputs_to_function_with_gui
+
+@enduml

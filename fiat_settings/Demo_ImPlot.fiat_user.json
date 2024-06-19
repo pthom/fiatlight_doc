@@ -1,0 +1,318 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "make_spirograph_curve": {
+                "radius_fixed_circle": {
+                    "name": "radius_fixed_circle",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 18.649999618530273
+                    }
+                },
+                "radius_moving_circle": {
+                    "name": "radius_moving_circle",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 8.687000274658203
+                    }
+                },
+                "pen_offset": {
+                    "name": "pen_offset",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 11.206999778747559
+                    }
+                },
+                "nb_turns": {
+                    "name": "nb_turns",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 16.492000579833984
+                    }
+                }
+            },
+            "get_simple_values": {
+                "x": {
+                    "name": "x",
+                    "data": {
+                        "type": "Primitive",
+                        "value": -1.3000001907348633
+                    }
+                }
+            },
+            "time_seconds": {},
+            "phase_from_time_seconds": {},
+            "sin_wave": {
+                "amplitude": {
+                    "name": "amplitude",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 1.9000002145767212
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "make_spirograph_curve": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "radius_fixed_circle": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "radius_moving_circle": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "pen_offset": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "nb_turns": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "plot_type": "line",
+                                "plot_size_em": [
+                                    25.709001541137695,
+                                    20.972867965698242
+                                ],
+                                "small_array_threshold": 100,
+                                "auto_fit": true
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "radius_fixed_circle": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "radius_moving_circle": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "pen_offset": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "nb_turns": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "plot_type": "line",
+                            "plot_size_em": [
+                                25.709001541137695,
+                                20.972867965698242
+                            ],
+                            "small_array_threshold": 100,
+                            "auto_fit": true
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        },
+        "get_simple_values": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "x": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "plot_type": "bars",
+                                "plot_size_em": [
+                                    19.454607009887695,
+                                    15.302213668823242
+                                ],
+                                "small_array_threshold": 100,
+                                "auto_fit": true
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "x": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "plot_type": "bars",
+                            "plot_size_em": [
+                                19.454607009887695,
+                                15.302213668823242
+                            ],
+                            "small_array_threshold": 100,
+                            "auto_fit": true
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        },
+        "time_seconds": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {},
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {},
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        },
+        "phase_from_time_seconds": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "time_": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "time_": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        },
+        "sin_wave": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "phase": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "amplitude": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "plot_type": "line",
+                                "plot_size_em": [
+                                    22.956592559814453,
+                                    18.547956466674805
+                                ],
+                                "small_array_threshold": 100,
+                                "auto_fit": true
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "phase": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "amplitude": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "plot_type": "line",
+                            "plot_size_em": [
+                                22.956592559814453,
+                                18.547956466674805
+                            ],
+                            "small_array_threshold": 100,
+                            "auto_fit": true
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "circle_perimeter": {
+                "radius": {
+                    "name": "radius",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 23.899999618530273
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "circle_perimeter": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "radius": {
+                            "cb_options": {
+                                "use_imperial_units": false
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "use_imperial_units": false
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "radius": {
+                        "cb_options": {
+                            "use_imperial_units": false
+                        },
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "use_imperial_units": false
+                        },
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "fahrenheit_to_celsius": {
+                "fahrenheit": {
+                    "name": "fahrenheit",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 45.57699966430664
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "fahrenheit_to_celsius": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "fahrenheit": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "fahrenheit": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

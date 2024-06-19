@@ -1,0 +1,85 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "foo": {
+                "a": {
+                    "name": "a",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 0.30000001192092896
+                    }
+                },
+                "b": {
+                    "name": "b",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 3.0
+                    }
+                },
+                "times_two": {
+                    "name": "times_two",
+                    "data": {
+                        "type": "Primitive",
+                        "value": true
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "foo": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "a": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "b": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "times_two": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "a": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "b": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "times_two": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

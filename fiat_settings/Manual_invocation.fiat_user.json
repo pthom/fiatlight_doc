@@ -1,0 +1,70 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "my_function": {
+                "a": {
+                    "name": "a",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 0
+                    }
+                },
+                "b": {
+                    "name": "b",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 0.0
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "my_function": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "fiat_tuning_expanded": false,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "a": {
+                            "cb_options": {},
+                            "expanded": false
+                        },
+                        "b": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "a": {
+                        "cb_options": {},
+                        "expanded": false
+                    },
+                    "b": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "internal_gui_options": {}
+            }
+        }
+    }
+}

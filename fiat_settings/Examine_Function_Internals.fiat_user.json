@@ -1,0 +1,299 @@
+{
+    "functions_graph": {
+        "functions_nodes": {
+            "image_source": {
+                "inputs": {
+                    "image_file": {
+                        "name": "image_file",
+                        "data": {
+                            "type": "Primitive",
+                            "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/images/house.jpg"
+                        }
+                    },
+                    "max_image_size": {
+                        "name": "max_image_size",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    }
+                },
+                "gui_options": {
+                    "inputs": {},
+                    "outputs": {
+                        "0": {
+                            "image_params": {
+                                "AddWatchedPixelOnDoubleClick": true,
+                                "ColormapKey": "",
+                                "ColormapSettings": {
+                                    "Colormap": "None",
+                                    "ColormapScaleFromStats": {
+                                        "ColorMapStatsType": 0,
+                                        "NbSigmas": 1.5,
+                                        "UseStatsMax": false,
+                                        "UseStatsMin": false
+                                    },
+                                    "ColormapScaleMax": 1.0,
+                                    "ColormapScaleMin": 0.0,
+                                    "internal_ColormapHovered": ""
+                                },
+                                "DrawValuesOnZoomedPixels": true,
+                                "HighlightWatchedPixels": true,
+                                "ImageDisplaySize": {
+                                    "height": 275,
+                                    "width": 287
+                                },
+                                "IsColorOrderBGR": true,
+                                "PanWithMouse": true,
+                                "RefreshImage": false,
+                                "SelectedChannel": -1,
+                                "ShowAlphaChannelCheckerboard": true,
+                                "ShowGrid": true,
+                                "ShowImageInfo": true,
+                                "ShowOptionsButton": true,
+                                "ShowOptionsInTooltip": false,
+                                "ShowOptionsPanel": false,
+                                "ShowPixelInfo": true,
+                                "ShowSchoolPaperBackground": true,
+                                "ShowZoomButtons": true,
+                                "WatchedPixels": [],
+                                "ZoomKey": "z",
+                                "ZoomPanMatrix": {
+                                    "00": 0.305829472746154,
+                                    "01": 0.0,
+                                    "02": -9.593584017958067,
+                                    "10": 0.0,
+                                    "11": 0.305829472746154,
+                                    "12": 6.604985664645906,
+                                    "20": 0.0,
+                                    "21": 0.0,
+                                    "22": 1.0
+                                },
+                                "ZoomWithMouseWheel": true
+                            },
+                            "show_channels": false,
+                            "channel_layout_vertically": false
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            },
+            "add_toon_edges": {
+                "inputs": {
+                    "canny_t_lower": {
+                        "name": "canny_t_lower",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "canny_t_upper": {
+                        "name": "canny_t_upper",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "canny_l2_gradient": {
+                        "name": "canny_l2_gradient",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "canny_blur_sigma": {
+                        "name": "canny_blur_sigma",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "dilate_kernel_size": {
+                        "name": "dilate_kernel_size",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "dilate_morph_shape": {
+                        "name": "dilate_morph_shape",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "dilate_iterations": {
+                        "name": "dilate_iterations",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "blur_edges_sigma": {
+                        "name": "blur_edges_sigma",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    },
+                    "edges_intensity": {
+                        "name": "edges_intensity",
+                        "data": {
+                            "type": "Unspecified"
+                        }
+                    }
+                },
+                "gui_options": {
+                    "inputs": {
+                        "image": {
+                            "image_params": {
+                                "AddWatchedPixelOnDoubleClick": true,
+                                "ColormapKey": "",
+                                "ColormapSettings": {
+                                    "Colormap": "None",
+                                    "ColormapScaleFromStats": {
+                                        "ColorMapStatsType": 0,
+                                        "NbSigmas": 1.5,
+                                        "UseStatsMax": false,
+                                        "UseStatsMin": false
+                                    },
+                                    "ColormapScaleMax": 1.0,
+                                    "ColormapScaleMin": 0.0,
+                                    "internal_ColormapHovered": ""
+                                },
+                                "DrawValuesOnZoomedPixels": true,
+                                "HighlightWatchedPixels": true,
+                                "ImageDisplaySize": {
+                                    "height": 0,
+                                    "width": 200
+                                },
+                                "IsColorOrderBGR": true,
+                                "PanWithMouse": true,
+                                "RefreshImage": true,
+                                "SelectedChannel": -1,
+                                "ShowAlphaChannelCheckerboard": true,
+                                "ShowGrid": true,
+                                "ShowImageInfo": true,
+                                "ShowOptionsButton": true,
+                                "ShowOptionsInTooltip": false,
+                                "ShowOptionsPanel": false,
+                                "ShowPixelInfo": true,
+                                "ShowSchoolPaperBackground": true,
+                                "ShowZoomButtons": true,
+                                "WatchedPixels": [],
+                                "ZoomKey": "z",
+                                "ZoomPanMatrix": {
+                                    "00": 1.0,
+                                    "01": 0.0,
+                                    "02": 0.0,
+                                    "10": 0.0,
+                                    "11": 1.0,
+                                    "12": 0.0,
+                                    "20": 0.0,
+                                    "21": 0.0,
+                                    "22": 1.0
+                                },
+                                "ZoomWithMouseWheel": true
+                            },
+                            "show_channels": false,
+                            "channel_layout_vertically": false
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "image_params": {
+                                "AddWatchedPixelOnDoubleClick": true,
+                                "ColormapKey": "",
+                                "ColormapSettings": {
+                                    "Colormap": "None",
+                                    "ColormapScaleFromStats": {
+                                        "ColorMapStatsType": 0,
+                                        "NbSigmas": 1.5,
+                                        "UseStatsMax": false,
+                                        "UseStatsMin": false
+                                    },
+                                    "ColormapScaleMax": 1.0,
+                                    "ColormapScaleMin": 0.0,
+                                    "internal_ColormapHovered": ""
+                                },
+                                "DrawValuesOnZoomedPixels": true,
+                                "HighlightWatchedPixels": true,
+                                "ImageDisplaySize": {
+                                    "height": 170,
+                                    "width": 324
+                                },
+                                "IsColorOrderBGR": true,
+                                "PanWithMouse": true,
+                                "RefreshImage": false,
+                                "SelectedChannel": -1,
+                                "ShowAlphaChannelCheckerboard": true,
+                                "ShowGrid": true,
+                                "ShowImageInfo": true,
+                                "ShowOptionsButton": true,
+                                "ShowOptionsInTooltip": false,
+                                "ShowOptionsPanel": false,
+                                "ShowPixelInfo": true,
+                                "ShowSchoolPaperBackground": true,
+                                "ShowZoomButtons": true,
+                                "WatchedPixels": [],
+                                "ZoomKey": "z",
+                                "ZoomPanMatrix": {
+                                    "00": 0.3452569657482714,
+                                    "01": 0.0,
+                                    "02": -10.830387532468336,
+                                    "10": 0.0,
+                                    "11": 0.3452569657482714,
+                                    "12": -62.76998134026036,
+                                    "20": 0.0,
+                                    "21": 0.0,
+                                    "22": 1.0
+                                },
+                                "ZoomWithMouseWheel": true
+                            },
+                            "show_channels": false,
+                            "channel_layout_vertically": false
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            }
+        }
+    },
+    "functions_gui_settings": {
+        "image_source": {
+            "_show_input_details": {
+                "image_file": true,
+                "max_image_size": false
+            },
+            "_inputs_expanded": true,
+            "_show_output_details": {
+                "0": true
+            },
+            "_outputs_expanded": true,
+            "_show_internals_details": {
+                "edges": true,
+                "dilated_edges": true,
+                "image_with_edges": false
+            },
+            "_internals_expanded": true,
+            "_internal_state_gui_expanded": true
+        },
+        "add_toon_edges": {
+            "_show_input_details": {
+                "image": false,
+                "canny_t_lower": false,
+                "canny_t_upper": false,
+                "canny_l2_gradient": false,
+                "canny_blur_sigma": false,
+                "dilate_kernel_size": false,
+                "dilate_morph_shape": false,
+                "dilate_iterations": false,
+                "blur_edges_sigma": false,
+                "edges_intensity": false
+            },
+            "_inputs_expanded": false,
+            "_show_output_details": {
+                "0": true
+            },
+            "_outputs_expanded": true,
+            "_show_internals_details": {
+                "edges": true,
+                "dilated_edges": true,
+                "image_with_edges": false
+            },
+            "_internals_expanded": true,
+            "_internal_state_gui_expanded": true
+        }
+    }
+}

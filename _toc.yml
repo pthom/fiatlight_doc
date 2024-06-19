@@ -1,0 +1,38 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+chapters:
+  - file: imgui_tech_stack
+  - file: install
+  - file: tutorials
+    sections:
+      - file: tutorials_first
+      - file: tutorial_signature
+      - file: tutorials_cli
+      - file: tutorials_validation
+      - file: tutorials_advanced
+      - file: tutorials_new_widget
+      - file: tutorials_demos
+  - file: api
+    sections:
+      - file: function_with_gui
+      - file: any_data_with_gui
+      - file: any_data_gui_callbacks
+      - file: functions_graph
+      - file: fiat_togui
+  - file: fiat_kits
+    sections:
+      - file: fiat_image
+      - file: fiat_matplotlib
+      - file: fiat_dataframe
+      - file: fiat_implot
+  - file: architecture
+  - file: comparisons
+    sections:
+      - file: comparison_streamlit
+      - file: comparison_dash
+      - file: comparison_ipywidgets
+  - file: rosetta

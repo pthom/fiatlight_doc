@@ -1,0 +1,45 @@
+{
+    "functions_graph": {
+        "functions_nodes": {
+            "circle_perimeter": {
+                "inputs": {
+                    "radius": {
+                        "name": "radius",
+                        "data": {
+                            "type": "Primitive",
+                            "value": 122.52996955038817
+                        }
+                    }
+                },
+                "gui_options": {
+                    "inputs": {
+                        "radius": {
+                            "use_imperial_units": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "use_imperial_units": false
+                        }
+                    },
+                    "internal_gui_options": {}
+                }
+            }
+        }
+    },
+    "functions_gui_settings": {
+        "circle_perimeter": {
+            "_show_input_details": {
+                "radius": true
+            },
+            "_inputs_expanded": true,
+            "_show_output_details": {
+                "0": true
+            },
+            "_outputs_expanded": true,
+            "_show_internals_details": {},
+            "_internals_expanded": true,
+            "_internal_state_gui_expanded": true
+        }
+    }
+}
