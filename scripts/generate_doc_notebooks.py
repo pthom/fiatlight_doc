@@ -176,6 +176,13 @@ def generate_book() -> None:
     # Generate multiple HTML pages for the manual
     subprocess.run(["jupyter-book", "build", DOC_DIR])
 
+    # Copy recursively the _build/html directory to output/
+    import shutil
+    output_dir = f"{DOC_DIR}/docs/flgt"
+    shutil.rmtree(output_dir, ignore_errors=True)
+    shutil.copytree(f"{DOC_DIR}/_build/html", output_dir)
+
+
 
 if __name__ == "__main__":
     generate_doc_notebooks()

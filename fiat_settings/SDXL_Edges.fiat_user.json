@@ -671,7 +671,7 @@
                                             "expanded": false
                                         }
                                     },
-                                    "expanded": true
+                                    "expanded": false
                                 },
                                 "appearance": {
                                     "cb_options": {
@@ -685,7 +685,7 @@
                                         },
                                         "color": {
                                             "cb_options": {},
-                                            "expanded": false
+                                            "expanded": true
                                         }
                                     },
                                     "expanded": true
@@ -855,7 +855,7 @@
                                         "expanded": false
                                     }
                                 },
-                                "expanded": true
+                                "expanded": false
                             },
                             "appearance": {
                                 "cb_options": {
@@ -869,7 +869,7 @@
                                     },
                                     "color": {
                                         "cb_options": {},
-                                        "expanded": false
+                                        "expanded": true
                                     }
                                 },
                                 "expanded": true

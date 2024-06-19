@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A Mature Tech stack on top of Dear ImGui &#8212; Fiatlight</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'imgui_tech_stack_source';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Fiatlight: Brighten the Journey from Idea to Creation
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fiat_image.html">fiat_image: advanced image widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_matplotlib.html">fiat_matplotlib: display matplotlib figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_dataframe.html">fiat_dataframe: pandas DataFrame explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Fimgui_tech_stack_source.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/imgui_tech_stack_source.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A Mature Tech stack on top of Dear ImGui</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A Mature Tech stack on top of Dear ImGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui">Dear ImGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documented-python-bindings">Documented Python bindings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-is-an-immediate-mode-c-gui-library">Dear ImGui is an immediate mode C++ GUI library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imgui-is-its-own-teacher">ImGui is its own teacher!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extensively-documented-api">An extensively documented API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-imgui">Hello ImGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-tutorials-and-demos">Extensive tutorials and demos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">An extensively documented API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-bundle">Dear ImGui Bundle</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-documentation-and-tutorials">Extensive documentation and tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ecosystem-of-powerful-libraries">An ecosystem of powerful libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bindings-from-c-to-python">Python Bindings: from C++ to Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-a-c-function-in-python">How to use a C++ function in Python</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-mature-tech-stack-on-top-of-dear-imgui">
+<h1>A Mature Tech stack on top of Dear ImGui<a class="headerlink" href="#a-mature-tech-stack-on-top-of-dear-imgui" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Fiatlight is built on top of several powerful libraries and tools, including <a class="reference external" href="https://github.com/ocornut/imgui">Dear ImGui</a>, <a class="reference external" href="https://pthom.github.io/hello_imgui">Hello ImGui</a>, and <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>.</p>
+</div></blockquote>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dear-imgui">
+<h1>Dear ImGui<a class="headerlink" href="#dear-imgui" title="Link to this heading">#</a></h1>
+<p><a href="https://github.com/ocornut/imgui"><img src="_static/images/logo_imgui.jpg"></a></p>
+<p><em><a class="reference external" href="https://github.com/ocornut/imgui">Dear ImGui</a> is a Bloat-free Graphical User interface for C++ with minimal dependencies</em></p>
+<p>Dear ImGui is a simple and powerful immediate mode GUI library, designed to be easy to integrate and use. It is written in C++, but can be used in many other languages, including Python. It is extremely lightweight and performant, and can be used in a wide range of applications, from games to scientific simulations.</p>
+<section id="documented-python-bindings">
+<h2>Documented Python bindings<a class="headerlink" href="#documented-python-bindings" title="Link to this heading">#</a></h2>
+<p>Thanks to <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>, python bindings for ImGui <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/imgui/">are available</a>, and it can even be used from within a Jupyter notebook.</p>
+<p>They reproduce the C++ API in python with high fidelity, and are extensively documented.
+What’s more they are <strong>autogenerated</strong>, so that they are always very close to the latest greatest version.</p>
+</section>
+<section id="dear-imgui-is-an-immediate-mode-c-gui-library">
+<h2>Dear ImGui is an immediate mode C++ GUI library<a class="headerlink" href="#dear-imgui-is-an-immediate-mode-c-gui-library" title="Link to this heading">#</a></h2>
+<p>In an immediate GUI, widgets display and event handling are done at the same time. For example:</p>
+<ul class="simple">
+<li><p>a call to <code class="docutils literal notranslate"><span class="pre">imgui.button(&quot;Click</span> <span class="pre">me&quot;)</span></code> will at the same time display the button and return true if it was clicked.</p></li>
+<li><p>a call to <code class="docutils literal notranslate"> <span class="pre">imgui.input_text(&quot;some</span> <span class="pre">label&quot;,</span> <span class="pre">some_string)</span></code> will display a text input and return a tuple <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">new_string_value)</span></code> where <code class="docutils literal notranslate"><span class="pre">changed</span></code> is true if the text was modified.</p></li>
+</ul>
+<p><em>Example: the following code will display a button and increment a counter when it is clicked:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span><span class="p">,</span> <span class="n">immapp</span>
+
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">gui</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">counter</span><span class="p">,</span> <span class="n">name</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Counter = </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">counter</span><span class="p">)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">same_line</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">imgui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;increment counter&quot;</span><span class="p">):</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">changed</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">imgui</span><span class="o">.</span><span class="n">input_text</span><span class="p">(</span><span class="s2">&quot;Your name?&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># Run the GUI in this notebook (and display a thumbnail afterwards)</span>
+<span class="n">immapp</span><span class="o">.</span><span class="n">run_nb</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="imgui-is-its-own-teacher">
+<h2>ImGui is its own teacher!<a class="headerlink" href="#imgui-is-its-own-teacher" title="Link to this heading">#</a></h2>
+<p>Thanks to <a class="reference external" href="https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html">ImGui Manual</a>, you can explore the numerous ImGui widgets, and see the python code behind each.</p>
+<p><a class="reference external" href="https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html"><img alt="ImGui Manual" src="_images/imgui_manual_python.jpg" /></a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Open the <a class="reference external" href="https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html">manual</a></p></li>
+<li><p>Tick the “Python” checkbox</p></li>
+<li><p>Explore the widgets on the left panel</p></li>
+<li><p>See the corresponding python code on the right panel</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="an-extensively-documented-api">
+<h2>An extensively documented API<a class="headerlink" href="#an-extensively-documented-api" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/imgui/">API for ImGui python bindings</a> is extensively documented, and gives you access to all the ImGui functions, along with their python and  C++ signatures.</p>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Source: <a class="github reference external" href="https://github.com/ocornut/imgui">ocornut/imgui</a></p></li>
+<li><p>Documentation:</p>
+<ul>
+<li><p>Interactive Manual: <a class="reference external" href="https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html">https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html</a></p></li>
+<li><p>Wiki: <a class="github reference external" href="https://github.com/ocornut/imgui/wiki">ocornut/imgui</a></p></li>
+</ul>
+</li>
+<li><p>Gallery &amp; Real world apps: <a class="github reference external" href="https://github.com/ocornut/imgui/issues/7503">ocornut/imgui#7503</a></p></li>
+<li><p>Python Bindings, with Dear ImGui Bundle (autogenerated): <a class="github reference external" href="https://github.com/pthom/imgui_bundle/tree/main/bindings/imgui_bundle/imgui">pthom/imgui_bundle</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="hello-imgui">
+<h1>Hello ImGui<a class="headerlink" href="#hello-imgui" title="Link to this heading">#</a></h1>
+<p><a href="https://pthom.github.io/hello_imgui"><img src="_static/images/logo_hello_imgui.jpg" width="35%"></a></p>
+<p><em><a class="reference external" href="https://pthom.github.io/hello_imgui">Hello ImGui</a> is a library designed to make multiplatform app development as simple as writing a “Hello World” program, built on top of Dear ImGui.</em></p>
+<p>Thanks to <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>, python bindings for Hello ImGui <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/hello_imgui.pyi">are available</a>.</p>
+<p><a href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_docking.html"><img src="_static/images/docking.jpg" width="30%"></a></p>
+<p><em>(An advanced <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/demos_python/demos_immapp/demo_docking.py">tutorial</a> with Hello ImGui. Click the image to run it)</em></p>
+<section id="extensive-tutorials-and-demos">
+<h2>Extensive tutorials and demos<a class="headerlink" href="#extensive-tutorials-and-demos" title="Link to this heading">#</a></h2>
+<p>The demo for <a class="reference external" href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html">Dear ImGui Bundle</a> provides great tutorials for the usage of Hello ImGui in python:</p>
+<p><a class="reference external" href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html"><img alt="bundle_apps" src="_images/bundle_apps.jpg" /></a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Open the <a class="reference external" href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html">demo</a></p></li>
+<li><p>Click on the “Immediate Apps” tab</p></li>
+<li><p>Explore the various demos, run them, and see the python code behind each</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="id1">
+<h2>An extensively documented API<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/hello_imgui.pyi">API for the python bindings</a> is extensively documented, and gives you access to all the classes and functions, along with their python and  C++ signatures.</p>
+</section>
+<section id="id2">
+<h2>Links<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Source: <a class="github reference external" href="https://github.com/pthom/hello_imgui">pthom/hello_imgui</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://pthom.github.io/hello_imgui">https://pthom.github.io/hello_imgui</a></p></li>
+<li><p>Demos &amp; Real world apps: <a class="reference external" href="https://pthom.github.io/hello_imgui/book/intro.html#demos-real-world-apps">https://pthom.github.io/hello_imgui/book/intro.html#demos-real-world-apps</a></p></li>
+<li><p>Python Bindings, with Dear ImGui Bundle (autogenerated): <a class="github reference external" href="https://github.com/pthom/imgui_bundle/blob/main/bindings/imgui_bundle/hello_imgui.pyi">pthom/imgui_bundle</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="dear-imgui-bundle">
+<h1>Dear ImGui Bundle<a class="headerlink" href="#dear-imgui-bundle" title="Link to this heading">#</a></h1>
+<p><a href="https://pthom.github.io/imgui_bundle"><img src="_static/images/logo_imgui_bundle.png" width="35%"></a></p>
+<p><em><a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>: easily create ImGui applications in Python and C++. Batteries included!</em></p>
+<p>Dear ImGui Bundle is an extensive bundle for Dear ImGui, featuring <a class="reference external" href="https://pthom.github.io/imgui_bundle/introduction.html">many powerful libraries</a> from its ecosystem. It can be used in C++ and Python, across Windows, macOS, Linux, iOS, Android, as well as in Web apps. It is ideal for application developers, and researchers eager to dive into GUI development with ease and efficiency.</p>
+<section id="extensive-documentation-and-tutorials">
+<h2>Extensive documentation and tutorials<a class="headerlink" href="#extensive-documentation-and-tutorials" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle documentation</a> provides a comprehensive guide to the various libraries and tools available in the bundle.</p>
+<p>The <a class="reference external" href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html">online interactive demo</a> showcases the capabilities of the bundle, and provides a hands-on experience with the tools and libraries it offers and many tutorials (the code for all demos can easily be accessed from within the interactive demo).</p>
+</section>
+<section id="an-ecosystem-of-powerful-libraries">
+<h2>An ecosystem of powerful libraries<a class="headerlink" href="#an-ecosystem-of-powerful-libraries" title="Link to this heading">#</a></h2>
+<p>All the <a class="reference external" href="https://pthom.github.io/imgui_bundle/introduction.html">numerous libraries</a> provided by the bundle are extensively documented, and can be used in both C++ and Python. The <a class="reference external" href="https://github.com/pthom/imgui_bundle/tree/main/bindings/imgui_bundle">bindings for all of these libraries</a> are also extensively documented.</p>
+<p>What’s more, the bindings are generated automatically by a powerful <a class="reference external" href="https://pthom.github.io/litgen">bindings generator</a>, so that they are always up-to-date.</p>
+</section>
+<section id="id3">
+<h2>Links<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Source: <a class="github reference external" href="https://github.com/pthom/imgui_bundle">pthom/imgui_bundle</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://pthom.github.io/imgui_bundle">https://pthom.github.io/imgui_bundle</a></p></li>
+<li><p>Included Libraries: <a class="reference external" href="https://pthom.github.io/imgui_bundle/introduction.html">https://pthom.github.io/imgui_bundle/introduction.html</a></p></li>
+<li><p>Interactive Demo &amp; Manual: <a class="reference external" href="https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html">https://traineq.org/ImGuiBundle/emscripten/bin/demo_imgui_bundle.html</a></p></li>
+<li><p>Gallery: <a class="github reference external" href="https://github.com/pthom/imgui_bundle/discussions/107">pthom/imgui_bundle#107</a></p></li>
+<li><p>Autogenerated and documented Python Bindings, for all the included libraries: <a class="github reference external" href="https://github.com/pthom/imgui_bundle/tree/main/bindings/imgui_bundle">pthom/imgui_bundle</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="python-bindings-from-c-to-python">
+<h1>Python Bindings: from C++ to Python<a class="headerlink" href="#python-bindings-from-c-to-python" title="Link to this heading">#</a></h1>
+<p>The python bindings for all the libraries are autogenerated from the C++ API, and are extensively documented.</p>
+<section id="how-to-use-a-c-function-in-python">
+<h2>How to use a C++ function in Python<a class="headerlink" href="#how-to-use-a-c-function-in-python" title="Link to this heading">#</a></h2>
+<p>There are two rules of thumbs that were applied when translating the APIs from C++ to Python:</p>
+<ul class="simple">
+<li><p>The names of functions and class members are transformed from CamelCase (C++) to snake_case (Python)</p></li>
+<li><p>When a C++ function modifies an argument passed by pointer and returns a bool, the equivalent python function will return a tuple <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">new_value)</span></code>, where <code class="docutils literal notranslate"><span class="pre">changed</span></code> is a boolean indicating whether the value was modified.</p></li>
+</ul>
+<p>For example, the following C++ function from ImGui,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>IMGUI_API bool          SliderFloat(const char* label, float* v, float v_min, float v_max, const char* format = &quot;%.3f&quot;, ImGuiSliderFlags flags = 0);
+</pre></div>
+</div>
+<p>is translated to the following python function:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def slider_float(
+    label: str, v: float, v_min: float, v_max: float, format: str = &quot;%.3&quot;, flags: SliderFlags = 0
+) -&gt; Tuple[bool, float]:
+    pass
+</pre></div>
+</div>
+<p><strong>Example with Dear ImGui:</strong></p>
+<p><a class="reference external" href="https://github.com/ocornut/imgui/blob/b9084949bd70dcc5ec5f3f417e66db613746f1c7/imgui.h#L587-L606">This part</a> of the ImGui C++ API is equivalent to <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/cfa5d63540aa04c84ee43565e744d46795966aac/bindings/imgui_bundle/imgui/__init__.pyi#L1567-L1596">this part</a> of the Python API.</p>
+<p><strong>Example with Hello ImGui:</strong></p>
+<p><a class="reference external" href="https://github.com/pthom/hello_imgui/blob/571e7287d3e1d2dd08d462a30effbc457e7f233e/src/hello_imgui/runner_params.h#L144-L270">This part</a> of the Hello ImGui C++ API is equivalent to <a class="reference external" href="https://github.com/pthom/imgui_bundle/blob/cfa5d63540aa04c84ee43565e744d46795966aac/bindings/imgui_bundle/hello_imgui.pyi#L2676-L2835">this part</a> of the Python API.</p>
+<p><strong>More details:</strong></p>
+<p>For more detail refer to the <a class="reference external" href="https://pthom.github.io/imgui_bundle/porting.html">C++ / Python porting advices</a> section of the Dear ImGui Bundle documentation.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A Mature Tech stack on top of Dear ImGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui">Dear ImGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documented-python-bindings">Documented Python bindings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-is-an-immediate-mode-c-gui-library">Dear ImGui is an immediate mode C++ GUI library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imgui-is-its-own-teacher">ImGui is its own teacher!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extensively-documented-api">An extensively documented API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-imgui">Hello ImGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-tutorials-and-demos">Extensive tutorials and demos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">An extensively documented API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-bundle">Dear ImGui Bundle</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-documentation-and-tutorials">Extensive documentation and tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ecosystem-of-powerful-libraries">An ecosystem of powerful libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Links</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bindings-from-c-to-python">Python Bindings: from C++ to Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-a-c-function-in-python">How to use a C++ function in Python</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pascal Thomet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,2096 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FunctionWithGui &#8212; Fiatlight</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'function_with_gui';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AnyDataWithGui" href="any_data_with_gui.html" />
+    <link rel="prev" title="API" href="api.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Fiatlight: Brighten the Journey from Idea to Creation
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">FunctionWithGui</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fiat_image.html">fiat_image: advanced image widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_matplotlib.html">fiat_matplotlib: display matplotlib figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_dataframe.html">fiat_dataframe: pandas DataFrame explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Ffunction_with_gui.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/function_with_gui.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FunctionWithGui</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FunctionWithGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-functionwithgui-object">Creating a FunctionWithGui object</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-creation-example">Automatic creation example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-creation-example">Manual creation example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-registered-types">Use registered types</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-parameters-gui">Customizing parameters GUI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-range-of-a-numeric-parameter">Customize the range of a numeric parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-customization-options">Available customization options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-int-parameters">For int parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-float-parameters">For float parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-bool-parameters">For bool parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-images">For images:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-full-example-with-custom-attributes-for-function-parameters">A full example with custom attributes for function parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-gui-for-a-function-parameter-or-output">Customizing the GUI for a function parameter or output</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#control-function-behavior">Control function behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-customizing-a-functionwithgui-object">Fully customizing a FunctionWithGui object</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-function-internals">Debug function internals</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functionwithgui-signature">FunctionWithGui signature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="functionwithgui">
+<h1>FunctionWithGui<a class="headerlink" href="#functionwithgui" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> is one of the core classes of FiatLight: it wraps a function with a GUI that presents its
+inputs and its output(s).</p>
+<p>See its full code <a class="reference download internal" download="" href="_downloads/03a3fd679ada2ce2441dad9ec4c4d130/function_with_gui.py"><span class="xref download myst">online</span></a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="creating-a-functionwithgui-object">
+<h1>Creating a FunctionWithGui object<a class="headerlink" href="#creating-a-functionwithgui-object" title="Link to this heading">#</a></h1>
+<p>For most functions, fiatlight will automatically create the GUI for the inputs and outputs of your functions.</p>
+<section id="automatic-creation-example">
+<h2>Automatic creation example:<a class="headerlink" href="#automatic-creation-example" title="Link to this heading">#</a></h2>
+<p>The code below will provide a GUI for the function <code class="docutils literal notranslate"><span class="pre">foo</span></code> where the user can enter an integer and a float, and
+it will display the result of the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="c1"># When invoking run, fiatlight will automatically wrap the function into a FunctionWithGui object</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Automatic creation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a6b5e28277174513da7dc03bf9c1addf696a9b027303823df6468a905465f165.png" src="_images/a6b5e28277174513da7dc03bf9c1addf696a9b027303823df6468a905465f165.png" />
+</div>
+</div>
+<p><em>Note: fiatlight handles the default values of the parameters, so the user can leave the float parameter empty,
+or click on the “+” button to set it to the default value, and further change it</em></p>
+</section>
+<section id="manual-creation-example">
+<h2>Manual creation example<a class="headerlink" href="#manual-creation-example" title="Link to this heading">#</a></h2>
+<p>If you want to create the GUI manually, you can use the <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> class.
+The previous example can be rewritten as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">foo_gui</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionWithGui</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+
+<span class="c1"># Method 1: directly run the function</span>
+<span class="c1"># fl.run(foo_gui)</span>
+
+<span class="c1"># Method 2: create a graph and run it</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionsGraph</span><span class="p">()</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">foo_gui</span><span class="p">)</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Manual creation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/37567250768e958ae1cab4f6aed38c9f7d76f4f681fd245dd857de1f51655ad8.png" src="_images/37567250768e958ae1cab4f6aed38c9f7d76f4f681fd245dd857de1f51655ad8.png" />
+</div>
+</div>
+</section>
+<section id="use-registered-types">
+<h2>Use registered types<a class="headerlink" href="#use-registered-types" title="Link to this heading">#</a></h2>
+<p>If you use registered types, the GUI will be automatically created for the parameters and outputs.
+In the example below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fl.fiat_types.TextPath</span></code> is an alias for str, but it is registered to be displayed with a file selection dialog.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code> is registered to be displayed as a plot in the GUI</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.figure</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">words_length_histogram</span><span class="p">(</span><span class="n">text_file</span><span class="p">:</span> <span class="n">fl</span><span class="o">.</span><span class="n">fiat_types</span><span class="o">.</span><span class="n">TextPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="s2">&quot;Create a histogram of the lengths of words in a text file.&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">text_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lengths</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Word Length Histogram&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Word Length&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">words_length_histogram</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Registered types&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a6c93d41362715503218ebe5d963b1e382d48d16f8d46436ce938a6027a6f1ed.png" src="_images/a6c93d41362715503218ebe5d963b1e382d48d16f8d46436ce938a6027a6f1ed.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="customizing-parameters-gui">
+<h1>Customizing parameters GUI<a class="headerlink" href="#customizing-parameters-gui" title="Link to this heading">#</a></h1>
+<p>As an example, let’s consider the function “my_asin” below: if you run this function with <code class="docutils literal notranslate"><span class="pre">run()</span></code>,
+the GUI will allow the user to enter any float value for x.
+This lets the user enter values that may not be valid for the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+<span class="c1"># Ideally, we would like to restrict the range of x to [-1, 1]</span>
+<span class="k">def</span> <span class="nf">my_asin</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_asin</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;No range restriction&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/59296ab4748f1a10b07f42ea7ed3b89608b327135ac9f17c9e7ab63ba6b0bb4c.png" src="_images/59296ab4748f1a10b07f42ea7ed3b89608b327135ac9f17c9e7ab63ba6b0bb4c.png" />
+</div>
+</div>
+<section id="customize-the-range-of-a-numeric-parameter">
+<h2>Customize the range of a numeric parameter<a class="headerlink" href="#customize-the-range-of-a-numeric-parameter" title="Link to this heading">#</a></h2>
+<p>It is possible to customize the GUI for parameters using function attributes:
+below, we set the range for x. As a consequence it will be displayed with a slider widget
+with a range from -1 to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+<span class="c1"># Use the `with_fiat_attributes` decorator to set custom attributes for the function:</span>
+<span class="c1"># Here, we set the range of the x parameter.</span>
+<span class="c1"># Important: note the double underscore (&quot;_&quot;) after the parameter name!</span>
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">x__range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">my_asin</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Note: we could have obtained the same effect with the commented line below:</span>
+<span class="c1">#    my_asin.x__range = (-1, 1)</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_asin</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Range restriction&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d4232bf675ee880bec70553caaa35bb1636dded405af22cbecb4e4c35e5921c8.png" src="_images/d4232bf675ee880bec70553caaa35bb1636dded405af22cbecb4e4c35e5921c8.png" />
+</div>
+</div>
+</section>
+<section id="available-customization-options">
+<h2>Available customization options<a class="headerlink" href="#available-customization-options" title="Link to this heading">#</a></h2>
+<section id="for-int-parameters">
+<h3>For int parameters:<a class="headerlink" href="#for-int-parameters" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+fiatlight gui int
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GUI type: int
+==============
+  A highly customizable int widget.
+
+  Available custom attributes for IntWithGui:
+  --------------------------------------------------------------------------------
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | Name               | Type            | Default   | Explanation                               |
+  +====================+=================+===========+===========================================+
+  | range              | tuple[int, int] | (0, 10)   | Range of the integer                      |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | edit_type          | str             | input     | Type of the edit widget. Possible values: |
+  |                    |                 |           | slider, input, drag, knob,                |
+  |                    |                 |           | slider_and_minus_plus                     |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | format             | str             | %d        | Format string for the value               |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | width_em           | float           | 9.0       | Width of the widget in em                 |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | knob_size_em       | float           | 2.5       | Size of the knob in em                    |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | knob_steps         | int             | 10        | Number of steps in the knob               |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | knob_no_input      | bool            | True      | Disable text input on knobs and sliders   |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | slider_no_input    | bool            | False     | Disable text input on sliders             |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+  | slider_logarithmic | bool            | False     | Use a logarithmic scale for sliders       |
+  +--------------------+-----------------+-----------+-------------------------------------------+
+
+  Available custom attributes for AnyDataWithGui Generic attributes:
+  --------------------------------------------------------------------------------
+  +----------------+--------+---------------------+------------------------------------------------+
+  | Name           | Type   | Default             | Explanation                                    |
+  +================+========+=====================+================================================+
+  |                |        |                     | **Generic attributes**                         |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | validate_value | object | None                | Function to validate a parameter value (should |
+  |                |        |                     | return DataValidationResult.ok() .error()      |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label          | str    |                     | A label for the parameter. If empty, the       |
+  |                |        |                     | function parameter name is used                |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | tooltip        | str    |                     | An optional tooltip to be displayed            |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label_color    | ImVec4 | ImVec4(0.000000,    | The color of the label (will use the default   |
+  |                |        | 0.000000, 0.000000, | text color if not provided)                    |
+  |                |        | 1.000000)           |                                                |
+  +----------------+--------+---------------------+------------------------------------------------+
+
+Code to test this GUI type:
+----------------------------
+```python
+import typing
+import fiatlight
+
+@fiatlight.with_fiat_attributes(
+    int_param__range = (0, 10),
+    int_param__edit_type = &quot;input&quot;,
+    int_param__format = &quot;%d&quot;,
+    int_param__width_em = 9.0,
+    int_param__knob_size_em = 2.5,
+    int_param__knob_steps = 10,
+    int_param__knob_no_input = True,
+    int_param__slider_no_input = False,
+    int_param__slider_logarithmic = False,
+    #  Generic attributes
+    int_param__validate_value = None,
+    int_param__label = &quot;&quot;,
+    int_param__tooltip = &quot;&quot;,
+    int_param__label_color = ImVec4(0.000000, 0.000000, 0.000000, 1.000000))
+def f(int_param: int) -&gt; int:
+    return int_param
+
+fiatlight.run(f)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-float-parameters">
+<h3>For float parameters:<a class="headerlink" href="#for-float-parameters" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+fiatlight gui float
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GUI type: float
+================
+  A highly customizable float widget.
+
+  Available custom attributes for FloatWithGui:
+  --------------------------------------------------------------------------------
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | Name               | Type                | Default     | Explanation                               |
+  +====================+=====================+=============+===========================================+
+  | range              | tuple[float, float] | (0.0, 10.0) | Range of the float                        |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | edit_type          | str                 | input       | Type of the edit widget. Possible values: |
+  |                    |                     |             | slider, input, drag, knob,                |
+  |                    |                     |             | slider_float_any_range,                   |
+  |                    |                     |             | slider_float_any_range_positive           |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | format             | str                 | %.3f        | Format string for the value               |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | width_em           | float               | 9.0         | Width of the widget in em                 |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | knob_size_em       | float               | 2.5         | Size of the knob in em                    |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | knob_steps         | int                 | 10          | Number of steps in the knob               |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | knob_no_input      | bool                | False       | Disable text input on knobs and sliders   |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | slider_no_input    | bool                | False       | Disable text input on sliders             |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+  | slider_logarithmic | bool                | False       | Use a logarithmic scale for sliders       |
+  +--------------------+---------------------+-------------+-------------------------------------------+
+
+  Available custom attributes for AnyDataWithGui Generic attributes:
+  --------------------------------------------------------------------------------
+  +----------------+--------+---------------------+------------------------------------------------+
+  | Name           | Type   | Default             | Explanation                                    |
+  +================+========+=====================+================================================+
+  |                |        |                     | **Generic attributes**                         |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | validate_value | object | None                | Function to validate a parameter value (should |
+  |                |        |                     | return DataValidationResult.ok() .error()      |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label          | str    |                     | A label for the parameter. If empty, the       |
+  |                |        |                     | function parameter name is used                |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | tooltip        | str    |                     | An optional tooltip to be displayed            |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label_color    | ImVec4 | ImVec4(0.000000,    | The color of the label (will use the default   |
+  |                |        | 0.000000, 0.000000, | text color if not provided)                    |
+  |                |        | 1.000000)           |                                                |
+  +----------------+--------+---------------------+------------------------------------------------+
+
+Code to test this GUI type:
+----------------------------
+```python
+import typing
+import fiatlight
+
+@fiatlight.with_fiat_attributes(
+    float_param__range = (0.0, 10.0),
+    float_param__edit_type = &quot;input&quot;,
+    float_param__format = &quot;%.3f&quot;,
+    float_param__width_em = 9.0,
+    float_param__knob_size_em = 2.5,
+    float_param__knob_steps = 10,
+    float_param__knob_no_input = False,
+    float_param__slider_no_input = False,
+    float_param__slider_logarithmic = False,
+    #  Generic attributes
+    float_param__validate_value = None,
+    float_param__label = &quot;&quot;,
+    float_param__tooltip = &quot;&quot;,
+    float_param__label_color = ImVec4(0.000000, 0.000000, 0.000000, 1.000000))
+def f(float_param: float) -&gt; float:
+    return float_param
+
+fiatlight.run(f)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-bool-parameters">
+<h3>For bool parameters:<a class="headerlink" href="#for-bool-parameters" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+fiatlight gui bool
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GUI type: bool
+===============
+  A bool widget. Can use a checkbox or a toggle.
+
+  Available custom attributes for BoolWithGui:
+  --------------------------------------------------------------------------------
+  +-----------+--------+-----------+-------------------------------------------+
+  | Name      | Type   | Default   | Explanation                               |
+  +===========+========+===========+===========================================+
+  | edit_type | str    | checkbox  | Type of the edit widget. Possible values: |
+  |           |        |           | checkbox, toggle                          |
+  +-----------+--------+-----------+-------------------------------------------+
+
+  Available custom attributes for AnyDataWithGui Generic attributes:
+  --------------------------------------------------------------------------------
+  +----------------+--------+---------------------+------------------------------------------------+
+  | Name           | Type   | Default             | Explanation                                    |
+  +================+========+=====================+================================================+
+  |                |        |                     | **Generic attributes**                         |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | validate_value | object | None                | Function to validate a parameter value (should |
+  |                |        |                     | return DataValidationResult.ok() .error()      |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label          | str    |                     | A label for the parameter. If empty, the       |
+  |                |        |                     | function parameter name is used                |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | tooltip        | str    |                     | An optional tooltip to be displayed            |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label_color    | ImVec4 | ImVec4(0.000000,    | The color of the label (will use the default   |
+  |                |        | 0.000000, 0.000000, | text color if not provided)                    |
+  |                |        | 1.000000)           |                                                |
+  +----------------+--------+---------------------+------------------------------------------------+
+
+Code to test this GUI type:
+----------------------------
+```python
+import typing
+import fiatlight
+
+@fiatlight.with_fiat_attributes(
+    bool_param__edit_type = &quot;checkbox&quot;,
+    #  Generic attributes
+    bool_param__validate_value = None,
+    bool_param__label = &quot;&quot;,
+    bool_param__tooltip = &quot;&quot;,
+    bool_param__label_color = ImVec4(0.000000, 0.000000, 0.000000, 1.000000))
+def f(bool_param: bool) -&gt; bool:
+    return bool_param
+
+fiatlight.run(f)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-images">
+<h3>For images:<a class="headerlink" href="#for-images" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+fiatlight gui ImageWithGui
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GUI type: ImageWithGui
+=======================
+  A highly sophisticated GUI for displaying and analysing images. Zoom/Pan, show channels, show pixel values, sync zoom accross images, etc.
+
+  Available custom attributes for fiat_image.ImageWithGui:
+  --------------------------------------------------------------------------------
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | Name                            | Type            | Default   | Explanation                                   |
+  +=================================+=================+===========+===============================================+
+  |                                 |                 |           | **Main attributes for the image viewer**      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | only_display                    | bool            | False     | Only display the image, no info displayed, no |
+  |                                 |                 |           | zoom, no pan                                  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | image_display_size              | tuple[int, int] | (200, 0)  | Initial size of the displayed image (width,   |
+  |                                 |                 |           | height). One of them can be 0                 |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | zoom_key                        | str             | z         | Key to zoom in the image. All images with the |
+  |                                 |                 |           | same zoom key will be zoomed together         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | is_color_order_bgr              | bool            | True      | Color order is BGR (default is True). OpenCV  |
+  |                                 |                 |           | uses BGR by default, unfortunately.           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | can_resize                      | bool            | True      | Can resize the image by dragging the mouse at |
+  |                                 |                 |           | the bottom right corner                       |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Channels**                                  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_channels                   | bool            | False     | Show channels                                 |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | channel_layout_vertically       | bool            | False     | Layout channels vertically                    |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Zoom &amp; Pan**                                |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | pan_with_mouse                  | bool            | True      | Pan with mouse                                |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | zoom_with_mouse_wheel           | bool            | True      | Zoom with mouse wheel                         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Info displayed on image**                   |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_school_paper_background    | bool            | True      | Show school paper background, when the image  |
+  |                                 |                 |           | is unzoomed                                   |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_alpha_channel_checkerboard | bool            | True      | Show alpha channel checkerboard               |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_grid                       | bool            | True      | Show grid with the zoom level is high         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | draw_values_on_zoomed_pixels    | bool            | True      | Draw values on pixels, when the zoom is high  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Info displayed under the image**            |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_image_info                 | bool            | True      | Show image info, i.e image size and type      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_pixel_info                 | bool            | True      | Show pixel info, i.e. show pixel value and    |
+  |                                 |                 |           | position under the mouse                      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Control buttons under the image**           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_zoom_buttons               | bool            | True      | Show zoom buttons                             |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_options_panel              | bool            | True      | Show options panel                            |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_options_button             | bool            | True      | Show options button                           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_inspect_button             | bool            | True      | Show the inspect button, that enables to open |
+  |                                 |                 |           | a large version of image in the Image         |
+  |                                 |                 |           | Inspector                                     |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+
+  Available custom attributes for AnyDataWithGui Generic attributes:
+  --------------------------------------------------------------------------------
+  +----------------+--------+---------------------+------------------------------------------------+
+  | Name           | Type   | Default             | Explanation                                    |
+  +================+========+=====================+================================================+
+  |                |        |                     | **Generic attributes**                         |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | validate_value | object | None                | Function to validate a parameter value (should |
+  |                |        |                     | return DataValidationResult.ok() .error()      |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label          | str    |                     | A label for the parameter. If empty, the       |
+  |                |        |                     | function parameter name is used                |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | tooltip        | str    |                     | An optional tooltip to be displayed            |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label_color    | ImVec4 | ImVec4(0.000000,    | The color of the label (will use the default   |
+  |                |        | 0.000000, 0.000000, | text color if not provided)                    |
+  |                |        | 1.000000)           |                                                |
+  +----------------+--------+---------------------+------------------------------------------------+
+
+Code to test this GUI type:
+----------------------------
+```python
+import typing
+import fiatlight
+
+@fiatlight.with_fiat_attributes(
+    #  Main attributes for the image viewer
+    union_param__only_display = False,
+    union_param__image_display_size = (200, 0),
+    union_param__zoom_key = &quot;z&quot;,
+    union_param__is_color_order_bgr = True,
+    union_param__can_resize = True,
+    #  Channels
+    union_param__show_channels = False,
+    union_param__channel_layout_vertically = False,
+    #  Zoom &amp; Pan
+    union_param__pan_with_mouse = True,
+    union_param__zoom_with_mouse_wheel = True,
+    #  Info displayed on image
+    union_param__show_school_paper_background = True,
+    union_param__show_alpha_channel_checkerboard = True,
+    union_param__show_grid = True,
+    union_param__draw_values_on_zoomed_pixels = True,
+    #  Info displayed under the image
+    union_param__show_image_info = True,
+    union_param__show_pixel_info = True,
+    #  Control buttons under the image
+    union_param__show_zoom_buttons = True,
+    union_param__show_options_panel = True,
+    union_param__show_options_button = True,
+    union_param__show_inspect_button = True,
+    #  Generic attributes
+    union_param__validate_value = None,
+    union_param__label = &quot;&quot;,
+    union_param__tooltip = &quot;&quot;,
+    union_param__label_color = ImVec4(0.000000, 0.000000, 0.000000, 1.000000))
+def f(union_param: typing.Union[fiatlight.fiat_kits.fiat_image.image_types.ImageU8_1, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_2, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_3, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_4, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGB, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGBA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGRA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGR, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_GRAY, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_1, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_2, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_3, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_4]) -&gt; typing.Union[fiatlight.fiat_kits.fiat_image.image_types.ImageU8_1, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_2, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_3, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_4, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGB, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGBA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGRA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGR, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_GRAY, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_1, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_2, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_3, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_4]:
+    return union_param
+
+fiatlight.run(f)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-full-example-with-custom-attributes-for-function-parameters">
+<h2>A full example with custom attributes for function parameters<a class="headerlink" href="#a-full-example-with-custom-attributes-for-function-parameters" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span>
+<span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+
+<span class="nd">@fiatlight</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span>
+    <span class="c1"># Edit the number of bars with a knob</span>
+    <span class="n">n_bars__edit_type</span><span class="o">=</span><span class="s2">&quot;knob&quot;</span><span class="p">,</span>
+    <span class="n">n_bars__range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="c1"># Edit the mean with an input field</span>
+    <span class="n">mu__edit_type</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">,</span>
+    <span class="n">mu__range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="c1"># Edit the standard deviation with a drag</span>
+    <span class="n">sigma__edit_type</span><span class="o">=</span><span class="s2">&quot;drag&quot;</span><span class="p">,</span>
+    <span class="n">sigma__range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="c1"># Edit the average with a slider for a float value with any range</span>
+    <span class="c1"># (the slider range will adapt interactively, when dragging far to the left or to the right)</span>
+    <span class="n">average__edit_type</span><span class="o">=</span><span class="s2">&quot;slider_float_any_range&quot;</span><span class="p">,</span>
+    <span class="c1"># Edit the number of data points with a logarithmic slider</span>
+    <span class="c1"># Note: by default, you can ctrl+click on a slider to input a value directly,</span>
+    <span class="c1">#       this is disabled here with nb_data__slider_no_input</span>
+    <span class="n">nb_data__edit_type</span><span class="o">=</span><span class="s2">&quot;slider&quot;</span><span class="p">,</span>
+    <span class="n">nb_data__range</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">),</span>
+    <span class="n">nb_data__slider_logarithmic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">nb_data__slider_no_input</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">interactive_histogram</span><span class="p">(</span>
+    <span class="n">n_bars</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">mu</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">average</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">nb_data</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4000</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Figure</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate an interactive histogram with adjustable number of bars, mean, and standard deviation.&#39;&#39;&#39;</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">nb_data</span><span class="p">))</span> <span class="o">+</span> <span class="n">average</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">n_bars</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="n">fiatlight</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">interactive_histogram</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Custom attributes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/064cfbecfbe3b81004f99153f03c6ce8966d799d69b41d821f1a030230d4952e.png" src="_images/064cfbecfbe3b81004f99153f03c6ce8966d799d69b41d821f1a030230d4952e.png" />
+</div>
+</div>
+</section>
+<section id="customizing-the-gui-for-a-function-parameter-or-output">
+<h2>Customizing the GUI for a function parameter or output<a class="headerlink" href="#customizing-the-gui-for-a-function-parameter-or-output" title="Link to this heading">#</a></h2>
+<p>You can also customize the GUI for a parameter or output by setting a custom callback function, using
+<code class="docutils literal notranslate"><span class="pre">set_present_callback</span></code> or <code class="docutils literal notranslate"><span class="pre">set_edit_callback</span></code> on the parameter or output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+
+<span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
+
+<span class="c1"># This will be our edit callback: it accepts a float and returns a tuple (bool, float)</span>
+<span class="c1"># where the first element is True if the value has changed, and the second element is the new value</span>
+<span class="k">def</span> <span class="nf">edit_temperature</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span><span class="p">,</span> <span class="n">hello_imgui</span>
+
+    <span class="c1"># Set the width of the slider field to 10 em units (using em units is a good practice to make the GUI dpi aware)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">set_next_item_width</span><span class="p">(</span><span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_size</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">changed</span><span class="p">,</span> <span class="n">new_value</span> <span class="o">=</span> <span class="n">imgui</span><span class="o">.</span><span class="n">slider_float</span><span class="p">(</span><span class="s2">&quot;Fahrenheit&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">changed</span><span class="p">,</span> <span class="n">new_value</span>
+
+<span class="c1"># This will be our present callback: it accepts a float and returns None</span>
+<span class="k">def</span> <span class="nf">present_temperature</span><span class="p">(</span><span class="n">celsius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span><span class="p">,</span> <span class="n">ImVec4</span>
+
+    <span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;Cold&quot;</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="s2">&quot;Hot&quot;</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="k">else</span> <span class="s2">&quot;Warm&quot;</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="k">else</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text_colored</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">celsius</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C (</span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+
+<span class="n">fahrenheit_to_celsius_gui</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionWithGui</span><span class="p">(</span><span class="n">fahrenheit_to_celsius</span><span class="p">)</span>
+<span class="n">fahrenheit_to_celsius_gui</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">set_present_callback</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">)</span>
+<span class="n">fahrenheit_to_celsius_gui</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;fahrenheit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_edit_callback</span><span class="p">(</span><span class="n">edit_temperature</span><span class="p">)</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fahrenheit_to_celsius_gui</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Custom callbacks&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0060da0c9b50615e37a7d36b1a3ed542dac103b3cdd5ee23b67de2162876c245.png" src="_images/0060da0c9b50615e37a7d36b1a3ed542dac103b3cdd5ee23b67de2162876c245.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="control-function-behavior">
+<h1>Control function behavior<a class="headerlink" href="#control-function-behavior" title="Link to this heading">#</a></h1>
+<p>By default, the function will be called only when one of its inputs has changed (either because the user
+entered a new value, or because an input is connected to another function that has changed).</p>
+<p>You can control the behavior of the function by setting attributes on the function object.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_async</span></code>: if True, the function will be called asynchronously</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_manually</span></code>: if True, the function will be called only if the user clicks on the “invoke” button</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_always_dirty</span></code>: if True, the function output will always be considered out of date, and</p>
+<ul>
+<li><p>if “invoke_manually” is True, the “Refresh needed” label will be displayed</p></li>
+<li><p>if “invoke_manually” is False, the function will be called at each frame</p></li>
+</ul>
+</li>
+</ul>
+<p>Note: a “live” function is thus a function with <code class="docutils literal notranslate"><span class="pre">invoke_manually=False</span></code> and <code class="docutils literal notranslate"><span class="pre">invoke_always_dirty=True</span></code></p>
+<p><strong>Example: a live function that display a camera image</strong></p>
+<p><em>Note:<code class="docutils literal notranslate"><span class="pre">fiatlight.fiat_kits.fiat_image.ImageU8_3</span></code> is a registered type,
+synonym of numpy.ndarray with shape (h, w, 3) and dtype uint8.
+Fiatlight will display it as an image in the GUI with a sophisticated image widget (you can zoom in/out,
+pan, examine pixel values, etc.)</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span>
+<span class="kn">import</span> <span class="nn">cv2</span>  <span class="c1"># we use OpenCV to capture the camera image (pip install opencv-python)</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># you will need a camera!</span>
+
+<span class="k">def</span> <span class="nf">get_camera_image</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ImageU8_3</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="k">if</span> <span class="n">ret</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="c1"># Set flags to make this a live function (called automatically at each frame)</span>
+<span class="n">get_camera_image</span><span class="o">.</span><span class="n">invoke_always_dirty</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_camera_image</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Live camera image&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fe74452bb52900c85b8f2cb359396da908f5bf4a7d05e8269d913fef0fde0898.png" src="_images/fe74452bb52900c85b8f2cb359396da908f5bf4a7d05e8269d913fef0fde0898.png" />
+</div>
+</div>
+<p><strong>Example: an async function</strong></p>
+<p>When your function is slow, you can set the <code class="docutils literal notranslate"><span class="pre">invoke_async</span></code> flag to True.
+In the image below, the yellow spinner indicates that the function is running,
+and the GUI remains responsive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">42</span>
+
+<span class="n">slow_function</span><span class="o">.</span><span class="n">invoke_async</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Async function&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fd3e2c98d89454f6cfc1608e49b79430c4d3b8fa1f3fa3ffdc8e80af09ec877a.png" src="_images/fd3e2c98d89454f6cfc1608e49b79430c4d3b8fa1f3fa3ffdc8e80af09ec877a.png" />
+</div>
+</div>
+<p><strong>Example: a function that needs to be called manually</strong></p>
+<p>If you set the <code class="docutils literal notranslate"><span class="pre">invoke_manually</span></code> flag to True, the function will be called
+only if the user clicks on the “invoke” button (i.e. the button with a “recycle” icon).
+If the inputs were changed, a “Refresh needed” label will be displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">my_function</span><span class="o">.</span><span class="n">invoke_manually</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Manual invocation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cb688b1fc37a0edaed331ba4ec3388e633c2e2a49a9803e3bf60efc14fac068f.png" src="_images/cb688b1fc37a0edaed331ba4ec3388e633c2e2a49a9803e3bf60efc14fac068f.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fully-customizing-a-functionwithgui-object">
+<h1>Fully customizing a FunctionWithGui object<a class="headerlink" href="#fully-customizing-a-functionwithgui-object" title="Link to this heading">#</a></h1>
+<p>By subclassing <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, you can fully customize the behavior of the function:</p>
+<ul class="simple">
+<li><p>you can add a GUI for the internal state of the function (e.g. displaying a live plot of a sound signal)</p></li>
+<li><p>you can add a heartbeat function that will be called at each frame (e.g. get the latest data from a sensor)</p></li>
+<li><p>you can save and load the internal GUI presentation options to/from a JSON file (e.g. to save the layout of a plot)</p></li>
+</ul>
+<p><strong>Example: a camera provider with an internal state and saved options</strong></p>
+<p><a class="reference download internal" download="" href="_downloads/8526087f330b97834e4b6f54c3704340/camera_image_provider.py"><span class="xref download myst">fiatlight.fiat_kits.fiat_image.CameraImageProviderGui</span></a>
+is a good example of a custom FunctionWithGui class.</p>
+<p>You can see it in action with the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">CameraImageProviderGui</span><span class="p">,</span> <span class="n">ImageU8_3</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="k">def</span> <span class="nf">rotate_45</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">((</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>  <span class="c1"># type: ignore</span>
+
+<span class="n">camera_provider_gui</span> <span class="o">=</span> <span class="n">CameraImageProviderGui</span><span class="p">()</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">camera_provider_gui</span><span class="p">,</span> <span class="n">rotate_45</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Camera provider with rotation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/154e8c60c48f85df84a171ff2c49bc314ddccd0174e58edd6c0b779b54c3bada.png" src="_images/154e8c60c48f85df84a171ff2c49bc314ddccd0174e58edd6c0b779b54c3bada.png" />
+</div>
+</div>
+<p><strong>Commented extracts of <a class="reference download internal" download="" href="_downloads/8526087f330b97834e4b6f54c3704340/camera_image_provider.py"><span class="xref download myst">camera_image_provider.py</span></a></strong></p>
+<p>Look at the <code class="docutils literal notranslate"><span class="pre">CameraImageProviderGui</span></code> class that extends <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">look_at_code</span>
+<span class="o">%</span><span class="k">look_at_python_code</span> fiatlight.fiat_kits.fiat_image.camera_image_provider.CameraImageProviderGui
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.output_html .hll { background-color: #ffffcc }
+.output_html { background: #f8f8f8; }
+.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #9C6500 } /* Comment.Preproc */
+.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.output_html .gr { color: #E40000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #008400 } /* Generic.Inserted */
+.output_html .go { color: #717171 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #687822 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #767600 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CameraImageProviderGui</span><span class="p">(</span><span class="n">FunctionWithGui</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Gui for the camera image provider&quot;&quot;&quot;</span>
+
+    <span class="n">_camera_provider</span><span class="p">:</span> <span class="n">CameraImageProvider</span>
+    <span class="n">_camera_params_gui</span><span class="p">:</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">CameraParams</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;CameraImageProviderGui&quot;</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">fiatlight.fiat_togui</span> <span class="kn">import</span> <span class="n">to_data_with_gui</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span> <span class="o">=</span> <span class="n">CameraImageProvider</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span> <span class="o">=</span> <span class="n">to_data_with_gui</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Camera Params&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">internal_state_gui</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_state_gui</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_internal_gui_options_to_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_internal_gui_options_to_json</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_internal_gui_options_from_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_internal_gui_options_from_json</span>
+
+        <span class="c1"># A flag for fiatlight to set this as a live function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">invoke_always_dirty</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">get_image</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_save_internal_gui_options_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonDict</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">_load_internal_gui_options_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">:</span> <span class="n">JsonDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">camera_params</span> <span class="o">=</span> <span class="n">CameraParams</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">json_dict</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span> <span class="o">=</span> <span class="n">camera_params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">camera_params</span>
+
+    <span class="k">def</span> <span class="nf">_show_cam_button</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">started</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">started</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">imgui_ctx</span><span class="o">.</span><span class="n">begin_horizontal</span><span class="p">(</span><span class="s2">&quot;CamButton&quot;</span><span class="p">):</span>
+            <span class="n">imgui</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
+            <span class="n">button_size</span> <span class="o">=</span> <span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_to_vec2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">imgui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">icons_fontawesome_6</span><span class="o">.</span><span class="n">ICON_FA_CIRCLE_PLAY</span><span class="p">,</span> <span class="n">button_size</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">imgui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">icons_fontawesome_6</span><span class="o">.</span><span class="n">ICON_FA_CIRCLE_STOP</span><span class="p">,</span> <span class="n">button_size</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="n">imgui</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_internal_state_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">fontawesome_6_ctx</span><span class="p">():</span>
+            <span class="k">with</span> <span class="n">imgui_ctx</span><span class="o">.</span><span class="n">begin_vertical</span><span class="p">(</span><span class="s2">&quot;CamParams&quot;</span><span class="p">):</span>
+                <span class="n">imgui</span><span class="o">.</span><span class="n">text_wrapped</span><span class="p">(</span><span class="s2">&quot;(Note: some cameras may not support all the settings)&quot;</span><span class="p">)</span>
+                <span class="n">changed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">gui_edit</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+                    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">CameraParams</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">apply_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Start/Stop Camera&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_show_cam_button</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div></div>
+</div>
+<p>Note: CameraImageProviderGui uses a <code class="docutils literal notranslate"><span class="pre">CameraImageProvider</span></code> class that provides images from a camera,
+as well <code class="docutils literal notranslate"><span class="pre">CameraParams</span></code>, as a Pydantic model for the camera parameters that will be displayed in the GUI,
+and saved to a JSON file.</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">base_model_with_gui_registration</span></code> decorators to automatically create a GUI for the Pydantic model.</p>
+<p><em>Notes: <code class="docutils literal notranslate"><span class="pre">dataclass_with_gui_registration</span></code> is also available for dataclasses). A GUI will be created automatically for enums.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_togui.to_gui</span> <span class="n">base_model_with_gui_registration</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="k">class</span> <span class="nc">CameraResolution</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">HD_1280_720</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">]</span>
+    <span class="n">FULL_HD_1920_1080</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">]</span>
+    <span class="n">VGA_640_480</span> <span class="o">=</span> <span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">]</span>
+
+<span class="nd">@base_model_with_gui_registration</span><span class="p">(</span><span class="n">device_number__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">brightness__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">contrast__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">CameraParams</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">device_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">brightness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">contrast</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">camera_resolution</span><span class="p">:</span> <span class="n">CameraResolution</span> <span class="o">=</span> <span class="n">CameraResolution</span><span class="o">.</span><span class="n">VGA_640_480</span>
+
+
+<span class="k">class</span> <span class="nc">CameraImageProvider</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;A class that provides images from a camera&#39;&#39;&#39;</span>
+    <span class="n">camera_params</span><span class="p">:</span> <span class="n">CameraParams</span>
+    <span class="n">cv_cap</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="debug-function-internals">
+<h1>Debug function internals<a class="headerlink" href="#debug-function-internals" title="Link to this heading">#</a></h1>
+<p>fiatlight provides you with powerful tools to visually debug the intermediate states of your function.</p>
+<p><a class="reference download internal" download="" href="_downloads/5eafb79627c0d71404afa9e43ad18bab/toon_edges.py"><span class="xref download myst">demos/images/toon_edges.py</span></a> is a good example of how to use the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute.</p>
+<p>This is a complex function that adds a toon effect to an image, by adding colored edges to the image contours.</p>
+<p>Here are some commented extracts of the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">ImageU8_1</span>
+
+<span class="k">def</span> <span class="nf">add_toon_edges</span><span class="p">(</span>
+<span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">,</span>
+<span class="c1"># ... lots of parameters ...</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1"># = ...             (compute the edges)</span>
+    <span class="n">dilated_edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1">#  = ...    (dilate the edges)</span>
+    <span class="n">image_with_edges</span><span class="p">:</span> <span class="n">ImageU8_3</span>  <span class="c1"># = ... (superimpose the edges on the image)</span>
+
+    <span class="c1"># fiat_tuning: add debug internals to ease fine-tuning the function inside the node</span>
+    <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageWithGui</span>
+
+    <span class="c1"># Add to fiat_tuning any variable you want to be able to diagnose in the node</span>
+    <span class="c1">#     * Either a raw type (int, float, str, etc.): see &quot;durations&quot;</span>
+    <span class="c1">#     * Or a descendant of AnyDataWithGui: see &quot;canny&quot;, &quot;dilate&quot;, &quot;image_with_edges&quot;</span>
+    <span class="n">add_toon_edges</span><span class="o">.</span><span class="n">fiat_tuning</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># type: ignore</span>
+        <span class="s2">&quot;duration_canny&quot;</span><span class="p">:</span> <span class="n">duration_canny</span><span class="p">,</span>
+        <span class="s2">&quot;duration_dilate&quot;</span><span class="p">:</span> <span class="n">duration_dilate</span><span class="p">,</span>
+        <span class="s2">&quot;duration_blur&quot;</span><span class="p">:</span> <span class="n">duration_blur</span><span class="p">,</span>
+        <span class="s2">&quot;duration_merge&quot;</span><span class="p">:</span> <span class="n">duration_merge</span><span class="p">,</span>
+        <span class="s2">&quot;canny&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">edges</span><span class="p">),</span>
+        <span class="s2">&quot;dilate&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">dilated_edges</span><span class="p">),</span>
+        <span class="s2">&quot;image_with_edges&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">image_with_edges</span><span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="c1"># return the image with edges</span>
+    <span class="k">return</span> <span class="n">image_with_edges</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once these internals are set, you can see the function “Internals” in the GUI:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_GRAY</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">image_source</span>
+<span class="kn">from</span> <span class="nn">fiatlight.demos.images.toon_edges</span> <span class="kn">import</span> <span class="n">add_toon_edges</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">image_source</span><span class="p">,</span> <span class="n">add_toon_edges</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Toon edges&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5ad8d484b57a4e8344816b57f900d8e5452598ae58b6ee988146d62172e5b7ab.png" src="_images/5ad8d484b57a4e8344816b57f900d8e5452598ae58b6ee988146d62172e5b7ab.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="functionwithgui-signature">
+<h1>FunctionWithGui signature<a class="headerlink" href="#functionwithgui-signature" title="Link to this heading">#</a></h1>
+<p>Below, you will find the “signature” of the <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> class,
+with its main attributes and methods (but not their bodies)</p>
+<p>Its full source code is <a class="reference download internal" download="" href="_downloads/03a3fd679ada2ce2441dad9ec4c4d130/function_with_gui.py"><span class="xref download myst">available online</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">look_at_code</span>
+<span class="o">%</span><span class="k">look_at_class_header</span> fiatlight.fiat_core.FunctionWithGui
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.output_html .hll { background-color: #ffffcc }
+.output_html { background: #f8f8f8; }
+.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #9C6500 } /* Comment.Preproc */
+.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.output_html .gr { color: #E40000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #008400 } /* Generic.Inserted */
+.output_html .go { color: #717171 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #687822 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #767600 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FunctionWithGui</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FunctionWithGui: add GUI to a function</span>
+
+<span class="sd">    `FunctionWithGui` is one of the core classes of FiatLight: it wraps a function with a GUI that presents its</span>
+<span class="sd">    inputs and its output(s).</span>
+
+<span class="sd">    Public Members</span>
+<span class="sd">    ==============</span>
+<span class="sd">    # the name of the function</span>
+<span class="sd">    name: str = &quot;&quot;</span>
+
+<span class="sd">    #</span>
+<span class="sd">    # Behavioral Flags</span>
+<span class="sd">    # ----------------</span>
+<span class="sd">    # invoke_async: if true, the function shall be called asynchronously</span>
+<span class="sd">    invoke_async: bool = False</span>
+
+<span class="sd">    # invoke_manually: if true, the function will be called only if the user clicks on the &quot;invoke&quot; button</span>
+<span class="sd">    # (if inputs were changed, a &quot;Refresh needed&quot; label will be displayed)</span>
+<span class="sd">    invoke_manually: bool = False</span>
+
+<span class="sd">    # invoke_always_dirty: if true, the function output will always be considered out of date, and</span>
+<span class="sd">    #   - if invoke_manually is true, the &quot;Refresh needed&quot; label will be displayed</span>
+<span class="sd">    #   - if invoke_manually is false, the function will be called at each frame</span>
+<span class="sd">    # Note: a &quot;live&quot; function is thus a function with invoke_manually=False and invoke_always_dirty=True</span>
+<span class="sd">    invoke_always_dirty: bool = False</span>
+
+<span class="sd">    # Optional user documentation to be displayed in the GUI</span>
+<span class="sd">    #     - doc_display: if True, the doc string is displayed in the GUI (default: False)</span>
+<span class="sd">    #     - doc_is_markdown: if True, the doc string is in Markdown format (default: True)</span>
+<span class="sd">    #     - doc_user: the documentation string. If not provided, the function docstring will be used</span>
+<span class="sd">    #     - doc_show_source: if True, the source code of the function will be displayed in the GUI</span>
+<span class="sd">    doc_display: bool = True</span>
+<span class="sd">    doc_markdown: bool = True</span>
+<span class="sd">    doc_user: str = &quot;&quot;</span>
+<span class="sd">    doc_show_source: bool = False</span>
+
+<span class="sd">    #</span>
+<span class="sd">    # Internal state GUI</span>
+<span class="sd">    # ------------------</span>
+<span class="sd">    # internal_state_gui: optional Gui for the internal state of the function</span>
+<span class="sd">    # (this function may display a GUI to show the internal state of the function,</span>
+<span class="sd">    #  and return True if the state has changed, and the function needs to be called)</span>
+<span class="sd">    internal_state_gui: BoolFunction | None = None</span>
+
+<span class="sd">    # internal_state_gui_node_compatible:</span>
+<span class="sd">    # If True, the internal_state_gui function is incompatible with being presented in a node</span>
+<span class="sd">    # (this is due to a limitation of the node editor, which cannot render scrollable widgets)</span>
+<span class="sd">    # Note: instead of setting edit_node_compatible to False, you may query</span>
+<span class="sd">    #       `fiatlight.is_rendering_in_node()` to know if you are rendering in a node</span>
+<span class="sd">    #       and choose alternative widgets in this case.</span>
+<span class="sd">    internal_state_gui_node_compatible: bool = True</span>
+
+<span class="sd">    #</span>
+<span class="sd">    # Heartbeat</span>
+<span class="sd">    # ---------</span>
+<span class="sd">    # on_heartbeat: optional function that will be called at each frame</span>
+<span class="sd">    # (and return True if the function needs to be called to update the output)</span>
+<span class="sd">    on_heartbeat: BoolFunction | None = None</span>
+
+<span class="sd">    #</span>
+<span class="sd">    # Serialization</span>
+<span class="sd">    # -------------</span>
+<span class="sd">    # save/load_internal_gui_options_from_json (Optional)</span>
+<span class="sd">    # Optional serialization and deserialization of the internal state GUI presentation options</span>
+<span class="sd">    # (i.e. anything that deals with how the GUI is presented, not the data itself)</span>
+<span class="sd">    # If provided, these functions will be used to recreate the GUI presentation options when loading a graph,</span>
+<span class="sd">    # so that the GUI looks the same when the application is restarted.</span>
+<span class="sd">    save_internal_gui_options_to_json: Callable[[], JsonDict] | None = None</span>
+<span class="sd">    load_internal_gui_options_from_json: Callable[[JsonDict], None] | None = None</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">function_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">function_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">invoke_async</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">invoke_manually</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">invoke_always_dirty</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">doc_display</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">doc_markdown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">doc_user</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">doc_show_source</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">internal_state_gui</span><span class="p">:</span> <span class="n">BoolFunction</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">internal_state_gui_node_compatible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">on_heartbeat</span><span class="p">:</span> <span class="n">BoolFunction</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">save_internal_gui_options_to_json</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">JsonDict</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">load_internal_gui_options_from_json</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">JsonDict</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_dirty</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">_f_impl</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_inputs_with_gui</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ParamWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+    <span class="n">_outputs_with_gui</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">OutputWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+    <span class="n">_last_exception_message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_last_exception_traceback</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">class</span> <span class="nc">_Construct_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Construction</span>
+<span class="sd">        #  input_with_gui and output_with_gui should be filled soon after construction</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fn_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">signature_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fiat_attributes</span><span class="p">:</span> <span class="n">FiatAttributes</span> <span class="o">|</span> <span class="kc">None</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a FunctionWithGui object, with the given function as implementation</span>
+
+<span class="sd">        The function signature is automatically parsed, and the inputs and outputs are created</span>
+<span class="sd">        with the correct GUI types.</span>
+
+<span class="sd">        :param fn: the function for which we want to create a FunctionWithGui</span>
+
+<span class="sd">        Notes:</span>
+<span class="sd">        This function will capture the locals and globals of the caller to be able to evaluate the types.</span>
+<span class="sd">        Make sure to call this function *from the module where the function and its input/output types are defined*</span>
+
+<span class="sd">        If the function has attributes like invoke_manually or invoke_async, they will be taken into account:</span>
+<span class="sd">            - if `invoke_async` is True, the function will be called asynchronously</span>
+<span class="sd">            - if `invoke_manually` is True, the function will be called only if the user clicks on the &quot;invoke&quot; button</span>
+
+
+<span class="sd">        Advanced parameters:</span>
+<span class="sd">        ********************</span>
+<span class="sd">        :param signature_string: a string representing the signature of the function</span>
+<span class="sd">                                 used when the function signature cannot be retrieved automatically</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">handle_fiat_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fiat_attributes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle custom attributes for the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_invoke_live</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set flags to make this a live function (called automatically at each frame)&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_invoke_manually</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set flags to make this a function that needs to be called manually&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_invoke_manually_io</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set flags to make this a IO function that needs to be called manually</span>
+<span class="sd">        and that is always considered dirty, because it depends on an external device</span>
+<span class="sd">        or state (and likely has no input)&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">is_invoke_manually_io</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the function is an IO function that needs to be called manually&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_invoke_async</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set flags to make this a function that is called asynchronously&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">is_live</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the function is live&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Utilities_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Utilities</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">call_for_tests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the function with the given parameters, for testing purposes&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">is_dirty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the function needs to be called, because the inputs have changed since the last call&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_dirty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the function as dirty.&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">get_last_exception_message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the last exception message, if any&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">shall_display_refresh_needed_label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the &quot;Refresh needed&quot; label should be displayed</span>
+<span class="sd">        i.e. if the function is dirty and invoke_manually is True&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Inputs_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Inputs, aka parameters</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">nb_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of inputs of the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">all_inputs_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the names of all the inputs of the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given name as a AnyDataWithGui[Any]</span>
+<span class="sd">        The inner type of the returned value is Any in this case.</span>
+<span class="sd">        You may have to cast it to the correct type, if you rely on type hints.</span>
+
+<span class="sd">        Use input_as() if you want to get the input with the correct type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">input_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">gui_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">GuiType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">GuiType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given name as a GuiType</span>
+
+<span class="sd">        GuiType can be any descendant of AnyDataWithGui, like</span>
+<span class="sd">            fiatlight.fiat_core.IntWithGui, fiatlight.fiat_core.FloatWithGui, etc.</span>
+
+<span class="sd">        Raises a ValueError if the input is not found, and a TypeError if the input is not of the correct type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">input_of_idx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ParamWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given index as a ParamWithGui[Any]&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">input_of_idx_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gui_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">GuiType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">GuiType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given index as a GuiType&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">inputs_guis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_input_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">gui</span><span class="p">:</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the GUI for the input with the given name&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">has_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the function has a parameter with the given name&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ParamWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given name as a ParamWithGui[Any]&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">param_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the input with the given name as a AnyDataWithGui[Any]&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">set_param_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the value of the input with the given name</span>
+<span class="sd">        This is useful to set the value of an input programmatically, for example in tests.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">toggle_expand_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">toggle_expand_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Outputs_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Outputs</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">nb_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of outputs of the function.</span>
+<span class="sd">        A function typically has 0 or 1 output, but it can have more if it returns a tuple.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_idx</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the output with the given index as a AnyDataWithGui[Any]</span>
+<span class="sd">        The inner type of the returned value is Any in this case.</span>
+<span class="sd">        You may have to cast it to the correct type, if you rely on type hints.</span>
+
+<span class="sd">        Use output_as() if you want to get the output with the correct type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">output_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gui_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">GuiType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">GuiType</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the output with the given index as a GuiType</span>
+
+<span class="sd">        GuiType can be any descendant of AnyDataWithGui, like</span>
+<span class="sd">            fiatlight.fiat_core.IntWithGui, fiatlight.fiat_core.FloatWithGui, etc.</span>
+
+<span class="sd">        Raises a ValueError if the output is not found, and a TypeError if the output is not of the correct type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">outputs_guis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Invoke_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Invoke the function</span>
+<span class="sd">        # This is the heart of fiatlight: it calls the function with the current inputs</span>
+<span class="sd">        # and stores the result in the outputs, stores the exception if any, etc.</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@final</span>
+    <span class="k">def</span> <span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Invoke the function with the current inputs, and store the result in the outputs.</span>
+
+<span class="sd">        Will call the function if:</span>
+<span class="sd">         - the inputs have changed since the last call</span>
+<span class="sd">         - the function is dirty</span>
+<span class="sd">         - none of the inputs is an error or unspecified</span>
+
+<span class="sd">        If an exception is raised, the outputs will be set to ErrorValue, and the exception will be stored.</span>
+
+<span class="sd">        If the function returned None and the output is not allowed to be None, a ValueError will be raised</span>
+<span class="sd">        (this is inferred from the function signature)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">on_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Called when the application is exiting</span>
+<span class="sd">        Will call the on_exit callback of all the inputs and outputs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_can_emit_none_output</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the function can emit None as output</span>
+<span class="sd">        i.e.</span>
+<span class="sd">        - either the function has no output</span>
+<span class="sd">        - or the output can be None (i.e. the signature looks like `def f() -&gt; int | None:`)</span>
+<span class="sd">        if the function has multiple outputs, we consider that it can not emit None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Serialize_Section</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        #        Save and load to json</span>
+<span class="sd">        # Here, we only save the options that the user entered manually in the GUI:</span>
+<span class="sd">        #   - the options of the inputs</span>
+<span class="sd">        #   - the options of the outputs</span>
+<span class="sd">        # --------------------------------------------------------------------------------------------</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">save_user_inputs_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonDict</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">load_user_inputs_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_data</span><span class="p">:</span> <span class="n">JsonDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">save_gui_options_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonDict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the GUI options to a JSON file</span>
+<span class="sd">        (i.e. any presentation options of the inputs and outputs, as well as of the internal GUI)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">load_gui_options_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_data</span><span class="p">:</span> <span class="n">JsonDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the GUI options from a JSON file&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">class</span> <span class="nc">_Doc_Section</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">get_function_userdoc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the user documentation of the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_get_function_docstring</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the docstring of the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">get_function_source_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the source code of the function&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</pre></div>
+</div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h1>
+<p>Below is a PlantUML diagram showing the architecture of the <code class="docutils literal notranslate"><span class="pre">fiat_core</span></code> module.
+See the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">architecture page</span></a> for the full architecture diagrams.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">plantuml_magic</span>
+<span class="o">%</span><span class="k">plantuml_include</span> class_diagrams/fiat_core.puml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5d8da358d4e7008b80a4e3f2aae1c1a32c7af7d2b9e4f83726bb669fe143b994.svg" src="_images/5d8da358d4e7008b80a4e3f2aae1c1a32c7af7d2b9e4f83726bb669fe143b994.svg" /></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="api.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="any_data_with_gui.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AnyDataWithGui</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FunctionWithGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-functionwithgui-object">Creating a FunctionWithGui object</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-creation-example">Automatic creation example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-creation-example">Manual creation example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-registered-types">Use registered types</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-parameters-gui">Customizing parameters GUI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-range-of-a-numeric-parameter">Customize the range of a numeric parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-customization-options">Available customization options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-int-parameters">For int parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-float-parameters">For float parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-bool-parameters">For bool parameters:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-images">For images:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-full-example-with-custom-attributes-for-function-parameters">A full example with custom attributes for function parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-gui-for-a-function-parameter-or-output">Customizing the GUI for a function parameter or output</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#control-function-behavior">Control function behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-customizing-a-functionwithgui-object">Fully customizing a FunctionWithGui object</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-function-internals">Debug function internals</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functionwithgui-signature">FunctionWithGui signature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pascal Thomet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

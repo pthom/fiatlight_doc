@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>fiat_image: advanced image widget &#8212; Fiatlight</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fiat_image';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fiat_matplotlib: display matplotlib figures" href="fiat_matplotlib.html" />
+    <link rel="prev" title="Fiatlight Kits" href="fiat_kits.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Fiatlight: Brighten the Journey from Idea to Creation
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">fiat_image: advanced image widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_matplotlib.html">fiat_matplotlib: display matplotlib figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_dataframe.html">fiat_dataframe: pandas DataFrame explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Ffiat_image.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/fiat_image.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>fiat_image: advanced image widget</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-attributes-available-for-the-imagewithgui-widget">Custom attributes available for the ImageWithGui widget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-types">Image types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-for-the-example">Source code for the example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fiat-image-advanced-image-widget">
+<h1>fiat_image: advanced image widget<a class="headerlink" href="#fiat-image-advanced-image-widget" title="Link to this heading">#</a></h1>
+<p>Fiatlight provides an advanced image viewer and analyzer which enables to zoom, pan, look at pixel values and sync the zoom across images.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">fiat_image_attrs_demo</span>
+<span class="n">fiat_image_attrs_demo</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f28c10d2f5b00bb4d60e52bffd66ebb58be6c6ffce84b8dd99b2efb0dd8f6e1d.png" src="_images/f28c10d2f5b00bb4d60e52bffd66ebb58be6c6ffce84b8dd99b2efb0dd8f6e1d.png" />
+</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p>In the “show_image” output, the options panel was opened</p></li>
+<li><p>The “show_image_channels” output shows the image channels, and it zoom/pan is linked to “show_image”</p></li>
+<li><p>The “show_image_different_zoom_key” image has a different zoom key, and the zoom/pan is not linked to “show_image”.
+It also zoomed at a high-level, so that pixel values are displayed.</p></li>
+<li><p>the “show_image_only_display” image is displayed, and cannot be zoomed or panned (the widget may be resized however)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="custom-attributes-available-for-the-imagewithgui-widget">
+<h2>Custom attributes available for the ImageWithGui widget<a class="headerlink" href="#custom-attributes-available-for-the-imagewithgui-widget" title="Link to this heading">#</a></h2>
+<p>The image widget provided with fiat_image is extremely customizable. Here is a list of all the possible customizations options:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+fiatlight gui ImageWithGui
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GUI type: ImageWithGui
+=======================
+  A highly sophisticated GUI for displaying and analysing images. Zoom/Pan, show channels, show pixel values, sync zoom accross images, etc.
+
+  Available custom attributes for fiat_image.ImageWithGui:
+  --------------------------------------------------------------------------------
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | Name                            | Type            | Default   | Explanation                                   |
+  +=================================+=================+===========+===============================================+
+  |                                 |                 |           | **Main attributes for the image viewer**      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | only_display                    | bool            | False     | Only display the image, no info displayed, no |
+  |                                 |                 |           | zoom, no pan                                  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | image_display_size              | tuple[int, int] | (200, 0)  | Initial size of the displayed image (width,   |
+  |                                 |                 |           | height). One of them can be 0                 |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | zoom_key                        | str             | z         | Key to zoom in the image. All images with the |
+  |                                 |                 |           | same zoom key will be zoomed together         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | is_color_order_bgr              | bool            | True      | Color order is BGR (default is True). OpenCV  |
+  |                                 |                 |           | uses BGR by default, unfortunately.           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | can_resize                      | bool            | True      | Can resize the image by dragging the mouse at |
+  |                                 |                 |           | the bottom right corner                       |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Channels**                                  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_channels                   | bool            | False     | Show channels                                 |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | channel_layout_vertically       | bool            | False     | Layout channels vertically                    |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Zoom &amp; Pan**                                |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | pan_with_mouse                  | bool            | True      | Pan with mouse                                |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | zoom_with_mouse_wheel           | bool            | True      | Zoom with mouse wheel                         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Info displayed on image**                   |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_school_paper_background    | bool            | True      | Show school paper background, when the image  |
+  |                                 |                 |           | is unzoomed                                   |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_alpha_channel_checkerboard | bool            | True      | Show alpha channel checkerboard               |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_grid                       | bool            | True      | Show grid with the zoom level is high         |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | draw_values_on_zoomed_pixels    | bool            | True      | Draw values on pixels, when the zoom is high  |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Info displayed under the image**            |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_image_info                 | bool            | True      | Show image info, i.e image size and type      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_pixel_info                 | bool            | True      | Show pixel info, i.e. show pixel value and    |
+  |                                 |                 |           | position under the mouse                      |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  |                                 |                 |           | **Control buttons under the image**           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_zoom_buttons               | bool            | True      | Show zoom buttons                             |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_options_panel              | bool            | True      | Show options panel                            |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_options_button             | bool            | True      | Show options button                           |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+  | show_inspect_button             | bool            | True      | Show the inspect button, that enables to open |
+  |                                 |                 |           | a large version of image in the Image         |
+  |                                 |                 |           | Inspector                                     |
+  +---------------------------------+-----------------+-----------+-----------------------------------------------+
+
+  Available custom attributes for AnyDataWithGui Generic attributes:
+  --------------------------------------------------------------------------------
+  +----------------+--------+---------------------+------------------------------------------------+
+  | Name           | Type   | Default             | Explanation                                    |
+  +================+========+=====================+================================================+
+  |                |        |                     | **Generic attributes**                         |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | validate_value | object | None                | Function to validate a parameter value (should |
+  |                |        |                     | return DataValidationResult.ok() .error()      |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label          | str    |                     | A label for the parameter. If empty, the       |
+  |                |        |                     | function parameter name is used                |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | tooltip        | str    |                     | An optional tooltip to be displayed            |
+  +----------------+--------+---------------------+------------------------------------------------+
+  | label_color    | ImVec4 | ImVec4(0.000000,    | The color of the label (will use the default   |
+  |                |        | 0.000000, 0.000000, | text color if not provided)                    |
+  |                |        | 1.000000)           |                                                |
+  +----------------+--------+---------------------+------------------------------------------------+
+
+Code to test this GUI type:
+----------------------------
+```python
+import typing
+import fiatlight
+
+@fiatlight.with_fiat_attributes(
+    #  Main attributes for the image viewer
+    union_param__only_display = False,
+    union_param__image_display_size = (200, 0),
+    union_param__zoom_key = &quot;z&quot;,
+    union_param__is_color_order_bgr = True,
+    union_param__can_resize = True,
+    #  Channels
+    union_param__show_channels = False,
+    union_param__channel_layout_vertically = False,
+    #  Zoom &amp; Pan
+    union_param__pan_with_mouse = True,
+    union_param__zoom_with_mouse_wheel = True,
+    #  Info displayed on image
+    union_param__show_school_paper_background = True,
+    union_param__show_alpha_channel_checkerboard = True,
+    union_param__show_grid = True,
+    union_param__draw_values_on_zoomed_pixels = True,
+    #  Info displayed under the image
+    union_param__show_image_info = True,
+    union_param__show_pixel_info = True,
+    #  Control buttons under the image
+    union_param__show_zoom_buttons = True,
+    union_param__show_options_panel = True,
+    union_param__show_options_button = True,
+    union_param__show_inspect_button = True,
+    #  Generic attributes
+    union_param__validate_value = None,
+    union_param__label = &quot;&quot;,
+    union_param__tooltip = &quot;&quot;,
+    union_param__label_color = ImVec4(0.000000, 0.000000, 0.000000, 1.000000))
+def f(union_param: typing.Union[fiatlight.fiat_kits.fiat_image.image_types.ImageU8_1, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_2, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_3, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_4, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGB, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGBA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGRA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGR, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_GRAY, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_1, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_2, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_3, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_4]) -&gt; typing.Union[fiatlight.fiat_kits.fiat_image.image_types.ImageU8_1, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_2, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_3, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_4, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGB, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_RGBA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGRA, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_BGR, fiatlight.fiat_kits.fiat_image.image_types.ImageU8_GRAY, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_1, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_2, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_3, fiatlight.fiat_kits.fiat_image.image_types.ImageFloat_4]:
+    return union_param
+
+fiatlight.run(f)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="image-types">
+<h2>Image types<a class="headerlink" href="#image-types" title="Link to this heading">#</a></h2>
+<p>Fiatlight provides several synonyms for Numpy arrays that denote different types of images. Each of these types will be displayed by the image widget.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">look_at_code</span>  <span class="c1"># noqa</span>
+<span class="o">%</span><span class="k">look_at_python_file</span> fiat_kits/fiat_image/image_types.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.output_html .hll { background-color: #ffffcc }
+.output_html { background: #f8f8f8; }
+.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #9C6500 } /* Comment.Preproc */
+.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.output_html .gr { color: #E40000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #008400 } /* Generic.Inserted */
+.output_html .go { color: #717171 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #687822 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #767600 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;This module defines several types you can use to annotate your functions.</span>
+<span class="sd">The image types are defined as NewType instances, which are just aliases for numpy arrays.</span>
+
+<span class="sd">All those types will be displayed in the GUI as images, using the ImmVision image viewer</span>
+<span class="sd">(https://github.com/pthom/immvision)</span>
+
+<span class="sd">Notes:</span>
+<span class="sd">    - The easiest way to display an image is to use the `Image` type, which is a union of all image types,</span>
+<span class="sd">      or to use the `ImageU8` type, which is a union of all UInt8 image types.</span>
+<span class="sd">    - any numpy array can be used to create an `Image`, and the viewer will try to display it</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">NewType</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="c1"># Define shape types for clarity</span>
+<span class="n">ShapeHeightWidth</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="n">ShapeHeightWidthChannels</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># Define UInt8 as a dtype for numpy arrays</span>
+<span class="n">UInt8</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]</span>
+<span class="n">AnyFloat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># UInt8 Images</span>
+<span class="c1">#</span>
+<span class="c1"># ImageU8 = NewType(&quot;ImageU8&quot;, np.ndarray[ShapeHeightWidthChannels | ShapeHeightWidth, UInt8])</span>
+<span class="c1"># Type definitions for UInt8 images based on channel count</span>
+<span class="n">ImageU8_1</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_1&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidth</span><span class="p">,</span> <span class="n">UInt8</span><span class="p">])</span>
+<span class="n">ImageU8_2</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_2&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">UInt8</span><span class="p">])</span>
+<span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_3&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">UInt8</span><span class="p">])</span>
+<span class="n">ImageU8_4</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_4&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">UInt8</span><span class="p">])</span>
+<span class="n">ImageU8_WithNbChannels</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">ImageU8_1</span><span class="p">,</span> <span class="n">ImageU8_2</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">ImageU8_4</span><span class="p">]</span>
+<span class="c1"># Type definitions based on the roles of the channels</span>
+<span class="n">ImageU8_RGB</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_RGB&quot;</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">)</span>
+<span class="n">ImageU8_RGBA</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_RGBA&quot;</span><span class="p">,</span> <span class="n">ImageU8_4</span><span class="p">)</span>
+<span class="n">ImageU8_BGRA</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_BGRA&quot;</span><span class="p">,</span> <span class="n">ImageU8_4</span><span class="p">)</span>
+<span class="n">ImageU8_BGR</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_BGR&quot;</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">)</span>
+<span class="n">ImageU8_GRAY</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageU8_GRAY&quot;</span><span class="p">,</span> <span class="n">ImageU8_1</span><span class="p">)</span>
+<span class="n">ImageU8_WithChannelsRoles</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">ImageU8_RGB</span><span class="p">,</span> <span class="n">ImageU8_RGBA</span><span class="p">,</span> <span class="n">ImageU8_BGRA</span><span class="p">,</span> <span class="n">ImageU8_BGR</span><span class="p">,</span> <span class="n">ImageU8_GRAY</span><span class="p">]</span>
+
+<span class="c1"># Generic type for any 8-bit image</span>
+<span class="n">ImageU8</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">ImageU8_WithNbChannels</span><span class="p">,</span> <span class="n">ImageU8_WithChannelsRoles</span><span class="p">]</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Float Images</span>
+<span class="c1">#</span>
+<span class="c1"># Type definitions for float images based on channel count</span>
+<span class="n">ImageFloat_1</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageFloat_1&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidth</span><span class="p">,</span> <span class="n">AnyFloat</span><span class="p">])</span>
+<span class="n">ImageFloat_2</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageFloat_2&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">AnyFloat</span><span class="p">])</span>
+<span class="n">ImageFloat_3</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageFloat_3&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">AnyFloat</span><span class="p">])</span>
+<span class="n">ImageFloat_4</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ImageFloat_4&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">ShapeHeightWidthChannels</span><span class="p">,</span> <span class="n">AnyFloat</span><span class="p">])</span>
+
+<span class="c1"># Generic type for any float image</span>
+<span class="n">ImageFloat</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">ImageFloat_1</span><span class="p">,</span> <span class="n">ImageFloat_2</span><span class="p">,</span> <span class="n">ImageFloat_3</span><span class="p">,</span> <span class="n">ImageFloat_4</span><span class="p">]</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Generic Image Type</span>
+<span class="c1">#</span>
+<span class="c1"># Image is a union of all image types</span>
+<span class="n">Image</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">ImageU8</span><span class="p">,</span> <span class="n">ImageFloat</span><span class="p">]</span>
+
+
+<span class="c1"># ---------------------------- Register image type factories ----------------------------</span>
+
+
+<span class="k">def</span> <span class="nf">_register_image_type_factories</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">fiatlight.fiat_togui.gui_registry</span> <span class="kn">import</span> <span class="n">gui_factories</span>
+    <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image.image_gui</span> <span class="kn">import</span> <span class="n">ImageWithGui</span>
+
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;fiatlight.fiat_kits.fiat_image.image_types.Image&quot;</span>
+    <span class="n">gui_factories</span><span class="p">()</span><span class="o">.</span><span class="n">register_factory_name_start_with</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">ImageWithGui</span><span class="p">)</span>
+    <span class="n">gui_factories</span><span class="p">()</span><span class="o">.</span><span class="n">register_factory_union</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">ImageWithGui</span><span class="p">)</span>
+</pre></div>
+</div></div>
+</div>
+<p>`</p>
+</section>
+<section id="source-code-for-the-example">
+<h2>Source code for the example<a class="headerlink" href="#source-code-for-the-example" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">look_at_python_file</span> fiat_kits/fiat_image/fiat_image_attrs_demo.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.output_html .hll { background-color: #ffffcc }
+.output_html { background: #f8f8f8; }
+.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #9C6500 } /* Comment.Preproc */
+.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.output_html .gr { color: #E40000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #008400 } /* Generic.Inserted */
+.output_html .go { color: #717171 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #687822 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #767600 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Demo how to set custom presentation attributes for the Image Widget (ImageWithGui)</span>
+
+<span class="sd">Notes:</span>
+<span class="sd">    - The custom attributes can be set using the decorator fl.with_fiat_attributes</span>
+<span class="sd">    - In these examples, we intend to set custom attributes for the output of the</span>
+<span class="sd">      functions, i.e. the returned value.</span>
+<span class="sd">      As a consequence, the custom attributes are set in the return__...</span>
+<span class="sd">      arguments of the decorator.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+
+<span class="c1"># Our demo image</span>
+<span class="n">demo_image</span><span class="p">:</span> <span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fl</span><span class="o">.</span><span class="n">demo_assets_dir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/images/house.jpg&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+
+
+<span class="c1"># A simple function that will use the Image Widget with its default settings.</span>
+<span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">demo_image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="c1"># A function whose output will initially show the channels</span>
+<span class="c1"># Since it does not specify a zoom key,</span>
+<span class="c1"># it will be zoomed and panned together with the image</span>
+<span class="c1"># shown by &quot;show_image&quot;</span>
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">return__show_channels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_image_channels</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">demo_image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="c1"># A function whose output will have a different zoom key:</span>
+<span class="c1"># it can be panned and zoomed, independently of the other images</span>
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">return__zoom_key</span><span class="o">=</span><span class="s2">&quot;other&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_image_different_zoom_key</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">demo_image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="c1"># A function that will use the Image Widget with custom attributes:</span>
+<span class="c1"># - the image is displayed only (it cannot be zoomed or panned,</span>
+<span class="c1">#   and the pixel values are not shown)</span>
+<span class="c1"># - the image is displayed with a height of 300 pixels</span>
+<span class="c1">#   (the width is automatically calculated)</span>
+<span class="c1"># - the image cannot be resized</span>
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span>
+    <span class="n">return__only_display</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">return__image_display_size</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">return__can_resize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_image_only_display</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span> <span class="o">=</span> <span class="n">demo_image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionsGraph</span><span class="p">()</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">show_image</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">show_image_channels</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">show_image_different_zoom_key</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">show_image_only_display</span><span class="p">)</span>
+
+    <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;fiat_image_fiat_attrs_demo&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fiat_kits.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fiatlight Kits</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fiat_matplotlib.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">fiat_matplotlib: display matplotlib figures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-attributes-available-for-the-imagewithgui-widget">Custom attributes available for the ImageWithGui widget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-types">Image types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-for-the-example">Source code for the example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pascal Thomet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

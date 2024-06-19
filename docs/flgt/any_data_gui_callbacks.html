@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AnyDataGuiCallbacks &#8212; Fiatlight</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'any_data_gui_callbacks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FunctionsGraph" href="functions_graph.html" />
+    <link rel="prev" title="AnyDataWithGui" href="any_data_with_gui.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Fiatlight: Brighten the Journey from Idea to Creation
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fiat_image.html">fiat_image: advanced image widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_matplotlib.html">fiat_matplotlib: display matplotlib figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_dataframe.html">fiat_dataframe: pandas DataFrame explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Fany_data_gui_callbacks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/any_data_gui_callbacks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AnyDataGuiCallbacks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="anydataguicallbacks">
+<h1>AnyDataGuiCallbacks<a class="headerlink" href="#anydataguicallbacks" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>AnyDataGuiCallbacks provides a set of callbacks that define how a particular data type should be presented, edited, and managed within the Fiatlight GUI framework.</p>
+<p>These callbacks are used by <a class="reference internal" href="any_data_with_gui.html"><span class="doc std std-doc">AnyDataWithGui</span></a>.</p>
+</section>
+<section id="source">
+<h2>Source<a class="headerlink" href="#source" title="Link to this heading">#</a></h2>
+<p>Below, is the class source, which you can also see <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_core/any_data_gui_callbacks.py">online</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">look_at_code</span>
+<span class="o">%</span><span class="k">look_at_python_code</span> fiatlight.fiat_core.AnyDataGuiCallbacks
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.output_html .hll { background-color: #ffffcc }
+.output_html { background: #f8f8f8; }
+.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #9C6500 } /* Comment.Preproc */
+.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.output_html .gr { color: #E40000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #008400 } /* Generic.Inserted */
+.output_html .go { color: #717171 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #687822 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #767600 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AnyDataGuiCallbacks</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">DataType</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;AnyDataGuiCallbacks: Collection of callbacks for a given type</span>
+
+<span class="sd">    AnyDataGuiCallbacks</span>
+<span class="sd">    ===================</span>
+
+<span class="sd">    This class provides a set of callbacks that define how a particular data type should be</span>
+<span class="sd">    presented, edited, and managed within the Fiatlight GUI framework.</span>
+
+<span class="sd">    These callbacks are used by [AnyDataWithGui](any_data_with_gui).</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#                        Presentation</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># present_str: (Mandatory if str() is not enough, optional otherwise)</span>
+    <span class="c1"># Provide a function that returns a short string info about the data content</span>
+    <span class="c1"># This string will be presented as a short description of the data in the GUI</span>
+    <span class="c1">#</span>
+    <span class="c1"># If possible, it should be short enough to fit in a single line inside a node (40 chars max).</span>
+    <span class="c1"># If the result string is too long, or occupies more than one line, it will be truncated and followed by &quot;...&quot;</span>
+    <span class="c1"># (and the rest of the string will be displayed in a tooltip)</span>
+    <span class="c1"># For example, on complex types such as images, return something like &quot;128x128x3 uint8&quot;</span>
+    <span class="c1"># If not provided, the data will be presented using str()</span>
+    <span class="n">present_str</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># present: (Optional)</span>
+    <span class="c1"># a function that provides a more complex, custom GUI representation of the data. Used for detailed views.</span>
+    <span class="c1"># It will be presented when a function param is in &quot;expanded&quot; mode, and can use imgui widgets on several lines.</span>
+    <span class="c1"># If not provided, the data will be presented using present_str</span>
+    <span class="c1">#</span>
+    <span class="c1"># Note: Some widgets cannot be presented in a Node (e.g., a multiline text input, a child window, etc.)!</span>
+    <span class="c1">#       You can query `fiatlight.is_rendering_in_node()` to know if you are rendering in a node.</span>
+    <span class="c1">#       Also, when inside a Node, you may want to render a smaller version, to save space</span>
+    <span class="c1">#       (as opposed to rendering a larger version in a detached window).</span>
+    <span class="n">present</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># present_collapsible:</span>
+    <span class="c1"># Set this to False if your custom presentation is small and fits in one line</span>
+    <span class="c1"># (i.e. it does not need to be collapsible)</span>
+    <span class="c1"># If True, the gui presentation will either:</span>
+    <span class="c1">#     - show present_str + an expand button</span>
+    <span class="c1">#     - show the custom presentation + a collapse button</span>
+    <span class="n">present_collapsible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># present_node_compatible: (Optional: set to False if using input_text_multiline, combo, begin_child, etc.)</span>
+    <span class="c1"># If True, the present function is incompatible with being presented in a node (this is due to a limitation</span>
+    <span class="c1"># of the node editor, which cannot render scrollable widgets)</span>
+    <span class="c1"># Note: instead of setting edit_node_compatible to False, you may query</span>
+    <span class="c1">#       `fiatlight.is_rendering_in_node()` to know if you are rendering in a node</span>
+    <span class="c1">#       and choose alternative widgets in this case.</span>
+    <span class="n">present_node_compatible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="c1">#                        Edition</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># edit: (Mandatory if edition is required)</span>
+    <span class="c1"># Provide a function that presents an editable interface for the data, and returns</span>
+    <span class="c1">#     (True, new_value) if changed</span>
+    <span class="c1">#     (False, old_value) if not changed</span>
+    <span class="c1"># If not provided, the data will be presented as read-only</span>
+    <span class="c1"># Note: Some widgets cannot be presented in a Node (e.g., a multiline text input, a child window, etc.)!</span>
+    <span class="c1">#       You can query `fiatlight.is_rendering_in_node()` to know if you are rendering in a node.</span>
+    <span class="n">edit</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">DataType</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># edit_collapsible:</span>
+    <span class="c1"># Set this to False if your custom edition is small, and does not need to be collapsible (i.e. it fits one line)</span>
+    <span class="c1"># If True, the gui edition will either:</span>
+    <span class="c1">#     - show present_str + an expand button</span>
+    <span class="c1">#     - show the custom edition + a collapse button</span>
+    <span class="n">edit_collapsible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># edit_node_compatible: (Optional: set to False if using input_text_multiline, combo, begin_child, etc.)</span>
+    <span class="c1"># If True, the edit function is incompatible with being presented in a node (this is due to a limitation</span>
+    <span class="c1"># of the node editor, which cannot render scrollable widgets)</span>
+    <span class="c1"># Note: instead of setting edit_node_compatible to False, you may query</span>
+    <span class="c1">#       `fiatlight.is_rendering_in_node()` to know if you are rendering in a node</span>
+    <span class="c1">#       and choose alternative widgets in this case.</span>
+    <span class="n">edit_node_compatible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="c1">#                        Default value</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># default value provider (Needed only for a type without default constructor)</span>
+    <span class="c1"># this function will be called to provide a default value if needed</span>
+    <span class="n">default_value_provider</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">DataType</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="c1">#                        Events callbacks</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># on_change (Optional)</span>
+    <span class="c1"># if provided, this function will be called when the value changes.</span>
+    <span class="c1"># Can be used in more advanced cases,</span>
+    <span class="c1"># for example when `present` has an internal cache that needs to be updated,</span>
+    <span class="c1"># or other side effects.</span>
+    <span class="n">on_change</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># validate_value (Optional)</span>
+    <span class="c1"># if provided, these functions will be called when the user tries to set a value.</span>
+    <span class="c1"># They should return a DataValidationResult.ok() if the value is valid,</span>
+    <span class="c1"># or a DataValidationResult.error() with an error message.</span>
+    <span class="n">validate_value</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="n">DataValidationResult</span><span class="p">]]</span>
+
+    <span class="c1"># on_exit (Optional)</span>
+    <span class="c1"># if provided, this function will be called when the application is closed.</span>
+    <span class="c1"># Used in more advanced cases, typically when some resources need to be released.</span>
+    <span class="n">on_exit</span><span class="p">:</span> <span class="n">VoidFunction</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># on_heartbeat: (Optional)</span>
+    <span class="c1"># If provided, this function will be called at each heartbeat of the function node.</span>
+    <span class="c1"># (before the value is drawn). It should return True if any change has been made to the data.</span>
+    <span class="n">on_heartbeat</span><span class="p">:</span> <span class="n">BoolFunction</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># on_fiat_attributes_changed (Optional)</span>
+    <span class="c1"># if provided, this function will be called when the custom attributes of the data change.</span>
+    <span class="c1"># Used in more advanced cases, when the data presentation depends on custom attributes.</span>
+    <span class="n">on_fiat_attributes_changed</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">FiatAttributes</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="c1">#                        Serialization and deserialization</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># Of the GUI presentation options (not the data itself)</span>
+    <span class="c1">#</span>
+    <span class="c1"># save/load_gui_options_from_json (Optional)</span>
+    <span class="c1"># Optional serialization and deserialization of the GUI presentation options</span>
+    <span class="c1"># (i.e. anything that deals with how the data is presented in the GUI, *not the data itself*)</span>
+    <span class="c1"># If provided, these functions will be used to recreate the GUI presentation options when loading a graph,</span>
+    <span class="c1"># so that the GUI looks the same when the application is restarted.</span>
+    <span class="n">save_gui_options_to_json</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">JsonDict</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">load_gui_options_from_json</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">JsonDict</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Of the data itself</span>
+    <span class="c1">#</span>
+    <span class="c1"># Optional serialization and deserialization functions for DataType</span>
+    <span class="c1"># If provided, these functions will be used to serialize and deserialize the data with a custom dict format.</span>
+    <span class="c1"># If not provided, &quot;value&quot; will be serialized as a dict of its __dict__ attribute,</span>
+    <span class="c1"># or as a json string (for int, float, str, bool, and None)</span>
+    <span class="n">save_to_dict</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="n">JsonDict</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">load_from_dict</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">JsonDict</span><span class="p">],</span> <span class="n">DataType</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="c1">#                        Clipboard</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+    <span class="c1"># clipboard_copy_str (Optional)</span>
+    <span class="c1"># if provided, this function will be called when the value is copied to the clipboard.</span>
+    <span class="c1"># Used in more advanced cases, when the data is not a simple string, or when present_str or str() is not enough.</span>
+    <span class="n">clipboard_copy_str</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">DataType</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># clipboard_copy_possible (Optional)</span>
+    <span class="c1"># True by default</span>
+    <span class="c1"># If False, the user can not copy the data to the clipboard</span>
+    <span class="n">clipboard_copy_possible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1"># ---------------------------------------------------------------------------------------------</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate_value</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div></div>
+</div>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<p>Below is a PlantUML diagram showing the architecture of the <code class="docutils literal notranslate"><span class="pre">fiat_core</span></code> module.
+See the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">architecture page</span></a> for the full architecture diagrams.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_doc</span> <span class="kn">import</span> <span class="n">plantuml_magic</span>
+<span class="o">%</span><span class="k">plantuml_include</span> class_diagrams/fiat_core.puml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5d8da358d4e7008b80a4e3f2aae1c1a32c7af7d2b9e4f83726bb669fe143b994.svg" src="_images/5d8da358d4e7008b80a4e3f2aae1c1a32c7af7d2b9e4f83726bb669fe143b994.svg" /></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="any_data_with_gui.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AnyDataWithGui</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="functions_graph.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FunctionsGraph</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pascal Thomet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
