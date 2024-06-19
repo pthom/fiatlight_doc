@@ -169,15 +169,17 @@ def generate_doc_notebooks() -> None:
 
 
 def generate_book() -> None:
+    import shutil
+
     # Generate a single PDF for the complete manual.
     #     pip install pyppeteer
-    # subprocess.run(["jupyter-book", "build", DOC_DIR, "--builder", "pdfhtml"])
+    subprocess.run(["jupyter-book", "build", DOC_DIR, "--builder", "pdfhtml"])
+    shutil.copy(f"{DOC_DIR}/_build/pdf/book.pdf", f"{DOC_DIR}/docs/flgt.pdf")
 
     # Generate multiple HTML pages for the manual
     subprocess.run(["jupyter-book", "build", DOC_DIR])
 
     # Copy recursively the _build/html directory to output/
-    import shutil
     output_dir = f"{DOC_DIR}/docs/flgt"
     shutil.rmtree(output_dir, ignore_errors=True)
     shutil.copytree(f"{DOC_DIR}/_build/html", output_dir)
