@@ -22,13 +22,13 @@
                     "inputs": {
                         "n": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
                         "0": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -38,13 +38,13 @@
                 "inputs": {
                     "n": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
                     "0": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}

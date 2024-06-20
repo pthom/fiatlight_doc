@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
-    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
   
   
 </a></div>
@@ -452,8 +452,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replay-and-debug-function-errors">Replay and debug function errors</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-fledged-applications">Full-fledged Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sophisticated-widgets-and-data-validation">Sophisticated widgets and data validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-with-advanced-gui">Applications with advanced GUI</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-graph-creation">Custom Graph Creation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-widgets">Custom Widgets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sneak-peek-at-the-future-desktop-notebooks">A sneak peek at the future: desktop Notebooks</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
@@ -477,6 +483,7 @@ document.write(`
 <div><p><em>For technical readers:</em></p>
 <p><em>Fiatlight is a versatile Python framework that enables rapid development and visualization of applications by chaining functions into interactive graphs. It features automatic GUI generation for diverse data types, including primitive type, images, audio (…), and provides powerful debugging tools. It generates full applications that can save their state and presentation options.</em></p>
 </div></blockquote>
+<p><em>The name “Fiatlight” is inspired by “Fiat Lux”, i.e. “Let there be light”.</em></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="key-features-and-examples">
 <h1>Key Features and examples<a class="headerlink" href="#key-features-and-examples" title="Link to this heading">#</a></h1>
@@ -523,7 +530,7 @@ document.write(`
 <p><em>Example: The application below is a meme generator. It is a simple composition of an AI image generator, and a function that adds text onto an image</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_ai</span> <span class="kn">import</span> <span class="n">invoke_sdxl_turbo</span>
-<span class="kn">from</span> <span class="nn">fiatlight.demos.images.old_school_meme</span> <span class="kn">import</span> <span class="n">add_meme_text</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image.add_meme_text</span> <span class="kn">import</span> <span class="n">add_meme_text</span>
 
 <span class="c1"># Run the composition to create a simple app</span>
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">invoke_sdxl_turbo</span><span class="p">,</span> <span class="n">add_meme_text</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Old school meme generator&quot;</span><span class="p">)</span>
@@ -545,7 +552,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Image analysis</strong>: Sophisticated image analysis and manipulation widgets. See <a class="reference internal" href="fiat_image.html"><span class="std std-doc">fiat_image</span></a>.</p></li>
 <li><p><strong>Data Visualization</strong>: Display interactive data plots and charts for real-time data analysis, using MatPlotlib or ImPlot. See <a class="reference internal" href="fiat_matplotlib.html"><span class="std std-doc">fiat_matplotlib</span></a>, and <a class="reference internal" href="fiat_implot.html"><span class="std std-doc">fiat_implot</span></a> (for ImPlot)</p></li>
-<li><p><strong>Data Exploration</strong>: Provide widgets for exploring dataframes. See <a class="reference internal" href="#fiat_dataframeipynb"><span class="xref myst">fiat_dataframe</span></a>.</p></li>
+<li><p><strong>Data Exploration</strong>: Provide widgets for exploring dataframes. See <a class="reference internal" href="fiat_dataframe.html"><span class="std std-doc">fiat_dataframe</span></a>.</p></li>
 <li><p><strong>AI</strong>: (Draft) Provide a widget for Prompt entry, and an interface to Stable Diffusion. See <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_ai">fiat_ai</a>.</p></li>
 </ul>
 <section id="image-analysis">
@@ -667,6 +674,41 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <p><img alt="debug break" src="_images/debug_break.jpg" /></p>
 </section>
 </section>
+<section id="full-fledged-applications">
+<h2>Full-fledged Applications<a class="headerlink" href="#full-fledged-applications" title="Link to this heading">#</a></h2>
+<p>Besides being extremely powerful to generate function graphs, Fiatlight’s powerful GUI capabilities can also help you generate sophisticated classic applications.</p>
+<section id="sophisticated-widgets-and-data-validation">
+<h3>Sophisticated widgets and data validation<a class="headerlink" href="#sophisticated-widgets-and-data-validation" title="Link to this heading">#</a></h3>
+<p>The application below, demonstrate how you can use Fiatlight GUI capabilities to edit complex data. The GUI definition was created automatically, from the data definition (including the validation rules, in yellow).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.full_fledged_app</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
+<span class="c1"># demo_basemodel_app.main()</span>
+</pre></div>
+</div>
+<p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
+<blockquote>
+<div><p><em>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_basemodel_app.py">source code</a> for demo_basemodel_app.py</em>. The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
+</div></blockquote>
+</section>
+<section id="applications-with-advanced-gui">
+<h3>Applications with advanced GUI<a class="headerlink" href="#applications-with-advanced-gui" title="Link to this heading">#</a></h3>
+<p>The example below shows an application which:</p>
+<ul class="simple">
+<li><p>reuses the sophisticated GUI provided by Fiatlight in a standard application</p></li>
+<li><p>automatically, Save and reloads its state, and GUI presentation options</p></li>
+<li><p>provides dockable windows, and a top toolbar</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.full_fledged_app</span> <span class="kn">import</span> <span class="n">demo_image_processors_app</span>
+<span class="c1"># demo_image_processors_app.main()</span>
+</pre></div>
+</div>
+<p><img alt="img.png" src="_images/demo_image_processors_app.png" /></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_image_processors_app.py">source code</a> for demo_image_processors_app.py*.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
 <section id="custom-graph-creation">
 <h2>Custom Graph Creation<a class="headerlink" href="#custom-graph-creation" title="Link to this heading">#</a></h2>
 <p>Create custom graphs with a drag-and-drop interface, similar to Scratch, enabling a visual approach to building workflows.</p>
@@ -693,11 +735,16 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">sound_wave_from_file</span></code> is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py">source code</a></em></p>
 </div></blockquote>
 </section>
+<section id="a-sneak-peek-at-the-future-desktop-notebooks">
+<h2>A sneak peek at the future: desktop Notebooks<a class="headerlink" href="#a-sneak-peek-at-the-future-desktop-notebooks" title="Link to this heading">#</a></h2>
+<p>The advanced GUI creation capabilities of Fiatlight might make it possible to consider providing an alternative renderer for Jupyter notebooks, using Fiatlight highly interactive widgets. They would run outside the browser, and may provide a more desktop-like experience for some notebooks.</p>
+<p><img alt="cell.png" src="_images/nb_cell.png" /></p>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="use-cases">
 <h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h1>
-<p>Fiatlight is perfect for:</p>
+<p>Fiatlight is well-adapted for:</p>
 <ul class="simple">
 <li><p><strong>App Prototyping</strong>: Quickly prototype and develop robust applications.</p></li>
 <li><p><strong>Fine-Tuning and Debugging</strong>: Leverage Fiatlight as a powerful tool for fine-tuning your applications and shining light on all the intermediate states of your algorithms.</p></li>
@@ -729,7 +776,7 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <li><p>its ability to automatically save and restore the state of an application, and to save and reload several states per application</p></li>
 <li><p>its speed and efficiency, thanks to the fact that the rendering is done in C++ with ImGui and OpenGL</p></li>
 <li><p>its use of the immediate mode GUI paradigm, which makes it easy to create very adaptive and responsive GUIs</p></li>
-<li><p>its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitionning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
+<li><p>its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitioning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
 </ul>
 <p><strong>Cons</strong></p>
 <ul class="simple">
@@ -803,8 +850,14 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replay-and-debug-function-errors">Replay and debug function errors</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-fledged-applications">Full-fledged Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sophisticated-widgets-and-data-validation">Sophisticated widgets and data validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-with-advanced-gui">Applications with advanced GUI</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-graph-creation">Custom Graph Creation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-widgets">Custom Widgets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sneak-peek-at-the-future-desktop-notebooks">A sneak peek at the future: desktop Notebooks</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>

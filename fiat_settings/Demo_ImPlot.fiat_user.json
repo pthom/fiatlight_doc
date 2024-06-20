@@ -64,19 +64,19 @@
                     "inputs": {
                         "radius_fixed_circle": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "radius_moving_circle": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "pen_offset": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         },
                         "nb_turns": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -100,19 +100,19 @@
                 "inputs": {
                     "radius_fixed_circle": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "radius_moving_circle": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "pen_offset": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     },
                     "nb_turns": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -142,7 +142,7 @@
                     "inputs": {
                         "x": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -166,7 +166,7 @@
                 "inputs": {
                     "x": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {
@@ -197,7 +197,7 @@
                     "outputs": {
                         "0": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -208,7 +208,7 @@
                 "outputs": {
                     "0": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}
@@ -230,7 +230,7 @@
                     "outputs": {
                         "0": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "internal_gui_options": {}
@@ -246,7 +246,7 @@
                 "outputs": {
                     "0": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "internal_gui_options": {}
@@ -266,7 +266,7 @@
                         },
                         "amplitude": {
                             "cb_options": {},
-                            "expanded": true
+                            "expanded": false
                         }
                     },
                     "outputs": {
@@ -294,7 +294,7 @@
                     },
                     "amplitude": {
                         "cb_options": {},
-                        "expanded": true
+                        "expanded": false
                     }
                 },
                 "outputs": {

@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/fiatlight_logo2.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
-    <script>document.write(`<img src="_static/fiatlight_logo2.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
   
   
 </a></div>
@@ -434,7 +434,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-fiatlight-attribute-xxx-validate-value">With Fiatlight attribute (<code class="docutils literal notranslate"><span class="pre">xxx_validate_value</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-pydantic-validators">With pydantic validators</a></li>
 </ul>
             </nav>
         </div>
@@ -448,8 +449,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="validate-function-inputs-with-fiatlight">
 <h1>Validate function inputs with Fiatlight<a class="headerlink" href="#validate-function-inputs-with-fiatlight" title="Link to this heading">#</a></h1>
-<section id="basics">
-<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<section id="with-fiatlight-attribute-xxx-validate-value">
+<h2>With Fiatlight attribute (<code class="docutils literal notranslate"><span class="pre">xxx_validate_value</span></code>)<a class="headerlink" href="#with-fiatlight-attribute-xxx-validate-value" title="Link to this heading">#</a></h2>
 <p>Within flatlight, all functions inputs can optionally be validated before the function is executed.</p>
 <p>Step 1: we use the <code class="docutils literal notranslate"><span class="pre">&#64;fl.with_fiat_attributes</span></code> decorator to add custom attributes to the function.
 (note: we could also use <code class="docutils literal notranslate"><span class="pre">fl.add_fiat_attributes</span></code> to add custom attributes to a function later on)</p>
@@ -457,14 +458,13 @@ document.write(`
 <blockquote>
 <div><p><em>Note: pay attention to the double underscore in the custom attribute name.</em></p>
 </div></blockquote>
-<p>Step 3: this custom attribute must reference a function that take the value of the parameter as input and return a <code class="docutils literal notranslate"><span class="pre">fl.DataValidationResult</span></code> object. The <code class="docutils literal notranslate"><span class="pre">fl.DataValidationResult</span></code> object has two methods: <code class="docutils literal notranslate"><span class="pre">ok</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code>. The <code class="docutils literal notranslate"><span class="pre">ok</span></code> method is used to indicate that the value is valid, while the <code class="docutils literal notranslate"><span class="pre">error</span></code> method is used to indicate that the value is invalid.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<p>Step 3: this custom attribute must reference a function that take the value of the parameter as input and throws a ValueError if the value is not valid, with a nice error message, which will be displayed to the user.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 
 
-<span class="k">def</span> <span class="nf">validate_odd_number</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">validate_odd_number</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;The number must be odd&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">ok</span><span class="p">()</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The number must be odd&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">n__validate_value</span> <span class="o">=</span> <span class="n">validate_odd_number</span><span class="p">)</span>
@@ -481,6 +481,42 @@ document.write(`
     <span class="k">return</span> <span class="kc">True</span>
 
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">check_prime</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;check_prime&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="with-pydantic-validators">
+<h2>With pydantic validators<a class="headerlink" href="#with-pydantic-validators" title="Link to this heading">#</a></h2>
+<p>When using pydantic BaseModel, you can use the <code class="docutils literal notranslate"><span class="pre">&#64;field_validator</span></code> decorator to add validation functions to the fields of the model. The error messages will be displayed to the user.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">field_validator</span>
+
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">MyData</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="c1"># This field should be between 0 and 99 inclusive</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;adam&quot;</span>
+        
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_x</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;x must be odd&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;name must be lowercase&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">MyData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MyData</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">v</span>
+
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Pydantic validation&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -532,7 +568,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-fiatlight-attribute-xxx-validate-value">With Fiatlight attribute (<code class="docutils literal notranslate"><span class="pre">xxx_validate_value</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-pydantic-validators">With pydantic validators</a></li>
 </ul>
   </nav></div>
 

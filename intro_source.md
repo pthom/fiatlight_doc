@@ -8,6 +8,8 @@ Fiatlight is a user-friendly tool that helps you transform your ideas into fully
 >
 > *Fiatlight is a versatile Python framework that enables rapid development and visualization of applications by chaining functions into interactive graphs. It features automatic GUI generation for diverse data types, including primitive type, images, audio (...), and provides powerful debugging tools. It generates full applications that can save their state and presentation options.*
 
+_The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
+
 # Key Features and examples
 
 ## Create an GUI for any function
@@ -56,10 +58,11 @@ Create a full application in just 4 lines of Python by chaining pure Python func
 
 
 *Example: The application below is a meme generator. It is a simple composition of an AI image generator, and a function that adds text onto an image*
+
 ```python
 import fiatlight as fl
 from fiatlight.fiat_kits.fiat_ai import invoke_sdxl_turbo
-from fiatlight.demos.images.old_school_meme import add_meme_text
+from fiatlight.fiat_kits.fiat_image.add_meme_text import add_meme_text
 
 # Run the composition to create a simple app
 fl.run([invoke_sdxl_turbo, add_meme_text], app_name="Old school meme generator")
@@ -82,7 +85,7 @@ This can be used as a full application:
 
 - **Data Visualization**: Display interactive data plots and charts for real-time data analysis, using MatPlotlib or ImPlot. See [fiat_matplotlib](fiat_matplotlib.ipynb), and [fiat_implot](fiat_implot.ipynb) (for ImPlot)
 
-- **Data Exploration**: Provide widgets for exploring dataframes. See [fiat_dataframe](fiat_dataframeipynb).
+- **Data Exploration**: Provide widgets for exploring dataframes. See [fiat_dataframe](fiat_dataframe.ipynb).
 
 - **AI**: (Draft) Provide a widget for Prompt entry, and an interface to Stable Diffusion. See [fiat_ai](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_ai).
 
@@ -207,6 +210,38 @@ fl.run([float_source, sin, log], app_name="Replay error")
 ![debug break](images/debug_break.jpg)
 
 
+## Full-fledged Applications
+
+Besides being extremely powerful to generate function graphs, Fiatlight's powerful GUI capabilities can also help you generate sophisticated classic applications.
+
+#### Sophisticated widgets and data validation
+The application below, demonstrate how you can use Fiatlight GUI capabilities to edit complex data. The GUI definition was created automatically, from the data definition (including the validation rules, in yellow).
+
+```python
+from fiatlight.demos.full_fledged_app import demo_basemodel_app
+# demo_basemodel_app.main()
+```
+
+![img.png](_static/images/demo_basemodel_app.png)
+
+> *For technical readers: See the [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
+
+### Applications with advanced GUI
+
+The example below shows an application which: 
+- reuses the sophisticated GUI provided by Fiatlight in a standard application
+- automatically, Save and reloads its state, and GUI presentation options 
+- provides dockable windows, and a top toolbar
+
+```
+from fiatlight.demos.full_fledged_app import demo_image_processors_app
+# demo_image_processors_app.main()
+```
+
+![img.png](_static/images/demo_image_processors_app.png)
+
+> * For technical readers: See the [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_image_processors_app.py) for demo_image_processors_app.py*.
+
 
 ## Custom Graph Creation
 
@@ -239,11 +274,18 @@ fl.run(sound_wave_from_file, app_name="Sound Wave Player")
 > *For technical readers: `sound_wave_from_file` is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)*
 
 
+## A sneak peek at the future: desktop Notebooks
+
+The advanced GUI creation capabilities of Fiatlight might make it possible to consider providing an alternative renderer for Jupyter notebooks, using Fiatlight highly interactive widgets. They would run outside the browser, and may provide a more desktop-like experience for some notebooks.
+
+![cell.png](_static/images/nb_cell.png)
+
+
 ---------------------------------------------------------------------------------------------------
 
 # Use Cases
 
-Fiatlight is perfect for:
+Fiatlight is well-adapted for:
 
 - **App Prototyping**: Quickly prototype and develop robust applications.
 - **Fine-Tuning and Debugging**: Leverage Fiatlight as a powerful tool for fine-tuning your applications and shining light on all the intermediate states of your algorithms.
@@ -274,7 +316,7 @@ Fiatlight combines the strengths of several other tools and frameworks, while tr
 > - its ability to automatically save and restore the state of an application, and to save and reload several states per application
 > - its speed and efficiency, thanks to the fact that the rendering is done in C++ with ImGui and OpenGL
 > - its use of the immediate mode GUI paradigm, which makes it easy to create very adaptive and responsive GUIs
-> - its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitionning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.
+> - its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitioning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.
 >
 > **Cons**
 > * Fiatlight does work on Jupyter notebooks (this document is actually a Jupyter notebook). However, it requires a local computer (and will not work on Google Colab, for example). Solutions for this are being explored.
