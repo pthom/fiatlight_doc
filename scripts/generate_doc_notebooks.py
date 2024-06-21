@@ -171,6 +171,10 @@ def generate_doc_notebooks() -> None:
 def generate_book_html() -> None:
     import shutil
 
+    # Remove the _build directory
+    build_dir = f"{DOC_DIR}/_build"
+    shutil.rmtree(build_dir, ignore_errors=True)
+
     # Generate multiple HTML pages for the manual
     subprocess.run(["jupyter-book", "build", DOC_DIR])
 
