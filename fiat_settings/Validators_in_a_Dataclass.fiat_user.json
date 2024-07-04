@@ -1,0 +1,89 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "f": {
+                "v": {
+                    "name": "v",
+                    "data": {
+                        "type": "Unspecified"
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "f": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": false,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "v": {
+                            "cb_options": {
+                                "even_int": {
+                                    "cb_options": {},
+                                    "expanded": true
+                                },
+                                "multiple_of_5": {
+                                    "cb_options": {},
+                                    "expanded": true
+                                }
+                            },
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "even_int": {
+                                    "cb_options": {},
+                                    "expanded": true
+                                },
+                                "multiple_of_5": {
+                                    "cb_options": {},
+                                    "expanded": true
+                                }
+                            },
+                            "expanded": true
+                        }
+                    }
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "v": {
+                        "cb_options": {
+                            "even_int": {
+                                "cb_options": {},
+                                "expanded": true
+                            },
+                            "multiple_of_5": {
+                                "cb_options": {},
+                                "expanded": true
+                            }
+                        },
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "even_int": {
+                                "cb_options": {},
+                                "expanded": true
+                            },
+                            "multiple_of_5": {
+                                "cb_options": {},
+                                "expanded": true
+                            }
+                        },
+                        "expanded": true
+                    }
+                }
+            }
+        }
+    }
+}

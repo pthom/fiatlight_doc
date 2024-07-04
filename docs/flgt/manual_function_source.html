@@ -1,0 +1,1285 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Wrapping Functions &#8212; Fiatlight</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'manual_function_source';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Fiatlight: Brighten the Journey from Idea to Creation
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_architecture.html">Fiatlight Architecture</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="api_function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_functions_graph.html">FunctionsGraph</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fiat_image.html">fiat_image: advanced image widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_matplotlib.html">fiat_matplotlib: display matplotlib figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_dataframe.html">fiat_dataframe: pandas DataFrame explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Fmanual_function_source.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/manual_function_source.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Wrapping Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wrapping Functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#typed-signatures">Typed Signatures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-typed-signatures">Importance of Typed Signatures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typed-vs-untyped-functions-gui">Typed vs Untyped Functions GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Wrapping Functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#registered-types">Registered Types</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-registered-types">Using registered types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-matplotlib-figures">Example with Matplotlib Figures</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-function-execution">Controlling Function Execution</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-live-functions">Configuring “Live” functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-async-functions">Using Async Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stoppable-async-functions">“Stoppable” async Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-invocation-example">Manual Invocation Example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handwriting-the-gui">Handwriting the GUI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-edit-and-present-callbacks">Using Edit and Present Callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-custom-callbacks">Example: Custom Callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-nodes">Gui Nodes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-a-heart-curve-with-a-gui-node">Example: Visualizing a Heart Curve with a GUI Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-gui-node-with-serializable-state">Example: a GUI node with serializable state</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fiat-tuning-tune-functions">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-class-functionwithgui">Sub-class FunctionWithGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-camera-internal-state">Example: Camera &amp; Internal State</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wrapping-functions">
+<h1>Wrapping Functions<a class="headerlink" href="#wrapping-functions" title="Link to this heading">#</a></h1>
+<p>In this tutorial, we will see how to wrap functions in order to make them compatible with Fiatlight.</p>
+<p>Most of the time, functions are wrapped automatically. In the example below, the function <code class="docutils literal notranslate"><span class="pre">times_two</span></code> is wrapped
+automatically by Fiatlight into a <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="k">def</span> <span class="nf">times_two</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">times_two</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Times two&quot;</span><span class="p">)</span>  <span class="c1"># the function will be wrapped automatically into a FunctionWithGui object</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>In order to be wrapped automatically, a function must have a typed signature (see <a class="reference internal" href="#typed-signatures"><span class="xref myst">Typed signatures</span></a>).</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> is one of the core classes of FiatLight: it wraps a function with a GUI that presents its inputs and outputs.</p>
+<ul class="simple">
+<li><p><strong>Documentation</strong>: See its <a class="reference internal" href="api_function_with_gui.html"><span class="doc std std-doc">API</span></a> for detailed information.</p></li>
+<li><p><strong>Source code</strong>: View its full code <a class="reference internal" href="#FL_GH_ROOT/fiat_core/function_with_gui.py"><span class="xref myst">online</span></a>.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="typed-signatures">
+<h1>Typed Signatures<a class="headerlink" href="#typed-signatures" title="Link to this heading">#</a></h1>
+<section id="importance-of-typed-signatures">
+<h2>Importance of Typed Signatures<a class="headerlink" href="#importance-of-typed-signatures" title="Link to this heading">#</a></h2>
+<p>To automatically create a GUI for function parameters, Fiatlight <strong>requires</strong> type information for both the parameters and the return value of the functions. This is achieved using type hints in the function signature.</p>
+<p>For example, an untyped function signature looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>In contrast, a typed version is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>More information about type hints can be found in <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>.
+<em>Type hints specify the type of a variable in Python. They are not mandatory but are a good practice, as they help catch bugs early in the development process.</em></p>
+</div></blockquote>
+</section>
+<section id="typed-vs-untyped-functions-gui">
+<h2>Typed vs Untyped Functions GUI<a class="headerlink" href="#typed-vs-untyped-functions-gui" title="Link to this heading">#</a></h2>
+<p>In the example below, <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> and <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> are unfortunately not typed. <code class="docutils literal notranslate"><span class="pre">my_cos</span></code> is a wrapper around <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> that includes type information.</p>
+<p><strong>Code</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+
+<span class="k">def</span> <span class="nf">float_source</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A float source, where the user can specify the value of x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="k">def</span> <span class="nf">my_cos</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A wrapper around math.cos that adds types,</span>
+<span class="sd">    so that Fiatlight can infer the widgets in the GUI.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="c1"># We create a graph of functions, to which we will add functions manually</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionsGraph</span><span class="p">()</span>
+
+<span class="c1"># Add a node that will run math.cos: since this function has no type information,</span>
+<span class="c1"># Fiatlight **will not** be able to infer the widgets in the GUI)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>
+
+<span class="c1"># Add a node that will run my_cos: since this function has type information,</span>
+<span class="c1"># Fiatlight **will** be able to infer the widgets in the GUI</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">my_cos</span><span class="p">)</span>
+
+<span class="c1"># Add a function composition that will transfer the output of float_source to math.sin</span>
+<span class="c1"># (in this case, math.sin will work correctly, since it only has to display the numerical result,</span>
+<span class="c1"># and does not require an edition widget)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add_function_composition</span><span class="p">([</span><span class="n">float_source</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">])</span>
+
+<span class="c1"># Run the graph</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Typed Signatures&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Visual Output</strong>:
+The image above shows the result of running the above code. Notice the differences in GUI behavior for typed vs untyped functions.</p>
+<p><strong>Key Points</strong>:</p>
+<ul class="simple">
+<li><p>Since <code class="docutils literal notranslate"><span class="pre">cos</span></code> is untyped, it is impossible to enter a value for its input parameter.</p></li>
+<li><p>The function <code class="docutils literal notranslate"><span class="pre">sin</span></code>, however, works correctly in the graph since it receives an input from <code class="docutils literal notranslate"><span class="pre">float_source</span></code> and does not require an edition widget.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Wrapping Functions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Creating a wrapper is often extremely simple and necessary when dealing with untyped functions. Wrapping a function allows you to add type information, making it compatible with Fiatlight’s GUI capabilities. Let’s see how to wrap the <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> function.</p>
+<p><strong>Why Create a Wrapper?</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> function from Python’s standard library does not have type annotations. Without these annotations, Fiatlight cannot automatically create a GUI for it. By creating a wrapper, we add the necessary type information.</p>
+<p><strong>Example: Wrapping <code class="docutils literal notranslate"><span class="pre">math.cos</span></code></strong></p>
+<p>Below, we create a simple wrapper for <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> that includes type annotations. This allows Fiatlight to generate a GUI for the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+<span class="c1"># Original function without type annotations</span>
+<span class="k">def</span> <span class="nf">my_cos</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;A wrapper around math.cos that adds types, so that Fiatlight can infer the widgets in the GUI:</span>
+<span class="sd">  </span>
+<span class="sd">  We added:</span>
+<span class="sd">    * a type annotations for its parameter (`x: float`) </span>
+<span class="sd">    * and for its return value (`-&gt; float`)</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Run the wrapped function with Fiatlight</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_cos</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Wrapped Cosine Function&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When running the above code, Fiatlight generates a GUI that allows you to input a float value for <code class="docutils literal notranslate"><span class="pre">x</span></code> and see the result of <code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code>.</p>
+<p><em>As an additional benefit, the documentation you wrote in the wrapper is visible in the function node!</em></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="registered-types">
+<h1>Registered Types<a class="headerlink" href="#registered-types" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Fiatlight maintains a central registry that links data types (e.g., primitive types or custom data types) with GUI types. This registry allows Fiatlight to automatically create GUIs for functions based on their type annotations.</p>
+<p>For more information:</p>
+<ul class="simple">
+<li><p><strong>Gui Registry</strong>: See the <a class="reference internal" href="manual_registry_source.html"><span class="doc std std-doc">documentation</span></a> for detailed information</p></li>
+<li><p><strong>GUI Types</strong>: The GUI Types are all descendant of <code class="docutils literal notranslate"><span class="pre">AnyDataWithGui</span></code>, which is a generic type that can be used to create custom widgets for your data types. See its <a class="reference internal" href="api_any_data_with_gui.html"><span class="doc std std-doc">API</span></a>.</p></li>
+</ul>
+</section>
+<section id="using-registered-types">
+<h2>Using registered types<a class="headerlink" href="#using-registered-types" title="Link to this heading">#</a></h2>
+<p>Registered types provide dedicated widgets, enabling automatic GUI creation for function parameters and outputs.</p>
+<blockquote>
+<div><p>Tip: use the command <code class="docutils literal notranslate"><span class="pre">fiatlight</span> <span class="pre">types</span></code> in a terminal (or console) to list the registered types and their associated widgets. See “<a class="reference internal" href="manual_cli.html"><span class="doc std std-doc">Fiatlight command line utility</span></a>” for more information.</p>
+</div></blockquote>
+<p>Below is an extract of the output of the <code class="docutils literal notranslate"><span class="pre">fiatlight</span> <span class="pre">types</span></code> command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; fiatlight types
++----------------------------------------------------+-----------------------------------------------------------------------+
+| Data Type                                          | Gui Type                                                              |
++====================================================+=======================================================================+
+| int                                                | IntWithGui                                                            |
+|                                                    |   A highly customizable int widget.                                   |
++----------------------------------------------------+-----------------------------------------------------------------------+
+| float                                              | FloatWithGui                                                          |
+|                                                    |   A highly customizable float widget.                                 |
++----------------------------------------------------+-----------------------------------------------------------------------+
+| str                                                | StrWithGui                                                            |
+|                                                    |   A Gui for a string with resizable input text, with a popup for      |
+|                                                    | multiline editing.                                                    |
++----------------------------------------------------+-----------------------------------------------------------------------+
+| bool                                               | BoolWithGui                                                           |
+|                                                    |   A bool widget. Can use a checkbox or a toggle.                      |
++----------------------------------------------------+-----------------------------------------------------------------------+
+| ColorRgb                                           | ColorRgbWithGui                                                       |
+|   synonym for tuple[int, int, int] describing an   |   A nice color picker for RGB colors (int)                            |
+| RGB color, with values in [0, 255] (NewType)       |                                                                       |
++----------------------------------------------------+-----------------------------------------------------------------------+
+| ...                                                | ...                                                                   |
+</pre></div>
+</div>
+</section>
+<section id="example-with-matplotlib-figures">
+<h2>Example with Matplotlib Figures<a class="headerlink" href="#example-with-matplotlib-figures" title="Link to this heading">#</a></h2>
+<p>Let’s look at an example using <code class="docutils literal notranslate"><span class="pre">TextPath</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code>, which are registered types in Fiatlight:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fl.fiat_types.TextPath</span></code> is an alias for str, but it is registered to be displayed with a file selection dialog.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code> is registered to be displayed as a plot in the GUI</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.figure</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">words_length_histogram</span><span class="p">(</span><span class="n">text_file</span><span class="p">:</span> <span class="n">fl</span><span class="o">.</span><span class="n">fiat_types</span><span class="o">.</span><span class="n">TextPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="s2">&quot;Create a histogram of the lengths of words in a text file.&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">text_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lengths</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Word Length Histogram&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Word Length&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">words_length_histogram</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Registered types&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="controlling-function-execution">
+<h1>Controlling Function Execution<a class="headerlink" href="#controlling-function-execution" title="Link to this heading">#</a></h1>
+<p>By default, the function will be called only when one of its inputs has changed (either because the user
+entered a new value, or because an input is connected to another function that has changed).</p>
+<p>You can control the behavior of the function by setting attributes on the function object.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_async</span></code> (default=False): if set to True, the function will be called asynchronously</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_manually</span></code> (default=False): if set to True, the function will be called only if the user clicks on the “invoke” button</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_always_dirty</span></code> (default=False): if set to True, the function output will always be considered out of date. Depending on the value of <code class="docutils literal notranslate"><span class="pre">invoke_manually</span></code>:</p>
+<ul>
+<li><p>if “invoke_manually” is True, the “Refresh needed” label will be displayed</p></li>
+<li><p>if “invoke_manually” is False, the function will be called at each frame</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p><em>Note: a “live” function is thus a function with <code class="docutils literal notranslate"><span class="pre">invoke_manually=False</span></code> and <code class="docutils literal notranslate"><span class="pre">invoke_always_dirty=True</span></code></em></p>
+</div></blockquote>
+<section id="configuring-live-functions">
+<h2>Configuring “Live” functions<a class="headerlink" href="#configuring-live-functions" title="Link to this heading">#</a></h2>
+<p><strong>Example: a live function that display a camera image</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span>
+<span class="kn">import</span> <span class="nn">cv2</span>  <span class="c1"># we use OpenCV to capture the camera image (pip install opencv-python)</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># you will need a camera!</span>
+
+<span class="k">def</span> <span class="nf">get_camera_image</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ImageU8_3</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="k">if</span> <span class="n">ret</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="c1"># Set flags to make this a live function (called automatically at each frame)</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">get_camera_image</span><span class="p">,</span> <span class="n">invoke_always_dirty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_camera_image</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Live camera image&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-async-functions">
+<h2>Using Async Functions<a class="headerlink" href="#using-async-functions" title="Link to this heading">#</a></h2>
+<p><strong>Example: an async function</strong></p>
+<p>When your function is slow, you can set the <code class="docutils literal notranslate"><span class="pre">invoke_async</span></code> flag to True. In the example below, the yellow spinner indicates that the function is running, while keeping the GUI responsive.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">42</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span> <span class="n">invoke_async</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Async function&quot;</span><span class="p">)</span>
+
+<span class="c1"># Note:</span>
+<span class="c1"># You can also use the `@fl.with_fiat_attributes` decorator to set the flags directly on the function:</span>
+<span class="c1"># @fl.with_fiat_attributes(invoke_async=True)</span>
+<span class="c1"># def slow_function() -&gt; int:</span>
+<span class="c1">#    ...</span>
+</pre></div>
+</div>
+</section>
+<section id="stoppable-async-functions">
+<h2>“Stoppable” async Functions<a class="headerlink" href="#stoppable-async-functions" title="Link to this heading">#</a></h2>
+<p>In the case of async function, you may also set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">invoke_async_stoppable</span></code>(default=False): if true a GUI button will be displayed to stop the async function while it is running.</p></li>
+</ul>
+<p>In this case, you will need to check the flag <code class="docutils literal notranslate"><span class="pre">invoke_async_shall_stop</span></code> in your function to know if the function should stop.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_async_function</span><span class="p">():</span>
+    <span class="c1"># ...  # some initialization</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># inner loop of the function processing (can be any form of loop)</span>
+        <span class="c1"># ...  # some processing</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">my_async_function</span><span class="p">,</span> <span class="s2">&quot;invoke_async_shall_stop&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">my_async_function</span><span class="o">.</span><span class="n">invoke_async_shall_stop</span><span class="p">:</span>
+            <span class="n">my_async_function</span><span class="o">.</span><span class="n">invoke_async_shall_stop</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># reset the flag</span>
+            <span class="k">break</span>
+        <span class="c1"># ... # continue the function processing</span>
+</pre></div>
+</div>
+</section>
+<section id="manual-invocation-example">
+<h2>Manual Invocation Example<a class="headerlink" href="#manual-invocation-example" title="Link to this heading">#</a></h2>
+<p><strong>Example: a function that needs to be called manually</strong></p>
+<p>If you set the <code class="docutils literal notranslate"><span class="pre">invoke_manually</span></code> flag to True, the function will be called only when the user clicks the “invoke” button (indicated by a “recycle” icon). If the inputs have changed, a “Refresh needed” label will be displayed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">invoke_manually</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Manual invocation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="handwriting-the-gui">
+<h1>Handwriting the GUI<a class="headerlink" href="#handwriting-the-gui" title="Link to this heading">#</a></h1>
+<section id="using-edit-and-present-callbacks">
+<h2>Using Edit and Present Callbacks<a class="headerlink" href="#using-edit-and-present-callbacks" title="Link to this heading">#</a></h2>
+<p>You can also customize the GUI for a parameter or output by setting custom callbacks function, namely the “edit” and “present” callbacks.</p>
+<p>In this case, you will first wrap the function in a <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code> object, and then set the callbacks for the parameter or output.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">4</span>
+
+<span class="n">my_function_gui</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionWithGui</span><span class="p">(</span><span class="n">my_function</span><span class="p">)</span>
+
+<span class="c1"># A callback to edit the parameter. Receive the current value, and return a tuple (bool, new_value)</span>
+<span class="c1"># my_function_gui.input(&quot;a&quot;).callbacks.edit = ...</span>
+
+<span class="c1"># A callback to present the output. Receive the current value, and return None</span>
+<span class="c1"># my_function_gui.output().callbacks.present = ...</span>
+</pre></div>
+</div>
+<p>For more information, see:</p>
+<ul class="simple">
+<li><p><strong>AnyDataWithGui</strong>: See the <a class="reference internal" href="api_any_data_with_gui.html"><span class="std std-doc">API</span></a> for detailed information.</p></li>
+<li><p><strong>AnyDataWithGuiCallbacks</strong>: See the <a class="reference internal" href="api_any_data_gui_callbacks.html"><span class="std std-doc">API</span></a> for detailed information.</p></li>
+</ul>
+</section>
+<section id="example-custom-callbacks">
+<h2>Example: Custom Callbacks<a class="headerlink" href="#example-custom-callbacks" title="Link to this heading">#</a></h2>
+<p>In this example, we define custom edit and present callbacks for the function fahrenheit_to_celsius. The resulting GUI allows the user to input a temperature in Fahrenheit using a custom slider and see the converted temperature in Celsius with a color-coded note indicating whether it is cold, warm, or hot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span><span class="p">,</span> <span class="n">hello_imgui</span><span class="p">,</span> <span class="n">ImVec4</span>
+
+
+<span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
+
+<span class="c1"># This will be our edit callback: it accepts a float and returns a tuple (bool, float)</span>
+<span class="c1"># where the first element is True if the value has changed, and the second element is the new value</span>
+<span class="k">def</span> <span class="nf">edit_temperature</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;This is our custom edit callback&quot;</span><span class="p">)</span>
+    <span class="c1"># Set the width of the slider field to 10 em units (using em units is a good practice to make the GUI dpi aware)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">set_next_item_width</span><span class="p">(</span><span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_size</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">changed</span><span class="p">,</span> <span class="n">new_value</span> <span class="o">=</span> <span class="n">imgui</span><span class="o">.</span><span class="n">slider_float</span><span class="p">(</span><span class="s2">&quot;Fahrenheit&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">changed</span><span class="p">,</span> <span class="n">new_value</span>
+
+<span class="c1"># This will be our present callback: it accepts a float and returns None</span>
+<span class="k">def</span> <span class="nf">present_temperature</span><span class="p">(</span><span class="n">celsius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;This is our custom present callback&quot;</span><span class="p">)</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;Cold&quot;</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="s2">&quot;Hot&quot;</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="k">else</span> <span class="s2">&quot;Warm&quot;</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="k">else</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text_colored</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">celsius</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C (</span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+
+<span class="n">fahrenheit_to_celsius_gui</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">FunctionWithGui</span><span class="p">(</span><span class="n">fahrenheit_to_celsius</span><span class="p">)</span>
+<span class="n">fahrenheit_to_celsius_gui</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">present</span> <span class="o">=</span> <span class="n">present_temperature</span>
+<span class="n">fahrenheit_to_celsius_gui</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;fahrenheit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">edit</span> <span class="o">=</span> <span class="n">edit_temperature</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fahrenheit_to_celsius_gui</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Custom callbacks&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="gui-nodes">
+<h2>Gui Nodes<a class="headerlink" href="#gui-nodes" title="Link to this heading">#</a></h2>
+<p>Gui Nodes are specialized nodes in Fiatlight, dedicated to functions which do not return values but instead displaying a user interface using ImGui widgets. Gui Nodes are called at every frame, ensuring that the GUI is always responsive and up-to-date.</p>
+<p>Gui Nodes are particularly useful for:</p>
+<ul class="simple">
+<li><p>Displaying interactive visualizations (plots, etc)</p></li>
+<li><p>Creating dashboards</p></li>
+<li><p>Providing user controls (e.g., sliders, buttons) that alter global variables</p></li>
+</ul>
+<blockquote>
+<div><p>Notes:</p>
+<ul class="simple">
+<li><p>Gui Nodes are not meant to return values</p></li>
+<li><p>Your GUI function should be fast. If you need to perform heavy computations, consider using AnyDataWithGui, where the “on_change” callback can be used to cache heavy computations.</p></li>
+</ul>
+</div></blockquote>
+<section id="example-visualizing-a-heart-curve-with-a-gui-node">
+<h3>Example: Visualizing a Heart Curve with a GUI Node<a class="headerlink" href="#example-visualizing-a-heart-curve-with-a-gui-node" title="Link to this heading">#</a></h3>
+<p>In this example, we demonstrate how to create a GUI node that visualizes a heart curve. The size of the heart dynamically changes over time to simulate a heartbeat.</p>
+<p><strong>Explanation</strong>:</p>
+<ol class="arabic simple">
+<li><p>time_seconds: This function returns the current time in seconds and is set to always be re-evaluated at every frame.</p></li>
+<li><p>heart_curve: Generates the x and y coordinates of a heart curve that changes size over time to simulate a heartbeat.</p></li>
+<li><p>gui_curve: A GUI node that visualizes the heart curve using ImPlot. It updates the curve at every frame to reflect the beating heart.</p></li>
+<li><p>gui_curve is a gui function. So, we wrap it in a GuiNode to display the heart curve with either
+<code class="docutils literal notranslate"><span class="pre">GuiNode(gui_curve)</span></code> or <code class="docutils literal notranslate"><span class="pre">graph.add_gui_node(gui_curve)</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">hello_imgui</span><span class="p">,</span> <span class="n">implot</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">ArrayLike</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">invoke_always_dirty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">time_seconds</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the current time in seconds.</span>
+<span class="sd">    This function is marked as always dirty, so it will be re-evaluated at every frame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">heart_curve</span><span class="p">(</span><span class="n">time_</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayLike</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the x and y coordinates of a heart curve whose size changes over time,</span>
+<span class="sd">    to simulate a heart beating.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">16</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span>
+
+    <span class="c1"># Heart pulse rate and time tracking</span>
+    <span class="n">heart_pulse_rate</span> <span class="o">=</span> <span class="mi">80</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">time_</span> <span class="o">*</span> <span class="n">heart_pulse_rate</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">k</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">gui_curve</span><span class="p">(</span><span class="n">xy</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display the heart curve with ImPlot</span>
+
+<span class="sd">    This function is a GUI node that displays the heart curve.</span>
+
+<span class="sd">    It is called at every frame to update the curve.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">implot</span><span class="o">.</span><span class="n">begin_plot</span><span class="p">(</span><span class="s2">&quot;Heart&quot;</span><span class="p">,</span> <span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_to_vec2</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">)):</span>
+        <span class="n">implot</span><span class="o">.</span><span class="n">setup_axes_limits</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="n">implot</span><span class="o">.</span><span class="n">plot_line</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">implot</span><span class="o">.</span><span class="n">end_plot</span><span class="p">()</span>
+
+<span class="c1"># Run the graph</span>
+<span class="c1"># Method 1: Using the run function, and wrapping the gui_curve function in a GuiNode</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">time_seconds</span><span class="p">,</span> <span class="n">heart_curve</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">GuiNode</span><span class="p">(</span><span class="n">gui_curve</span><span class="p">)],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;HeartCurve&quot;</span><span class="p">)</span>
+
+<span class="c1"># Method 2: Using a FunctionsGraph</span>
+<span class="c1"># graph = fl.FunctionsGraph()</span>
+<span class="c1"># graph.add_function(time_seconds)</span>
+<span class="c1"># graph.add_function(heart_curve)</span>
+<span class="c1"># graph.add_gui_node(gui_curve)  # Add the gui_curve function as a GuiNode</span>
+<span class="c1"># graph.add_link(time_seconds, heart_curve)</span>
+<span class="c1"># graph.add_link(heart_curve, gui_curve)</span>
+<span class="c1"># fl.run(graph, app_name=&quot;HeartCurve&quot;)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="example-a-gui-node-with-serializable-state">
+<h3>Example: a GUI node with serializable state<a class="headerlink" href="#example-a-gui-node-with-serializable-state" title="Link to this heading">#</a></h3>
+<p>When adding a GuiNode, you can pass a serializable data class to store the options of the GUI function. This allows you to save the state of the GUI function and reload it when restarting the application.</p>
+<p>In the example below, we demonstrate how to create a GUI node that multiplies an input value by a factor. The factor can be adjusted by the user and is stored in a serializable data class. The factor value is reloaded upon restarting the application.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="k">def</span> <span class="nf">input_x</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;a function that will be displayed in the function graph, in order to let the user input a value.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">class</span> <span class="nc">WhatToMultiply</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A serializable data class that will be used to store the options of the GUI function `gui_x_times_factor&quot;&quot;&quot;</span>
+    <span class="n">factor</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">WHAT_TO_MULTIPLY</span> <span class="o">=</span> <span class="n">WhatToMultiply</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">gui_x_times_factor</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A GUI function that multiplies the input by a serializable factor.</span>
+<span class="sd">    It will be added via graph.add_gui_node(gui_x_times_factor, gui_serializable_data=WHAT_TO_MULTIPLY).</span>
+<span class="sd">    It uses a serializable data class to store its options, which will be reloaded upon restarting the application.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="n">imgui</span><span class="o">.</span><span class="n">input_int</span><span class="p">(</span><span class="s2">&quot;Factor&quot;</span><span class="p">,</span> <span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="p">)</span>
+    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Multiply by a factor: x * </span><span class="si">{</span><span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="si">}</span><span class="s2"> =</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run the graph</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">input_x</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">GuiNode</span><span class="p">(</span><span class="n">gui_x_times_factor</span><span class="p">,</span> <span class="n">gui_serializable_data</span><span class="o">=</span><span class="n">WHAT_TO_MULTIPLY</span><span class="p">)],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;GuiNode with serializable state&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="debugging-functions-exceptions">
+<h1>Debugging Functions exceptions<a class="headerlink" href="#debugging-functions-exceptions" title="Link to this heading">#</a></h1>
+<p>When a function raises an exception, Fiatlight catches and displays it without crashing the application. Instead, you will see a “Debug this exception” button that you can use to trigger the exception again.</p>
+<p>This feature is invaluable for debugging and making your functions more robust. If you are using a debugger, you will be taken directly to the point where the exception occurred, with the correct inputs to reproduce the bug.</p>
+<blockquote>
+<div><p>_Note: this feature can be disabled with:
+<code class="docutils literal notranslate"><span class="pre">fl.get_fiat_config().run_config.catch_function_exceptions</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
+</div></blockquote>
+<section id="example-a-math-exception">
+<h2>Example: a Math Exception<a class="headerlink" href="#example-a-math-exception" title="Link to this heading">#</a></h2>
+<p>With this setup, if the input value of a causes math.log(cos_a) to produce an error (when cos_a is negative).</p>
+<p>Fiatlight will catch and display the exception, allowing you to debug it easily.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">cos_a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cos_a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Math domain exception&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fiat-tuning-tune-functions">
+<h1>Fiat Tuning: Tune functions<a class="headerlink" href="#fiat-tuning-tune-functions" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>Introduction<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Fiatlight provides you with powerful tools to visually debug the intermediate states of your function.</p>
+<p>By adding a fiat_tuning attribute to a function, you can provide additional information that will be displayed in the GUI node for this function. This attribute is a dictionary and can contain named data values or descendants of AnyDataWithGui. This information can be used to fine-tune the function, debug it, or visualize intermediate states.</p>
+<p>Moreover, this information can be updated in the GUI, even if the function is a long-running process called asynchronously.</p>
+<blockquote>
+<div><p><em>Example: The image below shows a sort competition between different algorithms. The GUI nodes display in real time the evolving state of each algorithm, using “fiat_tuning” (see tutorial “demos/tutorials/sort_competition” for more details).</em></p>
+<img src="_static/images/sort_competition.jpg" width="30%">
+</div></blockquote>
+</section>
+<section id="example-measure-execution-time">
+<h2>Example: Measure Execution Time<a class="headerlink" href="#example-measure-execution-time" title="Link to this heading">#</a></h2>
+<p>In the example below, we will add a simple float into the fiat_tuning attribute of the sort_list function. This float will represent the duration of the sort operation.</p>
+<p>The collapsible region “Fiat Tuning” will display this duration:we can see that in this example, it takes about 0.75 seconds to sort a list of 10,000,000 elements.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">n__range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">make_random_list</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+
+<span class="k">def</span> <span class="nf">sort_list</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">sort_list</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">duration</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">make_random_list</span><span class="p">,</span> <span class="n">sort_list</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Sort duration&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="example-tune-using-an-image">
+<h2>Example: Tune using an Image<a class="headerlink" href="#example-tune-using-an-image" title="Link to this heading">#</a></h2>
+<p>The fiat_tuning attribute can also be used to display widgets (which must be descendants of AnyDataWithGui) in the GUI node.</p>
+<p>In the example below, we will add an image widget (ImageWithGui) into the fiat_tuning attribute.</p>
+<blockquote>
+<div><p><em><a class="reference internal" href="#FL_GH_REPO/demos/images/toon_edges.py"><span class="xref myst">demos/images/toon_edges.py</span></a> is a good example of how to use the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute.</em></p>
+<p><em><code class="docutils literal notranslate"><span class="pre">add_toon_edges</span></code> is a complex function that adds a toon effect to an image, by adding colored edges to the image contours.</em>
+<em>The contour detection is extremely sensitive to the parameters, and the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute is used to display the intermediate states of the function in the GUI.</em></p>
+</div></blockquote>
+<p>Here are some commented extracts of the function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">ImageU8_1</span>
+
+<span class="k">def</span> <span class="nf">add_toon_edges</span><span class="p">(</span>
+<span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">,</span>
+<span class="c1"># ... lots of parameters ...</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1"># = ...             (compute the edges)</span>
+    <span class="n">dilated_edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1">#  = ...    (dilate the edges)</span>
+    <span class="n">image_with_edges</span><span class="p">:</span> <span class="n">ImageU8_3</span>  <span class="c1"># = ... (superimpose the edges on the image)</span>
+
+    <span class="c1"># fiat_tuning: add debug internals to ease fine-tuning the function inside the node</span>
+    <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageWithGui</span>
+
+    <span class="c1"># Add to fiat_tuning any variable you want to be able to fine-tune or debug in the function node</span>
+    <span class="c1">#     * Either a raw type (int, float, str, etc.): see durations</span>
+    <span class="c1">#     * Or a descendant of AnyDataWithGui: see &quot;canny&quot;, &quot;dilate&quot;, &quot;image_with_edges&quot;</span>
+    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">add_toon_edges</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;duration_canny&quot;</span><span class="p">:</span> <span class="n">duration_canny</span><span class="p">,</span>
+        <span class="s2">&quot;duration_dilate&quot;</span><span class="p">:</span> <span class="n">duration_dilate</span><span class="p">,</span>
+        <span class="s2">&quot;duration_blur&quot;</span><span class="p">:</span> <span class="n">duration_blur</span><span class="p">,</span>
+        <span class="s2">&quot;duration_merge&quot;</span><span class="p">:</span> <span class="n">duration_merge</span><span class="p">,</span>
+        <span class="s2">&quot;canny&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">edges</span><span class="p">),</span>
+        <span class="s2">&quot;dilate&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">dilated_edges</span><span class="p">),</span>
+        <span class="s2">&quot;image_with_edges&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">image_with_edges</span><span class="p">),</span>
+    <span class="p">})</span>
+
+    <span class="c1"># return the image with edges</span>
+    <span class="k">return</span> <span class="n">image_with_edges</span>
+</pre></div>
+</div>
+<p>Once these internals are set, you can see the function “Internals” in the GUI:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_GRAY</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">image_source</span>
+<span class="kn">from</span> <span class="nn">fiatlight.demos.images.toon_edges</span> <span class="kn">import</span> <span class="n">add_toon_edges</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">image_source</span><span class="p">,</span> <span class="n">add_toon_edges</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Toon edges&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><em>The image above shows the GUI node for the toon_edges function, with the expanded “Fiat Tuning” section:</em>
+<em>it displays the execution time of each step, as well as an image representation of the intermediate edges and dilated edges.</em></p>
+</div></blockquote>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sub-class-functionwithgui">
+<h1>Sub-class FunctionWithGui<a class="headerlink" href="#sub-class-functionwithgui" title="Link to this heading">#</a></h1>
+<section id="id3">
+<h2>Introduction<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>By subclassing <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, you can fully customize the behavior of the function:</p>
+<ul class="simple">
+<li><p>you can add a GUI for the internal state of the function (e.g. displaying a live plot of a sound signal)</p></li>
+<li><p>you can add a heartbeat function that will be called at each frame (e.g. get the latest data from a sensor)</p></li>
+<li><p>you can save and load the internal GUI presentation options to/from a JSON file (e.g. to save the layout of a plot)</p></li>
+</ul>
+</section>
+<section id="example-camera-internal-state">
+<h2>Example: Camera &amp; Internal State<a class="headerlink" href="#example-camera-internal-state" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#FL_GH_ROOT/fiat_kits/fiat_image/camera_image_provider.py"><span class="xref myst">fiatlight.fiat_kits.fiat_image.CameraImageProviderGui</span></a>
+is a good example of a custom FunctionWithGui class.</p>
+<p>You can see it in action below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">CameraImageProviderGui</span><span class="p">,</span> <span class="n">ImageU8_3</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="k">def</span> <span class="nf">rotate_45</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">((</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>  <span class="c1"># type: ignore</span>
+
+<span class="n">camera_provider_gui</span> <span class="o">=</span> <span class="n">CameraImageProviderGui</span><span class="p">()</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">camera_provider_gui</span><span class="p">,</span> <span class="n">rotate_45</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Camera provider with rotation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Commented extracts of <a class="reference download internal" download="" href="_downloads/8526087f330b97834e4b6f54c3704340/camera_image_provider.py"><span class="xref download myst">camera_image_provider.py</span></a></strong></p>
+<p>Look at the <code class="docutils literal notranslate"><span class="pre">CameraImageProviderGui</span></code> class that extends <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>:</p>
+<blockquote>
+<div><p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CameraImageProviderGui</span></code> der uses a <code class="docutils literal notranslate"><span class="pre">CameraImageProvider</span></code> class that provides images from a camera.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CameraParams</span></code> contains the state of the camera (device number, brightness, contrast, etc.).
+This state is serialized. As it is as a Pydantic model, a GUI for it is automatically created by Fiatlight,
+and its state is serialized.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>CameraImageProviderGui (a descendant of FunctionWithGui)</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_notebook</span> <span class="kn">import</span> <span class="n">look_at_code</span>
+<span class="o">%</span><span class="n">look_at_python_code</span>
+<span class="n">fiatlight</span><span class="o">.</span><span class="n">fiat_kits</span><span class="o">.</span><span class="n">fiat_image</span><span class="o">.</span><span class="n">camera_image_provider</span><span class="o">.</span><span class="n">CameraImageProviderGui</span>
+</pre></div>
+</div>
+<p><strong>CameraParams (serialized internal state)</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="k">class</span> <span class="nc">CameraResolution</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">HD_1280_720</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">]</span>
+    <span class="n">FULL_HD_1920_1080</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">]</span>
+    <span class="n">VGA_640_480</span> <span class="o">=</span> <span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">]</span>
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">(</span><span class="n">device_number__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">brightness__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">contrast__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">CameraParams</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">device_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">brightness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">contrast</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">camera_resolution</span><span class="p">:</span> <span class="n">CameraResolution</span> <span class="o">=</span> <span class="n">CameraResolution</span><span class="o">.</span><span class="n">VGA_640_480</span>
+
+
+<span class="k">class</span> <span class="nc">CameraImageProvider</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;A class that provides images from a camera&#39;&#39;&#39;</span>
+    <span class="n">camera_params</span><span class="p">:</span> <span class="n">CameraParams</span>
+    <span class="n">cv_cap</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wrapping Functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#typed-signatures">Typed Signatures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-typed-signatures">Importance of Typed Signatures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typed-vs-untyped-functions-gui">Typed vs Untyped Functions GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Wrapping Functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#registered-types">Registered Types</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-registered-types">Using registered types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-matplotlib-figures">Example with Matplotlib Figures</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-function-execution">Controlling Function Execution</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-live-functions">Configuring “Live” functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-async-functions">Using Async Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stoppable-async-functions">“Stoppable” async Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-invocation-example">Manual Invocation Example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handwriting-the-gui">Handwriting the GUI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-edit-and-present-callbacks">Using Edit and Present Callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-custom-callbacks">Example: Custom Callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-nodes">Gui Nodes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-a-heart-curve-with-a-gui-node">Example: Visualizing a Heart Curve with a GUI Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-gui-node-with-serializable-state">Example: a GUI node with serializable state</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fiat-tuning-tune-functions">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-class-functionwithgui">Sub-class FunctionWithGui</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-camera-internal-state">Example: Camera &amp; Internal State</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pascal Thomet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

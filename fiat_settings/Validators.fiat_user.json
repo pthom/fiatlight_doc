@@ -1,0 +1,68 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "my_function": {
+                "even_int": {
+                    "name": "even_int",
+                    "data": {
+                        "type": "Unspecified"
+                    }
+                },
+                "multiple_of_5": {
+                    "name": "multiple_of_5",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 25
+                    }
+                }
+            }
+        }
+    },
+    "gui_options": {
+        "my_function": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": false,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "even_int": {
+                            "cb_options": {},
+                            "expanded": true
+                        },
+                        "multiple_of_5": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    }
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "even_int": {
+                        "cb_options": {},
+                        "expanded": true
+                    },
+                    "multiple_of_5": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                }
+            }
+        }
+    }
+}

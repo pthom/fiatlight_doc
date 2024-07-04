@@ -174,8 +174,9 @@ src/python/fiatlight//
 ├── fiat_doc/                                 # documentation utilities
 │   ├── __init__.py
 │   ├── code_utils.py
-│   ├── look_at_code.py
 │   ├── make_class_header.py
+├── fiat_notebook/                            # notebook utilities
+│   ├── look_at_code.py
 │   ├── notebook_utils.py
 │   └── plantuml_magic.py
 ├── py.typed

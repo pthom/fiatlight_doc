@@ -74,7 +74,7 @@ This can be used as a full application:
   * The user can save and load different state of the application (i.e. different memes)
 
 
-> *For technical readers: [`invoke_sdxl_turbo`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py) provides a simple wrapper to SDXL, and [`add_meme_text`](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/old_school_meme.py) is a Python function that adds colored text onto an image.*
+> *For technical readers: [`invoke_sdxl_turbo`](FL_GH_ROOT/fiat_kits/fiat_ai/invoke_sdxl_turbo.py) provides a simple wrapper to SDXL, and [`add_meme_text`](FL_GH_ROOT/demos/images/old_school_meme.py) is a Python function that adds colored text onto an image.*
 
 
 ## Domain-specific Kits:
@@ -87,7 +87,7 @@ This can be used as a full application:
 
 - **Data Exploration**: Provide widgets for exploring dataframes. See [fiat_dataframe](fiat_dataframe.ipynb).
 
-- **AI**: (Draft) Provide a widget for Prompt entry, and an interface to Stable Diffusion. See [fiat_ai](https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_ai).
+- **AI**: (Draft) Provide a widget for Prompt entry, and an interface to Stable Diffusion. See [fiat_ai](FL_GH_ROOT/fiat_kits/fiat_ai).
 
 
 ### Image analysis
@@ -101,7 +101,7 @@ from fiatlight.demos.images.opencv_wrappers import canny, dilate
 
 fl.run([image_from_file, canny, dilate], app_name="demo_computer_vision")
 ```
->*For technical readers: [`image_from_file`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_image/image_to_from_file_gui.py) is a function that reads an image from a file, [`canny`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py) applies the Canny edge detection algorithm, and [`dilate`](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py) dilates the edges.*
+>*For technical readers: [`image_from_file`](FL_GH_ROOT/fiat_kits/fiat_image/image_to_from_file_gui.py) is a function that reads an image from a file, [`canny`](FL_GH_ROOT/demos/images/opencv_wrappers.py) applies the Canny edge detection algorithm, and [`dilate`](FL_GH_ROOT/demos/images/opencv_wrappers.py) dilates the edges.*
 
 ### Data visualization with Matplotlib and ImPlot
 
@@ -114,8 +114,8 @@ demo_mix_implot_matplotib.main()
 ```
 
 > *For technical readers:* 
-> * when a function returns a `matplotlib.figure.Figure`, its output will be displayed as a plot. See demo_matplotlib.py [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_matplotlib/demo_matplotlib.py).*
-> * when a function returns a `fiat_implot.FloatMatrix_Dim1` or `fiat_implot.FloatMatrix_Dim2` (which are aliases for np.ndarray), its output will be displayed as a plot, using [ImPlot](https://github.com/epezent/implot). See demo_implot [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_implot/demo_implot.py). 
+> * when a function returns a `matplotlib.figure.Figure`, its output will be displayed as a plot. See demo_matplotlib.py [source code](FL_GH_ROOT/fiat_kits/fiat_matplotlib/demo_matplotlib.py).*
+> * when a function returns a `fiat_implot.FloatMatrix_Dim1` or `fiat_implot.FloatMatrix_Dim2` (which are aliases for np.ndarray), its output will be displayed as a plot, using [ImPlot](https://github.com/epezent/implot). See demo_implot [source code](FL_GH_ROOT/fiat_kits/fiat_implot/demo_implot.py). 
 > * [ImPlot](https://github.com/epezent/implot) is a plotting library for Dear ImGui. It is often faster than Matplotlib, and can be used in real-time applications. For a complete demo of ImPlot, click here: [ImPlot complete demo](https://traineq.org/implot_demo/src/implot_demo.html)*
 
 ### Data Exploration
@@ -139,7 +139,7 @@ from fiatlight.demos.images.toon_edges import add_toon_edges
 fl.run([invoke_sdxl_turbo, lut_channels_in_colorspace, add_toon_edges], app_name="SDXL Edges")
 ```
 
->*For technical readers: `invoke_sdxl_turbo` uses HuggingFace's diffuser library to invoke stable diffusion. See its [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py)*
+>*For technical readers: `invoke_sdxl_turbo` uses HuggingFace's diffuser library to invoke stable diffusion. See its [source code](FL_GH_ROOT/fiat_kits/fiat_ai/invoke_sdxl_turbo.py)*
 
 ### Audio processing (experimental)
 
@@ -150,7 +150,7 @@ from fiatlight.fiat_kits.experimental.fiat_audio_simple.demos import demo_audio_
 demo_audio_processing.main()
 ```
 
->*For technical readers: See demo_audio_processing [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/demos/demo_audio_processing.py)*
+>*For technical readers: See demo_audio_processing [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/demos/demo_audio_processing.py)*
 
 ## Visualize, Understand, Innovate
 
@@ -167,7 +167,7 @@ demo_word_count.main()
 > *For technical readers: demo_word_count will simply chain the following string functions:
 >     `text_from_file, str_lower, split_words, filter_out_short_words,
 >     sort_words, run_length_encode, sort_word_with_counts`.
-> See its [source](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/string/demo_word_count.py)*
+> See its [source](FL_GH_ROOT/demos/string/demo_word_count.py)*
 
 ### Examine and understand function internals
 
@@ -183,7 +183,7 @@ from fiatlight.demos.images.toon_edges import add_toon_edges
 fl.run([image_source, add_toon_edges], app_name="Toon Edges")
 ```
 
-> *For technical readers: the function `add_toon_edges` has an attribute `fiat_tuning` that contains the internal variables that will be displayed. See [demos/images/toon_edges.py](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/toon_edges.py).*
+> *For technical readers: the function `add_toon_edges` has an attribute `fiat_tuning` that contains the internal variables that will be displayed. See [demos/images/toon_edges.py](FL_GH_ROOT/demos/images/toon_edges.py).*
 
 
 ### Replay and debug function errors
@@ -214,17 +214,17 @@ fl.run([float_source, sin, log], app_name="Replay error")
 
 Besides being extremely powerful to generate function graphs, Fiatlight's powerful GUI capabilities can also help you generate sophisticated classic applications.
 
-#### Sophisticated widgets and data validation
+### Sophisticated widgets and data validation
 The application below, demonstrate how you can use Fiatlight GUI capabilities to edit complex data. The GUI definition was created automatically, from the data definition (including the validation rules, in yellow).
 
 ```python
-from fiatlight.demos.full_fledged_app import demo_basemodel_app
+from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
 # demo_basemodel_app.main()
 ```
 
 ![img.png](_static/images/demo_basemodel_app.png)
 
-> *For technical readers: See the [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
+> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
 
 ### Applications with advanced GUI
 
@@ -240,7 +240,7 @@ from fiatlight.demos.full_fledged_app import demo_image_processors_app
 
 ![img.png](_static/images/demo_image_processors_app.png)
 
-> * For technical readers: See the [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_image_processors_app.py) for demo_image_processors_app.py*.
+> * For technical readers: See the [source code](FL_GH_ROOT/demos/full_fledged_app/demo_image_processors_app.py) for demo_image_processors_app.py*.
 
 
 ## Custom Graph Creation
@@ -256,7 +256,7 @@ from fiatlight.demos.custom_graph import demo_custom_graph
 
 ![custom graph](images/custom_graph.jpg)
 
-> *For technical readers: See the [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/custom_graph/demo_custom_graph.py) for custom_graph.py*
+> *For technical readers: See the [source code](FL_GH_ROOT/demos/custom_graph/demo_custom_graph.py) for custom_graph.py*
 
 
 ## Custom Widgets
@@ -271,7 +271,7 @@ from fiatlight.fiat_kits.experimental.fiat_audio_simple import sound_wave_from_f
 fl.run(sound_wave_from_file, app_name="Sound Wave Player")
 ```
 
-> *For technical readers: `sound_wave_from_file` is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its [source code](https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)*
+> *For technical readers: `sound_wave_from_file` is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)*
 
 
 ## A sneak peek at the future: desktop Notebooks

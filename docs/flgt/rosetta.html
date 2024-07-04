@@ -183,42 +183,45 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_architecture.html">Fiatlight Architecture</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
-<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="api_function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_functions_graph.html">FunctionsGraph</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,9 +231,6 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
-
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
@@ -532,25 +532,25 @@ It is even shorter than the specification.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>  <span class="c1"># noqa</span>
 
 
-<span class="k">def</span> <span class="nf">validate_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">validate_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Please enter your name.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please enter your name.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;No more than 10 characters, please&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No more than 10 characters, please&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Only non-accentuated latin letters are allowed&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only non-accentuated latin letters are allowed&quot;</span><span class="p">)</span>
     <span class="n">letters_a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">letters_a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Only one &#39;a&#39; or &#39;A&#39; is allowed&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only one &#39;a&#39; or &#39;A&#39; is allowed&quot;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">fl</span><span class="o">.</span><span class="n">DataValidationResult</span><span class="o">.</span><span class="n">ok</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">name</span>
 
 
 <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span>
     <span class="n">hello_rosetta</span><span class="p">,</span>
     <span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">125</span><span class="p">),</span>
     <span class="n">name__hint</span><span class="o">=</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">,</span>
-    <span class="n">name__validate_value</span><span class="o">=</span><span class="n">validate_name</span><span class="p">,</span>
+    <span class="n">name__validator</span><span class="o">=</span><span class="n">validate_name</span><span class="p">,</span>
     <span class="n">doc_display</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 

@@ -6,28 +6,28 @@
                     "name": "freq1",
                     "data": {
                         "type": "Primitive",
-                        "value": 5.0
+                        "value": 4.2220001220703125
                     }
                 },
                 "freq2": {
                     "name": "freq2",
                     "data": {
                         "type": "Primitive",
-                        "value": 3.130000114440918
+                        "value": 1.5889999866485596
                     }
                 },
                 "delta": {
                     "name": "delta",
                     "data": {
                         "type": "Primitive",
-                        "value": 1.5707963267948966
+                        "value": 0.6779999732971191
                     }
                 },
                 "nb_periods": {
                     "name": "nb_periods",
                     "data": {
                         "type": "Primitive",
-                        "value": 2.509999990463257
+                        "value": 1.6100000143051147
                     }
                 }
             }
@@ -38,6 +38,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -63,14 +64,13 @@
                         "0": {
                             "cb_options": {
                                 "figure_size": {
-                                    "x": 471.0,
-                                    "y": 353.0
+                                    "x": 330.0,
+                                    "y": 273.0
                                 }
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -96,14 +96,13 @@
                     "0": {
                         "cb_options": {
                             "figure_size": {
-                                "x": 471.0,
-                                "y": 353.0
+                                "x": 330.0,
+                                "y": 273.0
                             }
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

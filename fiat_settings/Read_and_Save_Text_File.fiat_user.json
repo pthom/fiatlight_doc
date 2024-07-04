@@ -17,7 +17,7 @@
                         "type": "Optional",
                         "value": {
                             "type": "Primitive",
-                            "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/text/hamlet_lower.txt"
+                            "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/text/hamlet_lower2.txt"
                         }
                     }
                 }
@@ -29,6 +29,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -51,8 +52,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -75,14 +75,14 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "save_lower_case_text_file": {
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -104,8 +104,7 @@
                             "expanded": true
                         }
                     },
-                    "outputs": {},
-                    "internal_gui_options": {}
+                    "outputs": {}
                 }
             },
             "function_node": {
@@ -127,8 +126,7 @@
                         "expanded": true
                     }
                 },
-                "outputs": {},
-                "internal_gui_options": {}
+                "outputs": {}
             }
         }
     }

@@ -6,7 +6,7 @@
                     "name": "image_file",
                     "data": {
                         "type": "Primitive",
-                        "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight.old/priv_assets/images/house.jpg"
+                        "value": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/images/house.jpg"
                     }
                 },
                 "max_image_size": {
@@ -38,9 +38,9 @@
                                 "blur_sigma": 0.0,
                                 "intensity": 0.8,
                                 "color": [
-                                    0,
-                                    0,
-                                    0
+                                    23,
+                                    108,
+                                    226
                                 ]
                             }
                         }
@@ -54,6 +54,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -88,8 +89,8 @@
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 272,
-                                        "width": 270
+                                        "height": 288,
+                                        "width": 293
                                     },
                                     "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
@@ -107,12 +108,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 1.2086424163527096,
+                                        "00": 1.3620249468455372,
                                         "01": 0.0,
-                                        "02": -475.7341484875653,
+                                        "02": -533.3454500950181,
                                         "10": 0.0,
-                                        "11": 1.2086424163527096,
-                                        "12": -329.936098786457,
+                                        "11": 1.3620249468455372,
+                                        "12": -430.77250972297213,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -124,8 +125,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -160,8 +160,8 @@
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 272,
-                                    "width": 270
+                                    "height": 288,
+                                    "width": 293
                                 },
                                 "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
@@ -179,12 +179,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 1.2086424163527096,
+                                    "00": 1.3620249468455372,
                                     "01": 0.0,
-                                    "02": -475.7341484875653,
+                                    "02": -533.3454500950181,
                                     "10": 0.0,
-                                    "11": 1.2086424163527096,
-                                    "12": -329.936098786457,
+                                    "11": 1.3620249468455372,
+                                    "12": -430.77250972297213,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -196,14 +196,14 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "add_toon_edges": {
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": true,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -320,13 +320,13 @@
                                         },
                                         "color": {
                                             "cb_options": {},
-                                            "expanded": true
+                                            "expanded": false
                                         }
                                     },
                                     "expanded": false
                                 }
                             },
-                            "expanded": false
+                            "expanded": true
                         }
                     },
                     "outputs": {
@@ -369,12 +369,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 1.2802656706550923,
+                                        "00": 1.329485101699057,
                                         "01": 0.0,
-                                        "02": -503.92580173127277,
+                                        "02": -520.6034086251714,
                                         "10": 0.0,
-                                        "11": 1.2802656706550923,
-                                        "12": -398.54712686269147,
+                                        "11": 1.329485101699057,
+                                        "12": -466.04074327907875,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -386,8 +386,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -504,13 +503,13 @@
                                     },
                                     "color": {
                                         "cb_options": {},
-                                        "expanded": true
+                                        "expanded": false
                                     }
                                 },
                                 "expanded": false
                             }
                         },
-                        "expanded": false
+                        "expanded": true
                     }
                 },
                 "outputs": {
@@ -553,12 +552,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 1.2802656706550923,
+                                    "00": 1.329485101699057,
                                     "01": 0.0,
-                                    "02": -503.92580173127277,
+                                    "02": -520.6034086251714,
                                     "10": 0.0,
-                                    "11": 1.2802656706550923,
-                                    "12": -398.54712686269147,
+                                    "11": 1.329485101699057,
+                                    "12": -466.04074327907875,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -570,8 +569,7 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

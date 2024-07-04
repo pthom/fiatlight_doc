@@ -24,10 +24,10 @@
                         "type": "Pydantic",
                         "value": {
                             "text": "Are we there yet?",
-                            "font_size": 11,
+                            "font_size": 12,
                             "font_type": "fonts/Anton/Anton-Regular.ttf",
-                            "x": 0.050999999046325684,
-                            "y": 0.8379999995231628,
+                            "x": 0.04699999839067459,
+                            "y": 0.08500000089406967,
                             "text_color": [
                                 255,
                                 255,
@@ -50,6 +50,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -65,7 +66,7 @@
                                     "wrap_multiline": false,
                                     "wrap_multiline_width": 80
                                 },
-                                "submit_continuously": true
+                                "submit_continuously": false
                             },
                             "expanded": false
                         },
@@ -95,8 +96,8 @@
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 285,
-                                        "width": 269
+                                        "height": 338,
+                                        "width": 352
                                     },
                                     "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
@@ -114,12 +115,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.5432147536963421,
+                                        "00": 0.5896072338105596,
                                         "01": 0.0,
-                                        "02": -4.562976946263698,
+                                        "02": 17.997823533154484,
                                         "10": 0.0,
-                                        "11": 0.5432147536963421,
-                                        "12": 3.4370230537363016,
+                                        "11": 0.5896072338105596,
+                                        "12": 11.845137465596432,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -131,8 +132,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -148,7 +148,7 @@
                                 "wrap_multiline": false,
                                 "wrap_multiline_width": 80
                             },
-                            "submit_continuously": true
+                            "submit_continuously": false
                         },
                         "expanded": false
                     },
@@ -178,8 +178,8 @@
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 285,
-                                    "width": 269
+                                    "height": 338,
+                                    "width": 352
                                 },
                                 "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
@@ -197,12 +197,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.5432147536963421,
+                                    "00": 0.5896072338105596,
                                     "01": 0.0,
-                                    "02": -4.562976946263698,
+                                    "02": 17.997823533154484,
                                     "10": 0.0,
-                                    "11": 0.5432147536963421,
-                                    "12": 3.4370230537363016,
+                                    "11": 0.5896072338105596,
+                                    "12": 11.845137465596432,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -214,14 +214,14 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "add_meme_text": {
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -349,8 +349,8 @@
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 424,
-                                        "width": 458
+                                        "height": 459,
+                                        "width": 520
                                     },
                                     "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
@@ -368,12 +368,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.924878651274813,
+                                        "00": 0.8710106863110539,
                                         "01": 0.0,
-                                        "02": -7.768934726352313,
+                                        "02": 26.587693855796402,
                                         "10": 0.0,
-                                        "11": 0.924878651274813,
-                                        "12": -24.768934726352285,
+                                        "11": 0.8710106863110539,
+                                        "12": -2.660592380368911,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -385,8 +385,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -514,8 +513,8 @@
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 424,
-                                    "width": 458
+                                    "height": 459,
+                                    "width": 520
                                 },
                                 "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
@@ -533,12 +532,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.924878651274813,
+                                    "00": 0.8710106863110539,
                                     "01": 0.0,
-                                    "02": -7.768934726352313,
+                                    "02": 26.587693855796402,
                                     "10": 0.0,
-                                    "11": 0.924878651274813,
-                                    "12": -24.768934726352285,
+                                    "11": 0.8710106863110539,
+                                    "12": -2.660592380368911,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -550,8 +549,7 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

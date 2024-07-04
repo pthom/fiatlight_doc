@@ -2,39 +2,32 @@
     "user_inputs": {
         "functions_nodes": {
             "interactive_histogram": {
+                "nb_data": {
+                    "name": "nb_data",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 5596
+                    }
+                },
                 "n_bars": {
                     "name": "n_bars",
                     "data": {
                         "type": "Primitive",
-                        "value": 69
-                    }
-                },
-                "mu": {
-                    "name": "mu",
-                    "data": {
-                        "type": "Primitive",
-                        "value": 0.4000000059604645
+                        "value": 81
                     }
                 },
                 "sigma": {
                     "name": "sigma",
                     "data": {
                         "type": "Primitive",
-                        "value": 4.0
+                        "value": 4.210000038146973
                     }
                 },
                 "average": {
                     "name": "average",
                     "data": {
                         "type": "Primitive",
-                        "value": 549.7999877929688
-                    }
-                },
-                "nb_data": {
-                    "name": "nb_data",
-                    "data": {
-                        "type": "Primitive",
-                        "value": 8562
+                        "value": 346.3999938964844
                     }
                 }
             }
@@ -45,15 +38,16 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
                     "inputs": {
-                        "n_bars": {
+                        "nb_data": {
                             "cb_options": {},
                             "expanded": false
                         },
-                        "mu": {
+                        "n_bars": {
                             "cb_options": {},
                             "expanded": false
                         },
@@ -62,10 +56,6 @@
                             "expanded": false
                         },
                         "average": {
-                            "cb_options": {},
-                            "expanded": false
-                        },
-                        "nb_data": {
                             "cb_options": {},
                             "expanded": false
                         }
@@ -80,17 +70,16 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
                 "inputs": {
-                    "n_bars": {
+                    "nb_data": {
                         "cb_options": {},
                         "expanded": false
                     },
-                    "mu": {
+                    "n_bars": {
                         "cb_options": {},
                         "expanded": false
                     },
@@ -99,10 +88,6 @@
                         "expanded": false
                     },
                     "average": {
-                        "cb_options": {},
-                        "expanded": false
-                    },
-                    "nb_data": {
                         "cb_options": {},
                         "expanded": false
                     }
@@ -117,8 +102,7 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

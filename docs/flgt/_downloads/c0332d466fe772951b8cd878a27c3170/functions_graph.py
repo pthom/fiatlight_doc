@@ -1,125 +1,15 @@
-'''FunctionsGraph: A graph of FunctionNodes
-
-FunctionsGraph
-==============
-
- `FunctionsGraph` is one of the core classes of FiatLight: it represents a graph of functions,
- where the output of one function can be linked to the input of another function.
-
- See its full code [online](../fiat_core/functions_graph.py).
-
-Creating a FunctionsGraph
-=========================
-
-### When a FunctionsGraph can be created automatically
-
-In simple cases (one function, or a list of functions that are chained together), you do not need to create a
-FunctionsGraph. See the examples below.
-
-*Single function*:
-```python
-import fiatlight as fl
-def f(x: int) -> int:
-    return x + 1
-fl.run(f, app_name="Single function")
-```
-
-*Chained functions*:
-```python
-import fiatlight as fl
-def f(x: int) -> int:
-    return x + 1
-def g(x: int) -> int:
-    return x * 2
-fl.run([f, g], app_name="Chained functions")
-```
-
-When you need to create a FunctionsGraph
-----------------------------------------
-
-For more complex cases, you can create a FunctionsGraph manually. This allows you to precisely control the links between
-the functions.
-
-```python
-import fiatlight as fl
-
-def int_source(x : int) -> int:
-    """This function will be the entry point of the graph
-    Since its inputs is unlinked, fiatlight will ask the user for a value for x
-    """
-    return x
-
-def square(x: int) -> int:
-    return x * x
-
-def add(x: int, y: int) -> int:
-    return x + y
-
-# 1. Create the graph
-#
-#    Notes:
-#      - in this example we add the function `square` *two times*!
-#          Each of them will have a different *unique name*: "square_1" and "square_2"
-#      - instead of creating a graph from a function composition, we could also create an empty graph
-#        and add the functions manually, like show in the comment below:
-#             graph = fl.FunctionsGraph.create_empty()
-#             graph.add_function_composition([int_source, square, square])
-#
-graph = fl.FunctionsGraph.from_function_composition([int_source, square, square])
-
-
-# 2. Manually add a function
-graph.add_function(add)
-
-# 3. And link it
-# First, link the output of int_source to the "x" input of add
-# Note: we could also specify the source output index: src_output_idx=0 (but this is the default)
-graph.add_link("int_source", "add", dst_input_name="x")
-
-# Then, link the output of the second `square` to the "y" input of add
-graph.add_link("square_2", "add", dst_input_name="y")
-
-
-# 4. Run the graph
-fl.run(graph, app_name="Manual graph")
-```
-
--------------------------------------------------------------------------------
-
-FunctionsGraph signature
-========================
-
-Below, you will find the "signature" of the `FunctionsGraph` class,
-with its main attributes and methods (but not their bodies)
-
-Its full source code is [available online](../fiat_core/functions_graph.py).
-
-    ```python
-    from fiatlight.fiat_doc import look_at_code
-    %look_at_class_header fiatlight.fiat_core.FunctionsGraph
-    ```
-
-Architecture
-============
-
-Below is a PlantUML diagram showing the architecture of the `fiat_core` module.
-See the [architecture page](architecture) for the full architecture diagrams.
-
-    ```python
-    from fiatlight.fiat_doc import plantuml_magic
-    %plantuml_include class_diagrams/fiat_core.puml
-    ```
-
-
-'''
+"""FunctionsGraph: A graph of FunctionNodes"""
 
 import copy
 
 from fiatlight.fiat_core.function_with_gui import FunctionWithGui, FunctionWithGuiFactoryFromName
 from fiatlight.fiat_core.function_node import FunctionNode, FunctionNodeLink
-from fiatlight.fiat_types import Function, JsonDict
+from fiatlight.fiat_core.gui_node import GuiNode
+from fiatlight.fiat_core.markdown_node import MarkdownNode
+from fiatlight.fiat_types import Function, JsonDict, GuiFunctionWithInputs
 
 from typing import Sequence, Dict, Tuple, Set, List
+from pydantic import BaseModel
 
 
 class FunctionsGraph:
@@ -228,6 +118,25 @@ class FunctionsGraph:
             return self._add_function_with_gui(f)
         else:
             return self._add_function(f)
+
+    def add_gui_node(
+        self,
+        gui_function: GuiFunctionWithInputs,
+        label: str | None = None,
+        gui_serializable_data: BaseModel | None = None,
+    ) -> FunctionNode:
+        gui_node = GuiNode(gui_function, label=label, gui_serializable_data=gui_serializable_data)
+        return self._add_function_with_gui(gui_node)
+
+    def add_markdown_node(
+        self,
+        md_string: str,
+        label: str = "Documentation",
+        text_width_em: float = 20.0,
+        unindented: bool = True,
+    ) -> FunctionNode:
+        markdown_node = MarkdownNode(md_string, label=label, text_width_em=text_width_em, unindented=unindented)
+        return self._add_function_with_gui(markdown_node)
 
     class _Private_API_Add_Function_Section:  # Dummy class to create a section in the IDE # noqa
         """
@@ -398,17 +307,21 @@ class FunctionsGraph:
         return link
 
     def add_link(
-        self, src_function_name: str, dst_function_name: str, dst_input_name: str | None = None, src_output_idx: int = 0
+        self,
+        src_function: str | Function | FunctionWithGui,
+        dst_function: str | Function | FunctionWithGui,
+        dst_input_name: str | None = None,
+        src_output_idx: int = 0,
     ) -> None:
         """Add a link between two functions, which are identified by their *unique* names
 
         If a graph reuses several times the same function "f",
         the unique names for this functions will be "f_1", "f_2", "f_3", etc.
         """
-        src_function = self._function_node_with_unique_name(src_function_name)
-        dst_function = self._function_node_with_unique_name(dst_function_name)
+        src_function_node = self._function_node_with_name_or_is_function(src_function)
+        dst_function_node = self._function_node_with_name_or_is_function(dst_function)
         self._add_link_from_function_nodes(
-            src_function, dst_function, dst_input_name=dst_input_name, src_output_idx=src_output_idx
+            src_function_node, dst_function_node, dst_input_name=dst_input_name, src_output_idx=src_output_idx
         )
 
     def merge_graph(self, other: "FunctionsGraph") -> None:
@@ -506,6 +419,41 @@ class FunctionsGraph:
             ]
             this_function_idx = functions_with_same_name.index(function_node)
             return f"{function_node.function_with_gui.function_name}_{this_function_idx + 1}"
+
+    def _function_node_with_name_or_is_function(
+        self, name_or_function: str | Function | FunctionWithGui
+    ) -> FunctionNode:
+        """Get the function node with the given name or function"""
+        if isinstance(name_or_function, str):
+            return self._function_node_with_unique_name(name_or_function)
+
+        elif isinstance(name_or_function, FunctionWithGui):
+            fn_with_gui = name_or_function
+            candidate_nodes = []
+            for fn_node in self.functions_nodes:
+                if fn_node.function_with_gui is fn_with_gui:
+                    candidate_nodes.append(fn_node)
+
+            if len(candidate_nodes) == 0:
+                raise ValueError(f"No function {fn_with_gui}")
+            elif len(candidate_nodes) > 1:
+                raise ValueError(f"Multiple functions {fn_with_gui}")
+            else:
+                return candidate_nodes[0]
+
+        else:
+            function_reference = name_or_function
+            candidate_nodes = []
+            for fn_node in self.functions_nodes:
+                if fn_node.function_with_gui._f_impl is function_reference:
+                    candidate_nodes.append(fn_node)
+
+            if len(candidate_nodes) == 0:
+                raise ValueError(f"No function {function_reference}")
+            elif len(candidate_nodes) > 1:
+                raise ValueError(f"Multiple functions {function_reference}")
+            else:
+                return candidate_nodes[0]
 
     def _function_node_with_unique_name(self, function_name: str) -> FunctionNode:
         """Get the function with the unique name"""

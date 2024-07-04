@@ -1,0 +1,14 @@
+{
+    "functions_names": [
+        "invoke_sdxl_turbo",
+        "add_toon_edges"
+    ],
+    "functions_nodes_links": [
+        {
+            "src_function_name": "invoke_sdxl_turbo",
+            "dst_function_name": "add_toon_edges",
+            "dst_input_name": "image",
+            "src_output_idx": 0
+        }
+    ]
+}

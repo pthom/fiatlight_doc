@@ -83,25 +83,25 @@ It is even shorter than the specification.
 import fiatlight as fl  # noqa
 
 
-def validate_name(name: str) -> fl.DataValidationResult:
+def validate_name(name: str) -> str:
     if len(name) == 0:
-        return fl.DataValidationResult.error("Please enter your name.")
+        raise ValueError("Please enter your name.")
     if len(name) > 10:
-        return fl.DataValidationResult.error("No more than 10 characters, please")
+        raise ValueError("No more than 10 characters, please")
     if not name.isalpha():
-        return fl.DataValidationResult.error("Only non-accentuated latin letters are allowed")
+        raise ValueError("Only non-accentuated latin letters are allowed")
     letters_a = list(filter(lambda x: x == "a" or x == "A", name))
     if len(letters_a) > 1:
-        return fl.DataValidationResult.error("Only one 'a' or 'A' is allowed")
+        raise ValueError("Only one 'a' or 'A' is allowed")
 
-    return fl.DataValidationResult.ok()
+    return name
 
 
 fl.add_fiat_attributes(
     hello_rosetta,
     age__range=(0, 125),
     name__hint="Enter your name",
-    name__validate_value=validate_name,
+    name__validator=validate_name,
     doc_display=True,
 )
 

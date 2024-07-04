@@ -187,42 +187,45 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_architecture.html">Fiatlight Architecture</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
-<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="api_function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_functions_graph.html">FunctionsGraph</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -232,9 +235,6 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
-
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
@@ -466,7 +466,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">A sneak peek at the future: desktop Notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Use Cases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Comparable Frameworks</a></li>
 </ul>
 
             </nav>
@@ -528,7 +533,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/84ac30e9bf56bb37797cd0bc3ccd537d168839f9cddae5cfe90c02d42af25e25.png" src="_images/84ac30e9bf56bb37797cd0bc3ccd537d168839f9cddae5cfe90c02d42af25e25.png" />
+<img alt="_images/98f1dedb3e985a09e9bc1b0d3bf939226ee82231634e52efac3c9e18103acaa3.png" src="_images/98f1dedb3e985a09e9bc1b0d3bf939226ee82231634e52efac3c9e18103acaa3.png" />
 </div>
 </div>
 <p><em>See the application in action in the video below</em></p>
@@ -550,7 +555,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3fcb10b9eb284f47a9ce7439d128e2b1", "version_major": 2, "version_minor": 0}</script><img alt="_images/f139b2416bc9c50a47d3049f9679da9a5dd9fe4e88017e34e36e5be94debe30a.png" src="_images/f139b2416bc9c50a47d3049f9679da9a5dd9fe4e88017e34e36e5be94debe30a.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "499287351a714ca7a34436ccf1b95969", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "659bd2aa2a1f4816b12bbfcdaeb99b89", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "e5a2cdd02efc413ca261e1c051a64667", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "a993525f7a6749a88befaca652cec8de", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "78177d07fdf84984867598d6e32fa490", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "23682ff2b25046ad988f85669b4494c7", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "51891f6dec2b4d289f707c9be1aaa648", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "cea2248a1b774ce9a23b9bcbe468896a", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "03f7f33dc6dd4559b205ff76059c46eb", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "22a46a991cab4725b50ec293e49a2c6b", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "226f2d962d9847a0bc6efc543a07bd39", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "7969be7f3174457681c99c432dea5ec5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "5619812234ee4307a796986ec77d8733", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2ae0b0e190474ecbb5bf03df5a85bd9b", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "d528bc4177034f8ebf2009d4a0426672", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "f9e82559325349c7b9bc69685b575382", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "ed65a8f3980740e8aa64440034a51c3f", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "36bb42cd2ceb41a1b3e26c764831d0f2", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "4825ba7bf20a41f38ccd810c41f59547", "version_major": 2, "version_minor": 0}</script><img alt="_images/55a86f44af6bc099212cde8ff5dfdbfb3e1fee87e17579cf948b6318e1c7519f.png" src="_images/55a86f44af6bc099212cde8ff5dfdbfb3e1fee87e17579cf948b6318e1c7519f.png" />
 </div>
 </div>
 <p>This can be used as a full application:</p>
@@ -560,7 +565,7 @@ document.write(`
 <li><p>The user can save and load different state of the application (i.e. different memes)</p></li>
 </ul>
 <blockquote>
-<div><p><em>For technical readers: <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py"><code class="docutils literal notranslate"><span class="pre">invoke_sdxl_turbo</span></code></a> provides a simple wrapper to SDXL, and <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/old_school_meme.py"><code class="docutils literal notranslate"><span class="pre">add_meme_text</span></code></a> is a Python function that adds colored text onto an image.</em></p>
+<div><p><em>For technical readers: <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py"><code class="docutils literal notranslate"><span class="pre">invoke_sdxl_turbo</span></code></a> provides a simple wrapper to SDXL, and <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/old_school_meme.py"><code class="docutils literal notranslate"><span class="pre">add_meme_text</span></code></a> is a Python function that adds colored text onto an image.</em></p>
 </div></blockquote>
 </section>
 <section id="domain-specific-kits">
@@ -585,12 +590,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/e89aca6c37a22d18899cf81c322d8d7c91aa0a4ae71fa304d41d8370d30a8eac.png" src="_images/e89aca6c37a22d18899cf81c322d8d7c91aa0a4ae71fa304d41d8370d30a8eac.png" />
-</div>
 </div>
 <blockquote>
-<div><p><em>For technical readers: <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_image/image_to_from_file_gui.py"><code class="docutils literal notranslate"><span class="pre">image_from_file</span></code></a> is a function that reads an image from a file, <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py"><code class="docutils literal notranslate"><span class="pre">canny</span></code></a> applies the Canny edge detection algorithm, and <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py"><code class="docutils literal notranslate"><span class="pre">dilate</span></code></a> dilates the edges.</em></p>
+<div><p><em>For technical readers: <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_image/image_to_from_file_gui.py"><code class="docutils literal notranslate"><span class="pre">image_from_file</span></code></a> is a function that reads an image from a file, <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py"><code class="docutils literal notranslate"><span class="pre">canny</span></code></a> applies the Canny edge detection algorithm, and <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/opencv_wrappers.py"><code class="docutils literal notranslate"><span class="pre">dilate</span></code></a> dilates the edges.</em></p>
 </div></blockquote>
 </section>
 <section id="data-visualization-with-matplotlib-and-implot">
@@ -604,15 +606,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/7cc20adf37f5675a574a8d65c9026aec1341cf15d0ce836ada9601ccc237b885.png" src="_images/7cc20adf37f5675a574a8d65c9026aec1341cf15d0ce836ada9601ccc237b885.png" />
-</div>
 </div>
 <blockquote>
 <div><p><em>For technical readers:</em></p>
 <ul class="simple">
-<li><p>when a function returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code>, its output will be displayed as a plot. See demo_matplotlib.py <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_matplotlib/demo_matplotlib.py">source code</a>.*</p></li>
-<li><p>when a function returns a <code class="docutils literal notranslate"><span class="pre">fiat_implot.FloatMatrix_Dim1</span></code> or <code class="docutils literal notranslate"><span class="pre">fiat_implot.FloatMatrix_Dim2</span></code> (which are aliases for np.ndarray), its output will be displayed as a plot, using <a class="reference external" href="https://github.com/epezent/implot">ImPlot</a>. See demo_implot <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_implot/demo_implot.py">source code</a>.</p></li>
+<li><p>when a function returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code>, its output will be displayed as a plot. See demo_matplotlib.py <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_matplotlib/demo_matplotlib.py">source code</a>.*</p></li>
+<li><p>when a function returns a <code class="docutils literal notranslate"><span class="pre">fiat_implot.FloatMatrix_Dim1</span></code> or <code class="docutils literal notranslate"><span class="pre">fiat_implot.FloatMatrix_Dim2</span></code> (which are aliases for np.ndarray), its output will be displayed as a plot, using <a class="reference external" href="https://github.com/epezent/implot">ImPlot</a>. See demo_implot <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_implot/demo_implot.py">source code</a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/epezent/implot">ImPlot</a> is a plotting library for Dear ImGui. It is often faster than Matplotlib, and can be used in real-time applications. For a complete demo of ImPlot, click here: <a class="reference external" href="https://traineq.org/implot_demo/src/implot_demo.html">ImPlot complete demo</a>*</p></li>
 </ul>
 </div></blockquote>
@@ -626,9 +625,6 @@ document.write(`
 <span class="n">dataframe_with_gui_demo_titanic</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/259b54b46deb85d896d6fced7006cd52c7a0e6e4d7163b64d301e944ff44642e.png" src="_images/259b54b46deb85d896d6fced7006cd52c7a0e6e4d7163b64d301e944ff44642e.png" />
 </div>
 </div>
 </section>
@@ -646,12 +642,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d323bd9dc6044ca8823922f815c18bff", "version_major": 2, "version_minor": 0}</script><img alt="_images/2221aff007938631c1321b57f00beb2e4d4ad00ca51d687992d7c29e0d73d362.png" src="_images/2221aff007938631c1321b57f00beb2e4d4ad00ca51d687992d7c29e0d73d362.png" />
-</div>
 </div>
 <blockquote>
-<div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">invoke_sdxl_turbo</span></code> uses HuggingFace’s diffuser library to invoke stable diffusion. See its <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py">source code</a></em></p>
+<div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">invoke_sdxl_turbo</span></code> uses HuggingFace’s diffuser library to invoke stable diffusion. See its <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_ai/invoke_sdxl_turbo.py">source code</a></em></p>
 </div></blockquote>
 </section>
 <section id="audio-processing-experimental">
@@ -664,12 +657,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/759cd5bd5fe110be144b33e1bede5b924ffc1e818611d235e1a9f59975119f91.png" src="_images/759cd5bd5fe110be144b33e1bede5b924ffc1e818611d235e1a9f59975119f91.png" />
-</div>
 </div>
 <blockquote>
-<div><p><em>For technical readers: See demo_audio_processing <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/demos/demo_audio_processing.py">source code</a></em></p>
+<div><p><em>For technical readers: See demo_audio_processing <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/demos/demo_audio_processing.py">source code</a></em></p>
 </div></blockquote>
 </section>
 </section>
@@ -685,14 +675,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/b377519682c9a9972619b928547f2d4523b322a682602609baf7680ab6d1581b.png" src="_images/b377519682c9a9972619b928547f2d4523b322a682602609baf7680ab6d1581b.png" />
-</div>
 </div>
 <blockquote>
 <div><p><em>For technical readers: demo_word_count will simply chain the following string functions:
 <code class="docutils literal notranslate"><span class="pre">text_from_file,</span> <span class="pre">str_lower,</span> <span class="pre">split_words,</span> <span class="pre">filter_out_short_words,</span>&#160;&#160;&#160;&#160; <span class="pre">sort_words,</span> <span class="pre">run_length_encode,</span> <span class="pre">sort_word_with_counts</span></code>.
-See its <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/string/demo_word_count.py">source</a></em></p>
+See its <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/string/demo_word_count.py">source</a></em></p>
 </div></blockquote>
 </section>
 <section id="examine-and-understand-function-internals">
@@ -709,12 +696,9 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/4b06d2424e760fa032c58629836cf42ee46843fdd248f509270c710ff6783a6f.png" src="_images/4b06d2424e760fa032c58629836cf42ee46843fdd248f509270c710ff6783a6f.png" />
-</div>
 </div>
 <blockquote>
-<div><p><em>For technical readers: the function <code class="docutils literal notranslate"><span class="pre">add_toon_edges</span></code> has an attribute <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> that contains the internal variables that will be displayed. See <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/images/toon_edges.py">demos/images/toon_edges.py</a>.</em></p>
+<div><p><em>For technical readers: the function <code class="docutils literal notranslate"><span class="pre">add_toon_edges</span></code> has an attribute <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> that contains the internal variables that will be displayed. See <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/toon_edges.py">demos/images/toon_edges.py</a>.</em></p>
 </div></blockquote>
 </section>
 <section id="replay-and-debug-function-errors">
@@ -737,9 +721,6 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/2b2ee623a823cb5fef472983db0a0f9730a0280a8dbb75b562d576640057ada4.png" src="_images/2b2ee623a823cb5fef472983db0a0f9730a0280a8dbb75b562d576640057ada4.png" />
-</div>
 </div>
 <blockquote>
 <div><p><em>For technical readers: the function <code class="docutils literal notranslate"><span class="pre">log</span></code> will raise an error when x is negative. Once you click on the “Debug this exception” button, you will be able to debug it:</em></p>
@@ -755,7 +736,7 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <p>The application below, demonstrate how you can use Fiatlight GUI capabilities to edit complex data. The GUI definition was created automatically, from the data definition (including the validation rules, in yellow).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.full_fledged_app</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.tutorials.pydantic_gui</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
 <span class="c1"># demo_basemodel_app.main()</span>
 </pre></div>
 </div>
@@ -763,7 +744,7 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </div>
 <p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
 <blockquote>
-<div><p><em>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_basemodel_app.py">source code</a> for demo_basemodel_app.py</em>. The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
+<div><p><em>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/tutorials/pydantic_gui/demo_basemodel_app.py">source code</a> for demo_basemodel_app.py</em>. The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
 </div></blockquote>
 </section>
 <section id="applications-with-advanced-gui">
@@ -785,7 +766,7 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 <p><img alt="img.png" src="_images/demo_image_processors_app.png" /></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_image_processors_app.py">source code</a> for demo_image_processors_app.py*.</p></li>
+<li><p>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/full_fledged_app/demo_image_processors_app.py">source code</a> for demo_image_processors_app.py*.</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -804,7 +785,7 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </div>
 <p><img alt="custom graph" src="_images/custom_graph.jpg" /></p>
 <blockquote>
-<div><p><em>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/demos/custom_graph/demo_custom_graph.py">source code</a> for custom_graph.py</em></p>
+<div><p><em>For technical readers: See the <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/custom_graph/demo_custom_graph.py">source code</a> for custom_graph.py</em></p>
 </div></blockquote>
 </section>
 <section id="custom-widgets">
@@ -819,12 +800,9 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/7f7363266e40e8632a871e312a94220545a5613c63e5f69f02a250cad00d8609.png" src="_images/7f7363266e40e8632a871e312a94220545a5613c63e5f69f02a250cad00d8609.png" />
-</div>
 </div>
 <blockquote>
-<div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">sound_wave_from_file</span></code> is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py">source code</a></em></p>
+<div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">sound_wave_from_file</span></code> is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py">source code</a></em></p>
 </div></blockquote>
 </section>
 <section id="a-sneak-peek-at-the-future-desktop-notebooks">
@@ -848,6 +826,58 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="comparable-frameworks">
 <h1>Comparable Frameworks<a class="headerlink" href="#comparable-frameworks" title="Link to this heading">#</a></h1>
+<p>Fiatlight combines the strengths of several other tools and frameworks, while trying to provide a more integrated and flexible solution, making it suitable for both beginners and advanced users.</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://scratch.mit.edu/">Scratch</a></strong>: For visual graph creation.</p></li>
+<li><p><strong><a class="reference external" href="https://jupyter.org/">Jupyter</a></strong>: For interactive data exploration.</p></li>
+<li><p><strong><a class="reference external" href="https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/">Unity Blueprints</a></strong>: For visual scripting and custom widgets.</p></li>
+<li><p><strong><a class="reference external" href="https://streamlit.io/">Python Streamlit</a></strong> &amp; <strong><a class="reference external" href="https://plotly.com/dash/">Dash</a></strong>: For easy app creation with integrated GUI elements.</p></li>
+<li><p><strong><a class="reference external" href="https://ryven.org/">Ryven</a></strong>: For advanced graph creation.</p></li>
+<li><p><strong><a class="reference external" href="https://github.com/comfyanonymous/ComfyUI">Comfy UI</a></strong>: For AI workflow integration.</p></li>
+<li><p><strong><a class="reference external" href="https://www.lego.com/en-us/themes/mindstorms/about">LEGO Mindstorms</a></strong>: For educational and creative applications.</p></li>
+</ul>
+<blockquote>
+<div><p>Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:</p>
+<p><strong>Pros</strong></p>
+<ul class="simple">
+<li><p>its advanced introspection capabilities, which enable the automatic creation of a graphical interface</p></li>
+<li><p>its ability to visualize the intermediate states of a function</p></li>
+<li><p>its ability to replay errors</p></li>
+<li><p>its ability to automatically save and restore the state of an application, and to save and reload several states per application</p></li>
+<li><p>its speed and efficiency, thanks to the fact that the rendering is done in C++ with ImGui and OpenGL</p></li>
+<li><p>its use of the immediate mode GUI paradigm, which makes it easy to create very adaptive and responsive GUIs</p></li>
+<li><p>its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitioning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul class="simple">
+<li><p>Fiatlight does work on Jupyter notebooks (this document is actually a Jupyter notebook). However, it requires a local computer (and will not work on Google Colab, for example). Solutions for this are being explored.</p></li>
+</ul>
+</div></blockquote>
+<p>Note: detailed comparisons with scratch, ipywidgets, and streamlit can be found in the <a class="reference internal" href="comparisons.html"><span class="doc std std-doc">comparisons</span></a> document.</p>
+<blockquote>
+<div><p><em>For technical readers: <code class="docutils literal notranslate"><span class="pre">sound_wave_from_file</span></code> is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its <a class="reference external" href="https://github.com/pthom/fiatlight/blob/refact_io/src/python/fiatlight/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py">source code</a></em></p>
+</div></blockquote>
+<section id="id1">
+<h2>A sneak peek at the future: desktop Notebooks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The advanced GUI creation capabilities of Fiatlight might make it possible to consider providing an alternative renderer for Jupyter notebooks, using Fiatlight highly interactive widgets. They would run outside the browser, and may provide a more desktop-like experience for some notebooks.</p>
+<p><img alt="cell.png" src="_images/nb_cell.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>Use Cases<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p>Fiatlight is well-adapted for:</p>
+<ul class="simple">
+<li><p><strong>App Prototyping</strong>: Quickly prototype and develop robust applications.</p></li>
+<li><p><strong>Fine-Tuning and Debugging</strong>: Leverage Fiatlight as a powerful tool for fine-tuning your applications and shining light on all the intermediate states of your algorithms.</p></li>
+<li><p><strong>Education</strong>: Teach programming and data analysis with interactive tools.</p></li>
+<li><p><strong>Data Exploration</strong>: Engage in interactive exploration and visualization of complex datasets.</p></li>
+<li><p><strong>AI Development</strong>: Build and visualize sophisticated AI models and algorithms.</p></li>
+<li><p><strong>App Development</strong>: Since it is based on Dear ImGui, prototypes developed with fiatlight can serve as a basis for full-fledged applications. Those application may then also be translated to C++ with little effort, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>Comparable Frameworks<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
 <p>Fiatlight combines the strengths of several other tools and frameworks, while trying to provide a more integrated and flexible solution, making it suitable for both beginners and advanced users.</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://scratch.mit.edu/">Scratch</a></strong>: For visual graph creation.</p></li>
@@ -964,7 +994,12 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/b
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">A sneak peek at the future: desktop Notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Use Cases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Comparable Frameworks</a></li>
 </ul>
 
   </nav></div>
