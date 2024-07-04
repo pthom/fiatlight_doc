@@ -1,0 +1,114 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "generate_data": {
+                "value": {
+                    "name": "value",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 3
+                    }
+                }
+            },
+            "write_to_file": {}
+        }
+    },
+    "gui_options": {
+        "generate_data": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": true,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "value": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {
+                                "width_em": 15.0,
+                                "size_multiline_em": [
+                                    60.0,
+                                    15.0
+                                ],
+                                "wrap_multiline": false,
+                                "wrap_multiline_width": 80
+                            },
+                            "expanded": true
+                        }
+                    }
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "value": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {
+                            "width_em": 15.0,
+                            "size_multiline_em": [
+                                60.0,
+                                15.0
+                            ],
+                            "wrap_multiline": false,
+                            "wrap_multiline_width": 80
+                        },
+                        "expanded": true
+                    }
+                }
+            }
+        },
+        "write_to_file": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": true,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "data": {
+                            "cb_options": {
+                                "width_em": 15.0,
+                                "size_multiline_em": [
+                                    60.0,
+                                    15.0
+                                ],
+                                "wrap_multiline": false,
+                                "wrap_multiline_width": 80
+                            },
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {}
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "data": {
+                        "cb_options": {
+                            "width_em": 15.0,
+                            "size_multiline_em": [
+                                60.0,
+                                15.0
+                            ],
+                            "wrap_multiline": false,
+                            "wrap_multiline_width": 80
+                        },
+                        "expanded": false
+                    }
+                },
+                "outputs": {}
+            }
+        }
+    }
+}

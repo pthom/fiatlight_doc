@@ -134,7 +134,6 @@ From idea to app in 3 minutes ...
 
 -----------
 
-------------
 
 # Done High-Level Overview of Fiatlight Framework
 ## Done Class Diagrams
@@ -161,6 +160,4 @@ From idea to app in 3 minutes ...
 ## Done FunctionsGraph
 
 ## Done Gui Registry
-
------------
 

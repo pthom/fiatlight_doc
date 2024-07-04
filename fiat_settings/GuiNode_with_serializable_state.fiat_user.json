@@ -1,0 +1,88 @@
+{
+    "user_inputs": {
+        "functions_nodes": {
+            "input_x": {
+                "x": {
+                    "name": "x",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 2
+                    }
+                }
+            },
+            "gui_x_times_factor": {}
+        }
+    },
+    "gui_options": {
+        "input_x": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": false,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "x": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    },
+                    "outputs": {
+                        "0": {
+                            "cb_options": {},
+                            "expanded": true
+                        }
+                    }
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "x": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                },
+                "outputs": {
+                    "0": {
+                        "cb_options": {},
+                        "expanded": true
+                    }
+                }
+            }
+        },
+        "gui_x_times_factor": {
+            "function_node_with_gui": {
+                "_inputs_expanded": true,
+                "_outputs_expanded": true,
+                "_doc_expanded": false,
+                "fiat_tuning_expanded": true,
+                "_internal_state_gui_expanded": true,
+                "_function_node": {
+                    "inputs": {
+                        "x": {
+                            "cb_options": {},
+                            "expanded": false
+                        }
+                    },
+                    "outputs": {},
+                    "internal_gui_options": {
+                        "factor": 7
+                    }
+                }
+            },
+            "function_node": {
+                "inputs": {
+                    "x": {
+                        "cb_options": {},
+                        "expanded": false
+                    }
+                },
+                "outputs": {},
+                "internal_gui_options": {
+                    "factor": 7
+                }
+            }
+        }
+    }
+}

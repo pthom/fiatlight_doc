@@ -31,6 +31,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": false,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -53,8 +54,7 @@
                             "cb_options": {},
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -77,8 +77,7 @@
                         "cb_options": {},
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

@@ -21,7 +21,7 @@
                     "name": "t_lower",
                     "data": {
                         "type": "Primitive",
-                        "value": 11530.0
+                        "value": 3728.0
                     }
                 },
                 "t_upper": {
@@ -83,6 +83,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -101,8 +102,7 @@
                             "cb_options": {},
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -121,14 +121,14 @@
                         "cb_options": {},
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "canny": {
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -224,15 +224,15 @@
                                             "UseStatsMax": false,
                                             "UseStatsMin": false
                                         },
-                                        "ColormapScaleMax": 71.34904655815326,
-                                        "ColormapScaleMin": -56.647951594618526,
+                                        "ColormapScaleMax": 74.79299147172688,
+                                        "ColormapScaleMin": -58.74739463384916,
                                         "internal_ColormapHovered": ""
                                     },
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 241,
-                                        "width": 300
+                                        "height": 300,
+                                        "width": 423
                                     },
                                     "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
@@ -250,12 +250,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.6547807574090724,
+                                        "00": 0.8849061200421473,
                                         "01": 0.0,
-                                        "02": -874.4879656627804,
+                                        "02": -1188.175589872575,
                                         "10": 0.0,
-                                        "11": 0.6547807574090724,
-                                        "12": -558.8652582917812,
+                                        "11": 0.8849061200421473,
+                                        "12": -725.7748450391712,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -267,8 +267,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -364,15 +363,15 @@
                                         "UseStatsMax": false,
                                         "UseStatsMin": false
                                     },
-                                    "ColormapScaleMax": 71.34904655815326,
-                                    "ColormapScaleMin": -56.647951594618526,
+                                    "ColormapScaleMax": 74.79299147172688,
+                                    "ColormapScaleMin": -58.74739463384916,
                                     "internal_ColormapHovered": ""
                                 },
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 241,
-                                    "width": 300
+                                    "height": 300,
+                                    "width": 423
                                 },
                                 "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
@@ -390,12 +389,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.6547807574090724,
+                                    "00": 0.8849061200421473,
                                     "01": 0.0,
-                                    "02": -874.4879656627804,
+                                    "02": -1188.175589872575,
                                     "10": 0.0,
-                                    "11": 0.6547807574090724,
-                                    "12": -558.8652582917812,
+                                    "11": 0.8849061200421473,
+                                    "12": -725.7748450391712,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -407,14 +406,14 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "dilate": {
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -502,15 +501,15 @@
                                             "UseStatsMax": false,
                                             "UseStatsMin": false
                                         },
-                                        "ColormapScaleMax": 156.6418453740996,
-                                        "ColormapScaleMin": -94.16906066470128,
+                                        "ColormapScaleMax": 162.99362369030524,
+                                        "ColormapScaleMin": -95.77932822129955,
                                         "internal_ColormapHovered": ""
                                     },
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 285,
-                                        "width": 318
+                                        "height": 422,
+                                        "width": 453
                                     },
                                     "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
@@ -528,12 +527,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.6940676028536167,
+                                        "00": 0.9476654193359166,
                                         "01": 0.0,
-                                        "02": -926.9572436025471,
+                                        "02": -1272.4433622039635,
                                         "10": 0.0,
-                                        "11": 0.6940676028536167,
-                                        "12": -577.627173789288,
+                                        "11": 0.9476654193359166,
+                                        "12": -726.8865361767012,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -545,8 +544,7 @@
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -634,15 +632,15 @@
                                         "UseStatsMax": false,
                                         "UseStatsMin": false
                                     },
-                                    "ColormapScaleMax": 156.6418453740996,
-                                    "ColormapScaleMin": -94.16906066470128,
+                                    "ColormapScaleMax": 162.99362369030524,
+                                    "ColormapScaleMin": -95.77932822129955,
                                     "internal_ColormapHovered": ""
                                 },
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 285,
-                                    "width": 318
+                                    "height": 422,
+                                    "width": 453
                                 },
                                 "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
@@ -660,12 +658,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.6940676028536167,
+                                    "00": 0.9476654193359166,
                                     "01": 0.0,
-                                    "02": -926.9572436025471,
+                                    "02": -1272.4433622039635,
                                     "10": 0.0,
-                                    "11": 0.6940676028536167,
-                                    "12": -577.627173789288,
+                                    "11": 0.9476654193359166,
+                                    "12": -726.8865361767012,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -677,8 +675,7 @@
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

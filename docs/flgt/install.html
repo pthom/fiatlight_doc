@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'install';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorials.html" />
+    <link rel="next" title="Manual" href="manual.html" />
     <link rel="prev" title="A Mature Tech stack on top of Dear ImGui" href="imgui_tech_stack.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,42 +184,45 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_first.html">First Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_cli.html">fiatlight command line utility: explore the available widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_validation.html">Validate function inputs with Fiatlight</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_advanced.html">Advanced Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_new_widget.html">How to create a fully customizable new widget.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials_demos.html">Run the demos</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_architecture.html">Fiatlight Architecture</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="any_data_with_gui.html">AnyDataWithGui</a></li>
-<li class="toctree-l2"><a class="reference internal" href="any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions_graph.html">FunctionsGraph</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="fiat_togui.html">Gui Registry &amp; Custom Types</a></li>
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="api_function_with_gui.html">FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_with_gui.html">AnyDataWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_any_data_gui_callbacks.html">AnyDataGuiCallbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_functions_graph.html">FunctionsGraph</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="fiat_kits.html">Fiatlight Kits</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -229,9 +232,6 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Fiatlight Architecture</a></li>
-
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
@@ -435,6 +435,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-source">Installation from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-imgui-bundle-from-the-main-branch">Install imgui-bundle (from the main branch)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-pypi">Installation from PyPI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-optional-dependencies">Install optional dependencies</a></li>
 </ul>
@@ -471,11 +472,34 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="install-imgui-bundle-from-the-main-branch">
+<h2>Install imgui-bundle (from the main branch)<a class="headerlink" href="#install-imgui-bundle-from-the-main-branch" title="Link to this heading">#</a></h2>
+<p>Fiatlight relies on imgui-bundle, and will depend on the latest version on the main branch (version 1.5.2 from pypi is not sufficient).</p>
+<p>To install it, you can</p>
+<ul class="simple">
+<li><p>either clone it and install it from source:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pthom</span><span class="o">/</span><span class="n">imgui_bundle</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">imgui_bundle</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> <span class="c1"># (1)</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">.</span> <span class="c1"># (2)</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pyGLM</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>or download pre-compiled recent wheels from here: <a class="github reference external" href="https://github.com/pthom/imgui_bundle/actions/workflows/wheels.yml">pthom/imgui_bundle</a></p></li>
+</ul>
+</section>
 <section id="installation-from-pypi">
 <h2>Installation from PyPI<a class="headerlink" href="#installation-from-pypi" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be done</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Not available yet</span>
 </pre></div>
 </div>
 </div>
@@ -490,6 +514,8 @@ document.write(`
 <li><p>requirements-audio.txt: requirements for audio demos</p></li>
 <li><p>requirements-dev.txt: requirements for development</p></li>
 </ul>
+<p>Note: for AI demos, you will have to install torch manually, as its installation is dependent on your system configuration.
+See <a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a> (you will of course need a GPU to run the demos)</p>
 </section>
 </section>
 
@@ -533,11 +559,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="tutorials.html"
+       href="manual.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorials</p>
+        <p class="prev-next-title">Manual</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -558,6 +584,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-source">Installation from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-imgui-bundle-from-the-main-branch">Install imgui-bundle (from the main branch)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-pypi">Installation from PyPI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-optional-dependencies">Install optional dependencies</a></li>
 </ul>

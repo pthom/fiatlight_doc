@@ -41,6 +41,7 @@
             "function_node_with_gui": {
                 "_inputs_expanded": true,
                 "_outputs_expanded": true,
+                "_doc_expanded": true,
                 "fiat_tuning_expanded": false,
                 "_internal_state_gui_expanded": true,
                 "_function_node": {
@@ -74,8 +75,8 @@
                         "0": {
                             "cb_options": {
                                 "widget_size_em": [
-                                    52.96178436279297,
-                                    15.06606674194336
+                                    74.06389617919922,
+                                    69.66666412353516
                                 ],
                                 "column_widths_em": {
                                     "PassengerId": 3.799999952316284,
@@ -91,15 +92,14 @@
                                     "Cabin": 3.133333444595337,
                                     "Embarked": 2.133333444595337
                                 },
-                                "rows_per_page_node": 10,
+                                "rows_per_page_node": 45,
                                 "rows_per_page_classic": 20,
                                 "current_page_start_idx": 0,
                                 "sort_by": []
                             },
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
+                    }
                 }
             },
             "function_node": {
@@ -133,8 +133,8 @@
                     "0": {
                         "cb_options": {
                             "widget_size_em": [
-                                52.96178436279297,
-                                15.06606674194336
+                                74.06389617919922,
+                                69.66666412353516
                             ],
                             "column_widths_em": {
                                 "PassengerId": 3.799999952316284,
@@ -150,15 +150,14 @@
                                 "Cabin": 3.133333444595337,
                                 "Embarked": 2.133333444595337
                             },
-                            "rows_per_page_node": 10,
+                            "rows_per_page_node": 45,
                             "rows_per_page_classic": 20,
                             "current_page_start_idx": 0,
                             "sort_by": []
                         },
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }
