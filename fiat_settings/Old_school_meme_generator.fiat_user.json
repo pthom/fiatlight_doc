@@ -48,11 +48,26 @@
     "gui_options": {
         "invoke_sdxl_turbo": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "prompt": {
@@ -96,10 +111,9 @@
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 338,
-                                        "width": 352
+                                        "height": 303,
+                                        "width": 303
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -115,12 +129,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.5896072338105596,
+                                        "00": 0.591796875,
                                         "01": 0.0,
-                                        "02": 17.997823533154484,
+                                        "02": 1.6819878823071122e-14,
                                         "10": 0.0,
-                                        "11": 0.5896072338105596,
-                                        "12": 11.845137465596432,
+                                        "11": 0.591796875,
+                                        "12": 0.0,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -133,7 +147,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -178,10 +197,9 @@
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 338,
-                                    "width": 352
+                                    "height": 303,
+                                    "width": 303
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
@@ -197,12 +215,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.5896072338105596,
+                                    "00": 0.591796875,
                                     "01": 0.0,
-                                    "02": 17.997823533154484,
+                                    "02": 1.6819878823071122e-14,
                                     "10": 0.0,
-                                    "11": 0.5896072338105596,
-                                    "12": 11.845137465596432,
+                                    "11": 0.591796875,
+                                    "12": 0.0,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0
@@ -219,11 +237,26 @@
         },
         "add_meme_text": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -249,7 +282,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -352,7 +384,6 @@
                                         "height": 459,
                                         "width": 520
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -368,12 +399,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.8710106863110539,
+                                        "00": 1.015625,
                                         "01": 0.0,
-                                        "02": 26.587693855796402,
+                                        "02": 0.0,
                                         "10": 0.0,
-                                        "11": 0.8710106863110539,
-                                        "12": -2.660592380368911,
+                                        "11": 1.015625,
+                                        "12": -30.5,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -386,7 +417,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -413,7 +449,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -516,7 +551,6 @@
                                     "height": 459,
                                     "width": 520
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
@@ -532,12 +566,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.8710106863110539,
+                                    "00": 1.015625,
                                     "01": 0.0,
-                                    "02": 26.587693855796402,
+                                    "02": 0.0,
                                     "10": 0.0,
-                                    "11": 0.8710106863110539,
-                                    "12": -2.660592380368911,
+                                    "11": 1.015625,
+                                    "12": -30.5,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0

@@ -143,5 +143,5 @@ def generate_book_pdf() -> None:
 
 if __name__ == "__main__":
     generate_doc_notebooks()
-    generate_book_html()
     generate_book_pdf()
+    generate_book_html()

@@ -579,7 +579,7 @@ The fiat_tuning attribute can also be used to display widgets (which must be des
 
 In the example below, we will add an image widget (ImageWithGui) into the fiat_tuning attribute. 
 
-> _[demos/images/toon_edges.py](FL_GH_REPO/demos/images/toon_edges.py) is a good example of how to use the `fiat_tuning` attribute._
+> _[demos/images/toon_edges.py](FL_GH_ROOT/demos/images/toon_edges.py) is a good example of how to use the `fiat_tuning` attribute._
 > 
 > _`add_toon_edges` is a complex function that adds a toon effect to an image, by adding colored edges to the image contours._
 > _The contour detection is extremely sensitive to the parameters, and the `fiat_tuning` attribute is used to display the intermediate states of the function in the GUI._

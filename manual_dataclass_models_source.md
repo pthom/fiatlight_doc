@@ -89,7 +89,7 @@ class TrainingImage(BaseModel):
 def process_image(image: TrainingImage) -> tuple[str, ImageU8_3]:
     import os
     basename = os.path.basename(image.image_path)
-    img = cv2.imread(image.image_path)
+    img = fl.imread_rgb(image.image_path)
     return basename, img
 
 # Note: this app *will* remember the values of the Pydantic model fields between runs
