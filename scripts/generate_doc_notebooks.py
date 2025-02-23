@@ -142,6 +142,12 @@ def generate_book_pdf() -> None:
 
 
 if __name__ == "__main__":
+    import sys
+    gen_pdf = (len(sys.argv) > 1 and sys.argv[1] == "pdf")
+
     generate_doc_notebooks()
-    generate_book_html()
-    generate_book_pdf()
+    if gen_pdf:
+        print("Generating PDF")
+        generate_book_pdf()
+    else:
+        generate_book_html()
