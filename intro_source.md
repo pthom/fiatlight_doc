@@ -1,18 +1,36 @@
 #  Fiatlight: Brighten the Journey from Idea to Creation
 
+*Expressive Code, Instant Applications*
 
-Fiatlight is a user-friendly tool that helps you transform your ideas into fully functional applications, using minimal code, or a drag-and-drop interface. The delay between an idea and a full application may be reduced to a few minutes.
-
+Fiatlight is a user-friendly tool that helps you transform your ideas into fully functional applications, using minimal code. The delay between an idea and a full application may be reduced to a few minutes. Whether you're working with functions or structured data, FiatLight automatically generates reusable GUIs with minimal effort.
 
 > *For technical readers:*
 >
-> *Fiatlight is a versatile Python framework that enables rapid development and visualization of applications by chaining functions into interactive graphs. It features automatic GUI generation for diverse data types, including primitive type, images, audio (...), and provides powerful debugging tools. It generates full applications that can save their state and presentation options.*
+> FiatLight provides automatic UI generation for functions and structured data, making it a powerful tool for rapid prototyping and application development.
+>
+>    * Immediate Widgets: Instantly edit and visualize any object in a GUI (BaseModel, int, str, etc.), with fine-grained customization.
+>    * Function Pipelines: Chain functions into interactive graphs for seamless application flow.
+>    * Built-in Validation & Debugging: Enforce constraints at runtime and visually inspect data.
+>    * State Persistence: Save and restore application state, ensuring a fluid user experience.
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
 # Key Features and examples
 
-## Create an GUI for any function
+## Create a GUI for structured data
+
+In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).
+
+```python
+from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
+# demo_basemodel_app.main()
+```
+
+![img.png](_static/images/demo_basemodel_app.png)
+
+> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
+
+## Create a GUI for any function
 
 Simply call `fl.run` with a function or a list of functions, and Fiatlight will automatically generate a GUI for them.
 
@@ -20,11 +38,12 @@ Simply call `fl.run` with a function or a list of functions, and Fiatlight will 
 # Part 1: Standard Python code (no user interface)
 # ------------------------------------------------
 import numpy as np
-from matplotlib.figure import Figure
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-def lissajous_curve(freq1: float = 5.0, freq2: float = 4.0, delta: float = np.pi / 2, nb_periods: float = 1) -> Figure:
+def lissajous_curve(freq1: float = 5.0, freq2: float = 4.0, delta: float = np.pi / 2, nb_periods: float = 1) -> plt.Figure:
     """Creates a Lissajous curve, and returns a Matplotlib figure."""
     t = np.linspace(0, 2 * np.pi * nb_periods, 10_000)
     x = np.sin(freq1 * t + delta)
@@ -141,16 +160,6 @@ fl.run([invoke_sdxl_turbo, lut_channels_in_colorspace, add_toon_edges], app_name
 
 >*For technical readers: `invoke_sdxl_turbo` uses HuggingFace's diffuser library to invoke stable diffusion. See its [source code](FL_GH_ROOT/fiat_kits/fiat_ai/invoke_sdxl_turbo.py)*
 
-### Audio processing (experimental)
-
-*Example: the application below is a demo where you can sing into the microphone and see information about the note you're singing + advanced graphs using librosa.*
-
-```python
-from fiatlight.fiat_kits.experimental.fiat_audio_simple.demos import demo_audio_processing
-demo_audio_processing.main()
-```
-
->*For technical readers: See demo_audio_processing [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/demos/demo_audio_processing.py)*
 
 ## Visualize, Understand, Innovate
 
@@ -214,18 +223,6 @@ fl.run([float_source, sin, log], app_name="Replay error")
 
 Besides being extremely powerful to generate function graphs, Fiatlight's powerful GUI capabilities can also help you generate sophisticated classic applications.
 
-### Sophisticated widgets and data validation
-The application below, demonstrate how you can use Fiatlight GUI capabilities to edit complex data. The GUI definition was created automatically, from the data definition (including the validation rules, in yellow).
-
-```python
-from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
-# demo_basemodel_app.main()
-```
-
-![img.png](_static/images/demo_basemodel_app.png)
-
-> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
-
 ### Applications with advanced GUI
 
 The example below shows an application which: 
@@ -272,13 +269,6 @@ fl.run(sound_wave_from_file, app_name="Sound Wave Player")
 ```
 
 > *For technical readers: `sound_wave_from_file` is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)*
-
-
-## A sneak peek at the future: desktop Notebooks
-
-The advanced GUI creation capabilities of Fiatlight might make it possible to consider providing an alternative renderer for Jupyter notebooks, using Fiatlight highly interactive widgets. They would run outside the browser, and may provide a more desktop-like experience for some notebooks.
-
-![cell.png](_static/images/nb_cell.png)
 
 
 ---------------------------------------------------------------------------------------------------

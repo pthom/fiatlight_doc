@@ -8,12 +8,6 @@
                         "type": "Primitive",
                         "value": "/Users/pascal/Pictures/p16bmhkurhwa1.jpg"
                     }
-                },
-                "convert_bgr_to_rgb": {
-                    "name": "convert_bgr_to_rgb",
-                    "data": {
-                        "type": "Unspecified"
-                    }
                 }
             },
             "canny": {
@@ -81,18 +75,29 @@
     "gui_options": {
         "image_from_file": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "path": {
-                            "cb_options": {},
-                            "expanded": false
-                        },
-                        "convert_bgr_to_rgb": {
                             "cb_options": {},
                             "expanded": false
                         }
@@ -103,15 +108,16 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
                     "path": {
-                        "cb_options": {},
-                        "expanded": false
-                    },
-                    "convert_bgr_to_rgb": {
                         "cb_options": {},
                         "expanded": false
                     }
@@ -126,11 +132,26 @@
         },
         "canny": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -156,7 +177,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -234,7 +254,6 @@
                                         "height": 300,
                                         "width": 423
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -268,7 +287,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -295,7 +319,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -373,7 +396,6 @@
                                     "height": 300,
                                     "width": 423
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
@@ -411,11 +433,26 @@
         },
         "dilate": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -441,7 +478,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -511,7 +547,6 @@
                                         "height": 422,
                                         "width": 453
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -545,7 +580,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -572,7 +612,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -642,7 +681,6 @@
                                     "height": 422,
                                     "width": 453
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,

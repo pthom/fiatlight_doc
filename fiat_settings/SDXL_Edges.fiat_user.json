@@ -87,9 +87,9 @@
                                 "blur_sigma": 1.6069999933242798,
                                 "intensity": 0.7900000214576721,
                                 "color": [
-                                    20,
-                                    47,
-                                    151
+                                    11,
+                                    74,
+                                    203
                                 ]
                             }
                         }
@@ -101,11 +101,26 @@
     "gui_options": {
         "invoke_sdxl_turbo": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "prompt": {
@@ -152,7 +167,6 @@
                                         "height": 352,
                                         "width": 306
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -186,7 +200,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -234,7 +253,6 @@
                                     "height": 352,
                                     "width": 306
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
@@ -272,11 +290,26 @@
         },
         "lut_channels_in_colorspace": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -302,7 +335,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -384,7 +416,6 @@
                                         "height": 307,
                                         "width": 319
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -418,7 +449,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -445,7 +481,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -527,7 +562,6 @@
                                     "height": 307,
                                     "width": 319
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
@@ -565,11 +599,26 @@
         },
         "add_toon_edges": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -595,7 +644,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -717,7 +765,6 @@
                                         "height": 430,
                                         "width": 404
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": false,
                                     "SelectedChannel": -1,
@@ -751,7 +798,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -778,7 +830,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -900,7 +951,6 @@
                                     "height": 430,
                                     "width": 404
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": false,
                                 "SelectedChannel": -1,
