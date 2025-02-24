@@ -5,8 +5,9 @@ format: jb-book
 root: intro
 
 chapters:
-  - file: imgui_tech_stack
+#  - file: imgui_tech_stack
   - file: install
+  - file: video_tutorials
   - file: manual
     sections:
       - file: manual_first
@@ -37,4 +38,3 @@ chapters:
       - file: comparison_streamlit
       - file: comparison_dash
       - file: comparison_ipywidgets
-  - file: rosetta

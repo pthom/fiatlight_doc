@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
-    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+    <img src="_static/logo_fiatlight.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/logo_fiatlight.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
   
   
 </a></div>
@@ -178,12 +178,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
@@ -238,7 +234,6 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
 </ul>
 
     </div>
@@ -411,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -427,6 +424,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros"><strong>Pros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cons"><strong>Cons</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -438,7 +444,36 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="comparisons-w-other-frameworks">
 <h1>Comparisons w. other frameworks<a class="headerlink" href="#comparisons-w-other-frameworks" title="Link to this heading">#</a></h1>
+<p>Fiatlight integrates features from various tools into a unified, flexible framework for rapid prototyping and exploration.</p>
+<p>Similar tools dedicated to rapid prototyping, exploration and visualization include:</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://scratch.mit.edu/">Scratch</a></strong>: For visual graph creation.</p></li>
+<li><p><strong><a class="reference external" href="https://jupyter.org/">Jupyter</a></strong>: For interactive data exploration.</p></li>
+<li><p><strong><a class="reference external" href="https://streamlit.io/">Python Streamlit</a></strong> &amp; <strong><a class="reference external" href="https://plotly.com/dash/">Dash</a></strong>: For easy app creation with integrated GUI elements.</p></li>
+<li><p><strong><a class="reference external" href="https://ryven.org/">Ryven</a></strong>: For advanced graph creation.</p></li>
+<li><p><strong><a class="reference external" href="https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/">Unity Blueprints</a></strong>: For visual scripting and custom widgets.</p></li>
+<li><p><strong><a class="reference external" href="https://github.com/comfyanonymous/ComfyUI">Comfy UI</a></strong>: For AI workflow integration.</p></li>
+</ul>
+<p>Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:</p>
+<section id="pros">
+<h2><strong>Pros</strong><a class="headerlink" href="#pros" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Automatic GUI Generation</strong> – Introspects functions &amp; structured data to create interfaces.</p></li>
+<li><p><strong>Live Function State Visualization</strong> – View intermediate values at any step.</p></li>
+<li><p><strong>Error Replay &amp; Debugging</strong> – Reproduce issues with the exact inputs that caused them.</p></li>
+<li><p><strong>State Persistence</strong> – Save &amp; restore multiple application states.</p></li>
+<li><p><strong>High-Performance Rendering</strong> – Uses <strong>Dear ImGui</strong> with C++ and OpenGL for speed.</p></li>
+<li><p><strong>Runs Locally in the Browser</strong> – Can be executed entirely <strong>in-browser via Pyodide</strong>, requiring <strong>no server</strong>.</p></li>
+<li><p><strong>Seamless Transition to Full Applications</strong> – Prototypes can evolve into full <strong>Dear ImGui</strong> apps, with easy migration to C++.</p></li>
+</ul>
+</section>
+<section id="cons">
+<h2><strong>Cons</strong><a class="headerlink" href="#cons" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>No Server-Side Computation</strong> – Cannot rely on a remote server for <strong>heavy computation</strong> (e.g., large AI models like TensorFlow).</p></li>
+</ul>
 <p>An extensive comparison of Fiatlight <a class="reference internal" href="comparison_streamlit.html"><span class="std std-doc">with streamlit</span></a>, <a class="reference internal" href="comparison_dash.html"><span class="std std-doc">with dash</span></a>, and <a class="reference internal" href="comparison_ipywidgets.html"><span class="std std-doc">with ipywidgets</span></a> is available in the subsections.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -498,6 +533,22 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros"><strong>Pros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cons"><strong>Cons</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -507,7 +558,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Pascal Thomet
+By  
 </p>
 
   </div>
@@ -517,7 +568,7 @@ By Pascal Thomet
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025, Pascal Thomet.
       <br/>
     
   </p>

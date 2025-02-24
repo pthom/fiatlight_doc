@@ -5,9 +5,9 @@
 # Main book settings
 # -----------------------------------------------------------
 title: "Fiatlight"
-author: Pascal Thomet
-logo: ../assets/logo/logo.jpg
-copyright: "2024"
+author: " "
+logo: ../assets/logo/logo_fiatlight.jpg
+copyright: "2025, Pascal Thomet"
 
 #
 # Notebook execution during book build

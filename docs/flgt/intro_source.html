@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
-    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
+    <img src="_static/logo_fiatlight.jpg" class="logo__image only-light" alt="Fiatlight - Home"/>
+    <script>document.write(`<img src="_static/logo_fiatlight.jpg" class="logo__image only-dark" alt="Fiatlight - Home"/>`);</script>
   
   
 </a></div>
@@ -178,12 +178,8 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="imgui_tech_stack.html">A Mature Tech stack on top of Dear ImGui</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
@@ -238,7 +234,6 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="rosetta.html">The Rosetta Challenge</a></li>
 </ul>
 
     </div>
@@ -460,8 +455,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-widgets">Custom Widgets</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases"><strong>Use Cases</strong></a></li>
 </ul>
 
             </nav>
@@ -477,18 +471,23 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fiatlight-brighten-the-journey-from-idea-to-creation">
 <h1>Fiatlight: Brighten the Journey from Idea to Creation<a class="headerlink" href="#fiatlight-brighten-the-journey-from-idea-to-creation" title="Link to this heading">#</a></h1>
 <p><em>Expressive Code, Instant Applications</em></p>
-<p>Fiatlight is a user-friendly tool that helps you transform your ideas into fully functional applications, using minimal code. The delay between an idea and a full application may be reduced to a few minutes. Whether you’re working with functions or structured data, FiatLight automatically generates reusable GUIs with minimal effort.</p>
+<p>Fiatlight <strong>bridges the gap between code and UI</strong>, allowing you to turn ideas into <strong>fully functional applications in minutes</strong>. It <strong>automates UI generation</strong> for functions and structured data, making prototyping and fine-tuning faster and easier.</p>
 <blockquote>
 <div><p><em>For technical readers:</em></p>
 <p>FiatLight provides automatic UI generation for functions and structured data, making it a powerful tool for rapid prototyping and application development.</p>
 <ul class="simple">
-<li><p>Immediate Widgets: Instantly edit and visualize any object in a GUI (BaseModel, int, str, etc.), with fine-grained customization.</p></li>
-<li><p>Function Pipelines: Chain functions into interactive graphs for seamless application flow.</p></li>
-<li><p>Built-in Validation &amp; Debugging: Enforce constraints at runtime and visually inspect data.</p></li>
-<li><p>State Persistence: Save and restore application state, ensuring a fluid user experience.</p></li>
+<li><p>Instant Widgets: Edit and visualize any Python object with fine-grained control.</p></li>
+<li><p>Function Pipelines: Chain functions into visual and interactive workflows.</p></li>
+<li><p>Built-in Validation &amp; Debugging: Enforce constraints, inspect data, and replay errors.</p></li>
+<li><p>State Persistence: Save and restore application state seamlessly.</p></li>
 </ul>
 </div></blockquote>
+<p>Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications.
+⚠️ It does not provide full design control over GUI layout or appearance.</p>
 <p><em>The name “Fiatlight” is inspired by “Fiat Lux”, i.e. “Let there be light”.</em></p>
+<blockquote>
+<div><p><em>Note: The demos and high-level view provided in this page are also available in a video: 🔗 <a class="reference external" href="https://share.descript.com/view/tbvYBh3rpRF">Watch Video</a></em></p>
+</div></blockquote>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="key-features-and-examples">
 <h1>Key Features and examples<a class="headerlink" href="#key-features-and-examples" title="Link to this heading">#</a></h1>
@@ -578,7 +577,7 @@ document.write(`
 <p><em>The example below shows an image which undergoes a pipeline for a dilated edge extraction. The image viewer can pan &amp; zoom the images in sync, and display the pixel values</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">image_from_file</span>
-<span class="kn">from</span> <span class="nn">fiatlight.demos.images.opencv_wrappers</span> <span class="kn">import</span> <span class="n">canny</span><span class="p">,</span> <span class="n">dilate</span>
+<span class="kn">from</span> <span class="nn">fiatlight.demos.images.demo_canny</span> <span class="kn">import</span> <span class="n">canny</span><span class="p">,</span> <span class="n">dilate</span>
 
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">image_from_file</span><span class="p">,</span> <span class="n">canny</span><span class="p">,</span> <span class="n">dilate</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;demo_computer_vision&quot;</span><span class="p">)</span>
 </pre></div>
@@ -733,47 +732,17 @@ See its <a class="reference internal" href="#FL_GH_ROOT/demos/string/demo_word_c
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="use-cases">
-<h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h1>
-<p>Fiatlight is well-adapted for:</p>
+<h1><strong>Use Cases</strong><a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h1>
+<p>Fiatlight is <strong>best suited for</strong>:</p>
 <ul class="simple">
-<li><p><strong>App Prototyping</strong>: Quickly prototype and develop robust applications.</p></li>
-<li><p><strong>Fine-Tuning and Debugging</strong>: Leverage Fiatlight as a powerful tool for fine-tuning your applications and shining light on all the intermediate states of your algorithms.</p></li>
-<li><p><strong>Education</strong>: Teach programming and data analysis with interactive tools.</p></li>
-<li><p><strong>Data Exploration</strong>: Engage in interactive exploration and visualization of complex datasets.</p></li>
-<li><p><strong>AI Development</strong>: Build and visualize sophisticated AI models and algorithms.</p></li>
-<li><p><strong>App Development</strong>: Since it is based on Dear ImGui, prototypes developed with fiatlight can serve as a basis for full-fledged applications. Those application may then also be translated to C++ with little effort, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
+<li><p><strong>Rapid Prototyping</strong> – Quickly transform ideas into interactive applications with minimal effort.</p></li>
+<li><p><strong>Fine-Tuning &amp; Debugging</strong> – Inspect intermediate states, visualize function outputs, and replay errors.</p></li>
+<li><p><strong>Education</strong> – Teach programming, data science, and algorithm design with interactive tools.</p></li>
+<li><p><strong>Data Exploration</strong> – Analyze, filter, and visualize complex datasets in real-time.</p></li>
+<li><p><strong>AI &amp; Machine Learning</strong> – Prototype AI models, fine-tune hyperparameters, and visualize results dynamically.</p></li>
+<li><p><strong>Application Development</strong> – Prototypes built with Fiatlight can be <strong>seamlessly transitioned into full applications</strong> using <strong>Dear ImGui</strong>. Since Dear ImGui’s API is nearly identical in Python and C++, porting to C++ is straightforward.</p></li>
 </ul>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="comparable-frameworks">
-<h1>Comparable Frameworks<a class="headerlink" href="#comparable-frameworks" title="Link to this heading">#</a></h1>
-<p>Fiatlight combines the strengths of several other tools and frameworks, while trying to provide a more integrated and flexible solution, making it suitable for both beginners and advanced users.</p>
-<ul class="simple">
-<li><p><strong><a class="reference external" href="https://scratch.mit.edu/">Scratch</a></strong>: For visual graph creation.</p></li>
-<li><p><strong><a class="reference external" href="https://jupyter.org/">Jupyter</a></strong>: For interactive data exploration.</p></li>
-<li><p><strong><a class="reference external" href="https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/">Unity Blueprints</a></strong>: For visual scripting and custom widgets.</p></li>
-<li><p><strong><a class="reference external" href="https://streamlit.io/">Python Streamlit</a></strong> &amp; <strong><a class="reference external" href="https://plotly.com/dash/">Dash</a></strong>: For easy app creation with integrated GUI elements.</p></li>
-<li><p><strong><a class="reference external" href="https://ryven.org/">Ryven</a></strong>: For advanced graph creation.</p></li>
-<li><p><strong><a class="reference external" href="https://github.com/comfyanonymous/ComfyUI">Comfy UI</a></strong>: For AI workflow integration.</p></li>
-<li><p><strong><a class="reference external" href="https://www.lego.com/en-us/themes/mindstorms/about">LEGO Mindstorms</a></strong>: For educational and creative applications.</p></li>
-</ul>
-<blockquote>
-<div><p>Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:</p>
-<p><strong>Pros</strong></p>
-<ul class="simple">
-<li><p>its advanced introspection capabilities, which enable the automatic creation of a graphical interface</p></li>
-<li><p>its ability to visualize the intermediate states of a function</p></li>
-<li><p>its ability to replay errors</p></li>
-<li><p>its ability to automatically save and restore the state of an application, and to save and reload several states per application</p></li>
-<li><p>its speed and efficiency, thanks to the fact that the rendering is done in C++ with ImGui and OpenGL</p></li>
-<li><p>its use of the immediate mode GUI paradigm, which makes it easy to create very adaptive and responsive GUIs</p></li>
-<li><p>its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitioning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.</p></li>
-</ul>
-<p><strong>Cons</strong></p>
-<ul class="simple">
-<li><p>Fiatlight does work on Jupyter notebooks (this document is actually a Jupyter notebook). However, it requires a local computer (and will not work on Google Colab, for example). Solutions for this are being explored.</p></li>
-</ul>
-</div></blockquote>
-<p>Note: detailed comparisons with scratch, ipywidgets, and streamlit can be found in the <a class="reference internal" href="comparisons.html"><span class="doc std std-doc">comparisons</span></a> document.</p>
+<p>How does Fiatlight compare to other tools? See the <a class="reference internal" href="comparisons.html"><span class="doc std std-doc">full comparison</span></a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -848,8 +817,7 @@ See its <a class="reference internal" href="#FL_GH_ROOT/demos/string/demo_word_c
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-widgets">Custom Widgets</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparable-frameworks">Comparable Frameworks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases"><strong>Use Cases</strong></a></li>
 </ul>
 
   </nav></div>
@@ -865,7 +833,7 @@ See its <a class="reference internal" href="#FL_GH_ROOT/demos/string/demo_word_c
   <div class="footer-item">
     
 <p class="component-author">
-By Pascal Thomet
+By  
 </p>
 
   </div>
@@ -875,7 +843,7 @@ By Pascal Thomet
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025, Pascal Thomet.
       <br/>
     
   </p>

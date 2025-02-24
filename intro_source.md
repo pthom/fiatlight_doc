@@ -1,19 +1,25 @@
-#  Fiatlight: Brighten the Journey from Idea to Creation
+# Fiatlight: Brighten the Journey from Idea to Creation
 
 *Expressive Code, Instant Applications*
 
-Fiatlight is a user-friendly tool that helps you transform your ideas into fully functional applications, using minimal code. The delay between an idea and a full application may be reduced to a few minutes. Whether you're working with functions or structured data, FiatLight automatically generates reusable GUIs with minimal effort.
+Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas into **fully functional applications in minutes**. It **automates UI generation** for functions and structured data, making prototyping and fine-tuning faster and easier.
 
 > *For technical readers:*
 >
 > FiatLight provides automatic UI generation for functions and structured data, making it a powerful tool for rapid prototyping and application development.
 >
->    * Immediate Widgets: Instantly edit and visualize any object in a GUI (BaseModel, int, str, etc.), with fine-grained customization.
->    * Function Pipelines: Chain functions into interactive graphs for seamless application flow.
->    * Built-in Validation & Debugging: Enforce constraints at runtime and visually inspect data.
->    * State Persistence: Save and restore application state, ensuring a fluid user experience.
+>    * Instant Widgets: Edit and visualize any Python object with fine-grained control.
+>    * Function Pipelines: Chain functions into visual and interactive workflows.
+>    * Built-in Validation & Debugging: Enforce constraints, inspect data, and replay errors.
+>    * State Persistence: Save and restore application state seamlessly.
+
+Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications.
+⚠️ It does not provide full design control over GUI layout or appearance.
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
+
+> *Note: The demos and high-level view provided in this page are also available in a video: 🔗 [Watch Video](https://share.descript.com/view/tbvYBh3rpRF)*
+
 
 # Key Features and examples
 
@@ -96,6 +102,7 @@ This can be used as a full application:
 > *For technical readers: [`invoke_sdxl_turbo`](FL_GH_ROOT/fiat_kits/fiat_ai/invoke_sdxl_turbo.py) provides a simple wrapper to SDXL, and [`add_meme_text`](FL_GH_ROOT/demos/images/old_school_meme.py) is a Python function that adds colored text onto an image.*
 
 
+
 ## Domain-specific Kits:
 
 `fiatlight.fiats_kits` is intended to provide a set of pre-built functions and widgets for various domains, such as:
@@ -116,7 +123,7 @@ This can be used as a full application:
 ```python
 import fiatlight as fl
 from fiatlight.fiat_kits.fiat_image import image_from_file
-from fiatlight.demos.images.opencv_wrappers import canny, dilate
+from fiatlight.demos.images.demo_canny import canny, dilate
 
 fl.run([image_from_file, canny, dilate], app_name="demo_computer_vision")
 ```
@@ -273,42 +280,15 @@ fl.run(sound_wave_from_file, app_name="Sound Wave Player")
 
 ---------------------------------------------------------------------------------------------------
 
-# Use Cases
+# **Use Cases**  
 
-Fiatlight is well-adapted for:
+Fiatlight is **best suited for**:  
 
-- **App Prototyping**: Quickly prototype and develop robust applications.
-- **Fine-Tuning and Debugging**: Leverage Fiatlight as a powerful tool for fine-tuning your applications and shining light on all the intermediate states of your algorithms.
-- **Education**: Teach programming and data analysis with interactive tools.
-- **Data Exploration**: Engage in interactive exploration and visualization of complex datasets.
-- **AI Development**: Build and visualize sophisticated AI models and algorithms.
-- **App Development**: Since it is based on Dear ImGui, prototypes developed with fiatlight can serve as a basis for full-fledged applications. Those application may then also be translated to C++ with little effort, since the C++ and Python API for ImGui and Hello ImGui are very similar.
+- **Rapid Prototyping** – Quickly transform ideas into interactive applications with minimal effort.  
+- **Fine-Tuning & Debugging** – Inspect intermediate states, visualize function outputs, and replay errors.  
+- **Education** – Teach programming, data science, and algorithm design with interactive tools.  
+- **Data Exploration** – Analyze, filter, and visualize complex datasets in real-time.  
+- **AI & Machine Learning** – Prototype AI models, fine-tune hyperparameters, and visualize results dynamically.  
+- **Application Development** – Prototypes built with Fiatlight can be **seamlessly transitioned into full applications** using **Dear ImGui**. Since Dear ImGui’s API is nearly identical in Python and C++, porting to C++ is straightforward.  
 
-# Comparable Frameworks
-
-Fiatlight combines the strengths of several other tools and frameworks, while trying to provide a more integrated and flexible solution, making it suitable for both beginners and advanced users.
-
-- **[Scratch](https://scratch.mit.edu/)**: For visual graph creation.
-- **[Jupyter](https://jupyter.org/)**: For interactive data exploration.
-- **[Unity Blueprints](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/)**: For visual scripting and custom widgets.
-- **[Python Streamlit](https://streamlit.io/)** & **[Dash](https://plotly.com/dash/)**: For easy app creation with integrated GUI elements.
-- **[Ryven](https://ryven.org/)**: For advanced graph creation.
-- **[Comfy UI](https://github.com/comfyanonymous/ComfyUI)**: For AI workflow integration.
-- **[LEGO Mindstorms](https://www.lego.com/en-us/themes/mindstorms/about)**: For educational and creative applications.
-
-
-> Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:
->
-> **Pros**
-> - its advanced introspection capabilities, which enable the automatic creation of a graphical interface
-> - its ability to visualize the intermediate states of a function
-> - its ability to replay errors
-> - its ability to automatically save and restore the state of an application, and to save and reload several states per application
-> - its speed and efficiency, thanks to the fact that the rendering is done in C++ with ImGui and OpenGL
-> - its use of the immediate mode GUI paradigm, which makes it easy to create very adaptive and responsive GUIs
-> - its ability to prepare the path to a full-fledged application, since any custom widgets and callbacks developed within Fiatlight can be reused in an application based on Dear ImGui (and/or Dear ImGui Bundle). Transitioning to C++ is also within reach, since the C++ and Python API for ImGui and Hello ImGui are very similar.
->
-> **Cons**
-> * Fiatlight does work on Jupyter notebooks (this document is actually a Jupyter notebook). However, it requires a local computer (and will not work on Google Colab, for example). Solutions for this are being explored.
-
-Note: detailed comparisons with scratch, ipywidgets, and streamlit can be found in the [comparisons](comparisons) document.
+How does Fiatlight compare to other tools? See the [full comparison](comparisons).

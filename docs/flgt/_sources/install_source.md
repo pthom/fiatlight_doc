@@ -6,7 +6,7 @@ Installation from source
 ```
 %%bash
 
-git clone https://github.com/pthom/fiatlight.git --branch refact_io
+git clone https://github.com/pthom/fiatlight.git
 cd fiatlight
 
 # Optional: create a virtual environment

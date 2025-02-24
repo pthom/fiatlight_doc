@@ -26,6 +26,7 @@ def generate_doc_notebooks() -> None:
         "intro",
         "imgui_tech_stack",
         "install",
+        "video_tutorials",
     ])
 
     #
