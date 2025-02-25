@@ -122,6 +122,7 @@ In the example below, we customize the GUI for the function `interactive_histogr
 
 ```python
 import fiatlight
+import matplotlib; matplotlib.use('Agg')  # Required to display the figure in the GUI
 from matplotlib.figure import Figure
 
 @fiatlight.with_fiat_attributes(

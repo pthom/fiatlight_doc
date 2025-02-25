@@ -25,6 +25,7 @@ def count_words(filename: TextPath) -> int:
 fl.run(count_words, app_name="Count Words")
 ```
 
+*Note: TextPath is an alias for str, but it is associated with a file dialog widget in Fiatlight.*
 
 ### Composing two functions
 
@@ -197,3 +198,7 @@ from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
 
 See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py. 
 The GUI was created automatically, from a nested Pydantic model, with custom validator.
+
+Going Further
+-------------
+Explore the [introductory topics](manual) to learn how to customize widgets, and much more;

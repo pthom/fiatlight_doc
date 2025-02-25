@@ -13,12 +13,14 @@ Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas in
 >    * Built-in Validation & Debugging: Enforce constraints, inspect data, and replay errors.
 >    * State Persistence: Save and restore application state seamlessly.
 
-Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications.
-⚠️ It does not provide full design control over GUI layout or appearance.
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
-> *Note: The demos and high-level view provided in this page are also available in a video: 🔗 [Watch Video](https://share.descript.com/view/tbvYBh3rpRF)*
+> *Notes:*
+> - The demos and high-level view provided in this page are also available in a video: 
+> 🔗 [Watch Video](https://share.descript.com/view/tbvYBh3rpRF)*
+> - Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI.
+
 
 
 # Key Features and examples

@@ -555,6 +555,7 @@ Available fiat attributes for AnyDataWithGui Generic attributes:
 <h2>Example: Fiat Attributes in Action<a class="headerlink" href="#example-fiat-attributes-in-action" title="Link to this heading">#</a></h2>
 <p>In the example below, we customize the GUI for the function <code class="docutils literal notranslate"><span class="pre">interactive_histogram</span></code> by setting fiat attributes for the number of data points, the number of bars, the mean, and the standard deviation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span><span class="p">;</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>  <span class="c1"># Required to display the figure in the GUI</span>
 <span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
 
 <span class="nd">@fiatlight</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span>

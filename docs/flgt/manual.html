@@ -408,7 +408,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -424,6 +426,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -435,19 +447,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manual">
 <h1>Manual<a class="headerlink" href="#manual" title="Link to this heading">#</a></h1>
-<p>The manual is separated in several sections:</p>
+<p>Begin with the <a class="reference internal" href="manual_first.html"><span class="doc std std-doc">First steps</span></a> section to learn how to wrap functions and dataclasses and run them via Fiatlight.</p>
+<p>Then, explore the following sections.</p>
+<section id="introductory-topics">
+<h2>Introductory topics:<a class="headerlink" href="#introductory-topics" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="manual_first.html"><span class="std std-doc">First steps</span></a></p></li>
-<li><p><a class="reference internal" href="manual_function.html"><span class="std std-doc">Wrapping Functions</span></a></p></li>
-<li><p><a class="reference internal" href="manual_registry.html"><span class="std std-doc">GUI Registry</span></a></p></li>
-<li><p><a class="reference internal" href="manual_fiat_attributes.html"><span class="std std-doc">Customizing Widgets with Fiat Attributes</span></a></p></li>
-<li><p><a class="reference internal" href="manual_cli.html"><span class="std std-doc">Command line interface</span></a></p></li>
-<li><p><a class="reference internal" href="manual_functions_graph.html"><span class="std std-doc">Functions Graph</span></a></p></li>
-<li><p><a class="reference internal" href="manual_validation.html"><span class="std std-doc">Validate inputs</span></a></p></li>
-<li><p><a class="reference internal" href="manual_dataclass_models.html"><span class="std std-doc">Dataclasses &amp; Pydantic Models</span></a></p></li>
-<li><p><a class="reference internal" href="manual_custom.html"><span class="std std-doc">Custom types registration</span></a></p></li>
-<li><p><a class="reference internal" href="manual_demos.html"><span class="std std-doc">Run the demos</span></a></p></li>
+<li><p><a class="reference internal" href="manual_function.html#typed-signatures"><span class="std std-ref">Add types to signatures</span></a> so that Fiatlight can generate a GUI for your functions</p></li>
+<li><p><a class="reference internal" href="manual_cli.html"><span class="doc std std-doc">Use fiatlight command line tool</span></a> to list all supported types and their possible GUI customization options</p></li>
+<li><p><a class="reference internal" href="manual_fiat_attributes.html"><span class="doc std std-doc">Customize widgets</span></a> using fiat_attributes</p></li>
+<li><p><a class="reference internal" href="#manual_reuse_widgets"><span class="xref myst">Reuse Fiatlight widgets</span></a>  in your own apps, not only in Fiatlight’s functions graphs.</p></li>
+<li><p><a class="reference internal" href="manual_function.html#handwriting-the-gui"><span class="std std-ref">Fully customize any parameter’s GUI</span></a> by writing it by hand</p></li>
+<li><p><a class="reference internal" href="manual_function.html#controlling-function-execution"><span class="std std-ref">Run functions asynchronously</span></a></p></li>
+<li><p><a class="reference internal" href="manual_dataclass_models.html"><span class="doc std std-doc">Create GUI for structured data</span></a>, i.e pydantic models and dataclasses</p></li>
 </ul>
+</section>
+<section id="advanced-topics">
+<h2>Advanced topics:<a class="headerlink" href="#advanced-topics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="manual_validation.html"><span class="doc std std-doc">Validate inputs in the GUI</span></a></p></li>
+<li><p><a class="reference internal" href="manual_function.html#sub-class-functionwithgui"><span class="std std-ref">Fully customize functions GUI</span></a>
+subclassing FunctionWithGui</p></li>
+<li><p><a class="reference internal" href="manual_functions_graph.html"><span class="doc std std-doc">Create complex functions graph</span></a></p></li>
+<li><p><a class="reference internal" href="manual_custom.html"><span class="doc std std-doc">Create and register custom widgets for specific types</span></a></p></li>
+</ul>
+</section>
+<section id="domain-specific-topics">
+<h2>Domain-specific topics:<a class="headerlink" href="#domain-specific-topics" title="Link to this heading">#</a></h2>
+<p>Explore <a class="reference internal" href="fiat_kits.html"><span class="doc std std-doc">fiat_kits</span></a>, collections of pre-built widgets for specific domains, such as:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="fiat_image.html"><span class="doc std std-doc">fiat_image</span></a> for image processing</p></li>
+<li><p><a class="reference internal" href="fiat_matplotlib.html"><span class="doc std std-doc">fiat_matplotlib</span></a> for plotting with Matplotlib</p></li>
+<li><p><a class="reference internal" href="fiat_dataframe.html"><span class="doc std std-doc">fiat_dataframe</span></a>: a widget to display explore pandas dataframes</p></li>
+</ul>
+<p>TODO:
+manual_reuse_widgets</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -506,6 +540,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
