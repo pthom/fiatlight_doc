@@ -8,11 +8,26 @@
     "gui_options": {
         "CameraImageProviderGui": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {},
                     "outputs": {
@@ -28,7 +43,12 @@
                             480
                         ]
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {},
@@ -49,11 +69,26 @@
         },
         "rotate_45": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "_doc_expanded": false,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "image": {
@@ -79,7 +114,6 @@
                                         "height": 0,
                                         "width": 200
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
                                     "RefreshImage": true,
                                     "SelectedChannel": -1,
@@ -134,12 +168,11 @@
                                     "DrawValuesOnZoomedPixels": true,
                                     "HighlightWatchedPixels": true,
                                     "ImageDisplaySize": {
-                                        "height": 233,
-                                        "width": 305
+                                        "height": 301,
+                                        "width": 402
                                     },
-                                    "IsColorOrderBGR": true,
                                     "PanWithMouse": true,
-                                    "RefreshImage": false,
+                                    "RefreshImage": true,
                                     "SelectedChannel": -1,
                                     "ShowAlphaChannelCheckerboard": true,
                                     "ShowGrid": true,
@@ -153,12 +186,12 @@
                                     "WatchedPixels": [],
                                     "ZoomKey": "z",
                                     "ZoomPanMatrix": {
-                                        "00": 0.49244800902308833,
+                                        "00": 0.6426192366076113,
                                         "01": 0.0,
-                                        "02": -5.083362887388406,
+                                        "02": -4.638155714435736,
                                         "10": 0.0,
-                                        "11": 0.49244800902308833,
-                                        "12": -1.687522165541255,
+                                        "11": 0.6426192366076113,
+                                        "12": -3.7286167858268113,
                                         "20": 0.0,
                                         "21": 0.0,
                                         "22": 1.0
@@ -171,7 +204,12 @@
                             "expanded": true
                         }
                     }
-                }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -198,7 +236,6 @@
                                     "height": 0,
                                     "width": 200
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
                                 "RefreshImage": true,
                                 "SelectedChannel": -1,
@@ -253,12 +290,11 @@
                                 "DrawValuesOnZoomedPixels": true,
                                 "HighlightWatchedPixels": true,
                                 "ImageDisplaySize": {
-                                    "height": 233,
-                                    "width": 305
+                                    "height": 301,
+                                    "width": 402
                                 },
-                                "IsColorOrderBGR": true,
                                 "PanWithMouse": true,
-                                "RefreshImage": false,
+                                "RefreshImage": true,
                                 "SelectedChannel": -1,
                                 "ShowAlphaChannelCheckerboard": true,
                                 "ShowGrid": true,
@@ -272,12 +308,12 @@
                                 "WatchedPixels": [],
                                 "ZoomKey": "z",
                                 "ZoomPanMatrix": {
-                                    "00": 0.49244800902308833,
+                                    "00": 0.6426192366076113,
                                     "01": 0.0,
-                                    "02": -5.083362887388406,
+                                    "02": -4.638155714435736,
                                     "10": 0.0,
-                                    "11": 0.49244800902308833,
-                                    "12": -1.687522165541255,
+                                    "11": 0.6426192366076113,
+                                    "12": -3.7286167858268113,
                                     "20": 0.0,
                                     "21": 0.0,
                                     "22": 1.0

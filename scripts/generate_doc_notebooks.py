@@ -26,7 +26,6 @@ def generate_doc_notebooks() -> None:
         "intro",
         "imgui_tech_stack",
         "install",
-        "video_tutorials",
     ])
 
     #
@@ -35,6 +34,9 @@ def generate_doc_notebooks() -> None:
     md_source_list_to_notebooks([
         "manual_first",
         "manual_function",
+        "manual_gui_node",
+        "manual_tuning",
+        "manual_subclass",
         "manual_fiat_attributes",
         "manual_functions_graph",
         "manual_cli",
@@ -43,6 +45,7 @@ def generate_doc_notebooks() -> None:
         "manual_registry",
         "manual_dataclass_models",
         "manual_custom",
+        "manual_reuse_widgets",
     ])
 
     #

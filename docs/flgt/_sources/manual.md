@@ -8,18 +8,37 @@ Then, explore the following sections.
 ### Introductory topics:
 * [Add types to signatures](manual_function.ipynb#typed-signatures) so that Fiatlight can generate a GUI for your functions
 * [Use fiatlight command line tool](manual_cli) to list all supported types and their possible GUI customization options
-* [Customize widgets](manual_fiat_attributes) using fiat_attributes
-* [Reuse Fiatlight widgets](manual_reuse_widgets)  in your own apps, not only in Fiatlight's functions graphs.
+* [Customize widgets using fiat_attributes](manual_fiat_attributes)
 * [Fully customize any parameter's GUI](manual_function.ipynb#handwriting-the-gui) by writing it by hand
+* [Add GUI only nodes](manual_gui_node) to your functions graph (i.e. nodes that do not have a function associated with them)
 * [Run functions asynchronously](manual_function.ipynb#controlling-function-execution)
 * [Create GUI for structured data](manual_dataclass_models), i.e pydantic models and dataclasses
 
 ### Advanced topics:
 * [Validate inputs in the GUI](manual_validation)
+* [Reuse Fiatlight widgets](manual_reuse_widgets)  in your own apps, not only in Fiatlight's functions graphs.
 * [Fully customize functions GUI](manual_function.ipynb#sub-class-functionwithgui)
  subclassing FunctionWithGui
+* [Fine-tune functions](manual_tuning) by viewing their internal status. Debug and replay exceptions.
 * [Create complex functions graph](manual_functions_graph)
 * [Create and register custom widgets for specific types](manual_custom)
+
+
+### Advanced Video Tutorial: Sort Algorithm Visualizer  
+🔗 [Watch Video](https://share.descript.com/view/oBub1WN28bX)  
+
+**Overview:**  
+This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.  
+
+<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
+<img src="_static/images/video_fl_sort.jpg" width="300" />
+</a>
+
+**Key Topics:**  
+- Asynchronous execution for smooth UI updates  
+- Using Fiatlight’s function graph to build complex workflows  
+- Customizing the UI with additional widgets
+- Real-time visualization of sorting algorithms  
 
 ### Domain-specific topics:
 Explore [fiat_kits](fiat_kits), collections of pre-built widgets for specific domains, such as:

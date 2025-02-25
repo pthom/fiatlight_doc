@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Video Tutorials &#8212; Fiatlight</title>
+    <title>Fiat Tuning: Tune functions &#8212; Fiatlight</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'video_tutorials_source';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'manual_tuning_source';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -179,13 +179,9 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -199,16 +195,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Fvideo_tutorials_source.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2Fmanual_tuning_source.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="_sources/video_tutorials_source.md" target="_blank"
+      <li><a href="_sources/manual_tuning_source.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Video Tutorials</h1>
+    <h1>Fiat Tuning: Tune functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,11 +429,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-sort-algorithm-visualizer">Advanced Tutorial: Sort Algorithm Visualizer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -444,72 +451,122 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="video-tutorials">
-<h1>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Link to this heading">#</a></h1>
-<section id="full-demo-of-fiatlight">
-<h2>Full Demo of Fiatlight<a class="headerlink" href="#full-demo-of-fiatlight" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/tbvYBh3rpRF">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications.</p>
-<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
-<img src="_static/images/video_fl_demo.jpg" width="300" />
-</a>
-<p><strong>Highlights:</strong></p>
-<ul class="simple">
-<li><p>AI-powered meme generator in just 4 lines of code</p></li>
-<li><p>Real-time sorting algorithm visualization</p></li>
-<li><p>Tailored kits for image processing, data visualization, and audio analysis</p></li>
-<li><p>Fine-tuning and debugging with function state introspection</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="advanced-tutorial-sort-algorithm-visualizer">
-<h2>Advanced Tutorial: Sort Algorithm Visualizer<a class="headerlink" href="#advanced-tutorial-sort-algorithm-visualizer" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/oBub1WN28bX">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="fiat-tuning-tune-functions">
+<h1>Fiat Tuning: Tune functions<a class="headerlink" href="#fiat-tuning-tune-functions" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Fiatlight provides you with powerful tools to visually debug the intermediate states of your function.</p>
+<p>By adding a fiat_tuning attribute to a function, you can provide additional information that will be displayed in the GUI node for this function. This attribute is a dictionary and can contain named data values or descendants of AnyDataWithGui. This information can be used to fine-tune the function, debug it, or visualize intermediate states.</p>
+<p>Moreover, this information can be updated in the GUI, even if the function is a long-running process called asynchronously.</p>
+<blockquote>
+<div><p><em>Example: The image below shows a sort competition between different algorithms. The GUI nodes display in real time the evolving state of each algorithm, using “fiat_tuning”.</em></p>
+<p><em>See “Advanced Video Tutorial: Sort Algorithm Visualizer” below for more details.</em></p>
 <a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
 <img src="_static/images/video_fl_sort.jpg" width="300" />
 </a>
-<p><strong>Key Topics:</strong></p>
-<ul class="simple">
-<li><p>Asynchronous execution for smooth UI updates</p></li>
-<li><p>Using Fiatlight’s function graph to build complex workflows</p></li>
-<li><p>Customizing the UI with additional widgets</p></li>
-<li><p>Real-time visualization of sorting algorithms</p></li>
-</ul>
+</div></blockquote>
 </section>
-<hr class="docutils" />
-<section id="fiatlight-architecture">
-<h2>Fiatlight Architecture<a class="headerlink" href="#fiatlight-architecture" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/xkgrDb7Kzzj">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-A high-level overview of Fiatlight’s internal structure and how it automatically maps functions and data types to UI components.</p>
-<a href="https://share.descript.com/view/xkgrDb7Kzzj" target="_blank">
-<img src="_static/images/video_fl_architecture.jpg" width="300" />
-</a>
-<p><strong>Key Topics:</strong></p>
-<ul class="simple">
-<li><p>Core components: <code class="docutils literal notranslate"><span class="pre">AnyDataWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionGraph</span></code></p></li>
-<li><p>How Fiatlight registers data types to generate interactive UIs</p></li>
-<li><p>Customization callbacks to fine-tune how data is presented</p></li>
-</ul>
+<section id="example-measure-execution-time">
+<h2>Example: Measure Execution Time<a class="headerlink" href="#example-measure-execution-time" title="Link to this heading">#</a></h2>
+<p>In the example below, we will add a simple float into the fiat_tuning attribute of the sort_list function. This float will represent the duration of the sort operation.</p>
+<p>The collapsible region “Fiat Tuning” will display this duration:we can see that in this example, it takes about 0.75 seconds to sort a list of 10,000,000 elements.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">n__range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">make_random_list</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+
+<span class="k">def</span> <span class="nf">sort_list</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">sort_list</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">duration</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">make_random_list</span><span class="p">,</span> <span class="n">sort_list</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Sort duration&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<hr class="docutils" />
-<section id="gui-for-pydantic-models">
-<h2>GUI for Pydantic Models<a class="headerlink" href="#gui-for-pydantic-models" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/CxaFQ5T6iq7">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pydantic models.</p>
-<a href="https://share.descript.com/view/CxaFQ5T6iq7" target="_blank">
-<img src="_static/images/video_fl_pydantic.jpg" width="300" />
-</a>
-<p><strong>Key Features:</strong></p>
-<ul class="simple">
-<li><p>Customizing widgets with <code class="docutils literal notranslate"><span class="pre">fiat_attributes</span></code></p></li>
-<li><p>Automatic validation for user inputs</p></li>
-<li><p>Displaying structured data with interactive components</p></li>
-</ul>
+<section id="example-tune-using-an-image">
+<h2>Example: Tune using an Image<a class="headerlink" href="#example-tune-using-an-image" title="Link to this heading">#</a></h2>
+<p>The fiat_tuning attribute can also be used to display widgets (which must be descendants of AnyDataWithGui) in the GUI node.</p>
+<p>In the example below, we will add an image widget (ImageWithGui) into the fiat_tuning attribute.</p>
+<blockquote>
+<div><p><em><a class="reference internal" href="#FL_GH_ROOT/demos/images/toon_edges.py"><span class="xref myst">demos/images/toon_edges.py</span></a> is a good example of how to use the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute.</em></p>
+<p><em><code class="docutils literal notranslate"><span class="pre">add_toon_edges</span></code> is a complex function that adds a toon effect to an image, by adding colored edges to the image contours.</em>
+<em>The contour detection is extremely sensitive to the parameters, and the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute is used to display the intermediate states of the function in the GUI.</em></p>
+</div></blockquote>
+<p>Here are some commented extracts of the function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">ImageU8_1</span>
+
+<span class="k">def</span> <span class="nf">add_toon_edges</span><span class="p">(</span>
+<span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">,</span>
+<span class="c1"># ... lots of parameters ...</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1"># = ...             (compute the edges)</span>
+    <span class="n">dilated_edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1">#  = ...    (dilate the edges)</span>
+    <span class="n">image_with_edges</span><span class="p">:</span> <span class="n">ImageU8_3</span>  <span class="c1"># = ... (superimpose the edges on the image)</span>
+
+    <span class="c1"># fiat_tuning: add debug internals to ease fine-tuning the function inside the node</span>
+    <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageWithGui</span>
+
+    <span class="c1"># Add to fiat_tuning any variable you want to be able to fine-tune or debug in the function node</span>
+    <span class="c1">#     * Either a raw type (int, float, str, etc.): see durations</span>
+    <span class="c1">#     * Or a descendant of AnyDataWithGui: see &quot;canny&quot;, &quot;dilate&quot;, &quot;image_with_edges&quot;</span>
+    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">add_toon_edges</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;duration_canny&quot;</span><span class="p">:</span> <span class="n">duration_canny</span><span class="p">,</span>
+        <span class="s2">&quot;duration_dilate&quot;</span><span class="p">:</span> <span class="n">duration_dilate</span><span class="p">,</span>
+        <span class="s2">&quot;duration_blur&quot;</span><span class="p">:</span> <span class="n">duration_blur</span><span class="p">,</span>
+        <span class="s2">&quot;duration_merge&quot;</span><span class="p">:</span> <span class="n">duration_merge</span><span class="p">,</span>
+        <span class="s2">&quot;canny&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">edges</span><span class="p">),</span>
+        <span class="s2">&quot;dilate&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">dilated_edges</span><span class="p">),</span>
+        <span class="s2">&quot;image_with_edges&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">image_with_edges</span><span class="p">),</span>
+    <span class="p">})</span>
+
+    <span class="c1"># return the image with edges</span>
+    <span class="k">return</span> <span class="n">image_with_edges</span>
+</pre></div>
+</div>
+<p>Once these internals are set, you can see the function “Internals” in the GUI:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_GRAY</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">image_source</span>
+<span class="kn">from</span> <span class="nn">fiatlight.demos.images.toon_edges</span> <span class="kn">import</span> <span class="n">add_toon_edges</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">image_source</span><span class="p">,</span> <span class="n">add_toon_edges</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Toon edges&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><em>The image above shows the GUI node for the toon_edges function, with the expanded “Fiat Tuning” section:</em>
+<em>it displays the execution time of each step, as well as an image representation of the intermediate edges and dilated edges.</em></p>
+</div></blockquote>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="debugging-functions-exceptions">
+<h1>Debugging Functions exceptions<a class="headerlink" href="#debugging-functions-exceptions" title="Link to this heading">#</a></h1>
+<p>When a function raises an exception, Fiatlight catches and displays it without crashing the application. Instead, you will see a “Debug this exception” button that you can use to trigger the exception again.</p>
+<p>This feature is invaluable for debugging and making your functions more robust. If you are using a debugger, you will be taken directly to the point where the exception occurred, with the correct inputs to reproduce the bug.</p>
+<blockquote>
+<div><p>_Note: this feature can be disabled with:
+<code class="docutils literal notranslate"><span class="pre">fl.get_fiat_config().run_config.catch_function_exceptions</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
+</div></blockquote>
+<section id="example-a-math-exception">
+<h2>Example: a Math Exception<a class="headerlink" href="#example-a-math-exception" title="Link to this heading">#</a></h2>
+<p>With this setup, if the input value of a causes math.log(cos_a) to produce an error (when cos_a is negative).</p>
+<p>Fiatlight will catch and display the exception, allowing you to debug it easily.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">cos_a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cos_a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Math domain exception&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -559,11 +616,18 @@ Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pyda
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-sort-algorithm-visualizer">Advanced Tutorial: Sort Algorithm Visualizer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

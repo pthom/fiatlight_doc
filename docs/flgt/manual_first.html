@@ -179,13 +179,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="manual.html">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -199,16 +195,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -436,12 +436,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-any-data-structure-with-a-gui">Edit any data structure with a GUI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-fiatlight-immediate-edit">Using fiatlight.immediate_edit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-guis-for-pydantic-models">Generate GUIs for pydantic models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-data">Validate the data</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going Further</a></li>
 </ul>
             </nav>
@@ -591,91 +585,6 @@ Below is a function that accepts a text path as a parameter and outputs the numb
 <p>only the user values are saved (in a file named “xxx.fiat_user.json”, where “xxx” is the file name you selected).</p>
 </section>
 </section>
-<section id="edit-any-data-structure-with-a-gui">
-<h2>Edit any data structure with a GUI<a class="headerlink" href="#edit-any-data-structure-with-a-gui" title="Link to this heading">#</a></h2>
-<p>Fiatlight can provide a versatile GUI for any kind of data (pydantic models, dataclasses, base types),
-with a simple API, and a high level of customization.</p>
-<section id="using-fiatlight-immediate-edit">
-<h3>Using fiatlight.immediate_edit<a class="headerlink" href="#using-fiatlight-immediate-edit" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">fiatlight.immediate_edit</span></code> is able to provide an edit widget for any data type that has a GUI representation in FiatLight.</p>
-<p>In the example below, we use <code class="docutils literal notranslate"><span class="pre">fiatlight.immediate_edit</span></code> to edit a simple integer value.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">hello_imgui</span>
-<span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-
-<span class="n">MY_VALUE</span> <span class="o">=</span> <span class="mi">42</span>
-
-<span class="k">def</span> <span class="nf">gui</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">MY_VALUE</span>
-
-    <span class="n">changed</span><span class="p">,</span> <span class="n">MY_VALUE</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">immediate_edit</span><span class="p">(</span>
-        <span class="s2">&quot;Value&quot;</span><span class="p">,</span>
-        <span class="n">MY_VALUE</span><span class="p">,</span>
-        <span class="n">edit_type</span><span class="o">=</span><span class="s2">&quot;knob&quot;</span><span class="p">,</span>  <span class="c1"># Here we customize the GUI widget type</span>
-        <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>    <span class="c1"># and the range of the knob</span>
-    <span class="p">)</span>
-
-<span class="n">hello_imgui</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/153fe759200f9f5fec5fbfb5f75bc769d8db7a66d30f2cf1772667d5159e2472.jpg" src="_images/153fe759200f9f5fec5fbfb5f75bc769d8db7a66d30f2cf1772667d5159e2472.jpg" />
-</div>
-</div>
-</section>
-<section id="generate-guis-for-pydantic-models">
-<h3>Generate GUIs for pydantic models<a class="headerlink" href="#generate-guis-for-pydantic-models" title="Link to this heading">#</a></h3>
-<p>You can use the <code class="docutils literal notranslate"><span class="pre">fl.base_model_with_gui_registration</span></code> decorator to generate a GUI for a pydantic model,
-and the <code class="docutils literal notranslate"><span class="pre">fl.immediate_edit</span></code> function to edit the model.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">immapp</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-<span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-
-<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">(</span>
-    <span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;John Doe&quot;</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">19</span>
-
-<span class="n">USER</span> <span class="o">=</span> <span class="n">User</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">gui</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">USER</span>
-    <span class="n">_changed</span><span class="p">,</span> <span class="n">USER</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">immediate_edit</span><span class="p">(</span><span class="s2">&quot;User##1&quot;</span><span class="p">,</span> <span class="n">USER</span><span class="p">)</span>
-
-<span class="n">immapp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/d1264eb1d267a9bff0264ae176f42c217ed4488736b58d3f629322fd127853be.jpg" src="_images/d1264eb1d267a9bff0264ae176f42c217ed4488736b58d3f629322fd127853be.jpg" />
-</div>
-</div>
-<p>Note: The decorator <code class="docutils literal notranslate"><span class="pre">&#64;fl.dataclass_with_gui_registration</span></code> is also available for dataclasses.</p>
-</section>
-<section id="validate-the-data">
-<h3>Validate the data<a class="headerlink" href="#validate-the-data" title="Link to this heading">#</a></h3>
-<p>In the case of pydantic BaseModel, the GUI generated by <code class="docutils literal notranslate"><span class="pre">fl.base_model_with_gui_registration</span></code>
-will automatically validate the data according to the model’s constraints, and display an error message
-if the data is invalid.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.tutorials.pydantic_gui</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
-<span class="c1"># demo_basemodel_app.main()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
-<p>See the <a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/tutorials/pydantic_gui/demo_basemodel_app.py">source code</a> for demo_basemodel_app.py.
-The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
-</section>
-</section>
 <section id="going-further">
 <h2>Going Further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
 <p>Explore the <a class="reference internal" href="manual.html"><span class="doc std std-doc">introductory topics</span></a> to learn how to customize widgets, and much more;</p>
@@ -751,12 +660,6 @@ The GUI was created automatically, from a nested Pydantic model, with custom val
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composing-two-functions">Composing two functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-of-the-available-controls">Video Tutorial of the available controls</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-any-data-structure-with-a-gui">Edit any data structure with a GUI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-fiatlight-immediate-edit">Using fiatlight.immediate_edit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-guis-for-pydantic-models">Generate GUIs for pydantic models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-data">Validate the data</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going Further</a></li>

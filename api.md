@@ -1,10 +1,22 @@
 API
 ===
 
+High level overview video
+-------------------------
+
+The video below present a high-level overview of Fiatlight's architecture and how it automatically maps functions and data types to UI components.  
+
+🔗 [Watch Video](https://share.descript.com/view/xkgrDb7Kzzj)  
+
+<a href="https://share.descript.com/view/xkgrDb7Kzzj" target="_blank">
+<img src="_static/images/video_fl_architecture.jpg" width="300" />
+</a>
+
 Architecture
 ------------
 
 * [Fiatlight Architecture](api_architecture): Overview of the Fiatlight architecture, including the class diagrams and folders structure.
+
 
 fiat_core
 ---------

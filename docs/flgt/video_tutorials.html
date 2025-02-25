@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'video_tutorials';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Manual" href="manual.html" />
-    <link rel="prev" title="Installation" href="install.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Run the demos" href="manual_demos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,13 +179,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Video Tutorials</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="manual.html">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -199,16 +195,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="_sources/video_tutorials.ipynb" target="_blank"
+      <li><a href="_sources/video_tutorials.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +345,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -449,8 +449,8 @@ document.write(`
 <section id="full-demo-of-fiatlight">
 <h2>Full Demo of Fiatlight<a class="headerlink" href="#full-demo-of-fiatlight" title="Link to this heading">#</a></h2>
 <p>🔗 <a class="reference external" href="https://share.descript.com/view/tbvYBh3rpRF">Watch Video</a></p>
-<p><strong>Overview:</strong>
-This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications.</p>
+<p><strong>Overview:</strong><br />
+This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications. It is a demo, rather than a tutorial.</p>
 <a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
 <img src="_static/images/video_fl_demo.jpg" width="300" />
 </a>
@@ -466,7 +466,7 @@ This video provides a complete walkthrough of Fiatlight, showcasing how it can r
 <section id="advanced-tutorial-sort-algorithm-visualizer">
 <h2>Advanced Tutorial: Sort Algorithm Visualizer<a class="headerlink" href="#advanced-tutorial-sort-algorithm-visualizer" title="Link to this heading">#</a></h2>
 <p>🔗 <a class="reference external" href="https://share.descript.com/view/oBub1WN28bX">Watch Video</a></p>
-<p><strong>Overview:</strong>
+<p><strong>Overview:</strong><br />
 This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.</p>
 <a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
 <img src="_static/images/video_fl_sort.jpg" width="300" />
@@ -483,7 +483,7 @@ This more advanced tutorial walks through the creation of an interactive sorting
 <section id="fiatlight-architecture">
 <h2>Fiatlight Architecture<a class="headerlink" href="#fiatlight-architecture" title="Link to this heading">#</a></h2>
 <p>🔗 <a class="reference external" href="https://share.descript.com/view/xkgrDb7Kzzj">Watch Video</a></p>
-<p><strong>Overview:</strong>
+<p><strong>Overview:</strong><br />
 A high-level overview of Fiatlight’s internal structure and how it automatically maps functions and data types to UI components.</p>
 <a href="https://share.descript.com/view/xkgrDb7Kzzj" target="_blank">
 <img src="_static/images/video_fl_architecture.jpg" width="300" />
@@ -499,7 +499,7 @@ A high-level overview of Fiatlight’s internal structure and how it automatical
 <section id="gui-for-pydantic-models">
 <h2>GUI for Pydantic Models<a class="headerlink" href="#gui-for-pydantic-models" title="Link to this heading">#</a></h2>
 <p>🔗 <a class="reference external" href="https://share.descript.com/view/CxaFQ5T6iq7">Watch Video</a></p>
-<p><strong>Overview:</strong>
+<p><strong>Overview:</strong><br />
 Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pydantic models.</p>
 <a href="https://share.descript.com/view/CxaFQ5T6iq7" target="_blank">
 <img src="_static/images/video_fl_pydantic.jpg" width="300" />
@@ -544,20 +544,20 @@ Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pyda
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="install.html"
+       href="manual_demos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">Run the demos</p>
       </div>
     </a>
     <a class="right-next"
-       href="manual.html"
+       href="api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Manual</p>
+        <p class="prev-next-title">API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

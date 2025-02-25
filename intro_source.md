@@ -16,14 +16,16 @@ Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas in
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
-> *Notes:*
-> - The demos and high-level view provided in this page are also available in a video: 
-> 🔗 [Watch Video](https://share.descript.com/view/tbvYBh3rpRF)*
-> - Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI.
-
+_Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI._
 
 
 # Key Features and examples
+
+*Note: the demos presented in this page are also available in the video below:*
+
+<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
+<img src="_static/images/video_fl_demo.jpg" width="300" /></a>
+
 
 ## Create a GUI for structured data
 

@@ -4,7 +4,7 @@
 🔗 [Watch Video](https://share.descript.com/view/tbvYBh3rpRF)
 
 **Overview:**  
-This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications.  
+This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications. It is a demo, rather than a tutorial. 
 
 <a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
 <img src="_static/images/video_fl_demo.jpg" width="300" />

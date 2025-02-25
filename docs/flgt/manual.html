@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="First steps" href="manual_first.html" />
-    <link rel="prev" title="Video Tutorials" href="video_tutorials.html" />
+    <link rel="prev" title="Installation" href="install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,13 +181,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -201,16 +197,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -433,6 +433,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-video-tutorial-sort-algorithm-visualizer">Advanced Video Tutorial: Sort Algorithm Visualizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
 </ul>
             </nav>
@@ -454,9 +455,9 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="manual_function.html#typed-signatures"><span class="std std-ref">Add types to signatures</span></a> so that Fiatlight can generate a GUI for your functions</p></li>
 <li><p><a class="reference internal" href="manual_cli.html"><span class="doc std std-doc">Use fiatlight command line tool</span></a> to list all supported types and their possible GUI customization options</p></li>
-<li><p><a class="reference internal" href="manual_fiat_attributes.html"><span class="doc std std-doc">Customize widgets</span></a> using fiat_attributes</p></li>
-<li><p><a class="reference internal" href="#manual_reuse_widgets"><span class="xref myst">Reuse Fiatlight widgets</span></a>  in your own apps, not only in Fiatlight’s functions graphs.</p></li>
+<li><p><a class="reference internal" href="manual_fiat_attributes.html"><span class="doc std std-doc">Customize widgets using fiat_attributes</span></a></p></li>
 <li><p><a class="reference internal" href="manual_function.html#handwriting-the-gui"><span class="std std-ref">Fully customize any parameter’s GUI</span></a> by writing it by hand</p></li>
+<li><p><a class="reference internal" href="manual_gui_node.html"><span class="doc std std-doc">Add GUI only nodes</span></a> to your functions graph (i.e. nodes that do not have a function associated with them)</p></li>
 <li><p><a class="reference internal" href="manual_function.html#controlling-function-execution"><span class="std std-ref">Run functions asynchronously</span></a></p></li>
 <li><p><a class="reference internal" href="manual_dataclass_models.html"><span class="doc std std-doc">Create GUI for structured data</span></a>, i.e pydantic models and dataclasses</p></li>
 </ul>
@@ -465,10 +466,28 @@ document.write(`
 <h2>Advanced topics:<a class="headerlink" href="#advanced-topics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="manual_validation.html"><span class="doc std std-doc">Validate inputs in the GUI</span></a></p></li>
+<li><p><a class="reference internal" href="manual_reuse_widgets.html"><span class="doc std std-doc">Reuse Fiatlight widgets</span></a>  in your own apps, not only in Fiatlight’s functions graphs.</p></li>
 <li><p><a class="reference internal" href="manual_function.html#sub-class-functionwithgui"><span class="std std-ref">Fully customize functions GUI</span></a>
 subclassing FunctionWithGui</p></li>
+<li><p><a class="reference internal" href="manual_tuning.html"><span class="doc std std-doc">Fine-tune functions</span></a> by viewing their internal status. Debug and replay exceptions.</p></li>
 <li><p><a class="reference internal" href="manual_functions_graph.html"><span class="doc std std-doc">Create complex functions graph</span></a></p></li>
 <li><p><a class="reference internal" href="manual_custom.html"><span class="doc std std-doc">Create and register custom widgets for specific types</span></a></p></li>
+</ul>
+</section>
+<section id="advanced-video-tutorial-sort-algorithm-visualizer">
+<h2>Advanced Video Tutorial: Sort Algorithm Visualizer<a class="headerlink" href="#advanced-video-tutorial-sort-algorithm-visualizer" title="Link to this heading">#</a></h2>
+<p>🔗 <a class="reference external" href="https://share.descript.com/view/oBub1WN28bX">Watch Video</a></p>
+<p><strong>Overview:</strong><br />
+This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.</p>
+<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
+<img src="_static/images/video_fl_sort.jpg" width="300" />
+</a>
+<p><strong>Key Topics:</strong></p>
+<ul class="simple">
+<li><p>Asynchronous execution for smooth UI updates</p></li>
+<li><p>Using Fiatlight’s function graph to build complex workflows</p></li>
+<li><p>Customizing the UI with additional widgets</p></li>
+<li><p>Real-time visualization of sorting algorithms</p></li>
 </ul>
 </section>
 <section id="domain-specific-topics">
@@ -517,12 +536,12 @@ manual_reuse_widgets</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="video_tutorials.html"
+       href="install.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Video Tutorials</p>
+        <p class="prev-next-title">Installation</p>
       </div>
     </a>
     <a class="right-next"
@@ -552,6 +571,7 @@ manual_reuse_widgets</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-video-tutorial-sort-algorithm-visualizer">Advanced Video Tutorial: Sort Algorithm Visualizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
 </ul>
   </nav></div>

@@ -7,19 +7,22 @@ root: intro
 chapters:
 #  - file: imgui_tech_stack
   - file: install
-  - file: video_tutorials
   - file: manual
     sections:
       - file: manual_first
       - file: manual_function
       - file: manual_registry
       - file: manual_fiat_attributes
+      - file: manual_gui_node
       - file: manual_cli
+      - file: manual_tuning
       - file: manual_functions_graph
       - file: manual_validation
       - file: manual_dataclass_models
+      - file: manual_subclass
       - file: manual_custom
       - file: manual_demos
+      - file: video_tutorials
   - file: api
     sections:
       - file: api_architecture

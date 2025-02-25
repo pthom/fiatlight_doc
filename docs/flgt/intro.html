@@ -182,13 +182,9 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -202,16 +198,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -486,17 +486,13 @@ document.write(`
 </ul>
 </div></blockquote>
 <p><em>The name “Fiatlight” is inspired by “Fiat Lux”, i.e. “Let there be light”.</em></p>
-<blockquote>
-<div><p><em>Notes:</em></p>
-<ul class="simple">
-<li><p>The demos and high-level view provided in this page are also available in a video:
-🔗 <a class="reference external" href="https://share.descript.com/view/tbvYBh3rpRF">Watch Video</a>*</p></li>
-<li><p>Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI.</p></li>
-</ul>
-</div></blockquote>
+<p><em>Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI.</em></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="key-features-and-examples">
 <h1>Key Features and examples<a class="headerlink" href="#key-features-and-examples" title="Link to this heading">#</a></h1>
+<p><em>Note: the demos presented in this page are also available in the video below:</em></p>
+<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
+<img src="_static/images/video_fl_demo.jpg" width="300" /></a>
 <section id="create-a-gui-for-structured-data">
 <h2>Create a GUI for structured data<a class="headerlink" href="#create-a-gui-for-structured-data" title="Link to this heading">#</a></h2>
 <p>In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).</p>
@@ -831,6 +827,15 @@ See its <a class="reference external" href="https://github.com/pthom/fiatlight/t
 <li><p><strong>Application Development</strong> – Prototypes built with Fiatlight can be <strong>seamlessly transitioned into full applications</strong> using <strong>Dear ImGui</strong>. Since Dear ImGui’s API is nearly identical in Python and C++, porting to C++ is straightforward.</p></li>
 </ul>
 <p>How does Fiatlight compare to other tools? See the <a class="reference internal" href="comparisons.html"><span class="doc std std-doc">full comparison</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.experimental.fiat_audio_simple</span> <span class="kn">import</span> <span class="n">sound_wave_from_file</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">sound_wave_from_file</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Sound Wave Player&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>

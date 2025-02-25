@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'manual_function';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -181,13 +179,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="manual.html">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Wrapping Functions</a></li>
-
-
-
 
 
 
@@ -201,16 +195,20 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="manual_functions_graph.html">Functions Graph</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -454,26 +452,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handwriting-the-gui">Handwriting the GUI</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-edit-and-present-callbacks">Using Edit and Present Callbacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-custom-callbacks">Example: Custom Callbacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-nodes">Gui Nodes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-a-heart-curve-with-a-gui-node">Example: Visualizing a Heart Curve with a GUI Node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-gui-node-with-serializable-state">Example: a GUI node with serializable state</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fiat-tuning-tune-functions">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-class-functionwithgui">Sub-class FunctionWithGui</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-camera-internal-state">Example: Camera &amp; Internal State</a></li>
 </ul>
 </li>
 </ul>
@@ -503,7 +481,7 @@ automatically by Fiatlight into a <code class="docutils literal notranslate"><sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/881e2b567bb25c28391fe431fdb81b59f3dbfa7546b06bfd62eab2ad09d3271f.png" src="_images/881e2b567bb25c28391fe431fdb81b59f3dbfa7546b06bfd62eab2ad09d3271f.png" />
+<img alt="_images/e346cce4a99833f76081e6cf33365030b36100f07bcf76c785b6b2903f446862.png" src="_images/e346cce4a99833f76081e6cf33365030b36100f07bcf76c785b6b2903f446862.png" />
 </div>
 </div>
 <blockquote>
@@ -900,500 +878,6 @@ entered a new value, or because an input is connected to another function that h
 </div>
 </div>
 </section>
-<section id="gui-nodes">
-<h2>Gui Nodes<a class="headerlink" href="#gui-nodes" title="Link to this heading">#</a></h2>
-<p>Gui Nodes are specialized nodes in Fiatlight, dedicated to functions which do not return values but instead displaying a user interface using ImGui widgets. Gui Nodes are called at every frame, ensuring that the GUI is always responsive and up-to-date.</p>
-<p>Gui Nodes are particularly useful for:</p>
-<ul class="simple">
-<li><p>Displaying interactive visualizations (plots, etc)</p></li>
-<li><p>Creating dashboards</p></li>
-<li><p>Providing user controls (e.g., sliders, buttons) that alter global variables</p></li>
-</ul>
-<blockquote>
-<div><p>Notes:</p>
-<ul class="simple">
-<li><p>Gui Nodes are not meant to return values</p></li>
-<li><p>Your GUI function should be fast. If you need to perform heavy computations, consider using AnyDataWithGui, where the “on_change” callback can be used to cache heavy computations.</p></li>
-</ul>
-</div></blockquote>
-<section id="example-visualizing-a-heart-curve-with-a-gui-node">
-<h3>Example: Visualizing a Heart Curve with a GUI Node<a class="headerlink" href="#example-visualizing-a-heart-curve-with-a-gui-node" title="Link to this heading">#</a></h3>
-<p>In this example, we demonstrate how to create a GUI node that visualizes a heart curve. The size of the heart dynamically changes over time to simulate a heartbeat.</p>
-<p><strong>Explanation</strong>:</p>
-<ol class="arabic simple">
-<li><p>time_seconds: This function returns the current time in seconds and is set to always be re-evaluated at every frame.</p></li>
-<li><p>heart_curve: Generates the x and y coordinates of a heart curve that changes size over time to simulate a heartbeat.</p></li>
-<li><p>gui_curve: A GUI node that visualizes the heart curve using ImPlot. It updates the curve at every frame to reflect the beating heart.</p></li>
-<li><p>gui_curve is a gui function. So, we wrap it in a GuiNode to display the heart curve with either
-<code class="docutils literal notranslate"><span class="pre">GuiNode(gui_curve)</span></code> or <code class="docutils literal notranslate"><span class="pre">graph.add_gui_node(gui_curve)</span></code>.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">hello_imgui</span><span class="p">,</span> <span class="n">implot</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">ArrayLike</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">invoke_always_dirty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">time_seconds</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the current time in seconds.</span>
-<span class="sd">    This function is marked as always dirty, so it will be re-evaluated at every frame.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">heart_curve</span><span class="p">(</span><span class="n">time_</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayLike</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the x and y coordinates of a heart curve whose size changes over time,</span>
-<span class="sd">    to simulate a heart beating.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-    <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">16</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">vals</span><span class="p">)</span>
-
-    <span class="c1"># Heart pulse rate and time tracking</span>
-    <span class="n">heart_pulse_rate</span> <span class="o">=</span> <span class="mi">80</span>
-    <span class="n">phase</span> <span class="o">=</span> <span class="n">time_</span> <span class="o">*</span> <span class="n">heart_pulse_rate</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">k</span><span class="p">])</span>
-
-<span class="k">def</span> <span class="nf">gui_curve</span><span class="p">(</span><span class="n">xy</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display the heart curve with ImPlot</span>
-
-<span class="sd">    This function is a GUI node that displays the heart curve.</span>
-
-<span class="sd">    It is called at every frame to update the curve.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">implot</span><span class="o">.</span><span class="n">begin_plot</span><span class="p">(</span><span class="s2">&quot;Heart&quot;</span><span class="p">,</span> <span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_to_vec2</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">)):</span>
-        <span class="n">implot</span><span class="o">.</span><span class="n">setup_axes_limits</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-        <span class="n">implot</span><span class="o">.</span><span class="n">plot_line</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">implot</span><span class="o">.</span><span class="n">end_plot</span><span class="p">()</span>
-
-<span class="c1"># Run the graph</span>
-<span class="c1"># Method 1: Using the run function, and wrapping the gui_curve function in a GuiNode</span>
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">time_seconds</span><span class="p">,</span> <span class="n">heart_curve</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">GuiNode</span><span class="p">(</span><span class="n">gui_curve</span><span class="p">)],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;HeartCurve&quot;</span><span class="p">)</span>
-
-<span class="c1"># Method 2: Using a FunctionsGraph</span>
-<span class="c1"># graph = fl.FunctionsGraph()</span>
-<span class="c1"># graph.add_function(time_seconds)</span>
-<span class="c1"># graph.add_function(heart_curve)</span>
-<span class="c1"># graph.add_gui_node(gui_curve)  # Add the gui_curve function as a GuiNode</span>
-<span class="c1"># graph.add_link(time_seconds, heart_curve)</span>
-<span class="c1"># graph.add_link(heart_curve, gui_curve)</span>
-<span class="c1"># fl.run(graph, app_name=&quot;HeartCurve&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/cb3f4587936db6c89875969f518909f76c1b1ff67df372ce06e308dc4db7976b.png" src="_images/cb3f4587936db6c89875969f518909f76c1b1ff67df372ce06e308dc4db7976b.png" />
-</div>
-</div>
-</section>
-<section id="example-a-gui-node-with-serializable-state">
-<h3>Example: a GUI node with serializable state<a class="headerlink" href="#example-a-gui-node-with-serializable-state" title="Link to this heading">#</a></h3>
-<p>When adding a GuiNode, you can pass a serializable data class to store the options of the GUI function. This allows you to save the state of the GUI function and reload it when restarting the application.</p>
-<p>In the example below, we demonstrate how to create a GUI node that multiplies an input value by a factor. The factor can be adjusted by the user and is stored in a serializable data class. The factor value is reloaded upon restarting the application.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">imgui</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-
-<span class="k">def</span> <span class="nf">input_x</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;a function that will be displayed in the function graph, in order to let the user input a value.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">x</span>
-
-<span class="k">class</span> <span class="nc">WhatToMultiply</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A serializable data class that will be used to store the options of the GUI function `gui_x_times_factor&quot;&quot;&quot;</span>
-    <span class="n">factor</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="n">WHAT_TO_MULTIPLY</span> <span class="o">=</span> <span class="n">WhatToMultiply</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">gui_x_times_factor</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A GUI function that multiplies the input by a serializable factor.</span>
-<span class="sd">    It will be added via graph.add_gui_node(gui_x_times_factor, gui_serializable_data=WHAT_TO_MULTIPLY).</span>
-<span class="sd">    It uses a serializable data class to store its options, which will be reloaded upon restarting the application.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="n">imgui</span><span class="o">.</span><span class="n">input_int</span><span class="p">(</span><span class="s2">&quot;Factor&quot;</span><span class="p">,</span> <span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="p">)</span>
-    <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Multiply by a factor: x * </span><span class="si">{</span><span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="si">}</span><span class="s2"> =</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WHAT_TO_MULTIPLY</span><span class="o">.</span><span class="n">factor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Run the graph</span>
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">input_x</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">GuiNode</span><span class="p">(</span><span class="n">gui_x_times_factor</span><span class="p">,</span> <span class="n">gui_serializable_data</span><span class="o">=</span><span class="n">WHAT_TO_MULTIPLY</span><span class="p">)],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;GuiNode with serializable state&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/7d8a5b0c9a7dbd890a156c10e5235682292781028bc502b553a91d5532b370a4.png" src="_images/7d8a5b0c9a7dbd890a156c10e5235682292781028bc502b553a91d5532b370a4.png" />
-</div>
-</div>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="debugging-functions-exceptions">
-<h1>Debugging Functions exceptions<a class="headerlink" href="#debugging-functions-exceptions" title="Link to this heading">#</a></h1>
-<p>When a function raises an exception, Fiatlight catches and displays it without crashing the application. Instead, you will see a “Debug this exception” button that you can use to trigger the exception again.</p>
-<p>This feature is invaluable for debugging and making your functions more robust. If you are using a debugger, you will be taken directly to the point where the exception occurred, with the correct inputs to reproduce the bug.</p>
-<blockquote>
-<div><p>_Note: this feature can be disabled with:
-<code class="docutils literal notranslate"><span class="pre">fl.get_fiat_config().run_config.catch_function_exceptions</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
-</div></blockquote>
-<section id="example-a-math-exception">
-<h2>Example: a Math Exception<a class="headerlink" href="#example-a-math-exception" title="Link to this heading">#</a></h2>
-<p>With this setup, if the input value of a causes math.log(cos_a) to produce an error (when cos_a is negative).</p>
-<p>Fiatlight will catch and display the exception, allowing you to debug it easily.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="n">cos_a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cos_a</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">r</span>
-
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Math domain exception&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/e82af61cb13b3fcab720b163e8ea10f026bec4175a889e5fe9847ded93782b29.png" src="_images/e82af61cb13b3fcab720b163e8ea10f026bec4175a889e5fe9847ded93782b29.png" />
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="fiat-tuning-tune-functions">
-<h1>Fiat Tuning: Tune functions<a class="headerlink" href="#fiat-tuning-tune-functions" title="Link to this heading">#</a></h1>
-<section id="id2">
-<h2>Introduction<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Fiatlight provides you with powerful tools to visually debug the intermediate states of your function.</p>
-<p>By adding a fiat_tuning attribute to a function, you can provide additional information that will be displayed in the GUI node for this function. This attribute is a dictionary and can contain named data values or descendants of AnyDataWithGui. This information can be used to fine-tune the function, debug it, or visualize intermediate states.</p>
-<p>Moreover, this information can be updated in the GUI, even if the function is a long-running process called asynchronously.</p>
-<blockquote>
-<div><p><em>Example: The image below shows a sort competition between different algorithms. The GUI nodes display in real time the evolving state of each algorithm, using “fiat_tuning” (see tutorial “demos/tutorials/sort_competition” for more details).</em></p>
-<img src="_static/images/sort_competition.jpg" width="30%">
-</div></blockquote>
-</section>
-<section id="example-measure-execution-time">
-<h2>Example: Measure Execution Time<a class="headerlink" href="#example-measure-execution-time" title="Link to this heading">#</a></h2>
-<p>In the example below, we will add a simple float into the fiat_tuning attribute of the sort_list function. This float will represent the duration of the sort operation.</p>
-<p>The collapsible region “Fiat Tuning” will display this duration:we can see that in this example, it takes about 0.75 seconds to sort a list of 10,000,000 elements.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">n__range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">make_random_list</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="kn">import</span> <span class="nn">random</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-
-
-<span class="k">def</span> <span class="nf">sort_list</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">duration</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">sort_list</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">duration</span><span class="p">})</span>
-    <span class="k">return</span> <span class="n">r</span>
-
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">make_random_list</span><span class="p">,</span> <span class="n">sort_list</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Sort duration&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/6f0fb8e3777cc9699252925e1185cfd1d28dc48c60e06b03be505ca7821d5a5b.png" src="_images/6f0fb8e3777cc9699252925e1185cfd1d28dc48c60e06b03be505ca7821d5a5b.png" />
-</div>
-</div>
-</section>
-<section id="example-tune-using-an-image">
-<h2>Example: Tune using an Image<a class="headerlink" href="#example-tune-using-an-image" title="Link to this heading">#</a></h2>
-<p>The fiat_tuning attribute can also be used to display widgets (which must be descendants of AnyDataWithGui) in the GUI node.</p>
-<p>In the example below, we will add an image widget (ImageWithGui) into the fiat_tuning attribute.</p>
-<blockquote>
-<div><p><em><a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/demos/images/toon_edges.py">demos/images/toon_edges.py</a> is a good example of how to use the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute.</em></p>
-<p><em><code class="docutils literal notranslate"><span class="pre">add_toon_edges</span></code> is a complex function that adds a toon effect to an image, by adding colored edges to the image contours.</em>
-<em>The contour detection is extremely sensitive to the parameters, and the <code class="docutils literal notranslate"><span class="pre">fiat_tuning</span></code> attribute is used to display the intermediate states of the function in the GUI.</em></p>
-</div></blockquote>
-<p>Here are some commented extracts of the function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">ImageU8_1</span>
-
-<span class="k">def</span> <span class="nf">add_toon_edges</span><span class="p">(</span>
-<span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">,</span>
-<span class="c1"># ... lots of parameters ...</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
-    <span class="n">edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1"># = ...             (compute the edges)</span>
-    <span class="n">dilated_edges</span><span class="p">:</span> <span class="n">ImageU8_1</span> <span class="c1">#  = ...    (dilate the edges)</span>
-    <span class="n">image_with_edges</span><span class="p">:</span> <span class="n">ImageU8_3</span>  <span class="c1"># = ... (superimpose the edges on the image)</span>
-
-    <span class="c1"># fiat_tuning: add debug internals to ease fine-tuning the function inside the node</span>
-    <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageWithGui</span>
-
-    <span class="c1"># Add to fiat_tuning any variable you want to be able to fine-tune or debug in the function node</span>
-    <span class="c1">#     * Either a raw type (int, float, str, etc.): see durations</span>
-    <span class="c1">#     * Or a descendant of AnyDataWithGui: see &quot;canny&quot;, &quot;dilate&quot;, &quot;image_with_edges&quot;</span>
-    <span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">add_toon_edges</span><span class="p">,</span> <span class="n">fiat_tuning</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;duration_canny&quot;</span><span class="p">:</span> <span class="n">duration_canny</span><span class="p">,</span>
-        <span class="s2">&quot;duration_dilate&quot;</span><span class="p">:</span> <span class="n">duration_dilate</span><span class="p">,</span>
-        <span class="s2">&quot;duration_blur&quot;</span><span class="p">:</span> <span class="n">duration_blur</span><span class="p">,</span>
-        <span class="s2">&quot;duration_merge&quot;</span><span class="p">:</span> <span class="n">duration_merge</span><span class="p">,</span>
-        <span class="s2">&quot;canny&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">edges</span><span class="p">),</span>
-        <span class="s2">&quot;dilate&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">dilated_edges</span><span class="p">),</span>
-        <span class="s2">&quot;image_with_edges&quot;</span><span class="p">:</span> <span class="n">ImageWithGui</span><span class="p">(</span><span class="n">image_with_edges</span><span class="p">),</span>
-    <span class="p">})</span>
-
-    <span class="c1"># return the image with edges</span>
-    <span class="k">return</span> <span class="n">image_with_edges</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Once these internals are set, you can see the function “Internals” in the GUI:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">ImageU8_GRAY</span><span class="p">,</span> <span class="n">ImageU8_3</span><span class="p">,</span> <span class="n">image_source</span>
-<span class="kn">from</span> <span class="nn">fiatlight.demos.images.toon_edges</span> <span class="kn">import</span> <span class="n">add_toon_edges</span>
-
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">image_source</span><span class="p">,</span> <span class="n">add_toon_edges</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Toon edges&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/84256edc7ddd0f0e5e7ab8612e8f038fbe037e6ac48e305bd47c6cb21825bfad.png" src="_images/84256edc7ddd0f0e5e7ab8612e8f038fbe037e6ac48e305bd47c6cb21825bfad.png" />
-</div>
-</div>
-<blockquote>
-<div><p><em>The image above shows the GUI node for the toon_edges function, with the expanded “Fiat Tuning” section:</em>
-<em>it displays the execution time of each step, as well as an image representation of the intermediate edges and dilated edges.</em></p>
-</div></blockquote>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sub-class-functionwithgui">
-<h1>Sub-class FunctionWithGui<a class="headerlink" href="#sub-class-functionwithgui" title="Link to this heading">#</a></h1>
-<section id="id3">
-<h2>Introduction<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>By subclassing <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, you can fully customize the behavior of the function:</p>
-<ul class="simple">
-<li><p>you can add a GUI for the internal state of the function (e.g. displaying a live plot of a sound signal)</p></li>
-<li><p>you can add a heartbeat function that will be called at each frame (e.g. get the latest data from a sensor)</p></li>
-<li><p>you can save and load the internal GUI presentation options to/from a JSON file (e.g. to save the layout of a plot)</p></li>
-</ul>
-</section>
-<section id="example-camera-internal-state">
-<h2>Example: Camera &amp; Internal State<a class="headerlink" href="#example-camera-internal-state" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/pthom/fiatlight/tree/refact_io/src/python/fiatlight/fiat_kits/fiat_image/camera_image_provider.py">fiatlight.fiat_kits.fiat_image.CameraImageProviderGui</a>
-is a good example of a custom FunctionWithGui class.</p>
-<p>You can see it in action below:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image</span> <span class="kn">import</span> <span class="n">CameraImageProviderGui</span><span class="p">,</span> <span class="n">ImageU8_3</span>
-<span class="kn">import</span> <span class="nn">cv2</span>
-
-<span class="k">def</span> <span class="nf">rotate_45</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageU8_3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span><span class="p">:</span>
-    <span class="n">transform</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">((</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>  <span class="c1"># type: ignore</span>
-
-<span class="n">camera_provider_gui</span> <span class="o">=</span> <span class="n">CameraImageProviderGui</span><span class="p">()</span>
-<span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">camera_provider_gui</span><span class="p">,</span> <span class="n">rotate_45</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Camera provider with rotation&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-14 15:42:54.462 Python[44008:11709418] WARNING: AVCaptureDeviceTypeExternal is deprecated for Continuity Cameras. Please use AVCaptureDeviceTypeContinuityCamera and add NSCameraUseContinuityCameraDeviceType to your Info.plist.
-</pre></div>
-</div>
-<img alt="_images/1b07945f5082f6d3a63012cee0f6fffc4d95ff3483fe6bc984687c24a2e9fa8f.png" src="_images/1b07945f5082f6d3a63012cee0f6fffc4d95ff3483fe6bc984687c24a2e9fa8f.png" />
-</div>
-</div>
-<p><strong>Commented extracts of <a class="reference download internal" download="" href="_downloads/8526087f330b97834e4b6f54c3704340/camera_image_provider.py"><span class="xref download myst">camera_image_provider.py</span></a></strong></p>
-<p>Look at the <code class="docutils literal notranslate"><span class="pre">CameraImageProviderGui</span></code> class that extends <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>:</p>
-<blockquote>
-<div><p>Notes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">CameraImageProviderGui</span></code> der uses a <code class="docutils literal notranslate"><span class="pre">CameraImageProvider</span></code> class that provides images from a camera.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CameraParams</span></code> contains the state of the camera (device number, brightness, contrast, etc.).
-This state is serialized. As it is as a Pydantic model, a GUI for it is automatically created by Fiatlight,
-and its state is serialized.</p></li>
-</ul>
-</div></blockquote>
-<p><strong>CameraImageProviderGui (a descendant of FunctionWithGui)</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_notebook</span> <span class="kn">import</span> <span class="n">look_at_code</span>
-<span class="o">%</span><span class="k">look_at_python_code</span>
-<span class="n">fiatlight</span><span class="o">.</span><span class="n">fiat_kits</span><span class="o">.</span><span class="n">fiat_image</span><span class="o">.</span><span class="n">camera_image_provider</span><span class="o">.</span><span class="n">CameraImageProviderGui</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-.output_html .hll { background-color: #ffffcc }
-.output_html { background: #f8f8f8; }
-.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */
-.output_html .err { border: 1px solid #FF0000 } /* Error */
-.output_html .k { color: #008000; font-weight: bold } /* Keyword */
-.output_html .o { color: #666666 } /* Operator */
-.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
-.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
-.output_html .cp { color: #9C6500 } /* Comment.Preproc */
-.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
-.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
-.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
-.output_html .gd { color: #A00000 } /* Generic.Deleted */
-.output_html .ge { font-style: italic } /* Generic.Emph */
-.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
-.output_html .gr { color: #E40000 } /* Generic.Error */
-.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.output_html .gi { color: #008400 } /* Generic.Inserted */
-.output_html .go { color: #717171 } /* Generic.Output */
-.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.output_html .gs { font-weight: bold } /* Generic.Strong */
-.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.output_html .gt { color: #0044DD } /* Generic.Traceback */
-.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.output_html .kp { color: #008000 } /* Keyword.Pseudo */
-.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.output_html .kt { color: #B00040 } /* Keyword.Type */
-.output_html .m { color: #666666 } /* Literal.Number */
-.output_html .s { color: #BA2121 } /* Literal.String */
-.output_html .na { color: #687822 } /* Name.Attribute */
-.output_html .nb { color: #008000 } /* Name.Builtin */
-.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.output_html .no { color: #880000 } /* Name.Constant */
-.output_html .nd { color: #AA22FF } /* Name.Decorator */
-.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */
-.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-.output_html .nf { color: #0000FF } /* Name.Function */
-.output_html .nl { color: #767600 } /* Name.Label */
-.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.output_html .nv { color: #19177C } /* Name.Variable */
-.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.output_html .w { color: #bbbbbb } /* Text.Whitespace */
-.output_html .mb { color: #666666 } /* Literal.Number.Bin */
-.output_html .mf { color: #666666 } /* Literal.Number.Float */
-.output_html .mh { color: #666666 } /* Literal.Number.Hex */
-.output_html .mi { color: #666666 } /* Literal.Number.Integer */
-.output_html .mo { color: #666666 } /* Literal.Number.Oct */
-.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
-.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
-.output_html .sc { color: #BA2121 } /* Literal.String.Char */
-.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
-.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
-.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
-.output_html .sx { color: #008000 } /* Literal.String.Other */
-.output_html .sr { color: #A45A77 } /* Literal.String.Regex */
-.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
-.output_html .ss { color: #19177C } /* Literal.String.Symbol */
-.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.output_html .fm { color: #0000FF } /* Name.Function.Magic */
-.output_html .vc { color: #19177C } /* Name.Variable.Class */
-.output_html .vg { color: #19177C } /* Name.Variable.Global */
-.output_html .vi { color: #19177C } /* Name.Variable.Instance */
-.output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CameraImageProviderGui</span><span class="p">(</span><span class="n">FunctionWithGui</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Gui for the camera image provider&quot;&quot;&quot;</span>
-
-    <span class="n">_camera_provider</span><span class="p">:</span> <span class="n">CameraImageProvider</span>
-    <span class="n">_camera_params_gui</span><span class="p">:</span> <span class="n">AnyDataWithGui</span><span class="p">[</span><span class="n">CameraParams</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;CameraImageProviderGui&quot;</span><span class="p">)</span>
-
-        <span class="kn">from</span> <span class="nn">fiatlight.fiat_togui</span> <span class="kn">import</span> <span class="n">to_data_with_gui</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span> <span class="o">=</span> <span class="n">CameraImageProvider</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span> <span class="o">=</span> <span class="n">to_data_with_gui</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Camera Params&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">internal_state_gui</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_state_gui</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_internal_gui_options_to_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_internal_gui_options_to_json</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">load_internal_gui_options_from_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_internal_gui_options_from_json</span>
-
-        <span class="c1"># A flag for fiatlight to set this as a live function</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">invoke_always_dirty</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageU8_3</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">get_image</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">_save_internal_gui_options_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonDict</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">r</span>
-
-    <span class="k">def</span> <span class="nf">_load_internal_gui_options_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">:</span> <span class="n">JsonDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">camera_params</span> <span class="o">=</span> <span class="n">CameraParams</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">json_dict</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">camera_params</span> <span class="o">=</span> <span class="n">camera_params</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">camera_params</span>
-
-    <span class="k">def</span> <span class="nf">_show_cam_button</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">started</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">started</span><span class="p">()</span>
-        <span class="k">with</span> <span class="n">imgui_ctx</span><span class="o">.</span><span class="n">begin_horizontal</span><span class="p">(</span><span class="s2">&quot;CamButton&quot;</span><span class="p">):</span>
-            <span class="n">imgui</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
-            <span class="n">button_size</span> <span class="o">=</span> <span class="n">hello_imgui</span><span class="o">.</span><span class="n">em_to_vec2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">started</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">imgui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">icons_fontawesome_6</span><span class="o">.</span><span class="n">ICON_FA_CIRCLE_PLAY</span><span class="p">,</span> <span class="n">button_size</span><span class="p">):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">imgui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">icons_fontawesome_6</span><span class="o">.</span><span class="n">ICON_FA_CIRCLE_STOP</span><span class="p">,</span> <span class="n">button_size</span><span class="p">):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-            <span class="n">imgui</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">_internal_state_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">fontawesome_6_ctx</span><span class="p">():</span>
-            <span class="k">with</span> <span class="n">imgui_ctx</span><span class="o">.</span><span class="n">begin_vertical</span><span class="p">(</span><span class="s2">&quot;CamParams&quot;</span><span class="p">):</span>
-                <span class="n">imgui</span><span class="o">.</span><span class="n">text_wrapped</span><span class="p">(</span><span class="s2">&quot;(Note: some cameras may not support all the settings)&quot;</span><span class="p">)</span>
-                <span class="n">changed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">gui_edit</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
-                    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">CameraParams</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_camera_provider</span><span class="o">.</span><span class="n">apply_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_camera_params_gui</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-                <span class="n">imgui</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Start/Stop Camera&quot;</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_show_cam_button</span><span class="p">()</span>
-
-        <span class="k">return</span> <span class="kc">False</span>
-</pre></div>
-</div></div>
-</div>
-<p><strong>CameraParams (serialized internal state)</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-<span class="kn">import</span> <span class="nn">cv2</span>
-
-<span class="k">class</span> <span class="nc">CameraResolution</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="n">HD_1280_720</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">]</span>
-    <span class="n">FULL_HD_1920_1080</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">]</span>
-    <span class="n">VGA_640_480</span> <span class="o">=</span> <span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">]</span>
-
-<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">(</span><span class="n">device_number__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">brightness__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">contrast__range</span><span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">class</span> <span class="nc">CameraParams</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">device_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">brightness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="n">contrast</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="n">camera_resolution</span><span class="p">:</span> <span class="n">CameraResolution</span> <span class="o">=</span> <span class="n">CameraResolution</span><span class="o">.</span><span class="n">VGA_640_480</span>
-
-
-<span class="k">class</span> <span class="nc">CameraImageProvider</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;A class that provides images from a camera&#39;&#39;&#39;</span>
-    <span class="n">camera_params</span><span class="p">:</span> <span class="n">CameraParams</span>
-    <span class="n">cv_cap</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1483,26 +967,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handwriting-the-gui">Handwriting the GUI</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-edit-and-present-callbacks">Using Edit and Present Callbacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-custom-callbacks">Example: Custom Callbacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-nodes">Gui Nodes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-a-heart-curve-with-a-gui-node">Example: Visualizing a Heart Curve with a GUI Node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-gui-node-with-serializable-state">Example: a GUI node with serializable state</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-functions-exceptions">Debugging Functions exceptions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-math-exception">Example: a Math Exception</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fiat-tuning-tune-functions">Fiat Tuning: Tune functions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-measure-execution-time">Example: Measure Execution Time</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tune-using-an-image">Example: Tune using an Image</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-class-functionwithgui">Sub-class FunctionWithGui</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-camera-internal-state">Example: Camera &amp; Internal State</a></li>
 </ul>
 </li>
 </ul>
