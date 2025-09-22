@@ -233,8 +233,11 @@ Example 3: a sound player
 -------------------------
 
 The sound wave player also uses a custom type with a GUI.
+
 ```python
-from fiatlight.fiat_kits.experimental.fiat_audio_simple import sound_wave_player_gui_demo
+
+from fiatlight.fiat_kits.experimental.fiat_audio_simple.demos import demo_sound_wave_player
+
 sound_wave_player_gui_demo.main()
 ```
 
