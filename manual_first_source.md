@@ -1,4 +1,38 @@
-First steps
+Tutorials & First steps
+=======================
+
+Video tutorials
+===============
+
+Advanced Tutorial
+-----------------
+
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 60%">
+
+<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
+<img src="_static/images/video_fl_sort.jpg" width="500" />
+</a>
+
+</td>
+<td style="vertical-align: center;">
+This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.  
+
+</td>
+</tr>
+</table>
+
+**Key Topics:**  
+* Create GUIs for Pydantic models and functions
+* Customize outputs with ImPlot charts
+* Use Fiatlight’s function graph to build complex workflows  
+* Register custom GUIs for types
+* Run functions asynchronously with real-time updates
+* Build function graphs with GUI and documentation nodes
+* Use Fiatlight GUIs inside a standalone app
+
+First Steps
 ===========
 
 Running functions via Fiatlight
@@ -90,7 +124,8 @@ fl.run([int_source, add], app_name="First Example")
 >   * "b" is equal to its default value (0). It is shown in gray to indicate that it is using the default value.
 >   * "c" is equal to its default value (None). It is also shown in gray.
 
-### Video Tutorial of the available controls
+Video Tutorial of the available controls
+-----------------------------------------------
 
 *The video below shows how to interact with the widgets in a function node*
 
@@ -99,7 +134,8 @@ fl.run([int_source, add], app_name="First Example")
   Your browser does not support the video tag.
 </video>
 
-### Save / Load user settings
+Save / Load user settings
+-------------------------
 
 **Automatic user settings saving**
 
@@ -125,5 +161,5 @@ only the user values are saved (in a file named "xxx.fiat_user.json", where "xxx
 
 
 Going Further
--------------
-Explore the [introductory topics](manual) to learn how to customize widgets, and much more;
+=============
+Explore the [manual](manual) to learn how to customize widgets, and much more.

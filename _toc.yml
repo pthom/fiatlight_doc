@@ -7,9 +7,9 @@ root: intro
 chapters:
 #  - file: imgui_tech_stack
   - file: install
+  - file: manual_first
   - file: manual
     sections:
-      - file: manual_first
       - file: manual_function
       - file: manual_registry
       - file: manual_fiat_attributes

@@ -24,22 +24,6 @@ Then, explore the following sections.
 * [Create and register custom widgets for specific types](manual_custom)
 
 
-### Advanced Video Tutorial: Sort Algorithm Visualizer  
-🔗 [Watch Video](https://share.descript.com/view/oBub1WN28bX)  
-
-**Overview:**  
-This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.  
-
-<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
-<img src="_static/images/video_fl_sort.jpg" width="300" />
-</a>
-
-**Key Topics:**  
-- Asynchronous execution for smooth UI updates  
-- Using Fiatlight’s function graph to build complex workflows  
-- Customizing the UI with additional widgets
-- Real-time visualization of sorting algorithms  
-
 ### Domain-specific topics:
 Explore [fiat_kits](fiat_kits), collections of pre-built widgets for specific domains, such as:
 * [fiat_image](fiat_image) for image processing
