@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'video_tutorials';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="Run the demos" href="manual_demos.html" />
+    <link rel="next" title="First Steps" href="manual_first.html" />
+    <link rel="prev" title="Installation" href="install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,13 +179,17 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="manual.html">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
 
 
@@ -194,7 +198,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -204,11 +207,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -429,11 +431,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-sort-algorithm-visualizer">Advanced Tutorial: Sort Algorithm Visualizer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Video Tutorials</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-list">Tutorials list</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial">Advanced Tutorial</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-for-these-videos">Sources for these videos</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -446,14 +454,91 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="video-tutorials">
 <h1>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorials-list">
+<h1>Tutorials list<a class="headerlink" href="#tutorials-list" title="Link to this heading">#</a></h1>
+<section id="advanced-tutorial">
+<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Link to this heading">#</a></h2>
+<p>This tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight, in order to explain more advanced features.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
+<img src="_static/images/video_fl_sort.jpg" width="500" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>Key Topics:</strong></p>
+<ul class="simple">
+<li><p>Create GUIs for Pydantic models and functions</p></li>
+<li><p>Customize outputs with ImPlot charts</p></li>
+<li><p>Use Fiatlight’s function graph to build complex workflows</p></li>
+<li><p>Register custom GUIs for types</p></li>
+<li><p>Run functions asynchronously with real-time updates</p></li>
+<li><p>Build function graphs with GUI and documentation nodes</p></li>
+<li><p>Use Fiatlight GUIs inside a standalone app</p></li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+<hr class="docutils" />
+<section id="gui-for-pydantic-models">
+<h2>GUI for Pydantic Models<a class="headerlink" href="#gui-for-pydantic-models" title="Link to this heading">#</a></h2>
+<p>Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pydantic models.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/CxaFQ5T6iq7" target="_blank">
+<img src="_static/images/video_fl_pydantic.jpg" width="300" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Customizing widgets with <code class="docutils literal notranslate"><span class="pre">fiat_attributes</span></code></p></li>
+<li><p>Automatic validation for user inputs</p></li>
+<li><p>Displaying structured data with interactive components</p></li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+<hr class="docutils" />
+<section id="fiatlight-architecture">
+<h2>Fiatlight Architecture<a class="headerlink" href="#fiatlight-architecture" title="Link to this heading">#</a></h2>
+<p>A high-level overview of Fiatlight’s internal structure and how it automatically maps functions and data types to UI components.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/xkgrDb7Kzzj" target="_blank">
+<img src="_static/images/video_fl_architecture.jpg" width="300" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>Key Topics:</strong></p>
+<ul class="simple">
+<li><p>Core components: <code class="docutils literal notranslate"><span class="pre">AnyDataWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionGraph</span></code></p></li>
+<li><p>How Fiatlight registers data types to generate interactive UIs</p></li>
+<li><p>Customization callbacks to fine-tune how data is presented</p></li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+<hr class="docutils" />
 <section id="full-demo-of-fiatlight">
 <h2>Full Demo of Fiatlight<a class="headerlink" href="#full-demo-of-fiatlight" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/tbvYBh3rpRF">Watch Video</a></p>
 <p><strong>Overview:</strong><br />
 This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications. It is a demo, rather than a tutorial.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
 <a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
 <img src="_static/images/video_fl_demo.jpg" width="300" />
 </a>
+</td>
+<td style="vertical-align: center;">
 <p><strong>Highlights:</strong></p>
 <ul class="simple">
 <li><p>AI-powered meme generator in just 4 lines of code</p></li>
@@ -461,56 +546,15 @@ This video provides a complete walkthrough of Fiatlight, showcasing how it can r
 <li><p>Tailored kits for image processing, data visualization, and audio analysis</p></li>
 <li><p>Fine-tuning and debugging with function state introspection</p></li>
 </ul>
+</td>
+</tr>
+</table>
 </section>
-<hr class="docutils" />
-<section id="advanced-tutorial-sort-algorithm-visualizer">
-<h2>Advanced Tutorial: Sort Algorithm Visualizer<a class="headerlink" href="#advanced-tutorial-sort-algorithm-visualizer" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/oBub1WN28bX">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.</p>
-<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
-<img src="_static/images/video_fl_sort.jpg" width="300" />
-</a>
-<p><strong>Key Topics:</strong></p>
-<ul class="simple">
-<li><p>Asynchronous execution for smooth UI updates</p></li>
-<li><p>Using Fiatlight’s function graph to build complex workflows</p></li>
-<li><p>Customizing the UI with additional widgets</p></li>
-<li><p>Real-time visualization of sorting algorithms</p></li>
-</ul>
 </section>
-<hr class="docutils" />
-<section id="fiatlight-architecture">
-<h2>Fiatlight Architecture<a class="headerlink" href="#fiatlight-architecture" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/xkgrDb7Kzzj">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-A high-level overview of Fiatlight’s internal structure and how it automatically maps functions and data types to UI components.</p>
-<a href="https://share.descript.com/view/xkgrDb7Kzzj" target="_blank">
-<img src="_static/images/video_fl_architecture.jpg" width="300" />
-</a>
-<p><strong>Key Topics:</strong></p>
-<ul class="simple">
-<li><p>Core components: <code class="docutils literal notranslate"><span class="pre">AnyDataWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionGraph</span></code></p></li>
-<li><p>How Fiatlight registers data types to generate interactive UIs</p></li>
-<li><p>Customization callbacks to fine-tune how data is presented</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="gui-for-pydantic-models">
-<h2>GUI for Pydantic Models<a class="headerlink" href="#gui-for-pydantic-models" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/CxaFQ5T6iq7">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pydantic models.</p>
-<a href="https://share.descript.com/view/CxaFQ5T6iq7" target="_blank">
-<img src="_static/images/video_fl_pydantic.jpg" width="300" />
-</a>
-<p><strong>Key Features:</strong></p>
-<ul class="simple">
-<li><p>Customizing widgets with <code class="docutils literal notranslate"><span class="pre">fiat_attributes</span></code></p></li>
-<li><p>Automatic validation for user inputs</p></li>
-<li><p>Displaying structured data with interactive components</p></li>
-</ul>
-</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sources-for-these-videos">
+<h1>Sources for these videos<a class="headerlink" href="#sources-for-these-videos" title="Link to this heading">#</a></h1>
+<p>The sources for these tutorials are available in <a class="reference external" href="https://github.com/pthom/fiatlight/tree/main/src/python/fiatlight/demos/tutorials">src/python/fiatlight/demos/tutorials</a>.</p>
+<p><img alt="tutorial_tree.png" src="_images/tutorial_tree.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -544,20 +588,20 @@ Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pyda
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="manual_demos.html"
+       href="install.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Run the demos</p>
+        <p class="prev-next-title">Installation</p>
       </div>
     </a>
     <a class="right-next"
-       href="api.html"
+       href="manual_first.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API</p>
+        <p class="prev-next-title">First Steps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -577,11 +621,17 @@ Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pyda
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-sort-algorithm-visualizer">Advanced Tutorial: Sort Algorithm Visualizer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Video Tutorials</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-list">Tutorials list</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial">Advanced Tutorial</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-for-these-videos">Sources for these videos</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

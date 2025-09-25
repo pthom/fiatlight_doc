@@ -1,7 +1,7 @@
-A Mature Tech stack on top of Dear ImGui
-========================================
+Immediate Gui in Python
+=======================
 
-> Fiatlight is built on top of several powerful libraries and tools, including [Dear ImGui](https://github.com/ocornut/imgui), [Hello ImGui](https://pthom.github.io/hello_imgui), and [Dear ImGui Bundle](https://pthom.github.io/imgui_bundle).
+> [Dear ImGui](https://github.com/ocornut/imgui), [Hello ImGui](https://pthom.github.io/hello_imgui), and [Dear ImGui Bundle](https://pthom.github.io/imgui_bundle).
 
 Dear ImGui
 ==========

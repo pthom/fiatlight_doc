@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'manual_registry';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Customizing Widgets with Fiat Attributes" href="manual_fiat_attributes.html" />
-    <link rel="prev" title="Wrapping Functions" href="manual_function.html" />
+    <link rel="next" title="Gui Nodes" href="manual_gui_node.html" />
+    <link rel="prev" title="Customizing Widgets with Fiat Attributes" href="manual_fiat_attributes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,13 +181,17 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="manual.html">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Gui Registry</a></li>
 
 
@@ -196,7 +200,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -206,11 +209,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -230,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -469,8 +471,8 @@ document.write(`
 <p>Here is the help message for the <code class="docutils literal notranslate"><span class="pre">fiatlight</span></code> command line utility:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-fiatlight --help
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">fiatlight</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
 </div>
 </div>
@@ -507,7 +509,7 @@ fiatlight --help
 <h2>Basic example<a class="headerlink" href="#basic-example" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">times_two</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">times_two</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -519,17 +521,17 @@ fiatlight --help
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/990e6f9e6414acf1d6840b58d4302c12071d8edef80c0c4816149fae824446aa.png" src="_images/990e6f9e6414acf1d6840b58d4302c12071d8edef80c0c4816149fae824446aa.png" />
+<img alt="_images/6253f091965d045a4642e72513c4888bc004c06c37161d739b391b571a070d23.png" src="_images/6253f091965d045a4642e72513c4888bc004c06c37161d739b391b571a070d23.png" />
 </div>
 </div>
 </section>
 <section id="example-with-custom-gui-options">
 <h2>Example with custom GUI options<a class="headerlink" href="#example-with-custom-gui-options" title="Link to this heading">#</a></h2>
-<p>The GUI of primitive is extensively configurable via fiat attributes.</p>
+<p>The GUI for these primitive types is extensively configurable via fiat attributes. Below, we customize the GUI for the <code class="docutils literal notranslate"><span class="pre">celsius</span></code> parameter to be a slider ranging from 0 to 100, with a specific format for displaying the value.</p>
 <p>See <a class="reference internal" href="api_function_with_gui.html"><span class="doc std std-doc">FunctionWithGui</span></a> for a comprehensive list of all the available attributes (in the “Customizing parameters GUI” section).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 
 
 <span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">celsius__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">celsius__format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2"> °C&quot;</span><span class="p">)</span>
@@ -542,7 +544,7 @@ fiatlight --help
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14e1cb826579261fb1347bbfc92b96dc019fb309bc34abc7fe25e85218249982.png" src="_images/14e1cb826579261fb1347bbfc92b96dc019fb309bc34abc7fe25e85218249982.png" />
+<img alt="_images/a83f431ba78ccb5026ac67a66dc5819b2f08a68c0f91d22f1a8a6ccd891e3feb.png" src="_images/a83f431ba78ccb5026ac67a66dc5819b2f08a68c0f91d22f1a8a6ccd891e3feb.png" />
 </div>
 </div>
 </section>
@@ -551,7 +553,7 @@ fiatlight --help
 <p>As a convenience, Fiatlight includes those predefined types for which the GUI will take into account their boundings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NewType</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NewType</span>
 
 <span class="c1"># Float types with specific ranges (bounds included)</span>
 <span class="n">Float_0_1</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;Float_0_1&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>  <span class="c1"># 0 to 1</span>
@@ -578,8 +580,8 @@ fiatlight --help
 They will be presented with a file dialog in the GUI.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_notebook</span> <span class="kn">import</span> <span class="n">look_at_code</span>
-<span class="o">%</span><span class="k">look_at_python_code</span> fiatlight.fiat_types.file_types
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.fiat_notebook</span> <span class="kn">import</span> <span class="n">look_at_code</span>
+<span class="o">%</span><span class="n">look_at_python_code</span> <span class="n">fiatlight</span><span class="o">.</span><span class="n">fiat_types</span><span class="o">.</span><span class="n">file_types</span>
 </pre></div>
 </div>
 </div>
@@ -696,36 +698,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre></div>
 </div></div>
 </div>
-<p><em>Example: a pipeline that lets the user select a text file and saves it into another file in lowercase</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
-<span class="kn">from</span> <span class="nn">fiatlight.fiat_types</span> <span class="kn">import</span> <span class="n">TextPath</span><span class="p">,</span> <span class="n">TextPath_Save</span>
-
-<span class="k">def</span> <span class="nf">read_text_file</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="n">TextPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span>  <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">save_lower_case_text_file</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="n">TextPath_Save</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="c1"># since filename is optional, the file will be saved only if the user selects a filename</span>
-    <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/d73d071dfc805b98f15762fac27c55b5bbc6f90d258a8ef302cd9492d173389d.png" src="_images/d73d071dfc805b98f15762fac27c55b5bbc6f90d258a8ef302cd9492d173389d.png" />
-</div>
-</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="color-types">
 <h1>Color types<a class="headerlink" href="#color-types" title="Link to this heading">#</a></h1>
 <p>Several color types are registered by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">look_at_python_code</span> fiatlight.fiat_types.color_types
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">look_at_python_code</span> <span class="n">fiatlight</span><span class="o">.</span><span class="n">fiat_types</span><span class="o">.</span><span class="n">color_types</span>
 </pre></div>
 </div>
 </div>
@@ -805,6 +784,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
 .output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NewType</span>
+<span class="kn">from</span> <span class="nn">imgui_bundle</span> <span class="kn">import</span> <span class="n">ImVec4</span>
+
 
 <span class="n">ColorRgb</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s2">&quot;ColorRgb&quot;</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span>
 <span class="n">ColorRgb</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">&quot;synonym for tuple[int, int, int] describing an RGB color, with values in [0, 255] (NewType)&quot;</span>
@@ -853,16 +834,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="k">def</span> <span class="nf">color_rgb_float_to_color_rgba_float</span><span class="p">(</span><span class="n">color_rgb_float</span><span class="p">:</span> <span class="n">ColorRgbFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ColorRgbaFloat</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">ColorRgbaFloat</span><span class="p">(</span><span class="n">color_rgb_float</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))</span>
+
+
+<span class="k">def</span> <span class="nf">color_rgb_to_imvec4</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">ColorRgb</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImVec4</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ImVec4</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">color_rgba_to_imvec4</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">ColorRgba</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImVec4</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ImVec4</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">color_rgb_float_to_imvec4</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">ColorRgbFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImVec4</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ImVec4</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">color_rgba_float_to_imvec4</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">ColorRgbaFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImVec4</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ImVec4</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div></div>
 </div>
 <p><em>Example: using color types in function</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_types</span> <span class="kn">import</span> <span class="n">ColorRgb</span><span class="p">,</span> <span class="n">ColorRgba</span>
 
-<span class="k">def</span> <span class="nf">color_chooser</span><span class="p">(</span><span class="n">color1</span><span class="p">:</span> <span class="n">ColorRgb</span><span class="p">,</span> <span class="n">color2</span><span class="p">:</span> <span class="n">ColorRgba</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">color_chooser</span><span class="p">(</span><span class="n">color1</span><span class="p">:</span> <span class="n">ColorRgba</span><span class="p">,</span> <span class="n">color2</span><span class="p">:</span> <span class="n">ColorRgb</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;You selected: </span><span class="si">{</span><span class="n">color1</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">color2</span><span class="si">=}</span><span class="s2">&quot;</span>
 
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">color_chooser</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Color Chooser&quot;</span><span class="p">)</span>
@@ -870,7 +867,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7f304609a6d8fe1c0aa89a5249179f9770f0ec3caebeb119eb7ee1994a4f013d.png" src="_images/7f304609a6d8fe1c0aa89a5249179f9770f0ec3caebeb119eb7ee1994a4f013d.png" />
+<img alt="_images/37de63a4bf21af719ec9548c8584065afd8044ce0232aa172d1810b421a224c5.png" src="_images/37de63a4bf21af719ec9548c8584065afd8044ce0232aa172d1810b421a224c5.png" />
 </div>
 </div>
 </section>
@@ -881,7 +878,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>(In this example, the user needs to click on “Set” to set a value to the optional color)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_types</span> <span class="kn">import</span> <span class="n">ColorRgb</span><span class="p">,</span> <span class="n">ColorRgba</span>
 
 <span class="k">def</span> <span class="nf">color_chooser</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">ColorRgb</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -892,7 +889,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/55fcea2adcebd74f3032b05efe1d2401a421a39ff044407bda248350996a2741.png" src="_images/55fcea2adcebd74f3032b05efe1d2401a421a39ff044407bda248350996a2741.png" />
+<img alt="_images/5bfac48570a51a499059dbcd75a2ad33ca0513ffd9c553006351989868eb1928.png" src="_images/5bfac48570a51a499059dbcd75a2ad33ca0513ffd9c553006351989868eb1928.png" />
 </div>
 </div>
 </section>
@@ -902,7 +899,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 However, it can present a list of values using (all of them will be rendered as string using str() function).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_types</span> <span class="kn">import</span> <span class="n">TextPath</span>
 
 <span class="k">def</span> <span class="nf">list_words_in_file</span><span class="p">(</span><span class="n">filenames</span><span class="p">:</span> <span class="n">TextPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
@@ -914,7 +911,7 @@ However, it can present a list of values using (all of them will be rendered as 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/757ec82cc56c6ddc5a2e0a167477d438d68f0cd9637f6a743bb3daceb5569aa7.png" src="_images/757ec82cc56c6ddc5a2e0a167477d438d68f0cd9637f6a743bb3daceb5569aa7.png" />
+<img alt="_images/876d0ea3cd6228f588d3242bf634c7f7eb357ae434505d7bdfc83f8e660c042c.png" src="_images/876d0ea3cd6228f588d3242bf634c7f7eb357ae434505d7bdfc83f8e660c042c.png" />
 </div>
 </div>
 </section>
@@ -923,7 +920,7 @@ However, it can present a list of values using (all of them will be rendered as 
 <p>Enum classes are automatically associated to a GUI.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
 <span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -939,7 +936,7 @@ However, it can present a list of values using (all of them will be rendered as 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1e926d27b67ea29d73b9008f3cfe180cf39e898960b657d835240c3510f282d8.png" src="_images/1e926d27b67ea29d73b9008f3cfe180cf39e898960b657d835240c3510f282d8.png" />
+<img alt="_images/77917589b0d9169a6abae0e37b0bdf142b89cb02b63b08ad829e4336837e1b11.png" src="_images/77917589b0d9169a6abae0e37b0bdf142b89cb02b63b08ad829e4336837e1b11.png" />
 </div>
 </div>
 </section>
@@ -975,20 +972,20 @@ However, it can present a list of values using (all of them will be rendered as 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="manual_function.html"
+       href="manual_fiat_attributes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Wrapping Functions</p>
+        <p class="prev-next-title">Customizing Widgets with Fiat Attributes</p>
       </div>
     </a>
     <a class="right-next"
-       href="manual_fiat_attributes.html"
+       href="manual_gui_node.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Customizing Widgets with Fiat Attributes</p>
+        <p class="prev-next-title">Gui Nodes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -5,15 +5,15 @@ format: jb-book
 root: intro
 
 chapters:
-#  - file: imgui_tech_stack
   - file: install
   - file: video_tutorials
   - file: manual_first
+#  - file: imgui_tech_stack
   - file: manual
     sections:
       - file: manual_function
-      - file: manual_registry
       - file: manual_fiat_attributes
+      - file: manual_registry
       - file: manual_gui_node
       - file: manual_cli
       - file: manual_tuning

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>First steps &#8212; Fiatlight</title>
+    <title>First Steps &#8212; Fiatlight</title>
   
   
   
@@ -179,13 +179,17 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
 
 
@@ -194,7 +198,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -204,11 +207,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -419,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>First steps</h1>
+    <h1>First Steps</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,11 +434,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-functions-via-fiatlight">Running functions via Fiatlight</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-single-function">Running a single function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composing-two-functions">Composing two functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-of-the-available-controls">Video Tutorial of the available controls</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going Further</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-of-the-available-controls">Video Tutorial of the available controls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
 </ul>
             </nav>
         </div>
@@ -449,7 +450,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="first-steps">
-<h1>First steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h1>
+<h1>First Steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h1>
 <section id="running-functions-via-fiatlight">
 <h2>Running functions via Fiatlight<a class="headerlink" href="#running-functions-via-fiatlight" title="Link to this heading">#</a></h2>
 <section id="running-a-single-function">
@@ -480,14 +481,16 @@ Below is a function that accepts a text path as a parameter and outputs the numb
 <li><p>“int_source” generates an integer value</p></li>
 <li><p>“add” adds two or three integer values.</p></li>
 </ul>
-<p>We use the “&#64;fl.with_fiat_attributes” decorator to specify the range of values for the input parameters of the functions.</p>
+<p>We specify the range of values for the input parameters of the functions using</p>
+<ul class="simple">
+<li><p>either the <code class="docutils literal notranslate"><span class="pre">fl.add_fiat_attributes</span></code> function,</p></li>
+<li><p>or the <code class="docutils literal notranslate"><span class="pre">&#64;fl.with_fiat_attributes</span></code> decorator</p></li>
+</ul>
 <p>Finally, we run the application using the “fl.run” function.</p>
 <p><strong>Code</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 
 
-<span class="c1"># Define int_source, using a decorator to specify the range of values for &quot;x&quot;</span>
-<span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">x__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">int_source</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;int_source is the first function of the application</span>
 <span class="sd">    Since it is not linked to any other function, fiatlight will ask</span>
@@ -497,7 +500,14 @@ Below is a function that accepts a text path as a parameter and outputs the numb
     <span class="k">return</span> <span class="n">x</span>
 
 
-<span class="c1"># Define add, using a decorator to specify the range of values for &quot;a&quot; and &quot;b&quot;</span>
+<span class="c1"># Customize the GUI for the `int_source` function. Below, we specify</span>
+<span class="c1"># the range of values for &quot;x&quot; by adding &quot;fiat_attributes&quot;</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">add_fiat_attributes</span><span class="p">(</span><span class="n">int_source</span><span class="p">,</span> <span class="n">x__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+
+<span class="c1"># This second function adds the values of &quot;a&quot;, &quot;b&quot;, and &quot;c&quot;</span>
+<span class="c1"># In this case, we add fiat_attributes using a decorator</span>
+<span class="c1"># to specify the range of values for &quot;a&quot; and &quot;b&quot;</span>
 <span class="nd">@fl</span><span class="o">.</span><span class="n">with_fiat_attributes</span><span class="p">(</span><span class="n">a__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">b__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;add is the second function of the application</span>
@@ -542,8 +552,9 @@ Below is a function that accepts a text path as a parameter and outputs the numb
 </ul>
 </div></blockquote>
 </section>
+</section>
 <section id="video-tutorial-of-the-available-controls">
-<h3>Video Tutorial of the available controls<a class="headerlink" href="#video-tutorial-of-the-available-controls" title="Link to this heading">#</a></h3>
+<h2>Video Tutorial of the available controls<a class="headerlink" href="#video-tutorial-of-the-available-controls" title="Link to this heading">#</a></h2>
 <p><em>The video below shows how to interact with the widgets in a function node</em></p>
 <video controls>
   <source src="_static/videos/basic_manip.mp4" type="video/mp4">
@@ -551,26 +562,19 @@ Below is a function that accepts a text path as a parameter and outputs the numb
 </video>
 </section>
 <section id="save-load-user-settings">
-<h3>Save / Load user settings<a class="headerlink" href="#save-load-user-settings" title="Link to this heading">#</a></h3>
+<h2>Save / Load user settings<a class="headerlink" href="#save-load-user-settings" title="Link to this heading">#</a></h2>
 <p><strong>Automatic user settings saving</strong></p>
 <p>Upon exit, Fiatlight automatically saves the user’s settings in a folder named <code class="docutils literal notranslate"><span class="pre">fiat_settings</span></code> in the current directory.</p>
 <p>The settings are named after the app_name param passed to `fl.run (if app_name is not set, the settings file will use the name of the main application module)</p>
 <p><img alt="settings_file.png" src="_images/settings_file.png" />.</p>
 <p>Three files are saved each time the application saves the settings:</p>
 <ul class="simple">
-<li><p>First_Example.ini: settings for Dear ImGui (since and positions of the window)</p></li>
+<li><p>First_Example.fiat_user.json: user settings (values of the parameters of the functions)</p></li>
 <li><p>First_Example.node_editor.json: settings for the node editor (positions of the nodes)</p></li>
-<li><p>First_Example.fiat_user.json: settings for the user (values of the parameters of the functions)</p></li>
+<li><p>First_Example.ini: settings for Dear ImGui (since and positions of the window)</p></li>
 </ul>
 <p><strong>Manually save the user settings</strong></p>
-<p>When you manually save the user inputs by clicking on the buttons below,</p>
-<p><img alt="img.png" src="_images/save_load_user_inputs.png" /></p>
-<p>only the user values are saved (in a file named “xxx.fiat_user.json”, where “xxx” is the file name you selected).</p>
-</section>
-</section>
-<section id="going-further">
-<h2>Going Further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
-<p>Explore the <a class="reference internal" href="manual.html"><span class="doc std std-doc">introductory topics</span></a> to learn how to customize widgets, and much more;</p>
+<p>When you manually save the user inputs by clicking on the menu “File / Save user settings”, the user settings are saved in a file named “xxx.fiat_user.json”, where “xxx” is the file name you selected.</p>
 </section>
 </section>
 
@@ -623,11 +627,10 @@ Below is a function that accepts a text path as a parameter and outputs the numb
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-functions-via-fiatlight">Running functions via Fiatlight</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-single-function">Running a single function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composing-two-functions">Composing two functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-of-the-available-controls">Video Tutorial of the available controls</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going Further</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-of-the-available-controls">Video Tutorial of the available controls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-load-user-settings">Save / Load user settings</a></li>
 </ul>
   </nav></div>
 

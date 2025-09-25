@@ -1,4 +1,4 @@
-First steps
+First Steps
 ===========
 
 Running functions via Fiatlight
@@ -34,7 +34,9 @@ Below we create a simple application with two functions: "int_source" and "add":
 * "int_source" generates an integer value
 * "add" adds two or three integer values.
 
-We use the "@fl.with_fiat_attributes" decorator to specify the range of values for the input parameters of the functions.
+We specify the range of values for the input parameters of the functions using
+* either the `fl.add_fiat_attributes` function,
+* or the `@fl.with_fiat_attributes` decorator
 
 Finally, we run the application using the "fl.run" function.
 
@@ -44,8 +46,6 @@ Finally, we run the application using the "fl.run" function.
 import fiatlight as fl
 
 
-# Define int_source, using a decorator to specify the range of values for "x"
-@fl.with_fiat_attributes(x__range=(0, 100))
 def int_source(x: int) -> int:
     """int_source is the first function of the application
     Since it is not linked to any other function, fiatlight will ask
@@ -55,7 +55,14 @@ def int_source(x: int) -> int:
     return x
 
 
-# Define add, using a decorator to specify the range of values for "a" and "b"
+# Customize the GUI for the `int_source` function. Below, we specify
+# the range of values for "x" by adding "fiat_attributes"
+fl.add_fiat_attributes(int_source, x__range=(0, 100))
+
+
+# This second function adds the values of "a", "b", and "c"
+# In this case, we add fiat_attributes using a decorator
+# to specify the range of values for "a" and "b"
 @fl.with_fiat_attributes(a__range=(0, 10), b__range=(0, 20))
 def add(a: int, b: int = 0, c: int | None = None) -> int:
     """add is the second function of the application
@@ -90,7 +97,8 @@ fl.run([int_source, add], app_name="First Example")
 >   * "b" is equal to its default value (0). It is shown in gray to indicate that it is using the default value.
 >   * "c" is equal to its default value (None). It is also shown in gray.
 
-### Video Tutorial of the available controls
+Video Tutorial of the available controls
+-----------------------------------------------
 
 *The video below shows how to interact with the widgets in a function node*
 
@@ -99,7 +107,8 @@ fl.run([int_source, add], app_name="First Example")
   Your browser does not support the video tag.
 </video>
 
-### Save / Load user settings
+Save / Load user settings
+-------------------------
 
 **Automatic user settings saving**
 
@@ -111,19 +120,11 @@ The settings are named after the app_name param passed to `fl.run (if app_name i
 
 
 Three files are saved each time the application saves the settings:
-* First_Example.ini: settings for Dear ImGui (since and positions of the window)
+* First_Example.fiat_user.json: user settings (values of the parameters of the functions)
 * First_Example.node_editor.json: settings for the node editor (positions of the nodes)
-* First_Example.fiat_user.json: settings for the user (values of the parameters of the functions)
+* First_Example.ini: settings for Dear ImGui (since and positions of the window)
 
 **Manually save the user settings**
 
-When you manually save the user inputs by clicking on the buttons below,
+When you manually save the user inputs by clicking on the menu "File / Save user settings", the user settings are saved in a file named "xxx.fiat_user.json", where "xxx" is the file name you selected.
 
- ![img.png](images/save_load_user_inputs.png)
-
-only the user values are saved (in a file named "xxx.fiat_user.json", where "xxx" is the file name you selected).
-
-
-Going Further
--------------
-Explore the [introductory topics](manual) to learn how to customize widgets, and much more;

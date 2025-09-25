@@ -179,13 +179,17 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
 
 
@@ -194,7 +198,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -204,11 +207,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -440,7 +442,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-automatically-create-a-gui-for-nested-pydantic-models">Example: automatically create a GUI for nested Pydantic models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-generated-gui-in-a-standalone-application">Use the generated GUI in a standalone application</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-use-the-generated-gui-in-fiatlight">Or use the generated GUI in Fiatlight</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-data">Validate the data</a></li>
 </ul>
 </li>
 </ul>
@@ -465,21 +466,31 @@ document.write(`
 <h2>Dataclasses<a class="headerlink" href="#dataclasses" title="Link to this heading">#</a></h2>
 <section id="example-automatically-create-a-gui-for-a-person-dataclass">
 <h3>Example: automatically create a GUI for a “Person” dataclass<a class="headerlink" href="#example-automatically-create-a-gui-for-a-person-dataclass" title="Link to this heading">#</a></h3>
-<p>You may either use the <code class="docutils literal notranslate"><span class="pre">&#64;fl.dataclass_with_gui_registration</span></code> decorator, or the <code class="docutils literal notranslate"><span class="pre">fl.register_dataclass</span></code> function to register the dataclass with its GUI.</p>
+<p>To create a GUI for a dataclass, you first need to register the dataclass with its GUI.</p>
+<p>For this, you can use <code class="docutils literal notranslate"><span class="pre">fl.register_dataclass(dataclass_type,</span> <span class="pre">**fiat_attributes)</span></code> or the <code class="docutils literal notranslate"><span class="pre">&#64;fl.dataclass_with_gui_registration(**fiat_attributes)</span></code> decorator.</p>
 <p>In either case, you can specify GUI options for the fields using the <a class="reference internal" href="#(manual_fiat_attributes)"><span class="xref myst">fiat_attributes</span></a> mechanism.</p>
+<p><strong>Option 1: using <code class="docutils literal notranslate"><span class="pre">register_dataclass</span></code>:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
-<span class="c1"># Using a decorator to register the dataclass with its GUI</span>
-<span class="nd">@fl</span><span class="o">.</span><span class="n">dataclass_with_gui_registration</span><span class="p">(</span><span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">))</span>
 <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
 
-<span class="c1"># Note: it is also possible to register the dataclass with the commented line below</span>
-<span class="c1">#    fl.register_dataclass(Person, age__range=(0, 120))</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">register_dataclass</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">))</span>
 </pre></div>
 </div>
+<p><strong>Option 2: using the decorator <code class="docutils literal notranslate"><span class="pre">dataclass_with_gui_registration</span></code>:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@fl</span><span class="o">.</span><span class="n">dataclass_with_gui_registration</span><span class="p">(</span><span class="n">age__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p>(This option is shorter, but more intrusive, as it modifies the original class definition.)</p>
 </section>
 <section id="use-the-generated-gui-in-fiatlight">
 <h3>Use the generated GUI in Fiatlight<a class="headerlink" href="#use-the-generated-gui-in-fiatlight" title="Link to this heading">#</a></h3>
@@ -518,7 +529,7 @@ For more info, see <a class="reference external" href="https://pthom.github.io/i
 <ul class="simple">
 <li><p>fiatlight will automatically generate a serialization/deserialization mechanism for Pydantic models, so that user entries can be saved and reloaded (when used as function parameters). This is not available for dataclasses.</p></li>
 <li><p>Pydantic models can be nested: in the example below, you will see 3 levels of nesting, and fiatlight will generate a nice GUI for those.</p></li>
-<li><p>We will use the <code class="docutils literal notranslate"><span class="pre">&#64;fl.base_model_with_gui_registration</span></code> decorator to register the Pydantic models with their GUI (alternatively, you can use the <code class="docutils literal notranslate"><span class="pre">fl.register_base_model</span></code> function).</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">fl.register_base_model</span></code> to register a Pydantic model with its GUI and add fiat attributes Alternatively, you can use the <code class="docutils literal notranslate"><span class="pre">&#64;fl.base_model_with_gui_registration</span></code> decorator (but this is more intrusive, as it modifies the original class definition).</p></li>
 <li><p>You can specify GUI options for the fields using the <a class="reference internal" href="#(manual_fiat_attributes)"><span class="xref myst">fiat_attributes</span></a> mechanism.</p></li>
 <li><p>Pydantic field validators (such as <code class="docutils literal notranslate"><span class="pre">Field(ge=0,</span> <span class="pre">le=90,</span> <span class="pre">...)</span></code>) are supported and will be reflected in the GUI.</p></li>
 <li><p>Custom validators can be used, as shown in the example below.</p></li>
@@ -538,11 +549,13 @@ For more info, see <a class="reference external" href="https://pthom.github.io/i
 
 <span class="c1"># GeographicInfo: a pydantic model, with validation on latitude and longitude</span>
 <span class="c1"># which will be reflected in the GUI</span>
-<span class="c1"># (the sliders will be limited to the specified ranges)</span>
-<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">()</span>
 <span class="k">class</span> <span class="nc">GeographicInfo</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">latitude</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">longitude</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">ge</span><span class="o">=-</span><span class="mi">180</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># We register the GeographicInfo model with its GUI</span>
+<span class="c1"># (the sliders for lon/lat will be limited to the ranges specified in the Fields)</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">register_base_model</span><span class="p">(</span><span class="n">GeographicInfo</span><span class="p">)</span>
 
 
 <span class="c1"># A custom validator, which will be used to validate the short description</span>
@@ -553,23 +566,28 @@ For more info, see <a class="reference external" href="https://pthom.github.io/i
 
 
 <span class="c1"># A second model, which nests the first one (GeographicInfo)</span>
-<span class="c1"># It also has a validated parameter, via a custom Fiatlight validator</span>
-<span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">(</span>
-    <span class="n">width__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
-    <span class="n">height__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
-    <span class="n">description__label</span><span class="o">=</span><span class="s2">&quot;Description&quot;</span><span class="p">,</span>
-    <span class="n">description__validator</span><span class="o">=</span><span class="n">validate_short_description</span><span class="p">,</span>
-    <span class="n">geo_info__label</span><span class="o">=</span><span class="s2">&quot;Geographic Info&quot;</span><span class="p">,</span>
-<span class="p">)</span>
 <span class="k">class</span> <span class="nc">ImageInfo</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">geo_info</span><span class="p">:</span> <span class="n">GeographicInfo</span> <span class="o">=</span> <span class="n">GeographicInfo</span><span class="p">()</span>
     <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Short Description...&quot;</span>
     <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 
+<span class="c1"># We register the ImageInfo model with its GUI, and add some fiat attributes</span>
+<span class="c1"># Also, we add a custom Fiatlight validator for the description field</span>
+<span class="n">fl</span><span class="o">.</span><span class="n">register_base_model</span><span class="p">(</span>
+    <span class="n">ImageInfo</span><span class="p">,</span>
+    <span class="n">width__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
+    <span class="n">height__range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
+    <span class="n">description__label</span><span class="o">=</span><span class="s2">&quot;Description&quot;</span><span class="p">,</span>
+    <span class="n">description__validator</span><span class="o">=</span><span class="n">validate_short_description</span><span class="p">,</span>
+    <span class="n">geo_info__label</span><span class="o">=</span><span class="s2">&quot;Geographic Info&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+    
+
 
 <span class="c1"># A third model, which nests the second one (ImageInfo)</span>
 <span class="c1"># In total, it has 3 levels: TrainingImage -&gt; ImageInfo -&gt; GeographicInfo</span>
+<span class="c1"># In this case, we use the decorator to register the model with its GUI</span>
 <span class="nd">@fl</span><span class="o">.</span><span class="n">base_model_with_gui_registration</span><span class="p">(</span>
     <span class="n">image_path__label</span><span class="o">=</span><span class="s2">&quot;Select Image&quot;</span><span class="p">,</span>
     <span class="n">training_type__label</span><span class="o">=</span><span class="s2">&quot;Training Set&quot;</span><span class="p">,</span>
@@ -609,19 +627,8 @@ For more info, see <a class="reference external" href="https://pthom.github.io/i
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">process_image</span><span class="p">,</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Pydantic Image Model&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="validate-the-data">
-<h3>Validate the data<a class="headerlink" href="#validate-the-data" title="Link to this heading">#</a></h3>
-<p>In the case of pydantic BaseModel, the GUI generated by <code class="docutils literal notranslate"><span class="pre">fl.base_model_with_gui_registration</span></code>
-will automatically validate the data according to the model’s constraints, and display an error message
-if the data is invalid.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.tutorials.pydantic_gui</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
-<span class="c1"># demo_basemodel_app.main()</span>
-</pre></div>
-</div>
-<p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
-<p>See the <a class="reference internal" href="#FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py"><span class="xref myst">source code</span></a> for demo_basemodel_app.py.
-The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
+<p>In the previous screenshot, the GUI generated by <code class="docutils literal notranslate"><span class="pre">fl.base_model_with_gui_registration</span></code>
+will automatically validate the data according to the model’s constraints, and thus display an error message (because in this case, the description is too long).</p>
 </section>
 </section>
 </section>
@@ -688,7 +695,6 @@ The GUI was created automatically, from a nested Pydantic model, with custom val
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-automatically-create-a-gui-for-nested-pydantic-models">Example: automatically create a GUI for nested Pydantic models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-generated-gui-in-a-standalone-application">Use the generated GUI in a standalone application</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-use-the-generated-gui-in-fiatlight">Or use the generated GUI in Fiatlight</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-the-data">Validate the data</a></li>
 </ul>
 </li>
 </ul>

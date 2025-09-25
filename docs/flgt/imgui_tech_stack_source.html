@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>A Mature Tech stack on top of Dear ImGui &#8212; Fiatlight</title>
+    <title>Immediate Gui in Python &#8212; Fiatlight</title>
   
   
   
@@ -179,13 +179,17 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
 
 
@@ -194,7 +198,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -204,11 +207,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -228,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -419,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>A Mature Tech stack on top of Dear ImGui</h1>
+    <h1>Immediate Gui in Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,7 +431,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A Mature Tech stack on top of Dear ImGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Immediate Gui in Python</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui">Dear ImGui</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documented-python-bindings">Documented Python bindings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-is-an-immediate-mode-c-gui-library">Dear ImGui is an immediate mode C++ GUI library</a></li>
@@ -466,10 +468,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a-mature-tech-stack-on-top-of-dear-imgui">
-<h1>A Mature Tech stack on top of Dear ImGui<a class="headerlink" href="#a-mature-tech-stack-on-top-of-dear-imgui" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="immediate-gui-in-python">
+<h1>Immediate Gui in Python<a class="headerlink" href="#immediate-gui-in-python" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p>Fiatlight is built on top of several powerful libraries and tools, including <a class="reference external" href="https://github.com/ocornut/imgui">Dear ImGui</a>, <a class="reference external" href="https://pthom.github.io/hello_imgui">Hello ImGui</a>, and <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>.</p>
+<div><p><a class="reference external" href="https://github.com/ocornut/imgui">Dear ImGui</a>, <a class="reference external" href="https://pthom.github.io/hello_imgui">Hello ImGui</a>, and <a class="reference external" href="https://pthom.github.io/imgui_bundle">Dear ImGui Bundle</a>.</p>
 </div></blockquote>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dear-imgui">
@@ -683,7 +685,7 @@ What’s more they are <strong>autogenerated</strong>, so that they are always v
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A Mature Tech stack on top of Dear ImGui</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Immediate Gui in Python</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui">Dear ImGui</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documented-python-bindings">Documented Python bindings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dear-imgui-is-an-immediate-mode-c-gui-library">Dear ImGui is an immediate mode C++ GUI library</a></li>

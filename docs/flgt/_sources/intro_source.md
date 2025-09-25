@@ -21,7 +21,7 @@ _Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning a
 
 # Key Features and examples
 
-*Note: the demos presented in this page are also available in the video below:*
+*Notes: this page intends to provide a high-level overview of Fiatlight's capabilities. For detailed tutorials, please refer to the [video tutorials](video_tutorials) and the [manual](manual). Also, the demos presented in this page are also available in the video below*
 
 <a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
 <img src="_static/images/video_fl_demo.jpg" width="300" /></a>
@@ -284,7 +284,7 @@ fl.run(sound_wave_from_file, app_name="Sound Wave Player")
 
 ---------------------------------------------------------------------------------------------------
 
-# **Use Cases**  
+# Use Cases  
 
 Fiatlight is **best suited for**:  
 
@@ -296,3 +296,9 @@ Fiatlight is **best suited for**:
 - **Application Development** – Prototypes built with Fiatlight can be **seamlessly transitioned into full applications** using **Dear ImGui**. Since Dear ImGui’s API is nearly identical in Python and C++, porting to C++ is straightforward.  
 
 How does Fiatlight compare to other tools? See the [full comparison](comparisons).
+
+# Full pdf version of this book
+
+View or download the [full pdf](https://pthom.github.io/fiatlight_doc/flgt.pdf) for this manual.
+
+You may feed it into a LLM such as ChatGPT, so that it can help you when using Fiatlight.

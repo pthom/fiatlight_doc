@@ -120,19 +120,11 @@ The settings are named after the app_name param passed to `fl.run (if app_name i
 
 
 Three files are saved each time the application saves the settings:
-* First_Example.ini: settings for Dear ImGui (since and positions of the window)
+* First_Example.fiat_user.json: user settings (values of the parameters of the functions)
 * First_Example.node_editor.json: settings for the node editor (positions of the nodes)
-* First_Example.fiat_user.json: settings for the user (values of the parameters of the functions)
+* First_Example.ini: settings for Dear ImGui (since and positions of the window)
 
 **Manually save the user settings**
 
-When you manually save the user inputs by clicking on the buttons below,
+When you manually save the user inputs by clicking on the menu "File / Save user settings", the user settings are saved in a file named "xxx.fiat_user.json", where "xxx" is the file name you selected.
 
- ![img.png](images/save_load_user_inputs.png)
-
-only the user values are saved (in a file named "xxx.fiat_user.json", where "xxx" is the file name you selected).
-
-
-Going Further
-=============
-Explore the [manual](manual) to learn how to customize widgets, and much more.

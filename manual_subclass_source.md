@@ -1,5 +1,5 @@
-Sub-class FunctionWithGui
-=========================
+Fully customize a Function Gui
+==============================
 
 Introduction
 ------------

@@ -1,4 +1,4 @@
-# Comparisons w. other frameworks
+# Comparisons w. other prototyping tools
 
 Fiatlight integrates features from various tools into a unified, flexible framework for rapid prototyping and exploration.
 
@@ -11,7 +11,9 @@ Similar tools dedicated to rapid prototyping, exploration and visualization incl
 - **[Unity Blueprints](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/)**: For visual scripting and custom widgets.
 - **[Comfy UI](https://github.com/comfyanonymous/ComfyUI)**: For AI workflow integration.
 
-Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:
+---
+
+> Compared to the aforementioned software frameworks, Fiatlight distinguishes itself by:
 
 ## **Pros**
 - **Automatic GUI Generation** – Introspects functions & structured data to create interfaces.

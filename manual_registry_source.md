@@ -46,7 +46,7 @@ fl.run(foo, app_name="Primitive Basic")
 Example with custom GUI options
 -------------------------------
 
-The GUI of primitive is extensively configurable via fiat attributes.
+The GUI for these primitive types is extensively configurable via fiat attributes. Below, we customize the GUI for the `celsius` parameter to be a slider ranging from 0 to 100, with a specific format for displaying the value.
 
 See [FunctionWithGui](api_function_with_gui) for a comprehensive list of all the available attributes (in the "Customizing parameters GUI" section).
 
@@ -96,24 +96,6 @@ from fiatlight.fiat_notebook import look_at_code
 %look_at_python_code fiatlight.fiat_types.file_types
 ```
 
-*Example: a pipeline that lets the user select a text file and saves it into another file in lowercase*
-
-```python
-import fiatlight as fl
-from fiatlight.fiat_types import TextPath, TextPath_Save
-
-def read_text_file(filename: TextPath) -> str:
-    with open(filename) as  f:
-        return f.read()
-
-def save_lower_case_text_file(text: str, filename: TextPath_Save | None = None) -> None:
-    # since filename is optional, the file will be saved only if the user selects a filename
-    if filename is None:
-        return
-    with open(filename, "w") as f:
-        f.write(text.lower())
-```
-
 Color types
 ===========
 
@@ -129,7 +111,7 @@ Several color types are registered by default.
 import fiatlight as fl
 from fiatlight.fiat_types import ColorRgb, ColorRgba
 
-def color_chooser(color1: ColorRgb, color2: ColorRgba) -> str:
+def color_chooser(color1: ColorRgba, color2: ColorRgb) -> str:
     return f"You selected: {color1=}, {color2=}"
 
 fl.run(color_chooser, app_name="Color Chooser")

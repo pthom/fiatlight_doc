@@ -39,15 +39,7 @@
                         "person": {
                             "cb_options": {
                                 "name": {
-                                    "cb_options": {
-                                        "width_em": 15.0,
-                                        "size_multiline_em": [
-                                            60.0,
-                                            15.0
-                                        ],
-                                        "wrap_multiline": false,
-                                        "wrap_multiline_width": 80
-                                    },
+                                    "cb_options": {},
                                     "expanded": true
                                 },
                                 "age": {
@@ -60,15 +52,7 @@
                     },
                     "outputs": {
                         "0": {
-                            "cb_options": {
-                                "width_em": 15.0,
-                                "size_multiline_em": [
-                                    60.0,
-                                    15.0
-                                ],
-                                "wrap_multiline": false,
-                                "wrap_multiline_width": 80
-                            },
+                            "cb_options": {},
                             "expanded": true
                         }
                     }
@@ -84,15 +68,7 @@
                     "person": {
                         "cb_options": {
                             "name": {
-                                "cb_options": {
-                                    "width_em": 15.0,
-                                    "size_multiline_em": [
-                                        60.0,
-                                        15.0
-                                    ],
-                                    "wrap_multiline": false,
-                                    "wrap_multiline_width": 80
-                                },
+                                "cb_options": {},
                                 "expanded": true
                             },
                             "age": {
@@ -105,15 +81,7 @@
                 },
                 "outputs": {
                     "0": {
-                        "cb_options": {
-                            "width_em": 15.0,
-                            "size_multiline_em": [
-                                60.0,
-                                15.0
-                            ],
-                            "wrap_multiline": false,
-                            "wrap_multiline_width": 80
-                        },
+                        "cb_options": {},
                         "expanded": true
                     }
                 }

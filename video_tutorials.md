@@ -1,5 +1,6 @@
 # Video Tutorials
 
+# Tutorials list
 
 ## Advanced Tutorial
 
@@ -110,3 +111,8 @@ This video provides a complete walkthrough of Fiatlight, showcasing how it can r
 </tr>
 </table>
 
+# Sources for these videos
+
+The sources for these tutorials are available in [src/python/fiatlight/demos/tutorials](https://github.com/pthom/fiatlight/tree/main/src/python/fiatlight/demos/tutorials).
+
+![tutorial_tree.png](_static/images/tutorial_tree.png)

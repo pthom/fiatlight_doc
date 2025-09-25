@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'manual';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="First steps" href="manual_first.html" />
-    <link rel="prev" title="Installation" href="install.html" />
+    <link rel="next" title="Wrapping Functions" href="manual_function.html" />
+    <link rel="prev" title="First Steps" href="manual_first.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,13 +181,17 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual_first.html">First steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_function.html">Wrapping Functions</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_registry.html">Gui Registry</a></li>
 
 
@@ -196,7 +200,6 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="manual_fiat_attributes.html">Customizing Widgets with Fiat Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_gui_node.html">Gui Nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_cli.html">Fiatlight command line utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_tuning.html">Fiat Tuning: Tune functions</a></li>
@@ -206,11 +209,10 @@
 <li class="toctree-l2"><a class="reference internal" href="manual_validation.html">Validate inputs with Fiatlight</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_dataclass_models.html">Dataclasses &amp; Pydantic Models</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Sub-class FunctionWithGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_subclass.html">Fully customize a Function Gui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual_custom.html">Custom types registration</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="manual_demos.html">Run the demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video_tutorials.html">Video Tutorials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -230,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fiat_implot.html">fiat_implot: widget for 1D and 2D numpy arrays</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other frameworks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparisons.html">Comparisons w. other prototyping tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="comparison_streamlit.html">Comparison with Streamlit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_dash.html">Comparison with Dash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison_ipywidgets.html">Comparison with Jupyter Lab and ipywidgets</a></li>
@@ -433,7 +435,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-video-tutorial-sort-algorithm-visualizer">Advanced Video Tutorial: Sort Algorithm Visualizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
 </ul>
             </nav>
@@ -472,22 +473,6 @@ subclassing FunctionWithGui</p></li>
 <li><p><a class="reference internal" href="manual_tuning.html"><span class="doc std std-doc">Fine-tune functions</span></a> by viewing their internal status. Debug and replay exceptions.</p></li>
 <li><p><a class="reference internal" href="manual_functions_graph.html"><span class="doc std std-doc">Create complex functions graph</span></a></p></li>
 <li><p><a class="reference internal" href="manual_custom.html"><span class="doc std std-doc">Create and register custom widgets for specific types</span></a></p></li>
-</ul>
-</section>
-<section id="advanced-video-tutorial-sort-algorithm-visualizer">
-<h2>Advanced Video Tutorial: Sort Algorithm Visualizer<a class="headerlink" href="#advanced-video-tutorial-sort-algorithm-visualizer" title="Link to this heading">#</a></h2>
-<p>🔗 <a class="reference external" href="https://share.descript.com/view/oBub1WN28bX">Watch Video</a></p>
-<p><strong>Overview:</strong><br />
-This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.</p>
-<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
-<img src="_static/images/video_fl_sort.jpg" width="300" />
-</a>
-<p><strong>Key Topics:</strong></p>
-<ul class="simple">
-<li><p>Asynchronous execution for smooth UI updates</p></li>
-<li><p>Using Fiatlight’s function graph to build complex workflows</p></li>
-<li><p>Customizing the UI with additional widgets</p></li>
-<li><p>Real-time visualization of sorting algorithms</p></li>
 </ul>
 </section>
 <section id="domain-specific-topics">
@@ -536,20 +521,20 @@ manual_reuse_widgets</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="install.html"
+       href="manual_first.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">First Steps</p>
       </div>
     </a>
     <a class="right-next"
-       href="manual_first.html"
+       href="manual_function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">First steps</p>
+        <p class="prev-next-title">Wrapping Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,7 +556,6 @@ manual_reuse_widgets</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-topics">Introductory topics:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced topics:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-video-tutorial-sort-algorithm-visualizer">Advanced Video Tutorial: Sort Algorithm Visualizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-topics">Domain-specific topics:</a></li>
 </ul>
   </nav></div>

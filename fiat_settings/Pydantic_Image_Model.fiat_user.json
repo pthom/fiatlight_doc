@@ -5,20 +5,7 @@
                 "image": {
                     "name": "image",
                     "data": {
-                        "type": "Pydantic",
-                        "value": {
-                            "image_path": "/Users/pascal/dvp/OpenSource/ImGuiWork/_Bundle/fiatlight/priv_assets/images/house.jpg",
-                            "training_type": "test",
-                            "info": {
-                                "geo_info": {
-                                    "latitude": 33.44499969482422,
-                                    "longitude": 49.28799819946289
-                                },
-                                "description": "A house in the countryside",
-                                "width": 786,
-                                "height": 610
-                            }
-                        }
+                        "type": "Unspecified"
                     }
                 }
             }
@@ -75,15 +62,7 @@
                                             "expanded": true
                                         },
                                         "description": {
-                                            "cb_options": {
-                                                "width_em": 15.0,
-                                                "size_multiline_em": [
-                                                    60.0,
-                                                    10.0
-                                                ],
-                                                "wrap_multiline": false,
-                                                "wrap_multiline_width": 80
-                                            },
+                                            "cb_options": {},
                                             "expanded": true
                                         },
                                         "width": {
@@ -103,15 +82,7 @@
                     },
                     "outputs": {
                         "0": {
-                            "cb_options": {
-                                "width_em": 15.0,
-                                "size_multiline_em": [
-                                    60.0,
-                                    10.0
-                                ],
-                                "wrap_multiline": false,
-                                "wrap_multiline_width": 80
-                            },
+                            "cb_options": {},
                             "expanded": true
                         }
                     }
@@ -120,7 +91,7 @@
                     "inside_node": null,
                     "focused": null
                 },
-                "_focused_function_visible": true
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -150,15 +121,7 @@
                                         "expanded": true
                                     },
                                     "description": {
-                                        "cb_options": {
-                                            "width_em": 15.0,
-                                            "size_multiline_em": [
-                                                60.0,
-                                                10.0
-                                            ],
-                                            "wrap_multiline": false,
-                                            "wrap_multiline_width": 80
-                                        },
+                                        "cb_options": {},
                                         "expanded": true
                                     },
                                     "width": {
@@ -178,15 +141,7 @@
                 },
                 "outputs": {
                     "0": {
-                        "cb_options": {
-                            "width_em": 15.0,
-                            "size_multiline_em": [
-                                60.0,
-                                10.0
-                            ],
-                            "wrap_multiline": false,
-                            "wrap_multiline_width": 80
-                        },
+                        "cb_options": {},
                         "expanded": true
                     }
                 }
