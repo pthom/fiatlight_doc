@@ -1,37 +1,3 @@
-Tutorials & First steps
-=======================
-
-Video tutorials
-===============
-
-Advanced Tutorial
------------------
-
-<table>
-<tr>
-<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 60%">
-
-<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
-<img src="_static/images/video_fl_sort.jpg" width="500" />
-</a>
-
-</td>
-<td style="vertical-align: center;">
-This more advanced tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight.  
-
-</td>
-</tr>
-</table>
-
-**Key Topics:**  
-* Create GUIs for Pydantic models and functions
-* Customize outputs with ImPlot charts
-* Use Fiatlight’s function graph to build complex workflows  
-* Register custom GUIs for types
-* Run functions asynchronously with real-time updates
-* Build function graphs with GUI and documentation nodes
-* Use Fiatlight GUIs inside a standalone app
-
 First Steps
 ===========
 
@@ -68,7 +34,9 @@ Below we create a simple application with two functions: "int_source" and "add":
 * "int_source" generates an integer value
 * "add" adds two or three integer values.
 
-We use the "@fl.with_fiat_attributes" decorator to specify the range of values for the input parameters of the functions.
+We specify the range of values for the input parameters of the functions using
+* either the `fl.add_fiat_attributes` function,
+* or the `@fl.with_fiat_attributes` decorator
 
 Finally, we run the application using the "fl.run" function.
 
@@ -78,8 +46,6 @@ Finally, we run the application using the "fl.run" function.
 import fiatlight as fl
 
 
-# Define int_source, using a decorator to specify the range of values for "x"
-@fl.with_fiat_attributes(x__range=(0, 100))
 def int_source(x: int) -> int:
     """int_source is the first function of the application
     Since it is not linked to any other function, fiatlight will ask
@@ -89,7 +55,14 @@ def int_source(x: int) -> int:
     return x
 
 
-# Define add, using a decorator to specify the range of values for "a" and "b"
+# Customize the GUI for the `int_source` function. Below, we specify
+# the range of values for "x" by adding "fiat_attributes"
+fl.add_fiat_attributes(int_source, x__range=(0, 100))
+
+
+# This second function adds the values of "a", "b", and "c"
+# In this case, we add fiat_attributes using a decorator
+# to specify the range of values for "a" and "b"
 @fl.with_fiat_attributes(a__range=(0, 10), b__range=(0, 20))
 def add(a: int, b: int = 0, c: int | None = None) -> int:
     """add is the second function of the application

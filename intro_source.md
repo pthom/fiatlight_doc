@@ -21,7 +21,7 @@ _Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning a
 
 # Key Features and examples
 
-*Note: the demos presented in this page are also available in the video below:*
+*Notes: this page intends to provide a high-level overview of Fiatlight's capabilities. For detailed tutorials, please refer to the [video tutorials](video_tutorials) and the [manual](manual). Also, the demos presented in this page are also available in the video below*
 
 <a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
 <img src="_static/images/video_fl_demo.jpg" width="300" /></a>

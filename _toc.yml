@@ -7,6 +7,7 @@ root: intro
 chapters:
 #  - file: imgui_tech_stack
   - file: install
+  - file: video_tutorials
   - file: manual_first
   - file: manual
     sections:
@@ -22,7 +23,6 @@ chapters:
       - file: manual_subclass
       - file: manual_custom
       - file: manual_demos
-      - file: video_tutorials
   - file: api
     sections:
       - file: api_architecture
