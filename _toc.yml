@@ -8,7 +8,7 @@ chapters:
   - file: install
   - file: video_tutorials
   - file: manual_first
-#  - file: imgui_tech_stack
+  - file: imgui_python_intro_link
   - file: manual
     sections:
       - file: manual_function

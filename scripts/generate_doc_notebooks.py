@@ -24,7 +24,6 @@ def generate_doc_notebooks() -> None:
     #
     md_source_list_to_notebooks([
         "intro",
-        "imgui_tech_stack",
         "install",
     ])
 
