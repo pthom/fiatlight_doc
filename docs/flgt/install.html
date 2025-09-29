@@ -430,9 +430,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-source">Installation from source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-imgui-bundle-from-the-main-branch">Install imgui-bundle (from the main branch)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-pypi">Installation from PyPI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-optional-dependencies">Install optional dependencies</a></li>
 </ul>
             </nav>
@@ -447,17 +444,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<section id="installation-from-source">
-<h2>Installation from source<a class="headerlink" href="#installation-from-source" title="Link to this heading">#</a></h2>
+<p>At the moment, the only way to install fiatlight is from source.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
-
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pthom</span><span class="o">/</span><span class="n">fiatlight</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pthom</span><span class="o">/</span><span class="n">fiatlight</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">fiatlight</span>
 
 <span class="c1"># Optional: create a virtual environment</span>
-<span class="c1"># (you can use whichever method you prefer)</span>
 <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
 <span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 
@@ -467,40 +460,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="install-imgui-bundle-from-the-main-branch">
-<h2>Install imgui-bundle (from the main branch)<a class="headerlink" href="#install-imgui-bundle-from-the-main-branch" title="Link to this heading">#</a></h2>
-<p>Fiatlight relies on imgui-bundle, and will depend on the latest version on the main branch (version 1.5.2 from pypi is not sufficient).</p>
-<p>To install it, you can</p>
-<ul class="simple">
-<li><p>either clone it and install it from source:</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pthom</span><span class="o">/</span><span class="n">imgui_bundle</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">imgui_bundle</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> <span class="c1"># (1)</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">.</span> <span class="c1"># (2)</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pyGLM</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>or download pre-compiled recent wheels from here: <a class="github reference external" href="https://github.com/pthom/imgui_bundle/actions/workflows/wheels.yml">pthom/imgui_bundle</a></p></li>
-</ul>
-</section>
-<section id="installation-from-pypi">
-<h2>Installation from PyPI<a class="headerlink" href="#installation-from-pypi" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Not available yet</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="install-optional-dependencies">
 <h2>Install optional dependencies<a class="headerlink" href="#install-optional-dependencies" title="Link to this heading">#</a></h2>
 <p>Several requirements files are provided, which you can install via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements-&lt;name&gt;.txt</span></code>:</p>
@@ -510,8 +469,7 @@ document.write(`
 <li><p>requirements-audio.txt: requirements for audio demos</p></li>
 <li><p>requirements-dev.txt: requirements for development</p></li>
 </ul>
-<p>Note: for AI demos, you will have to install torch manually, as its installation is dependent on your system configuration.
-See <a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a> (you will of course need a GPU to run the demos)</p>
+<p>Note: for AI demos, you may have to install pytorch manually.</p>
 </section>
 </section>
 
@@ -579,9 +537,6 @@ See <a class="reference external" href="https://pytorch.org/get-started/locally/
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-source">Installation from source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-imgui-bundle-from-the-main-branch">Install imgui-bundle (from the main branch)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-from-pypi">Installation from PyPI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-optional-dependencies">Install optional dependencies</a></li>
 </ul>
   </nav></div>
