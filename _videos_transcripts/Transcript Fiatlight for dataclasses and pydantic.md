@@ -25,5 +25,5 @@
 
 [00:02:15] When running, we can see that those validators are used: any error is nicely displayed, and numbers are changed to multiples of 5.
 
-[00:02:26] You will find these tutorials inside "fiatlight - demos - tutorials". ...
+[00:02:26] You will find these tutorials inside "fiatlight - demos - tutorials - GUI dataclass pydantic ". ...
 

@@ -18,13 +18,70 @@ _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
 _Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI._
 
+**Videos demonstrations**
+
+*(Additional tutorials and videos are available on the [video tutorials page](video_tutorials))*
+
+<table>
+
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+
+<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
+<img src="_static/images/video_fl_demo.jpg" width="300" />
+</a>
+
+</td>
+<td style="vertical-align: center;">
+
+**A full demo of Fiatlight** (8 min)
+
+Complete overview showcasing AI integration, image processing, audio analysis, and data visualization capabilities across multiple application domains, using visual examples. 
+
+*This demo is an illustration of the content of this page*
+
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+
+<a href="https://share.descript.com/view/gQ9ANLrtwQv" target="_blank">
+<img src="_static/images/video_fl_first.jpg" width="300" />
+</a>
+
+</td>
+<td style="vertical-align: center;">
+
+**First steps Tutorial** (8 min)
+
+Function-to-GUI basics, customization, and state persistence
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+
+<a href="https://share.descript.com/view/gby3nPdZEEE" target="_blank">
+<img src="_static/images/video_fl_interm.jpg" width="300" />
+</a>
+
+</td>
+<td style="vertical-align: center;">
+
+**Intermediate tutorial** (6 min)
+
+Exception handling, validation, and visual debugging
+</td>
+</tr>
+
+
+</table>
+
 
 # Key Features and examples
 
-*Notes: this page intends to provide a high-level overview of Fiatlight's capabilities. For detailed tutorials, please refer to the [video tutorials](video_tutorials) and the [manual](manual). Also, the demos presented in this page are also available in the video below*
-
-<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
-<img src="_static/images/video_fl_demo.jpg" width="300" /></a>
+This page intends to provide a high-level overview of Fiatlight's capabilities. For detailed tutorials, please refer to the [video tutorials](video_tutorials) and the [manual](manual).
 
 
 ## Create a GUI for structured data

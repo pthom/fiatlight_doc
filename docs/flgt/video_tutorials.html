@@ -180,8 +180,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Video Tutorials</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="manual_first.html">First Steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imgui_python_intro_link.html">Immediate Mode GUI with Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual.html">Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -432,17 +430,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Video Tutorials</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-list">Tutorials list</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-tutorial">First Steps Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-tutorial">Intermediate Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models-and-dataclasses">GUI for Pydantic Models and Dataclasses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial">Advanced Tutorial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-for-these-videos">Sources for these videos</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -455,38 +449,64 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="video-tutorials">
 <h1>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="tutorials-list">
-<h1>Tutorials list<a class="headerlink" href="#tutorials-list" title="Link to this heading">#</a></h1>
-<section id="advanced-tutorial">
-<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Link to this heading">#</a></h2>
-<p>This tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight, in order to explain more advanced features.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The sources for these tutorials are available in <a class="reference external" href="https://github.com/pthom/fiatlight/tree/main/src/python/fiatlight/demos/tutorials">fiatlight/src/python/fiatlight/demos/tutorials</a>.</p>
+</div>
+<section id="first-steps-tutorial">
+<h2>First Steps Tutorial<a class="headerlink" href="#first-steps-tutorial" title="Link to this heading">#</a></h2>
+<p><strong>Creating GUIs from Functions with Minimal Code</strong></p>
+<p>Learn the core concepts of Fiatlight by transforming Python functions into interactive applications. This tutorial demonstrates the fundamental workflow and customization options available.</p>
 <table>
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
-<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
-<img src="_static/images/video_fl_sort.jpg" width="500" />
+<a href="https://share.descript.com/view/gQ9ANLrtwQv" target="_blank">
+<img src="_static/images/video_fl_first.jpg" width="500" />
 </a>
 </td>
 <td style="vertical-align: center;">
 <p><strong>Key Topics:</strong></p>
 <ul class="simple">
-<li><p>Create GUIs for Pydantic models and functions</p></li>
-<li><p>Customize outputs with ImPlot charts</p></li>
-<li><p>Use Fiatlight’s function graph to build complex workflows</p></li>
-<li><p>Register custom GUIs for types</p></li>
-<li><p>Run functions asynchronously with real-time updates</p></li>
-<li><p>Build function graphs with GUI and documentation nodes</p></li>
-<li><p>Use Fiatlight GUIs inside a standalone app</p></li>
+<li><p>Generate GUIs for any Python function</p></li>
+<li><p>Compose functions</p></li>
+<li><p>Customize widget behavior using fiat_attributes</p></li>
+<li><p>Handle long-running computations</p></li>
+<li><p>Automatic state persistence</p></li>
 </ul>
 </td>
 </tr>
 </table>
 </section>
 <hr class="docutils" />
-<section id="gui-for-pydantic-models">
-<h2>GUI for Pydantic Models<a class="headerlink" href="#gui-for-pydantic-models" title="Link to this heading">#</a></h2>
-<p>Learn how Fiatlight can instantly generate GUIs from Python dataclasses and Pydantic models.</p>
+<section id="intermediate-tutorial">
+<h2>Intermediate Tutorial<a class="headerlink" href="#intermediate-tutorial" title="Link to this heading">#</a></h2>
+<p><strong>Exception Handling and Advanced GUI Techniques</strong></p>
+<p>Learn about error handling patterns, parameter validation, and custom GUI components.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/gby3nPdZEEE" target="_blank">
+<img src="_static/images/video_fl_interm.jpg" width="500" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>Key Topics:</strong></p>
+<ul class="simple">
+<li><p>Built-in exception handling with post-mortem debugging capabilities</p></li>
+<li><p>Parameter validation using custom validators and runtime checks</p></li>
+<li><p>Custom GUI component creation with Dear ImGui integration</p></li>
+<li><p>Visual debugging through fiat_tuning to inspect function internals</p></li>
+<li><p>Complex function graphs with multiple data flows and GUI nodes</p></li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+<hr class="docutils" />
+<section id="gui-for-pydantic-models-and-dataclasses">
+<h2>GUI for Pydantic Models and Dataclasses<a class="headerlink" href="#gui-for-pydantic-models-and-dataclasses" title="Link to this heading">#</a></h2>
+<p><strong>Automatic Form Generation from Data Models</strong></p>
+<p>Generate validated forms and configuration interfaces directly from dataclasses and Pydantic models. Covers serialization, validation, and customization patterns.</p>
 <table>
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
@@ -497,9 +517,37 @@ document.write(`
 <td style="vertical-align: center;">
 <p><strong>Key Features:</strong></p>
 <ul class="simple">
-<li><p>Customizing widgets with <code class="docutils literal notranslate"><span class="pre">fiat_attributes</span></code></p></li>
-<li><p>Automatic validation for user inputs</p></li>
-<li><p>Displaying structured data with interactive components</p></li>
+<li><p>Automatic GUI generation from existing data model definitions</p></li>
+<li><p>Real-time validation with user feedback for invalid inputs</p></li>
+<li><p>Customization through fiat_attributes for widget types and constraints</p></li>
+<li><p>Built-in serialization and state persistence for Pydantic models</p></li>
+<li><p>Structured form layouts with logical field grouping</p></li>
+</ul>
+</td>
+</tr>
+</table>
+</section>
+<hr class="docutils" />
+<section id="advanced-tutorial">
+<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Link to this heading">#</a></h2>
+<p><strong>Building a Sorting Algorithm Visualizer</strong></p>
+<p>This tutorial walks through the creation of an interactive sorting algorithm visualizer using Fiatlight, in order to explain advanced features.</p>
+<table>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/oBub1WN28bX" target="_blank">
+<img src="_static/images/video_fl_sort.jpg" width="500" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>Key Topics:</strong></p>
+<ul class="simple">
+<li><p>Asynchronous function execution with real-time GUI updates</p></li>
+<li><p>Custom data visualization using ImPlot for performance charts</p></li>
+<li><p>Advanced type registration and GUI customization</p></li>
+<li><p>Function composition and workflow management patterns</p></li>
+<li><p>Standalone application development and deployment</p></li>
+<li><p>Performance monitoring and comparative analysis tools</p></li>
 </ul>
 </td>
 </tr>
@@ -508,7 +556,8 @@ document.write(`
 <hr class="docutils" />
 <section id="fiatlight-architecture">
 <h2>Fiatlight Architecture<a class="headerlink" href="#fiatlight-architecture" title="Link to this heading">#</a></h2>
-<p>A high-level overview of Fiatlight’s internal structure and how it automatically maps functions and data types to UI components.</p>
+<p><strong>Understanding the Framework’s Core Components</strong></p>
+<p>A technical overview of Fiatlight’s architecture and extension points. Useful for developers who want to understand the framework’s internals or extend its capabilities.</p>
 <table>
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
@@ -520,8 +569,9 @@ document.write(`
 <p><strong>Key Topics:</strong></p>
 <ul class="simple">
 <li><p>Core components: <code class="docutils literal notranslate"><span class="pre">AnyDataWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionWithGui</span></code>, <code class="docutils literal notranslate"><span class="pre">FunctionGraph</span></code></p></li>
-<li><p>How Fiatlight registers data types to generate interactive UIs</p></li>
-<li><p>Customization callbacks to fine-tune how data is presented</p></li>
+<li><p>GUI registry system and type-to-widget mapping mechanisms</p></li>
+<li><p>Customization callbacks and data presentation patterns</p></li>
+<li><p>Extension points for supporting additional data types</p></li>
 </ul>
 </td>
 </tr>
@@ -530,8 +580,8 @@ document.write(`
 <hr class="docutils" />
 <section id="full-demo-of-fiatlight">
 <h2>Full Demo of Fiatlight<a class="headerlink" href="#full-demo-of-fiatlight" title="Link to this heading">#</a></h2>
-<p><strong>Overview:</strong><br />
-This video provides a complete walkthrough of Fiatlight, showcasing how it can rapidly generate UIs for various applications. It is a demo, rather than a tutorial.</p>
+<p><strong>A comprehensive Feature Overview:</strong></p>
+<p>This video showcases how Fiatlight can rapidly generate UIs for various across different application domains, from AI integration to data analysis and multimedia processing. It is a demo, rather than a tutorial.</p>
 <table>
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
@@ -542,20 +592,15 @@ This video provides a complete walkthrough of Fiatlight, showcasing how it can r
 <td style="vertical-align: center;">
 <p><strong>Highlights:</strong></p>
 <ul class="simple">
-<li><p>AI-powered meme generator in just 4 lines of code</p></li>
-<li><p>Real-time sorting algorithm visualization</p></li>
-<li><p>Tailored kits for image processing, data visualization, and audio analysis</p></li>
+<li><p>AI-powered meme generator in just 4 lines of code, using Stable Diffusion</p></li>
+<li><p>Real-time sorting algorithm visualization: parallel execution and performance comparison</p></li>
+<li><p>Tailored kits for image processing, data frames, and audio analysis</p></li>
 <li><p>Fine-tuning and debugging with function state introspection</p></li>
 </ul>
 </td>
 </tr>
 </table>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sources-for-these-videos">
-<h1>Sources for these videos<a class="headerlink" href="#sources-for-these-videos" title="Link to this heading">#</a></h1>
-<p>The sources for these tutorials are available in <a class="reference external" href="https://github.com/pthom/fiatlight/tree/main/src/python/fiatlight/demos/tutorials">src/python/fiatlight/demos/tutorials</a>.</p>
-<p><img alt="tutorial_tree.png" src="_images/tutorial_tree.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -622,17 +667,13 @@ This video provides a complete walkthrough of Fiatlight, showcasing how it can r
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Video Tutorials</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-list">Tutorials list</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-tutorial">First Steps Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-tutorial">Intermediate Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models-and-dataclasses">GUI for Pydantic Models and Dataclasses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial">Advanced Tutorial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-for-pydantic-models">GUI for Pydantic Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-architecture">Fiatlight Architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-demo-of-fiatlight">Full Demo of Fiatlight</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-for-these-videos">Sources for these videos</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

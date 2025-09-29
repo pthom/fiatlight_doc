@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fiatlight advanced tutorial &#8212; Fiatlight</title>
+    <title>Fiatlight - First steps &#8212; Fiatlight</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_videos_transcripts/Transcript Fiatlight advanced tutorial';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_videos_transcripts/Transcript Fiatlight first steps';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2F_videos_transcripts/Transcript Fiatlight advanced tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pthom/fiatlight/issues/new?title=Issue%20on%20page%20%2F_videos_transcripts/Transcript Fiatlight first steps.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@
       
       
       
-      <li><a href="../_sources/_videos_transcripts/Transcript Fiatlight advanced tutorial.md" target="_blank"
+      <li><a href="../_sources/_videos_transcripts/Transcript Fiatlight first steps.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fiatlight advanced tutorial</h1>
+    <h1>Fiatlight - First steps</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,14 +430,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-outline">[00:01:25] Tutorial Outline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-ready-to-use-sort-algorithms">[00:02:33] Intro - Ready-to-Use Sort Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-add-a-gui-for-the-numbers-generator">[00:03:35] Part 1 - Add a GUI for the Numbers Generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-renders-the-numbers-as-bar-chart">[00:05:08] Part 2 - Renders the numbers as bar chart</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-register-a-gui-to-display-bar-charts">[00:06:40] Part 3 - Register a GUI to display bar charts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-animate-one-sort-function">[00:07:20] Part 4 - Animate one sort function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-animate-all-the-sorting-functions">[00:09:25] Part 5 - Animate all the sorting functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-standalone-application">[00:11:45] Part 6 - Standalone application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-simple-functions">[00:00:18] Create a GUI for simple functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-compose-functions-example-with-an-image-widget">[00:01:02] How to compose functions (example with an image widget)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-command-line-utility">[00:02:40] Fiatlight command line utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-gui-using-fiat-attributes">[00:03:15] Customize the GUI using fiat attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-long-computation-times">[00:05:19] Handle long computation times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-fiatlight-saves-the-application-state">[00:06:25] How Fiatlight saves the application state</a></li>
 </ul>
             </nav>
         </div>
@@ -449,95 +447,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fiatlight-advanced-tutorial">
-<h1>Fiatlight advanced tutorial<a class="headerlink" href="#fiatlight-advanced-tutorial" title="Link to this heading">#</a></h1>
-<p>[00:00:00] In this tutorial, we will walk you through the process of creating an interactive application</p>
-<p>[00:00:06] which allows you to visualize and compare the performance of various sorting algorithms.</p>
-<p>[00:00:12] Thanks to Fiatlight, the GUI code is extremely concise and readable, focusing on the essential parts, making it easy to understand and maintain.</p>
-<p>[00:00:23] The application starts with a function node that generates a list of random numbers. You can customize the number of values, the random seed, and the generation type, allowing for various initial conditions. Click on “Call Manually” to generate a list of numbers.</p>
-<p>[00:00:42] This function output is redirected as an input to a series of functions. Each of these functions is a specific sorting algorithm. Thanks to Fiatlight, we can examine in real time the internal state of these functions and this way we can display their current status, even while they are running asynchronously in a separate thread. This allows you to visually compare their performance and behavior.</p>
-<p>[00:01:09] You can control the speed of the sorting process using the latency control, which simulates different memory access speeds. As expected, bubble sort is the slowest, and the variations based on quicksort are often much faster.</p>
-<section id="tutorial-outline">
-<h2>[00:01:25] Tutorial Outline<a class="headerlink" href="#tutorial-outline" title="Link to this heading">#</a></h2>
-<p>[00:01:25] First, let’s summarize the different parts of this tutorial.</p>
-<p>[00:01:30] In Part 1, we will cover how to create a GUI for a Pydantic BaseModel, set ranges for numeric widgets, and how to create functions that are invoked on demand.</p>
-<p>[00:01:42] In Part 2, we’ll dive into customizing the rendering of a function output, specifying widget sizes in DPI-independent units, and using ImPlot for high-performance plotting.</p>
-<p>[00:01:55] Part 3 will focus on how to register a specific GUI for a given type.</p>
-<p>[00:02:01] In Part 4, we’ll explore advanced features like displaying a function’s internal state, running functions asynchronously, and creating compositions of functions.</p>
-<p>[00:02:12] Part 5 will teach you how to create custom function graphs, add “GUI Only” nodes, and documentation nodes to your graph.</p>
-<p>[00:02:22] Finally, in Part 6, we’ll show you how to create a standalone app version of the sort visualization and manage application layouts using ImGui and dockable windows.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="fiatlight-first-steps">
+<h1>Fiatlight - First steps<a class="headerlink" href="#fiatlight-first-steps" title="Link to this heading">#</a></h1>
+<p>[00:00:00]   In this introduction to Fiatlight, we’ll explore how to create a simple GUI for functions, how Fiatlight saves application state, and how to customize the GUI for your needs. By the end of this video, you will have a solid understanding of how to use Fiatlight to build interactive applications.</p>
+<section id="create-a-gui-for-simple-functions">
+<h2>[00:00:18] Create a GUI for simple functions<a class="headerlink" href="#create-a-gui-for-simple-functions" title="Link to this heading">#</a></h2>
+<p>[00:00:18]   Let’s see how to create a simple GUI for functions.</p>
+<p>[00:00:22] We’ll start with a basic function that adds two integers. In order to create a GUI for it, we simply import fiatlight, then run the function via fiatlight!</p>
+<p>[00:00:33] We can then interactively play with our function: we can enter input parameters, and see the output result.</p>
+<p>[00:00:40] Widgets are generated automatically depending on the parameters type. For this dummy function - which accepts parameters of type string, integer, boolean, and enum - we will have a text input, an integer or float entry widget, two checkboxes - where the second handles our optional boolean parameter, and a combo box for the enum.</p>
 </section>
-<section id="intro-ready-to-use-sort-algorithms">
-<h2>[00:02:33] Intro - Ready-to-Use Sort Algorithms<a class="headerlink" href="#intro-ready-to-use-sort-algorithms" title="Link to this heading">#</a></h2>
-<p>[00:02:33] Before we dive into the content, let’s quickly look at the sort algorithms and how the latency is handled.</p>
-<p>[00:02:42] The code for this tutorial is located in “fiatlight/demos/tutorials/sort_competition”. “sort_algorithms.py” “ provides ready to use sort algorithms: bubble sort, quicksort, et cetera.</p>
-<p>[00:03:01] “numbers_list.py” “ provides a numbers list class which behaves like an integer array, but exposes a user settable latency for memory access and memory write.</p>
-<p>[00:03:15] “numbers_generator” provides a “NumbersGenerationOptions” class which describes how to generate a list of unordered numbers. It derives from pydantic’s BaseModel : it behaves like a serializable dataclass. “make_random_number_list” will generate the numbers that shall be sorted. ​</p>
+<section id="how-to-compose-functions-example-with-an-image-widget">
+<h2>[00:01:02] How to compose functions (example with an image widget)<a class="headerlink" href="#how-to-compose-functions-example-with-an-image-widget" title="Link to this heading">#</a></h2>
+<p>[00:01:02] Let’s see how we can compose functions with fiatlight.</p>
+<p>[00:01:06] In this example, we will compose two simple image processing functions: “read image”, and “detect edges”, using the Canny algorithm.</p>
+<p>[00:01:16] Note that we are using two types from fiatlight: ImagePath, and “Image RGB” which are synonyms for a string and a numpy array respectively.</p>
+<p>[00:01:26] ImagePath will be presented in the GUI as a file selector, and “Image RGB” will be presented with a widget to display the image.</p>
+<p>[00:01:36] Then we use “fiatlight run” to run the application, passing the two functions as a list: the output of the first function will be passed as input to the second function (for its first parameter).</p>
+<p>[00:01:49] When we run the application, we get a GUI with two nodes: “read image” and “detect edges”.</p>
+<p>[00:01:56] We can see that the output of the first node is connected to the input of the second node.</p>
+<p>[00:02:02] We can select an image file in the first node: we click on “+”, then we select our image file.</p>
+<p>[00:02:09] After we selected our image, we can see it in the first node’s output, and the detected edges in the second node’s output.</p>
+<p>[00:02:18] You can then adjust the parameters of the “detect edges” node to see how it affects the output.</p>
+<p>[00:02:24] These images widgets can be resized, zoomed and panned, in a synchronized way.</p>
+<p>[00:02:30] With high zoom, you can see the pixel values.</p>
+<p>[00:02:33] You can also save the images, or send them to an “inspector” tab for further analysis.</p>
 </section>
-<section id="part-1-add-a-gui-for-the-numbers-generator">
-<h2>[00:03:35] Part 1 - Add a GUI for the Numbers Generator<a class="headerlink" href="#part-1-add-a-gui-for-the-numbers-generator" title="Link to this heading">#</a></h2>
-<p>[00:03:36] Let’s now add a user interface for the number generator. NumbersGenerationOptions” is a pydantic BaseModel. Let’s try to use it and display it via Fiatlight: by default it cannot be edited, because we need to register it. we can do it by using “register base model” in our main script. Alternatively, we can place a decorator “base model with gui registration” on top of the class definition.</p>
-<p>[00:04:04] In both cases, our data becomes editable with a nice GUI that reflects our class content. We can see the “edit” GUI in the function parameters, and the “present” GUI in its output.</p>
-<p>[00:04:18] We can add “fiat attributes”, to customize our user interface: here we set the labels, and ranges for the values, and select a knob widget for the seed. These attrributes are faithfully taken into account in the user interface. Refer to the tutorial “GUI for dataclasses and pydantic models” for more information.</p>
-<p>[00:04:41] We can now run “make random number list” via Fiatlight. As you can see, we have added two attributes to this function: “invoke manually” because we want to run it manually, and “invoke always dirty” because we want to be able to run it even if the inputs did not change. As you can see, the user interface works correctly and we have a button to call the function manually.</p>
+<section id="fiatlight-command-line-utility">
+<h2>[00:02:40] Fiatlight command line utility<a class="headerlink" href="#fiatlight-command-line-utility" title="Link to this heading">#</a></h2>
+<p>[00:02:40] Fiatlight is provided with a command line utility.</p>
+<p>[00:02:43] Simply run “fiatlight” in a console to use it.</p>
+<p>[00:02:47] It provides three different modes, which we will cover in this video: “types”, “gui”, and “fn attrs”</p>
+<p>[00:02:55] With “fiatlight types”, you can list all supported types and their corresponding GUI.</p>
+<p>[00:03:01] With “fiatlight types path”, you can filter types related to “path”. There we can see the “Image Path” which we previously used, and which provides a file picker dialog for selecting image files.</p>
 </section>
-<section id="part-2-renders-the-numbers-as-bar-chart">
-<h2>[00:05:08] Part 2 - Renders the numbers as bar chart<a class="headerlink" href="#part-2-renders-the-numbers-as-bar-chart" title="Link to this heading">#</a></h2>
-<p>[00:05:08] Now, Let’s use ImPlot to render our numbers as a bar chart.</p>
-<p>[00:05:13] ImPlot is a fast and capable plotting library. You can see here an extract of the kind of figures it can generate.</p>
-<p>[00:05:21] Let’s see how we can change the appearance of the output of the function. First, we import imgui.</p>
-<p>[00:05:29] Then, we wrap our function into a “Function With Gui”,</p>
-<p>[00:05:33] and we override the “present” callback of the function’s output: this callback receives a data value and should display it. For the moment, it simply displays a string using “imgui text”.</p>
-<p>[00:05:47] Finally, we run the application, now using the wrapped function.</p>
-<p>[00:05:52] And we can see that our string is correctly displayed.</p>
-<p>[00:05:56] Let’s now work on generating the chart. First we import the required libraries. The “draw_bars” function will draw the bar chart. “plot bars” will plot our values. Each plot should be done between a call to “begin plot” and “end plot”.</p>
-<p>[00:06:15] Then, we ensure that the plotted values will always be fully visible, by setting the axis flags. Finally, we specify the plot size in EM units. 1 EM unit is the height of the font.</p>
-<p>[00:06:31] Then we can use this function as our “present” callback,</p>
-<p>[00:06:35] and see that we have a nice bar chart in the application.</p>
-<p>[00:06:39] ​</p>
-<p>[00:06:39]</p>
+<section id="customize-the-gui-using-fiat-attributes">
+<h2>[00:03:15] Customize the GUI using fiat attributes<a class="headerlink" href="#customize-the-gui-using-fiat-attributes" title="Link to this heading">#</a></h2>
+<p>[00:03:15] Let’s see how we can customize the GUI using fiat attributes.</p>
+<p>[00:03:20] Here, we continue from the previous image example.</p>
+<p>[00:03:23] Going back to the fiatlight command line interface, we can see that we can get info on how to customize the GUI for float parameters, by typing: “fiatlight gui float”</p>
+<p>[00:03:36] There, we can see customization options such as “range”, “edit type”, “slider logarithmic”, “label”, “tooltip”, etc.</p>
+<p>[00:03:45] We will use some of these options to customize the GUI for the “detect edges” function:</p>
+<p>[00:03:51] For this, we will use the “add fiat attributes” function which enables us to add customizations to the GUI for an existing function.</p>
+<p>[00:04:00] To customize the GUI for a function parameter, we use the following naming convention: parameter name followed by two underscores, followed by the attribute name.</p>
+<p>[00:04:11] Here, we will customize the “low threshold” and “high threshold” parameters of the “detect edges” function.</p>
+<p>[00:04:19] Then, going back to the fiatlight command line interface, we can see that we can get info on how to customize the GUI at a function level, by typing: “fiatlight fn attrs”.</p>
+<p>[00:04:31] There, we can see customization options such as “label”, “invoke async”, etc.</p>
+<p>[00:04:37] Let’s add a label to our function, by simply adding “label” as an argument to “add fiat attributes”.</p>
+<p>[00:04:45] Let’s now add a label to the “read image” function.</p>
+<p>[00:04:49] This time, instead of using “add fiat attributes”, we will use the decorator named “with fiat attributes” to add the label directly to the function definition. This is shorter, but more intrusive as it modifies the function definition itself.</p>
+<p>[00:05:05] Then, we can see that our GUI is updated with our customizations: our functions labels are applied, and the two thresholds are now sliders with logarithmic scale and a range from 0 to 5000.</p>
 </section>
-<section id="part-3-register-a-gui-to-display-bar-charts">
-<h2>[00:06:40] Part 3 - Register a GUI to display bar charts<a class="headerlink" href="#part-3-register-a-gui-to-display-bar-charts" title="Link to this heading">#</a></h2>
-<p>[00:06:40] Fiatlight maintains a GUI registry which associates types to GUI classes.</p>
-<p>[00:06:46] First, we create a new GUI class that inherits from “Any Data With Gui”. Since we only want to change how it is rendered, it is enough to set its “present” callback.</p>
-<p>[00:06:59] Refer to the video “Fiatlight Architecture” to learn more about the possible callbacks and the numerous presentation options.</p>
-<p>[00:07:07] Then, we tell Fiatlight to always present “Numbers List” with this new GUI.</p>
-<p>[00:07:14] And we are done!</p>
-<p>[00:07:15] Let’s look at the application, and see that it shows our bar chart.</p>
+<section id="handle-long-computation-times">
+<h2>[00:05:19] Handle long computation times<a class="headerlink" href="#handle-long-computation-times" title="Link to this heading">#</a></h2>
+<p>[00:05:19] Let’s see how fiatlight can handle functions which take more time to execute.</p>
+<p>[00:05:24] First, we will add a delay in the “detect edges” function, to simulate a long processing time.</p>
+<p>[00:05:31] Then using the command line “fiatlight fn attrs” we can see that “invoke async” enables to run the function in a separate thread, so that the GUI remains responsive.</p>
+<p>[00:05:43] We may also set “invoke manually” to avoid running the function automatically when an input changes (this is completely up to you, depending on your use case).</p>
+<p>[00:05:54] So, we will add these two attributes to our “detect edges” function: “invoke async” and “invoke manually”.</p>
+<p>[00:06:03] Then, in the user interface, we can see that when we change a parameter, the function is not invoked automatically.</p>
+<p>[00:06:11] Instead we have to click on a button near the label “Refresh needed” to invoke the function. While the function is running, the user interface remains responsive, and you can see a spinning icon in the top right corner of the node.</p>
 </section>
-<section id="part-4-animate-one-sort-function">
-<h2>[00:07:20] Part 4 - Animate one sort function<a class="headerlink" href="#part-4-animate-one-sort-function" title="Link to this heading">#</a></h2>
-<p>[00:07:20] Next, let’s add a wrapper function for the bubble sort algorithm that enables real-time visualization of the sorting process and measures the elapsed time.</p>
-<p>[00:07:31] We start by using the “with_fiat_attributes” decorator to add the “invoke_async’ attribute. This ensures that the function will be called asynchronously, allowing the GUI to update while the function runs.</p>
-<p>[00:07:46] Inside the function, we start a timer to measure the elapsed time. We make a copy of the numbers to ensure the original set remains unmodified.</p>
-<p>[00:07:56] To enable real-time visualization, we create an instance of NumbersListWithGui and assign the copied numbers to its value. This GUI will display the numbers being sorted.</p>
-<p>[00:08:09] We add this GUI instance to the “fiat tuning” dictionary. Fiatlight will automatically display the content of this dictionary at each frame, even if the function is running asynchronously. Since the numbers are updated in the background, their evolution will be visible in the user interface!</p>
-<p>[00:08:28] Finally, we call the bubble sort function, which sorts the copied numbers in place. We return the elapsed time to complete the function.</p>
-<p>[00:08:38] Now, let’s run the function composition with Fiatlight to visualize our sorting algorithm in action.</p>
-<p>[00:08:45] First, we need to ensure that the GUI updates as quickly as possible. We start by instantiating runner parameters for Fiatlight’s FunctionsGraph.</p>
-<p>[00:08:56] Next, we disable idling to make the animations smoother, even when the user is not interacting with the GUI.</p>
-<p>[00:09:04] Finally, we run the composition of functions with Fiatlight. This includes our random number generator and the “bubble sort wrapper” function.</p>
-<p>[00:09:15] And we have a nice looking user interface, where the numbers being sorted are updated in real time, and the total elapsed time is returned.</p>
-</section>
-<section id="part-5-animate-all-the-sorting-functions">
-<h2>[00:09:25] Part 5 - Animate all the sorting functions<a class="headerlink" href="#part-5-animate-all-the-sorting-functions" title="Link to this heading">#</a></h2>
-<p>[00:09:25] Now, let’s extend our initial implementation to create a more comprehensive application that showcases multiple sorting algorithms within an interactive GUI.</p>
-<p>[00:09:36] First, we import additional sorting algorithms, to be able to show them.</p>
-<p>[00:09:42] We’ve added a descriptive docstring at the beginning of the script to explain the purpose of the application and the role of various nodes. This docstring will be displayed in our application, via a markdown renderer.</p>
-<p>[00:09:57] Next, we introduce the “make sort function visualizer” function. This higher-order function wraps each sorting algorithm with the same principle as before, adding a Fiat tuning dictionary to visually track the current status of the numbers and return the elapsed time.</p>
-<p>[00:10:15] It also makes sure to preserve the original function name and docstring, so that it can be displayed in the graph</p>
-<p>[00:10:23] To control the latency of the sorting algorithms, we define the gui_latency function. This function will be added to the graph as a GUI node, in other words a node that will display the widgets defined by this function. It provides a slider to set the latency and a button to abort or enable sorting. Note that it is needed to call “set next item width” before displaying a slider.</p>
-<p>[00:10:51] To manage the execution of our functions, we create a FunctionsGraph. This will enable us to manually link functions in the graph.</p>
-<p>[00:11:00] We add the “make random number list” function to the graph.</p>
-<p>[00:11:05] Next, we add each sorting algorithm to the graph, linking them to the random numbers generator. This setup allows us to visualize and compare the performance of different sorting algorithms.</p>
-<p>[00:11:19] We also add a GUI node to control the latency, and a documentation node to display the docstring of this script.</p>
-<p>[00:11:27] Finally, we run the function graph.</p>
-<p>[00:11:30] And our function graph application is complete. You can see that it works perfectly. As always withFiatlight, the user inputs and GUI options - nodes locations, etc. - are saved and restored between different executions.</p>
-</section>
-<section id="part-6-standalone-application">
-<h2>[00:11:45] Part 6 - Standalone application<a class="headerlink" href="#part-6-standalone-application" title="Link to this heading">#</a></h2>
-<p>[00:11:45] Fiatlight goes beyond displaying Functions Graphs, and can also help you create full standalone applications. In the application shown here, we reuse Fiatlight’s powerful GUI to recreate the same workflow, but we are totally free to add any other components and to change the layout.</p>
+<section id="how-fiatlight-saves-the-application-state">
+<h2>[00:06:25] How Fiatlight saves the application state<a class="headerlink" href="#how-fiatlight-saves-the-application-state" title="Link to this heading">#</a></h2>
+<p>[00:06:25] Let’s see how fiatlight saves the application state.</p>
+<p>[00:06:29] Each time you exit the application, the current state is saved. This includes the values of all parameters, the positions and status of all functions nodes in the graph, the size and location of the application window.</p>
+<p>[00:06:44] Let’s demonstrate this by changing some parameter values and moving some function nodes around. Then, let’s quit the application.</p>
+<p>[00:06:53] When you restart the application, the previous state is automatically restored. This allows you to pick up right where you left off!</p>
+<p>[00:07:01] The settings are saved in a folder named “fiat_settings” in the current working directory : by default, they will use the name of the python script that was used to start the application.</p>
+<p>[00:07:13] You can also specify a custom name: the “app name” parameter of the “run” function will also be used for the settings file.</p>
+<p>[00:07:22] You can also manually save the current state at any time using the “File Save” menu.</p>
+<p>[00:07:29] Later you can reload this saved state using the “File Load” menu. With only two functions plus a call to “fiatlight run”, we could create a complete application, including customized GUI, and save/load functionality!</p>
 </section>
 </section>
 
@@ -587,14 +567,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-outline">[00:01:25] Tutorial Outline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-ready-to-use-sort-algorithms">[00:02:33] Intro - Ready-to-Use Sort Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-add-a-gui-for-the-numbers-generator">[00:03:35] Part 1 - Add a GUI for the Numbers Generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-renders-the-numbers-as-bar-chart">[00:05:08] Part 2 - Renders the numbers as bar chart</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-register-a-gui-to-display-bar-charts">[00:06:40] Part 3 - Register a GUI to display bar charts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-animate-one-sort-function">[00:07:20] Part 4 - Animate one sort function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-animate-all-the-sorting-functions">[00:09:25] Part 5 - Animate all the sorting functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-standalone-application">[00:11:45] Part 6 - Standalone application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-simple-functions">[00:00:18] Create a GUI for simple functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-compose-functions-example-with-an-image-widget">[00:01:02] How to compose functions (example with an image widget)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiatlight-command-line-utility">[00:02:40] Fiatlight command line utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-the-gui-using-fiat-attributes">[00:03:15] Customize the GUI using fiat attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-long-computation-times">[00:05:19] Handle long computation times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-fiatlight-saves-the-application-state">[00:06:25] How Fiatlight saves the application state</a></li>
 </ul>
   </nav></div>
 
