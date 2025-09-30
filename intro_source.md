@@ -2,7 +2,7 @@
 
 *Expressive Code, Instant Applications*
 
-Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas into **fully functional applications in minutes**. It **automates UI generation** for functions and structured data, making prototyping and fine-tuning faster and easier.
+Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas into **fully functional prototypes in minutes**. It **automates UI generation** for functions and structured data, making prototyping and fine-tuning faster and easier.
 
 > *For technical readers:*
 >
@@ -16,7 +16,7 @@ Fiatlight **bridges the gap between code and UI**, allowing you to turn ideas in
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
-_Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning applications. It does not provide full design control over GUI._
+_Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning algorithms. It does not provide full design control over GUI._
 
 **Videos demonstrations**
 
