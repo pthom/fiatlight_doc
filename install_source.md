@@ -1,15 +1,11 @@
 Installation
 ============
 
-At the moment, the only way to install fiatlight is from source.
+At the moment, the recommended way to install fiatlight is from source:
 
 ```bash
 git clone https://github.com/pthom/fiatlight.git
 cd fiatlight
-
-# Optional: create a virtual environment
-python3 -m venv venv
-source venv/bin/activate
 
 pip install -r requirements.txt
 pip install -v -e .
