@@ -36,8 +36,8 @@ chapters:
       - file: fiat_matplotlib
       - file: fiat_dataframe
       - file: fiat_implot
-  - file: comparisons
-    sections:
-      - file: comparison_streamlit
-      - file: comparison_dash
-      - file: comparison_ipywidgets
+#  - file: comparisons
+#    sections:
+#      - file: comparison_streamlit
+#      - file: comparison_dash
+#      - file: comparison_ipywidgets

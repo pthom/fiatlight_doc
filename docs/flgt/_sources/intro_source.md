@@ -1,4 +1,4 @@
-# Fiatlight: Brighten the Journey from Idea to Creation
+# Fiatlight
 
 *Create Applications Instantly with One Line of Code*
  
@@ -6,7 +6,7 @@ With Fiatlight, you can instantly generate rich, interactive user interfaces. Fo
 * `generate_image`: creates an AI-generated image from a prompt
 * `add_text_to_image`: adds custom text (a meme caption) to the image
 
-<img src="_static/images/meme.jpg" width="500">
+<img src="_static/images/meme.jpg" width="600">
  
 To run this application, you only need this line of code: `fiatlight.run([generate_image, add_text_to_image])`
 
@@ -133,19 +133,6 @@ fl.run(lissajous_curve, app_name="Interactive Lissajou Curve")
 
 <video src="_static/videos/lissajou.mp4" controls="controls" width="30%" height="auto"></video>
 
-## Create a GUI for structured data
-
-In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).
-
-```python
-from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
-# demo_basemodel_app.main()
-```
-
-![img.png](_static/images/demo_basemodel_app.png)
-
-> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
-
 
 ## From Idea to App in 3 minutes
 
@@ -168,7 +155,7 @@ This application state is automatically persistent:
 
 
 
-## Domain-specific Kits:
+# Domain-specific Kits:
 
 `fiatlight.fiats_kits` is intended to provide a set of pre-built functions and widgets for various domains, such as:
 
@@ -181,7 +168,7 @@ This application state is automatically persistent:
 - **AI**: (Draft) Provide a widget for Prompt entry, and an interface to Stable Diffusion. See [fiat_ai](FL_GH_ROOT/fiat_kits/fiat_ai).
 
 
-### Image analysis
+## Image analysis
 
 *The example below shows an image which undergoes a pipeline for a dilated edge extraction. The image viewer can pan & zoom the images in sync, and display the pixel values*
 
@@ -194,7 +181,7 @@ fl.run([image_from_file, canny, dilate], app_name="demo_computer_vision")
 ```
 >*For technical readers: [`image_from_file`](FL_GH_ROOT/fiat_kits/fiat_image/image_to_from_file_gui.py) is a function that reads an image from a file, [`canny`](FL_GH_ROOT/demos/images/opencv_wrappers.py) applies the Canny edge detection algorithm, and [`dilate`](FL_GH_ROOT/demos/images/opencv_wrappers.py) dilates the edges.*
 
-### Data visualization with Matplotlib and ImPlot
+## Data visualization with Matplotlib and ImPlot
 
 *In the example below, we display figures using [ImPlot](https://github.com/epezent/implot) (left) and [Matplotlib](https://matplotlib.org/) (right). Each figure provides user-settable parameters (in a given range, with customizable widgets). The sine wave function is updated in real time.*
 
@@ -209,7 +196,7 @@ demo_mix_implot_matplotib.main()
 > * when a function returns a `fiat_implot.FloatMatrix_Dim1` or `fiat_implot.FloatMatrix_Dim2` (which are aliases for np.ndarray), its output will be displayed as a plot, using [ImPlot](https://github.com/epezent/implot). See demo_implot [source code](FL_GH_ROOT/fiat_kits/fiat_implot/demo_implot.py). 
 > * [ImPlot](https://github.com/epezent/implot) is a plotting library for Dear ImGui. It is often faster than Matplotlib, and can be used in real-time applications. For a complete demo of ImPlot, click here: [ImPlot complete demo](https://traineq.org/implot_demo/src/implot_demo.html)*
 
-### Data Exploration
+## Data Frames
 *In the example below, we display a data frame from the famous titanic example with filtering.*
 
 ```python
@@ -217,26 +204,10 @@ from fiatlight.fiat_kits.fiat_dataframe import dataframe_with_gui_demo_titanic
 dataframe_with_gui_demo_titanic.main()
 ```
 
-### AI - Image generation
-
-*Example: the application below generates images using a stable diffusion model, and enables to add effects to it (color transformation, add colored edges).*
-
-```python
-import fiatlight as fl
-from fiatlight.fiat_kits.fiat_ai import invoke_sdxl_turbo
-from fiatlight.fiat_kits.fiat_image import lut_channels_in_colorspace
-from fiatlight.demos.images.toon_edges import add_toon_edges
-
-fl.run([invoke_sdxl_turbo, lut_channels_in_colorspace, add_toon_edges], app_name="SDXL Edges")
-```
-
->*For technical readers: `invoke_sdxl_turbo` uses HuggingFace's diffuser library to invoke stable diffusion. See its [source code](FL_GH_ROOT/fiat_kits/fiat_ai/invoke_sdxl_turbo.py)*
+# Visualize, Understand, Innovate
 
 
-## Visualize, Understand, Innovate
-
-
-### Visualize the Pipeline flow
+## Visualize the Pipeline flow
 
 *Example: the application below looks for the most frequent words in a given text file (here with the text from "Hamlet"), by applying a pipeline of transformations. It is possible to inspect the input and outputs of each function.*
 
@@ -250,7 +221,7 @@ demo_word_count.main()
 >     sort_words, run_length_encode, sort_word_with_counts`.
 > See its [source](FL_GH_ROOT/demos/string/demo_word_count.py)*
 
-### Examine and understand function internals
+## Examine and understand function internals
 
 fiatlight provides you with powerful tools to visually debug the intermediate states of your function.
 
@@ -267,7 +238,7 @@ fl.run([image_source, add_toon_edges], app_name="Toon Edges")
 > *For technical readers: the function `add_toon_edges` has an attribute `fiat_tuning` that contains the internal variables that will be displayed. See [demos/images/toon_edges.py](FL_GH_ROOT/demos/images/toon_edges.py).*
 
 
-### Replay and debug function errors
+## Replay and debug function errors
 
 *Example: the following application raises an error. However, this error can be replayed, with **the exact same inputs** to facilitate the debugging*
 
@@ -291,75 +262,22 @@ fl.run([float_source, sin, log], app_name="Replay error")
 ![debug break](images/debug_break.jpg)
 
 
-## Full-fledged Applications
-
-Besides being extremely powerful to generate function graphs, Fiatlight's powerful GUI capabilities can also help you generate sophisticated classic applications.
-
-### Applications with advanced GUI
-
-The example below shows an application which: 
-- reuses the sophisticated GUI provided by Fiatlight in a standard application
-- automatically, Save and reloads its state, and GUI presentation options 
-- provides dockable windows, and a top toolbar
-
-```
-from fiatlight.demos.full_fledged_app import demo_image_processors_app
-# demo_image_processors_app.main()
-```
-
-![img.png](_static/images/demo_image_processors_app.png)
-
-> * For technical readers: See the [source code](FL_GH_ROOT/demos/full_fledged_app/demo_image_processors_app.py) for demo_image_processors_app.py*.
-
-
-## Custom Graph Creation
-
-Create custom graphs with a drag-and-drop interface, similar to Scratch, enabling a visual approach to building workflows.
-
-*Example: in the image below, its is possible to add and link function nodes:*
-
-```python
-from fiatlight.demos.custom_graph import demo_custom_graph
-# demo_custom_graph.main()
-```
-
-![custom graph](images/custom_graph.jpg)
-
-> *For technical readers: See the [source code](FL_GH_ROOT/demos/custom_graph/demo_custom_graph.py) for custom_graph.py*
-
-
-## Custom Widgets
-
-Define custom ranges for data types, create custom widgets, and leverage special function attributes like async, live, and ranges for enhanced functionality and performance.
-
-*Example: display and play a sound wave with a custom widget*
-
-```python
-import fiatlight as fl
-from fiatlight.fiat_kits.experimental.fiat_audio_simple import sound_wave_from_file
-fl.run(sound_wave_from_file, app_name="Sound Wave Player")
-```
-
-> *For technical readers: `sound_wave_from_file` is a function that returns a sound wave from a file, and the widget is a custom widget that displays the sound wave and allows you to play it. See its [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)*
-
-
 ---------------------------------------------------------------------------------------------------
 
-# Use Cases  
+# Target Audience
 
-Fiatlight is **best suited for**:  
+Fiatlight is best suited for:
 
-- **Rapid Prototyping** – Quickly transform ideas into interactive applications with minimal effort.  
-- **Fine-Tuning & Debugging** – Inspect intermediate states, visualize function outputs, and replay errors.  
-- **Education** – Teach programming, data science, and algorithm design with interactive tools.  
-- **Data Exploration** – Analyze, filter, and visualize complex datasets in real-time.  
-- **AI & Machine Learning** – Prototype AI models, fine-tune hyperparameters, and visualize results dynamically.  
-- **Application Development** – Prototypes built with Fiatlight can be **seamlessly transitioned into full applications** using **Dear ImGui**. Since Dear ImGui’s API is nearly identical in Python and C++, porting to C++ is straightforward.  
+* Hobbyists wanting to create interactive applications quickly
+* Educators and instructors needing interactive tools for teaching programming or algorithms
+* Researchers who need shareable demos or visualizations of their work
+* Developers who want to fine tune their algorithms, with visual feedback
+* Library authors who want to showcase or demonstrate how to use and compose their functions
+* Data scientists and analysts wanting instant GUI dashboards for exploring data
 
-How does Fiatlight compare to other tools? See the [full comparison](comparisons).
 
 # Full pdf version of this book
 
-View or download the [full pdf](https://pthom.github.io/fiatlight_doc/flgt.pdf) for this manual.
+View or download the [full pdf](https://pthom.github.io/fi  atlight_doc/flgt.pdf) for this manual.
 
 You may feed it into a LLM such as ChatGPT, so that it can help you when using Fiatlight.

@@ -1,7 +1,7 @@
 Installation
 ============
 
-At the moment, the recommended way to install fiatlight is from source:
+The recommended way to install fiatlight is from source:
 
 ```bash
 git clone https://github.com/pthom/fiatlight.git
@@ -10,6 +10,8 @@ cd fiatlight
 pip install -r requirements.txt
 pip install -v -e .
 ```
+
+(fiatlight is also available on PyPI, but installing from source makes it easier to access the examples in src/python/fiatlight/demos).
 
 Install optional dependencies
 -----------------------------
