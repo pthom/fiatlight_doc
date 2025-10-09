@@ -431,9 +431,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fiatlight: Brighten the Journey from Idea to Creation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-demonstrations">Videos demonstrations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-and-examples">Key Features and examples</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-structured-data">Create a GUI for structured data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-any-function">Create a GUI for any function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-structured-data">Create a GUI for structured data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-idea-to-app-in-3-minutes">From Idea to App in 3 minutes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-kits">Domain-specific Kits:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-analysis">Image analysis</a></li>
@@ -472,35 +473,29 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fiatlight-brighten-the-journey-from-idea-to-creation">
 <h1>Fiatlight: Brighten the Journey from Idea to Creation<a class="headerlink" href="#fiatlight-brighten-the-journey-from-idea-to-creation" title="Link to this heading">#</a></h1>
-<p><em>Expressive Code, Instant Applications</em></p>
-<p>Fiatlight bridges the gap between code and UI, allowing you to turn ideas into <strong>fully functional applications in minutes</strong>. It <strong>automates UI generation</strong> for functions and structured data, making <strong>prototyping faster and easier</strong>.</p>
+<p><em>Create Applications Instantly with One Line of Code</em></p>
+<p>With Fiatlight, you can instantly generate rich, interactive user interfaces. For example, the application below combines two functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">generate_image</span></code>: creates an AI-generated image from a prompt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_text_to_image</span></code>: adds custom text (a meme caption) to the image</p></li>
+</ul>
+<img src="_static/images/meme.jpg" width="500">
+<p>To run this application, you only need this line of code: <code class="docutils literal notranslate"><span class="pre">fiatlight.run([generate_image,</span> <span class="pre">add_text_to_image])</span></code></p>
+<p>Fiatlight then creates an <strong>automatic user interface</strong> where users can adjust every parameter and <strong>save/reload</strong> their work. You do not have to write any UI code: all you do is compose the logic by combining functions, and Fiatlight takes care of the rest.</p>
+<p>Fiatlight lets anyone prototype, experiment, and share powerful applications—without boilerplate UI code.</p>
 <blockquote>
 <div><p><em>For technical readers:</em></p>
-<p>FiatLight provides automatic UI generation for functions and structured data, making it a powerful tool for rapid prototyping and application development.</p>
-<ul class="simple">
-<li><p>Instant Widgets: Edit and visualize any Python object with fine-grained control.</p></li>
-<li><p>Function Pipelines: Chain functions into visual and interactive workflows.</p></li>
-<li><p>Built-in Validation &amp; Debugging: Enforce constraints, inspect data, and replay errors.</p></li>
-<li><p>State Persistence: Save and restore application state seamlessly.</p></li>
-</ul>
+<p>FiatLight provides automatic UI generation for functions and structured data (dataclasses, pydantic models), making it a powerful tool for rapid prototyping and application development.</p>
+<p>It is built on top of <a class="reference external" href="https://github.com/pthom/imgui_bundle">Dear ImGui Bundle</a>. Applications developed with fiatlight are very fast, and provide feedback in <strong>real-time</strong> (at 120 FPS!).</p>
+<p>Since Dear ImGui Bundle is available via Pyodide, Fiatlight applications can be <em>used locally</em> or deployed as <em>static web pages</em>, without any server-side component.</p>
+<p>You may think of Fiatlight as “ComfyUI for any type of data and functions”: rapid, visual, and interactive pipelines for far more than AI image generation.</p>
 </div></blockquote>
 <p><em>The name “Fiatlight” is inspired by “Fiat Lux”, i.e. “Let there be light”.</em></p>
-<p><em>Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning algorithms. It does not provide full design control over GUI.</em></p>
-<p><strong>Videos demonstrations</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="videos-demonstrations">
+<h1>Videos demonstrations<a class="headerlink" href="#videos-demonstrations" title="Link to this heading">#</a></h1>
 <p><em>(Additional tutorials and videos are available on the <a class="reference internal" href="video_tutorials.html"><span class="doc std std-doc">video tutorials page</span></a>)</em></p>
 <table>
-<tr>
-<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
-<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
-<img src="_static/images/video_fl_demo.jpg" width="300" />
-</a>
-</td>
-<td style="vertical-align: center;">
-<p><strong>A full demo of Fiatlight</strong> (8 min)</p>
-<p>Complete overview showcasing AI integration, image processing, audio analysis, and data visualization capabilities across multiple application domains, using visual examples.</p>
-<p><em>This demo is an illustration of the content of this page</em></p>
-</td>
-</tr>
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
 <a href="https://share.descript.com/view/gQ9ANLrtwQv" target="_blank">
@@ -523,23 +518,23 @@ document.write(`
 <p>Exception handling, validation, and visual debugging</p>
 </td>
 </tr>
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
+<img src="_static/images/video_fl_demo.jpg" width="300" />
+</a>
+</td>
+<td style="vertical-align: center;">
+<p><strong>A full demo of Fiatlight</strong> (8 min)</p>
+<p>Complete overview showcasing AI integration, image processing, audio analysis, and data visualization capabilities across multiple application domains, using visual examples.</p>
+<p><em>This demo is an illustration of the content of this page</em></p>
+</td>
+</tr>
 </table>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="key-features-and-examples">
 <h1>Key Features and examples<a class="headerlink" href="#key-features-and-examples" title="Link to this heading">#</a></h1>
 <p>This page intends to provide a high-level overview of Fiatlight’s capabilities. For detailed tutorials, please refer to the <a class="reference internal" href="video_tutorials.html"><span class="doc std std-doc">video tutorials</span></a> and the <a class="reference internal" href="manual.html"><span class="doc std std-doc">manual</span></a>.</p>
-<section id="create-a-gui-for-structured-data">
-<h2>Create a GUI for structured data<a class="headerlink" href="#create-a-gui-for-structured-data" title="Link to this heading">#</a></h2>
-<p>In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.tutorials.pydantic_gui</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
-<span class="c1"># demo_basemodel_app.main()</span>
-</pre></div>
-</div>
-<p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
-<blockquote>
-<div><p><em>For technical readers: See the <a class="reference internal" href="#FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py"><span class="xref myst">source code</span></a> for demo_basemodel_app.py</em>. The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
-</div></blockquote>
-</section>
 <section id="create-a-gui-for-any-function">
 <h2>Create a GUI for any function<a class="headerlink" href="#create-a-gui-for-any-function" title="Link to this heading">#</a></h2>
 <p>Simply call <code class="docutils literal notranslate"><span class="pre">fl.run</span></code> with a function or a list of functions, and Fiatlight will automatically generate a GUI for them.</p>
@@ -578,19 +573,28 @@ document.write(`
 <p><em>See the application in action in the video below</em></p>
 <p><video src="_static/videos/lissajou.mp4" controls="controls" width="30%" height="auto"></video></p>
 </section>
+<section id="create-a-gui-for-structured-data">
+<h2>Create a GUI for structured data<a class="headerlink" href="#create-a-gui-for-structured-data" title="Link to this heading">#</a></h2>
+<p>In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fiatlight.demos.tutorials.pydantic_gui</span> <span class="kn">import</span> <span class="n">demo_basemodel_app</span>
+<span class="c1"># demo_basemodel_app.main()</span>
+</pre></div>
+</div>
+<p><img alt="img.png" src="_images/demo_basemodel_app.png" /></p>
+<blockquote>
+<div><p><em>For technical readers: See the <a class="reference internal" href="#FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py"><span class="xref myst">source code</span></a> for demo_basemodel_app.py</em>. The GUI was created automatically, from a nested Pydantic model, with custom validator.</p>
+</div></blockquote>
+</section>
 <section id="from-idea-to-app-in-3-minutes">
 <h2>From Idea to App in 3 minutes<a class="headerlink" href="#from-idea-to-app-in-3-minutes" title="Link to this heading">#</a></h2>
-<p>Create a full application in just 4 lines of Python by chaining pure Python functions into an interactive graph. This graph visually displays each function’s inputs and outputs, allowing for manual input adjustments.</p>
-<p><em>Example: The application below is a meme generator. It is a simple composition of an AI image generator, and a function that adds text onto an image</em></p>
+<p>For example, the application we saw in the introduction can be created in just 4 lines of code: we simply import our functions and fiatlight, and call <code class="docutils literal notranslate"><span class="pre">fl.run</span></code> with the list of functions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiatlight</span> <span class="k">as</span> <span class="nn">fl</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_ai</span> <span class="kn">import</span> <span class="n">invoke_sdxl_turbo</span>
 <span class="kn">from</span> <span class="nn">fiatlight.fiat_kits.fiat_image.add_meme_text</span> <span class="kn">import</span> <span class="n">add_meme_text</span>
-
-<span class="c1"># Run the composition to create a simple app</span>
 <span class="n">fl</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">invoke_sdxl_turbo</span><span class="p">,</span> <span class="n">add_meme_text</span><span class="p">],</span> <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;Old school meme generator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This can be used as a full application:</p>
+<p>This application state is automatically persistent:</p>
 <ul class="simple">
 <li><p>All inputs are saved: prompt, and meme text, font, color, position of the text</p></li>
 <li><p>All preferences are saved: window size, position, and layout of the nodes</p></li>
@@ -834,9 +838,10 @@ See its <a class="reference internal" href="#FL_GH_ROOT/demos/string/demo_word_c
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fiatlight: Brighten the Journey from Idea to Creation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-demonstrations">Videos demonstrations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-and-examples">Key Features and examples</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-structured-data">Create a GUI for structured data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-any-function">Create a GUI for any function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-gui-for-structured-data">Create a GUI for structured data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-idea-to-app-in-3-minutes">From Idea to App in 3 minutes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-kits">Domain-specific Kits:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-analysis">Image analysis</a></li>

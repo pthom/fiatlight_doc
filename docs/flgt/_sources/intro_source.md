@@ -1,47 +1,37 @@
 # Fiatlight: Brighten the Journey from Idea to Creation
 
-*Expressive Code, Instant Applications*
+*Create Applications Instantly with One Line of Code*
+ 
+With Fiatlight, you can instantly generate rich, interactive user interfaces. For example, the application below combines two functions:
+* `generate_image`: creates an AI-generated image from a prompt
+* `add_text_to_image`: adds custom text (a meme caption) to the image
 
-Fiatlight bridges the gap between code and UI, allowing you to turn ideas into **fully functional applications in minutes**. It **automates UI generation** for functions and structured data, making **prototyping faster and easier**.
+<img src="_static/images/meme.jpg" width="500">
+ 
+To run this application, you only need this line of code: `fiatlight.run([generate_image, add_text_to_image])`
+
+Fiatlight then creates an **automatic user interface** where users can adjust every parameter and **save/reload** their work. You do not have to write any UI code: all you do is compose the logic by combining functions, and Fiatlight takes care of the rest.
+
+Fiatlight lets anyone prototype, experiment, and share powerful applications—without boilerplate UI code. 
+
 
 > *For technical readers:*
 >
-> FiatLight provides automatic UI generation for functions and structured data, making it a powerful tool for rapid prototyping and application development.
->
->    * Instant Widgets: Edit and visualize any Python object with fine-grained control.
->    * Function Pipelines: Chain functions into visual and interactive workflows.
->    * Built-in Validation & Debugging: Enforce constraints, inspect data, and replay errors.
->    * State Persistence: Save and restore application state seamlessly.
-
+> FiatLight provides automatic UI generation for functions and structured data (dataclasses, pydantic models), making it a powerful tool for rapid prototyping and application development.
+> 
+> It is built on top of [Dear ImGui Bundle](https://github.com/pthom/imgui_bundle). Applications developed with fiatlight are very fast, and provide feedback in **real-time** (at 120 FPS!).
+> 
+> Since Dear ImGui Bundle is available via Pyodide, Fiatlight applications can be *used locally* or deployed as *static web pages*, without any server-side component. 
+> 
+> You may think of Fiatlight as “ComfyUI for any type of data and functions”: rapid, visual, and interactive pipelines for far more than AI image generation.
 
 _The name "Fiatlight" is inspired by "Fiat Lux", i.e. "Let there be light"._
 
-_Fiatlight is designed for rapid prototyping, experimentation, and fine-tuning algorithms. It does not provide full design control over GUI._
-
-**Videos demonstrations**
+# Videos demonstrations
 
 *(Additional tutorials and videos are available on the [video tutorials page](video_tutorials))*
 
 <table>
-
-<tr>
-<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
-
-<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
-<img src="_static/images/video_fl_demo.jpg" width="300" />
-</a>
-
-</td>
-<td style="vertical-align: center;">
-
-**A full demo of Fiatlight** (8 min)
-
-Complete overview showcasing AI integration, image processing, audio analysis, and data visualization capabilities across multiple application domains, using visual examples. 
-
-*This demo is an illustration of the content of this page*
-
-</td>
-</tr>
 
 <tr>
 <td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
@@ -75,6 +65,24 @@ Exception handling, validation, and visual debugging
 </td>
 </tr>
 
+<tr>
+<td style="vertical-align: center; padding-right: 20px; padding-bottom: 20px; width: 50%">
+
+<a href="https://share.descript.com/view/tbvYBh3rpRF" target="_blank">
+<img src="_static/images/video_fl_demo.jpg" width="300" />
+</a>
+
+</td>
+<td style="vertical-align: center;">
+
+**A full demo of Fiatlight** (8 min)
+
+Complete overview showcasing AI integration, image processing, audio analysis, and data visualization capabilities across multiple application domains, using visual examples. 
+
+*This demo is an illustration of the content of this page*
+
+</td>
+</tr>
 
 </table>
 
@@ -83,19 +91,6 @@ Exception handling, validation, and visual debugging
 
 This page intends to provide a high-level overview of Fiatlight's capabilities. For detailed tutorials, please refer to the [video tutorials](video_tutorials) and the [manual](manual).
 
-
-## Create a GUI for structured data
-
-In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).
-
-```python
-from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
-# demo_basemodel_app.main()
-```
-
-![img.png](_static/images/demo_basemodel_app.png)
-
-> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
 
 ## Create a GUI for any function
 
@@ -138,23 +133,32 @@ fl.run(lissajous_curve, app_name="Interactive Lissajou Curve")
 
 <video src="_static/videos/lissajou.mp4" controls="controls" width="30%" height="auto"></video>
 
+## Create a GUI for structured data
+
+In the example below, the GUI definition was created automatically, from the data structure definition of a nested pydantic BaseModel (including the validation rules, in yellow).
+
+```python
+from fiatlight.demos.tutorials.pydantic_gui import demo_basemodel_app
+# demo_basemodel_app.main()
+```
+
+![img.png](_static/images/demo_basemodel_app.png)
+
+> *For technical readers: See the [source code](FL_GH_ROOT/demos/tutorials/pydantic_gui/demo_basemodel_app.py) for demo_basemodel_app.py*. The GUI was created automatically, from a nested Pydantic model, with custom validator.
+
+
 ## From Idea to App in 3 minutes
 
-Create a full application in just 4 lines of Python by chaining pure Python functions into an interactive graph. This graph visually displays each function’s inputs and outputs, allowing for manual input adjustments.
-
-
-*Example: The application below is a meme generator. It is a simple composition of an AI image generator, and a function that adds text onto an image*
+For example, the application we saw in the introduction can be created in just 4 lines of code: we simply import our functions and fiatlight, and call `fl.run` with the list of functions:
 
 ```python
 import fiatlight as fl
 from fiatlight.fiat_kits.fiat_ai import invoke_sdxl_turbo
 from fiatlight.fiat_kits.fiat_image.add_meme_text import add_meme_text
-
-# Run the composition to create a simple app
 fl.run([invoke_sdxl_turbo, add_meme_text], app_name="Old school meme generator")
 ```
 
-This can be used as a full application:
+This application state is automatically persistent:
   * All inputs are saved: prompt, and meme text, font, color, position of the text
   * All preferences are saved: window size, position, and layout of the nodes
   * The user can save and load different state of the application (i.e. different memes)
