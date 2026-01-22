@@ -165,7 +165,7 @@ Fiatlight provides special support for Jupyter notebooks through the `fiatlight.
 1. **Blocking mode** with the standard `fl.run()`: in this mode, the application runs and captures a screenshot when closed, displaying it in the cell output.
 2. **Non-blocking mode** with `fl.nb.start()` / `fl.nb.stop()` / `fl.nb.is_running()`
 
-:::{Note}
+:::{note}
 * The `app_name` parameter is **required** when running in notebooks, as it determines where settings are saved.
 * When running in a notebook, it is recommended to pass `top_most=True` to keep the application window above the notebook interface.
 :::
