@@ -5,7 +5,8 @@
                 "x": {
                     "name": "x",
                     "data": {
-                        "type": "Unspecified"
+                        "type": "Primitive",
+                        "value": 27
                     }
                 }
             },
@@ -13,13 +14,15 @@
                 "b": {
                     "name": "b",
                     "data": {
-                        "type": "Unspecified"
+                        "type": "Primitive",
+                        "value": 7
                     }
                 },
                 "c": {
                     "name": "c",
                     "data": {
-                        "type": "Unspecified"
+                        "type": "Optional",
+                        "value": null
                     }
                 }
             }
@@ -28,10 +31,26 @@
     "gui_options": {
         "int_source": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "x": {
@@ -44,9 +63,13 @@
                             "cb_options": {},
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
-                }
+                    }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -60,16 +83,31 @@
                         "cb_options": {},
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         },
         "add": {
             "function_node_with_gui": {
-                "_inputs_expanded": true,
-                "_outputs_expanded": true,
-                "fiat_tuning_expanded": false,
-                "_internal_state_gui_expanded": true,
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
                 "_function_node": {
                     "inputs": {
                         "a": {
@@ -90,9 +128,13 @@
                             "cb_options": {},
                             "expanded": true
                         }
-                    },
-                    "internal_gui_options": {}
-                }
+                    }
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                },
+                "_focused_function_visible": false
             },
             "function_node": {
                 "inputs": {
@@ -114,8 +156,7 @@
                         "cb_options": {},
                         "expanded": true
                     }
-                },
-                "internal_gui_options": {}
+                }
             }
         }
     }

@@ -107,6 +107,7 @@ Video Tutorial of the available controls
   Your browser does not support the video tag.
 </video>
 
+
 Save / Load user settings
 -------------------------
 
@@ -128,3 +129,126 @@ Three files are saved each time the application saves the settings:
 
 When you manually save the user inputs by clicking on the menu "File / Save user settings", the user settings are saved in a file named "xxx.fiat_user.json", where "xxx" is the file name you selected.
 
+
+
+Additional Run parameters
+-----------------
+
+* **top_most**: `fl.run()` also accept a boolean parameter `top_most` to specify whether the window should stay on top of other windows.
+
+* via **FiatRunParams**:
+  For more control over the application, you can use the `FiatRunParams` class:
+
+```python
+from imgui_bundle import hello_imgui
+
+params = fl.FiatRunParams(
+    app_name="My App",
+    window_size=(1920, 1080),
+    enable_idling=True,  # Save CPU when idle
+    theme=hello_imgui.ImGuiTheme_.darcula_darker,
+    remember_theme=True,  # Save user's theme choice
+    top_most=False,
+    delete_settings=False  # Delete settings on startup
+)
+
+# Then, call
+#     fiatlight.run(my_function, params=params)
+```
+
+
+Running in Jupyter Notebooks
+----------------------------
+
+Fiatlight provides special support for Jupyter notebooks through the `fiatlight.nb` module. This module offers two modes of operation:
+
+1. **Blocking mode** with the standard `fl.run()`: in this mode, the application runs and captures a screenshot when closed, displaying it in the cell output.
+2. **Non-blocking mode** with `fl.nb.start()` / `fl.nb.stop()` / `fl.nb.is_running()`
+
+:::{Note}
+* The `app_name` parameter is **required** when running in notebooks, as it determines where settings are saved.
+* When running in a notebook, it is recommended to pass `top_most=True` to keep the application window above the notebook interface.
+:::
+
+### Blocking Mode with Screenshot
+
+
+When you call `fl.run()` directly in a Jupyter notebook, Fiatlight automatically:
+
+1. Runs the application in blocking mode: no other cells can be executed until the application window is closed.
+2. Captures a screenshot of the application when you close it
+3. Displays the screenshot in the notebook cell output
+
+This is useful for documentation and tutorials where you want to capture the final state of the application.
+
+In the cell below, running `fl.run()` will display a screenshot when the window is closed:
+
+```python
+import fiatlight as fl
+
+def my_function(x: int = 5) -> int:
+    return x * 2
+
+# Run in blocking mode - a screenshot will appear in the output when closed
+fl.run(my_function, app_name="Screenshot Demo", top_most=True)
+```
+
+
+### Non-Blocking Mode
+
+In non-blocking mode, the application runs in the background, allowing you to continue working in your notebook.
+For this mode, use the following functions from the `fiatlight.nb` module: `fl.nb.start()`, `fl.nb.stop()`, `fl.nb.is_running()`
+
+#### Starting an Application
+
+The cell below starts the application without blocking the notebook: the GUI window appears, and you can interact with it while continuing to run other cells. It stays on top of other windows (top_most=True). No screenshot is captured when the application is closed (this is why the cell output below is empty).
+
+```python
+import fiatlight as fl
+
+def my_function(x: int = 5) -> int:
+    return x * 2
+
+# Start the application (non-blocking)
+fl.nb.start(my_function, app_name="Notebook App", top_most=True)
+
+# The cell completes immediately, and the GUI runs in the background
+```
+
+#### Checking Status
+
+```python
+# Check if an application is running
+if fl.nb.is_running():
+    print("Application is running")
+else:
+    print("No application is running")
+```
+
+#### Stopping an Application
+
+```python
+# Stop the application
+fl.nb.stop()
+```
+
+
+Async Run
+-------
+
+For async workflows, Fiatlight provides `fl.run_async()`, which runs the application asynchronously without blocking the calling code.
+
+`fl.run_async()` accepts exactly the same parameters as `fl.run()`.
+
+**example usage:**
+```python
+import fiatlight as fl
+
+def my_function(x: int = 5) -> int:
+    return x * 2
+
+# You may Run the async function with asyncio, for example:
+#    await fl.run_async(my_function, app_name="Async App")
+```
+
+_Note: only one instance of fiatlight can run at a time, even in async mode._
