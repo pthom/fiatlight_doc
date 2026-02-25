@@ -1,8 +1,10 @@
 # Fiatlight
 
 *Create Applications Instantly with One Line of Code*
- 
-With Fiatlight, you can instantly generate rich, interactive user interfaces. For example, the application below combines two functions:
+
+With Fiatlight, you can instantly generate truly rich user interfaces from your functions signatures. 
+
+For example, the application below combines two functions:
 * `generate_image`: creates an AI-generated image from a prompt
 * `add_text_to_image`: adds custom text (a meme caption) to the image
 
@@ -18,6 +20,8 @@ Fiatlight lets anyone prototype, experiment, and share powerful applications—w
 > *For technical readers:*
 >
 > FiatLight provides automatic UI generation for functions and structured data (dataclasses, pydantic models), making it a powerful tool for rapid prototyping and application development.
+> 
+> The interface for each function parameter is customizable via specific attributes (e.g. range of values, type of widget, etc.), or fully customizable via a python function. The state of the application is automatically persistent: all inputs and preferences are saved, and users can save and load different states of the application.
 > 
 > It is built on top of [Dear ImGui Bundle](https://github.com/pthom/imgui_bundle). Applications developed with fiatlight are very fast, and provide feedback in **real-time** (at 120 FPS!).
 > 

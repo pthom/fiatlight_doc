@@ -465,7 +465,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fiatlight">
 <h1>Fiatlight<a class="headerlink" href="#fiatlight" title="Link to this heading">#</a></h1>
 <p><em>Create Applications Instantly with One Line of Code</em></p>
-<p>With Fiatlight, you can instantly generate rich, interactive user interfaces. For example, the application below combines two functions:</p>
+<p>With Fiatlight, you can instantly generate truly rich user interfaces from your functions signatures.</p>
+<p>For example, the application below combines two functions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">generate_image</span></code>: creates an AI-generated image from a prompt</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">add_text_to_image</span></code>: adds custom text (a meme caption) to the image</p></li>
@@ -477,6 +478,7 @@ document.write(`
 <blockquote>
 <div><p><em>For technical readers:</em></p>
 <p>FiatLight provides automatic UI generation for functions and structured data (dataclasses, pydantic models), making it a powerful tool for rapid prototyping and application development.</p>
+<p>The interface for each function parameter is customizable via specific attributes (e.g. range of values, type of widget, etc.), or fully customizable via a python function. The state of the application is automatically persistent: all inputs and preferences are saved, and users can save and load different states of the application.</p>
 <p>It is built on top of <a class="reference external" href="https://github.com/pthom/imgui_bundle">Dear ImGui Bundle</a>. Applications developed with fiatlight are very fast, and provide feedback in <strong>real-time</strong> (at 120 FPS!).</p>
 <p>Since Dear ImGui Bundle is available via Pyodide, Fiatlight applications can be <em>used locally</em> or deployed as <em>static web pages</em>, without any server-side component.</p>
 <p>You may think of Fiatlight as “ComfyUI for any type of data and functions”: rapid, visual, and interactive pipelines for far more than AI image generation.</p>
