@@ -1,8 +1,10 @@
 # Fiatlight
 
-*Create Applications Instantly with One Line of Code*
+> *Turn Python functions into interactive apps in one line.*
+>
+> Visual pipelines, persistent state, zero UI code.
 
-With Fiatlight, you can instantly generate truly rich user interfaces from your functions signatures. 
+Fiatlight auto-generates rich user interfaces from your Python functions.
 
 For example, the application below combines two functions:
 * `generate_image`: creates an AI-generated image from a prompt
