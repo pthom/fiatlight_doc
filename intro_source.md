@@ -284,6 +284,6 @@ Fiatlight is best suited for:
 
 # Full pdf version of this book
 
-View or download the [full pdf](https://pthom.github.io/fi  atlight_doc/flgt.pdf) for this manual.
+View or download the [full pdf](https://pthom.github.io/fiatlight_doc/flgt.pdf) for this manual.
 
 You may feed it into a LLM such as ChatGPT, so that it can help you when using Fiatlight.
