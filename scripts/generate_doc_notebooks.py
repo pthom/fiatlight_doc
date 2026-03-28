@@ -1,12 +1,12 @@
 from fiatlight.fiat_notebook.notebook_utils import (
     save_notebook_from_markdown_file,
 )
-import os
 import subprocess
+from pathlib import Path
 
-THIS_DIR = os.path.dirname(__file__)
-DOC_DIR = os.path.realpath(os.path.join(THIS_DIR, ".."))
-FIATLIGHT_DIR = os.path.realpath(os.path.join(DOC_DIR, ".."))
+THIS_DIR = Path(__file__).parent
+DOC_DIR = (THIS_DIR / "..").resolve()
+FIATLIGHT_DIR = (DOC_DIR / "../src/python/fiatlight").resolve()
 
 
 def generate_doc_notebooks() -> None:
