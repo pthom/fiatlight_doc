@@ -4,8 +4,9 @@ project:
   title: Fiatlight
   copyright: 2025-2026, Pascal Thomet
   github: pthom/fiatlight
-  authors:
-    - name: Pascal Thomet
+  # authors only used for PDF export, not shown on HTML pages
+  # authors:
+  #   - name: Pascal Thomet
   subject: Fiatlight Documentation
   abstract: Fiatlight transforms Python functions into interactive GUI applications using an immediate mode approach.
 
@@ -27,3 +28,6 @@ site:
       url: https://github.com/pthom/fiatlight
     - title: PyPI
       url: https://pypi.org/project/fiatlight/
+    - title: Dear ImGui Bundle
+      url: https://github.com/pthom/imgui_bundle
+

@@ -213,7 +213,7 @@ from fiatlight.fiat_kits.fiat_dataframe import dataframe_with_gui_demo_titanic
 dataframe_with_gui_demo_titanic.main()
 ```
 
-# Visualize, Understand, Innovate
+# Visualize and understand your functions workflow
 
 
 ## Visualize the Pipeline flow
