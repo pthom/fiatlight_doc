@@ -102,10 +102,9 @@ Video Tutorial of the available controls
 
 *The video below shows how to interact with the widgets in a function node*
 
-<video controls>
-  <source src="_static/videos/basic_manip.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+:::{figure} _static/videos/basic_manip.*
+Available controls in a function node
+:::
 
 
 Save / Load user settings

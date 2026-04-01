@@ -1,7 +1,6 @@
 from fiatlight.fiat_notebook.notebook_utils import (
     save_notebook_from_markdown_file,
 )
-import subprocess
 from pathlib import Path
 
 THIS_DIR = Path(__file__).parent
@@ -111,46 +110,5 @@ def generate_doc_notebooks() -> None:
     ])
 
 
-def generate_book_html() -> None:
-    import shutil
-
-    # Remove the _build directory
-    build_dir = f"{DOC_DIR}/_build"
-    shutil.rmtree(build_dir, ignore_errors=True)
-
-    # Generate multiple HTML pages for the manual
-    command = 'jupyter-book build . 2>&1 | grep -v "_source" | grep -v "copying" | grep -v "reading" | grep -v "writing"'
-    #subprocess.run(["jupyter-book", "build", DOC_DIR])
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=DOC_DIR)
-    stdout, stderr = process.communicate()
-    output = stdout.decode('utf-8')
-    print(output)
-
-    # Copy recursively the _build/html directory to output/
-    output_dir = f"{DOC_DIR}/docs/flgt"
-    shutil.rmtree(output_dir, ignore_errors=True)
-    shutil.copytree(f"{DOC_DIR}/_build/html", output_dir)
-    # Add nojekyll file
-    with open(f"{output_dir}/.nojekyll", "w") as f:
-        f.write("")
-
-
-def generate_book_pdf() -> None:
-    import shutil
-
-    # Generate a single PDF for the complete manual.
-    #     pip install pyppeteer
-    subprocess.run(["jupyter-book", "build", DOC_DIR, "--builder", "pdfhtml"])
-    shutil.copy(f"{DOC_DIR}/_build/pdf/book.pdf", f"{DOC_DIR}/docs/flgt.pdf")
-
-
 if __name__ == "__main__":
-    import sys
-    gen_pdf = (len(sys.argv) > 1 and sys.argv[1] == "pdf")
-
     generate_doc_notebooks()
-    if gen_pdf:
-        print("Generating PDF")
-        generate_book_pdf()
-    else:
-        generate_book_html()

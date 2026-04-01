@@ -111,4 +111,6 @@ fl.run(hello_rosetta, app_name="Rosetta Challenge")
 
 *Below is a video of this application*
 
-<video src="_static/videos/rosetta.mp4" controls preload></video>
+:::{figure} _static/videos/rosetta.*
+Rosetta stone application in action
+:::

@@ -1,5 +1,7 @@
 # Fiatlight
 
+<img src="images/logo_fiatlight.jpg" height="150">
+
 > *Turn Python functions into interactive apps in one line.*
 >
 > Visual pipelines, persistent state, zero UI code.
@@ -137,7 +139,9 @@ fl.run(lissajous_curve, app_name="Interactive Lissajou Curve")
 
 *See the application in action in the video below*
 
-<video src="_static/videos/lissajou.mp4" controls="controls" width="30%" height="auto"></video>
+:::{figure} _static/videos/lissajou.*
+Lissajou application in action
+:::
 
 
 ## From Idea to App in 3 minutes
@@ -284,6 +288,6 @@ Fiatlight is best suited for:
 
 # Full pdf version of this book
 
-View or download the [full pdf](https://pthom.github.io/fiatlight_doc/flgt.pdf) for this manual.
+View or download the [full pdf](https://pthom.github.io/fiatlight/flgt.pdf) for this manual.
 
 You may feed it into a LLM such as ChatGPT, so that it can help you when using Fiatlight.

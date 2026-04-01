@@ -17,8 +17,7 @@ Then, explore the following sections.
 ### Advanced topics:
 * [Validate inputs in the GUI](manual_validation)
 * [Reuse Fiatlight widgets](manual_reuse_widgets)  in your own apps, not only in Fiatlight's functions graphs.
-* [Fully customize functions GUI](manual_function.ipynb#sub-class-functionwithgui)
- subclassing FunctionWithGui
+* [Fully customize functions GUI](manual_subclass) by subclassing FunctionWithGui
 * [Fine-tune functions](manual_tuning) by viewing their internal status. Debug and replay exceptions.
 * [Create complex functions graph](manual_functions_graph)
 * [Create and register custom widgets for specific types](manual_custom)
