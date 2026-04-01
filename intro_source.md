@@ -143,7 +143,6 @@ fl.run(lissajous_curve, app_name="Interactive Lissajou Curve")
 Lissajou application in action
 :::
 
-
 ## From Idea to App in 3 minutes
 
 For example, the application we saw in the introduction can be created in just 4 lines of code: we simply import our functions and fiatlight, and call `fl.run` with the list of functions:
