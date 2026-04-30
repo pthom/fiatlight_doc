@@ -170,3 +170,35 @@ def interactive_histogram(
 
 fiatlight.run(interactive_histogram, app_name="Fiat attributes")
 ```
+
+Labelling Outputs
+-----------------
+
+Outputs can be customized just like parameters, using the `return__` prefix instead of a parameter name. Note the **double underscore** between `return` and the attribute name.
+
+For a function with a single output, use `return__label`:
+
+```python
+import fiatlight as fl
+
+@fl.with_fiat_attributes(return__label="Celsius")
+def fahrenheit_to_celsius(fahrenheit: float = 0) -> float:
+    return (fahrenheit - 32) * 5 / 9
+```
+
+When a function returns a `tuple[...]`, Fiatlight splits it into one output pin per element (by default labelled "Output 1", "Output 2", ...). You can give each pin a custom name by indexing into the return: the **first** output uses `return__` (no index), and subsequent outputs use `return_1__`, `return_2__`, ...
+
+```python
+import fiatlight as fl
+
+@fl.with_fiat_attributes(
+    return__label="sum",       # first output
+    return_1__label="product", # second output
+)
+def calc(a: int, b: int) -> tuple[int, int]:
+    return a + b, a * b
+
+fl.run(calc, app_name="Named outputs")
+```
+
+The same `return_N__` prefix works for any output-side fiat attribute (tooltip, range, edit_type, ...), not just `label`.
