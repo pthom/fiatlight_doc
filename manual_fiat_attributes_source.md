@@ -202,3 +202,33 @@ fl.run(calc, app_name="Named outputs")
 ```
 
 The same `return_N__` prefix works for any output-side fiat attribute (tooltip, range, edit_type, ...), not just `label`.
+
+Named Outputs with `NamedTuple`
+-------------------------------
+
+When all you need is to **name** the outputs (as opposed to also tweaking widget options), a typed `NamedTuple` return type is usually clearer than `return_N__label` decorators. Fiatlight detects `typing.NamedTuple` subclasses, splits them into one output pin per field, and uses the field names as labels automatically:
+
+```python
+from typing import NamedTuple
+import fiatlight as fl
+
+class CalcResult(NamedTuple):
+    sum: int
+    product: int
+
+def calc(a: int, b: int) -> CalcResult:
+    return CalcResult(sum=a + b, product=a * b)
+
+fl.run(calc, app_name="NamedTuple outputs")
+```
+
+This produces two output pins labelled "sum" and "product" — equivalent to the `return__label` / `return_1__label` example above, but the names live with the type rather than next to the function.
+
+Notes:
+
+- Only **`typing.NamedTuple`** is supported (the typed form), not the legacy untyped `collections.namedtuple` — Fiatlight needs the field annotations to build per-field GUIs.
+- Field names are used as the default labels. They can still be overridden with `return__label` / `return_N__label` if needed.
+- The same detection applies wherever the type appears (parameters, nested values), not just on the return type.
+- If you need to combine field naming with per-field widget options (e.g. a range on the `sum` field), you can still use the `return_N__` prefix in addition to the `NamedTuple`.
+
+`pydantic.BaseModel` and dataclasses are **not** split into multiple outputs — they appear as a single structured output pin with an editable form. Use a `tuple` or a `NamedTuple` when you want one pin per field.
