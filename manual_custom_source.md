@@ -6,11 +6,84 @@ By calling `fiatlight.register_type(DataType, DataTypeWithGui)`, it is possible 
 For a given type's GUI, it is possible to customize many aspects. Basically all the callbacks and options inside [AnyDataGuiCallbacks](api_any_data_gui_callbacks.ipynb) can be customized.
 
 
+Quick path: `register_callbacks` / `make_simple_gui`
+----------------------------------------------------
+
+For typed pins that don't need internal state (no zoom/pan cache, no per-instance
+configuration), you don't need to subclass `AnyDataWithGui`. The helpers
+`fl.register_callbacks` and `fl.make_simple_gui` accept the fields of
+`AnyDataGuiCallbacks` as explicit keyword-only parameters and produce a
+registered factory in one call.
+
+**Read-only display pin (a `Points2D` typed value):**
+
+```python
+import fiatlight as fl
+import numpy as np
+from imgui_bundle import imgui
+
+Points2D = fl.documented_newtype(
+    "Points2D",
+    np.ndarray,
+    "List of 2D pixel coordinates as an (N, 2) int32 ndarray.",
+)
+
+
+def _present(points: Points2D) -> None:
+    imgui.text(f"{int(points.shape[0])} point(s)")
+
+
+fl.register_callbacks(
+    Points2D,
+    present=_present,
+    present_str=lambda p: f"Points2D[n={int(p.shape[0])}]",
+    default=lambda: Points2D(np.empty((0, 2), dtype=np.int32)),
+)
+```
+
+**Edit-able pin (a `MyPoint3D` model):**
+
+```python
+class MyPoint3D:
+    x: float; y: float; z: float
+
+
+def _edit(p: MyPoint3D) -> tuple[bool, MyPoint3D]:
+    changed_x, p.x = imgui.drag_float("X", p.x)
+    changed_y, p.y = imgui.drag_float("Y", p.y)
+    changed_z, p.z = imgui.drag_float("Z", p.z)
+    return changed_x or changed_y or changed_z, p
+
+
+fl.register_callbacks(
+    MyPoint3D,
+    present_str=lambda p: f"MyPoint3D({p.x:.2f}, {p.y:.2f}, {p.z:.2f})",
+    default=lambda: MyPoint3D(),
+    edit=_edit,
+)
+```
+
+Notes:
+
+- The kwargs are typed and exhaustive — typos are caught by mypy and the IDE
+  autocompletes valid names.
+- `default` is a shorter alias for `default_value_provider`; pass at most one.
+- `present_collapsible` and `edit_collapsible` default to `False` for these
+  helpers (small pins), unlike `AnyDataGuiCallbacks` which defaults them to
+  `True` (large widgets).
+- `make_simple_gui(...)` returns the factory without registering it — useful
+  when you want to wire registration yourself.
+
+For a value type that needs internal state (a presenter cache, fiat-attribute
+handling, save/load of GUI options) you still want a full subclass — see
+Example 1 below.
+
+
 Example 1: a customizable Normal Distribution type
 --------------------------------------------------
 
 **Step 1: Define the Custom Type**
-
+  
 First, let’s define a new type called NormalDistribution.
 
 ```python
@@ -36,10 +109,13 @@ It will handle:
 - A default value provider
 
 ```python
-import fiatlight as fl
-from imgui_bundle import imgui, imgui_fig
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
+
+import fiatlight as fl
+from imgui_bundle import imgui, imgui_fig
 import numpy as np
 
 
@@ -144,15 +220,23 @@ Example 2: a Length type with imperial units
 --------------------------------------------
 
 ```python
-# Step 1: Define the custom type for which we want to create a GUI
-# =================================================================
-from typing import NewType
+import fiatlight as fl
 
-Length = NewType("Length", float)
+# Step 1: Define the custom type for which we want to create a GUI
+# ================================================================
+# Here, our custom type is a NewType on top of float
+
+# Option 1: using the standard library NewType (fiatlight requires you to add a __doc__ to the NewType, so we need to set it manually)
+#from typing import NewType
+# Length = NewType("Length", float)
+# Length.__doc__ = "A length in imperial units or meters"
+
+# or Option 2: using the helper function documented_newtype, which is more concise and automatically adds the __doc__
+Length = fl.documented_newtype("Length", float, "A length in imperial units or meters")
+
 
 # Step 2: Create a class to handle the custom type
 # ================================================
-import fiatlight
 from fiatlight import AnyDataWithGui
 from fiatlight.fiat_widgets import fontawesome_6_ctx, icons_fontawesome_6
 from typing import NewType, Any, Dict
@@ -227,21 +311,6 @@ def circle_perimeter(radius: Length) -> Length:
 # Run the function with the GUI
 fiatlight.run(circle_perimeter, app_name="Circle Perimeter in banana units")
 ```
-
-
-Example 3: a sound player
--------------------------
-
-The sound wave player also uses a custom type with a GUI.
-
-```python
-
-from fiatlight.fiat_kits.experimental.fiat_audio_simple.demos import demo_sound_wave_player
-
-sound_wave_player_gui_demo.main()
-```
-
-For more info, see its [source code](FL_GH_ROOT/fiat_kits/experimental/fiat_audio_simple/sound_wave_player_gui.py)).
 
 
 How to create a new "fiat kit"
