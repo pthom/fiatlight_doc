@@ -18,15 +18,13 @@ registered factory in one call.
 **Read-only display pin (a `Points2D` typed value):**
 
 ```python
+from typing import NewType
 import fiatlight as fl
 import numpy as np
 from imgui_bundle import imgui
 
-Points2D = fl.documented_newtype(
-    "Points2D",
-    np.ndarray,
-    "List of 2D pixel coordinates as an (N, 2) int32 ndarray.",
-)
+Points2D = NewType("Points2D", np.ndarray)
+Points2D.__doc__ = "List of 2D pixel coordinates as an (N, 2) int32 ndarray."
 
 
 def _present(points: Points2D) -> None:
@@ -225,14 +223,10 @@ import fiatlight as fl
 # Step 1: Define the custom type for which we want to create a GUI
 # ================================================================
 # Here, our custom type is a NewType on top of float
-
-# Option 1: using the standard library NewType (fiatlight requires you to add a __doc__ to the NewType, so we need to set it manually)
-#from typing import NewType
-# Length = NewType("Length", float)
-# Length.__doc__ = "A length in imperial units or meters"
-
-# or Option 2: using the helper function documented_newtype, which is more concise and automatically adds the __doc__
-Length = fl.documented_newtype("Length", float, "A length in imperial units or meters")
+# (fiatlight requires every registered NewType to carry a __doc__)
+from typing import NewType
+Length = NewType("Length", float)
+Length.__doc__ = "A length in imperial units or meters"
 
 
 # Step 2: Create a class to handle the custom type
