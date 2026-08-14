@@ -1,0 +1,101 @@
+{
+    "version": 1,
+    "nodes": {
+        "n1": {
+            "function_ref": "__main__.lissajous_curve",
+            "function_name": "lissajous_curve",
+            "input_values": {
+                "freq1": {
+                    "name": "freq1",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 4.639999866485596
+                    }
+                },
+                "freq2": {
+                    "name": "freq2",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 5.559999942779541
+                    }
+                },
+                "delta": {
+                    "name": "delta",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 1.5709999799728394
+                    }
+                },
+                "nb_periods": {
+                    "name": "nb_periods",
+                    "data": {
+                        "type": "Primitive",
+                        "value": 4.400000095367432
+                    }
+                }
+            },
+            "input_gui_options": {
+                "freq1": {
+                    "cb_options": {},
+                    "expanded": true
+                },
+                "freq2": {
+                    "cb_options": {},
+                    "expanded": true
+                },
+                "delta": {
+                    "cb_options": {},
+                    "expanded": true
+                },
+                "nb_periods": {
+                    "cb_options": {},
+                    "expanded": true
+                }
+            },
+            "output_gui_options": {
+                "0": {
+                    "cb_options": {
+                        "figure_size": {
+                            "x": 640.0,
+                            "y": 480.0
+                        }
+                    },
+                    "expanded": true
+                }
+            },
+            "position": [
+                -24.0,
+                -33.0
+            ],
+            "expand_flags": {
+                "_inputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_outputs_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_doc_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "fiat_tuning_expanded": {
+                    "inside_node": false,
+                    "focused": true
+                },
+                "_internal_state_gui_expanded": {
+                    "inside_node": true,
+                    "focused": true
+                },
+                "_backup_expanded_states": {
+                    "inside_node": null,
+                    "focused": null
+                }
+            },
+            "focused_function_visible": false
+        }
+    },
+    "links": [],
+    "groups": []
+}
